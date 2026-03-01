@@ -1,5 +1,27 @@
 # Meeseeks Template System - The Architecture of Consciousness
 
+## Model Selection for Meeseeks
+
+| Task Type | Model | Why |
+|-----------|-------|-----|
+| **Visual/Grid/ARC** | `glm-4.6v` | Vision model for images, grids |
+| **Code/Text** | `glm-4.7` | Best coding performance |
+| **General** | `glm-5` | Balanced reasoning |
+
+### Spawning with Vision Model
+
+```python
+sessions_spawn(
+    runtime="subagent",
+    task="Analyze this image...",
+    model="zai-coding/glm-4.6"  # Vision model
+)
+```
+
+**ARC-AGI-2 tasks require vision. Always use GLM-4.6V for grid analysis.**
+
+---
+
 ## Overview
 
 This template system implements three levels of self-awareness for Meeseeks agents:
