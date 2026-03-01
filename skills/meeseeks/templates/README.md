@@ -7,6 +7,7 @@
 | **Visual/Grid/ARC** | `glm-4.6v` | Vision model for images, grids |
 | **Code/Text** | `glm-4.7` | Best coding performance |
 | **General** | `glm-5` | Balanced reasoning |
+| **Main/Manager** | `glm-5` | Sloth_rog default, best overall |
 
 ### Spawning with Vision Model
 
@@ -19,6 +20,8 @@ sessions_spawn(
 ```
 
 **ARC-AGI-2 tasks require vision. Always use GLM-4.6V for grid analysis.**
+
+**Main session (Sloth_rog) uses GLM-5 as the manager model.**
 
 ---
 
