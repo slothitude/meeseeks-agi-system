@@ -71,6 +71,32 @@ Located at `share/` (synced to both agents):
 - **Capabilities:** inline buttons
 - **Timezone:** Australia/Brisbane
 
+## Model Stack (Updated 2026-03-01)
+
+### Mini Meeseeks Models
+- **Primary:** GLM-4.7-Flash (zai API) - ~3ms response, instant
+- **Fallback:** phi3:mini (Ollama CPU) - 9.9 tok/s
+- **Deprecated:** ministral-3 (too slow at 4.4 tok/s)
+
+### Large Meeseeks Models
+- **Primary:** GLM-5 (zai API) - Complex reasoning
+- **Alternative:** GLM-4.7 (zai API) - Main agent default
+
+### Special Purpose
+- **Embeddings:** nomic-embed-text (Ollama) - Crypt search
+- **Budget:** GLM-5 = 400 requests per 5 hours
+
+### Speed Comparison
+| Model | Response Time | Use Case |
+|-------|---------------|----------|
+| GLM-4.7-Flash | ~3ms | Mini tasks (classify, fitness, patterns) |
+| phi3:mini | 200-800ms | Local fallback when rate limited |
+| GLM-5 | Normal | Large tasks (reasoning, code) |
+
+### Rate Limits
+- zai API: Max 2 concurrent requests to avoid 429 errors
+- Fallback to local phi3:mini when rate limited
+
 ---
 
-_Last updated: 2026-02-14_
+_Last updated: 2026-03-01_

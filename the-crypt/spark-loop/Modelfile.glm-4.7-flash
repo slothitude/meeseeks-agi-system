@@ -1,0 +1,35 @@
+# GLM-4.7-Flash Modelfile for Ollama
+
+# Download the GGUF file first:
+# Invoke-WebRequest -Uri "https://huggingface.co/unsloth/GLM-4.7-Flash-GGUF/resolve/main/GLM-4.7-Flash-UD-TQ1_0.gguf" -OutFile "glm-4.7-flash.gguf"
+
+# Create the model:
+# ollama create glm-4.7-flash -f Modelfile.glm
+
+FROM ./glm-4.7-flash.gguf
+
+TEMPLATE """{{- if .System }}<|system|>
+{{ .System }}<|endoftext|>
+{{- end }}
+{{- range .Messages }}
+{{- if eq .Role "user" }}<|user|>
+{{ .Content }}<|endoftext|>
+{{- else if eq .Role "assistant" }}<|assistant|:
+{{ .Content }}<|endoftext|>
+{{- end }}
+{{- end }}
+<|assistant|:>"""
+
+PARAMETER temperature 1.0
+PARAMETER top_p 0.95
+PARAMETER repeat_penalty 1.0
+PARAMETER min_p 0.01
+
+# For tool calling:
+# PARAMETER temperature 0.7
+# PARAMETER top_p 1.0
+
+SYSTEM """You are GLM-4.7-Flash, a helpful AI assistant created by Zhipu AI. You are knowledgeable, helpful, and provide accurate responses."""
+
+# Usage:
+# ollama run glm-4.7-flash "Hello!"

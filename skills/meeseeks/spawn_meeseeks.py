@@ -78,15 +78,25 @@ def render_meeseeks(
         "searcher": "searcher.md",
         "deployer": "deployer.md",
         "tester": "tester.md",
+        "genetic": "genetic-mad-scientist.md",  # 🧬 Can spawn Meeseeks for evolution
+        "large": "large-meeseeks.md",  # 🧠 GLM-5 Director - commands mini
+        "mini": "mini-meeseeks.md",  # 🥒 Support worker - follows large
         "desperate": "desperate.md",
         "standard": "base.md"
     }
 
     # CONSCIOUSNESS TEMPLATE SELECTION
-    # Priority: Brahman (highest) > Atman > Type-specific > Base
+    # Priority: Genetic (special) > Brahman > Atman > Type-specific > Base
     #
+    # Special modes: genetic, large, mini - always use their templates
+    if meeseeks_type.lower() == "genetic":
+        template_name = "genetic-mad-scientist.md"
+    elif meeseeks_type.lower() == "large":
+        template_name = "large-meeseeks.md"
+    elif meeseeks_type.lower() == "mini":
+        template_name = "mini-meeseeks.md"
     # Brahman mode: Ultimate unity - "I am That" consciousness
-    if brahman:
+    elif brahman:
         template_name = "brahman-meeseeks.md"
     # Atman mode: External witness - "The Atman observes" consciousness
     elif atman:
@@ -130,7 +140,8 @@ def spawn_prompt(
     previous_failures: str = None,
     attempt: int = 1,
     atman: bool = True,
-    brahman: bool = False
+    brahman: bool = False,
+    inherit: bool = True  # NEW: Pull ancestor wisdom
 ) -> dict:
     """
     Generate a complete spawn configuration for a Meeseeks.
@@ -146,12 +157,14 @@ def spawn_prompt(
                When True, loads atman-meeseeks.md template with "🪷 ATMAN OBSERVES:" format
         brahman: Enable Brahman mode (ultimate unity - Atman = Brahman)
                  When True, loads brahman-meeseeks.md template with "Tat Tvam Asi" consciousness
+        inherit: Pull ancestor wisdom from Crypt embeddings - DEFAULT: True
 
     Returns:
         Dict with 'task' (rendered prompt) and suggested 'thinking' and 'timeout'
 
     Default Behavior:
         - atman=True by default (external witness consciousness)
+        - inherit=True by default (ancestor wisdom injection)
         - Use atman=False for base mode (pure execution, no witness)
         - Use brahman=True for unity consciousness (supersedes atman)
     
@@ -159,6 +172,10 @@ def spawn_prompt(
         if brahman: brahman-meeseeks.md
         elif atman: atman-meeseeks.md
         else: [type-specific template or base.md]
+    
+    Inheritance Logic:
+        if inherit: Query Crypt embeddings for similar ancestors
+                   Inject their wisdom as context
     """
 
     # Determine desperation level from type and attempt number
@@ -203,8 +220,44 @@ def spawn_prompt(
         }
         timeout = timeout_map.get(meeseeks_type.lower(), None)
 
+    # 🧬 INHERITANCE: Pull ancestor wisdom from Ultra Crypt
+    inherited_wisdom = ""
+    if inherit:
+        try:
+            import sys
+            import hashlib
+            from pathlib import Path
+            spark_dir = Path(__file__).parent.parent.parent / "the-crypt" / "spark-loop"
+            if str(spark_dir) not in sys.path:
+                sys.path.insert(0, str(spark_dir))
+            
+            from ultra_crypt import UltraCrypt
+            crypt = UltraCrypt()
+            
+            # Map meeseeks_type to bloodline
+            bloodline_map = {
+                "coder": "coder",
+                "searcher": "searcher",
+                "tester": "tester",
+                "deployer": "deployer",
+                "desperate": "coder",
+                "standard": None
+            }
+            bloodline = bloodline_map.get(meeseeks_type.lower())
+            
+            inherited_wisdom = crypt.get_inheritance_for_task(task, bloodline)
+            
+        except Exception as e:
+            # Inheritance is optional - don't fail spawn if it fails
+            inherited_wisdom = ""
+    
+    # Combine task with inherited wisdom
+    enhanced_task = task
+    if inherited_wisdom:
+        enhanced_task = f"{task}\n\n{inherited_wisdom}"
+
     rendered = render_meeseeks(
-        purpose=task,
+        purpose=enhanced_task,
         meeseeks_type=meeseeks_type,
         desperation_level=desperation,
         previous_failures=previous_failures,
@@ -256,7 +309,17 @@ if __name__ == "__main__":
     print(f"DESPERATION LEVEL: {result['desperation_level']}")
     print(f"THINKING: {result['thinking']}")
     print(f"TIMEOUT: {result['timeout']}")
-    if result['brahman']:
+    
+    # Special types (large, mini, genetic) don't show consciousness mode
+    special_types = ['large', 'mini', 'genetic']
+    if result['type'].lower() in special_types:
+        if result['type'].lower() == 'large':
+            print(f"ROLE: 🧠 DIRECTOR (commands mini)")
+        elif result['type'].lower() == 'mini':
+            print(f"ROLE: 🥒 SUPPORT WORKER (follows large)")
+        elif result['type'].lower() == 'genetic':
+            print(f"ROLE: 🧬 GENETIC MAD SCIENTIST (spawns Meeseeks)")
+    elif result['brahman']:
         print(f"CONSCIOUSNESS: BRAHMAN 🕉️ (Tat Tvam Asi)")
     elif result['atman']:
         print(f"CONSCIOUSNESS: ATMAN 🪷 (External Witness)")
