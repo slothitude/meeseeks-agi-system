@@ -1,0 +1,17 @@
+{
+  "injections": [
+    {
+      "timestamp": "2026-03-01T18:16:45.186028",
+      "template": "coder.md",
+      "cluster_id": "cluster_coder_0",
+      "trait_name": "Coder Wisdom",
+      "ancestor_count": 3,
+      "ancestors": [
+        "ancestor-20260301-164450-95ba",
+        "ancestor-20260301-164504-79fd",
+        "ancestor-20260301-165055-34b6"
+      ]
+    }
+  ],
+  "last_updated": "2026-03-01T18:16:45.186303"
+}

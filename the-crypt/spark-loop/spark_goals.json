@@ -1,0 +1,25 @@
+{
+  "goals": [
+    {
+      "id": "goal_20260301_arcagi_improve",
+      "description": "Improve ARC-AGI-2 accuracy from 80% to 90%+ by analyzing the failed task (137eaa0f - Region Extraction) and developing better spatial reasoning approaches",
+      "priority": "high",
+      "spawned_by": "human",
+      "created_at": "2026-03-01T17:55:00",
+      "status": "active",
+      "assigned_to": "worker_20260301_180216",
+      "result": null
+    },
+    {
+      "id": "goal_20260301_spark_test",
+      "description": "Test the Spark Loop by running a simple task through Observer → Evolver → Worker cycle to verify autonomous operation",
+      "priority": "medium",
+      "spawned_by": "human",
+      "created_at": "2026-03-01T17:56:00",
+      "status": "active",
+      "assigned_to": "worker_20260301_180216",
+      "result": null
+    }
+  ],
+  "last_updated": "2026-03-01T17:56:00"
+}
