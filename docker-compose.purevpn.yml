@@ -1,0 +1,50 @@
+# SearXNG + Gluetun (PureVPN) Docker Compose
+
+version: '3.8'
+
+services:
+  # Gluetun VPN container with PureVPN
+  gluetun:
+    image: qmcgaw/gluetun
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    ports:
+      - "8888:8888"   # SearXNG (will be forwarded)
+      - "8080:8080"   # HTTP proxy
+    environment:
+      # PureVPN credentials (REPLACE WITH YOUR ACTUAL CREDENTIALS)
+      - VPNSP=purevpn
+      - OPENVPN_USER=${PUREVPN_USER}
+      - OPENVPN_PASSWORD=${PUREVPN_PASSWORD}
+      
+      # Server selection (optional)
+      - SERVER_COUNTRIES=Australia,Netherlands
+      
+      # DNS
+      - DNS_ADDRESS=1.1.1.1
+      
+      # Allow local network access
+      - FIREWALL_OUTBOUND_SUBNETS=192.168.0.0/16,172.16.0.0/12,10.0.0.0/8
+    restart: unless-stopped
+
+  # SearXNG routed through Gluetun
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    network_mode: "service:gluetun"  # Use Gluetun's network (VPN)
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8888/
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
+    depends_on:
+      - gluetun
+    restart: unless-stopped
+
+# Create .env file with:
+# PUREVPN_USER=your_username
+# PUREVPN_PASSWORD=your_password
+# SEARXNG_SECRET=$(openssl rand -hex 32)
