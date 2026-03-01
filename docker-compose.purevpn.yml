@@ -19,9 +19,10 @@ services:
       - VPNSP=purevpn
       - OPENVPN_USER=${PUREVPN_USER}
       - OPENVPN_PASSWORD=${PUREVPN_PASSWORD}
+      - OPENVPN_PROTOCOL=tcp
       
-      # Server selection (optional)
-      - SERVER_COUNTRIES=Australia,Netherlands
+      # Server selection (optional - try without first)
+      # - SERVER_COUNTRIES=Netherlands,Germany
       
       # DNS
       - DNS_ADDRESS=1.1.1.1
