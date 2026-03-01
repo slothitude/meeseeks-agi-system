@@ -18,6 +18,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
 
+# Import bloodline evolution system
+try:
+    from bloodline_evolution import evolve_bloodlines
+    BLOODLINE_EVOLUTION_AVAILABLE = True
+except ImportError:
+    BLOODLINE_EVOLUTION_AVAILABLE = False
+
 # The Crypt location
 CRYPT_ROOT = Path(__file__).parent.parent.parent / "the-crypt"
 ANCESTORS_DIR = CRYPT_ROOT / "ancestors"
@@ -155,6 +162,15 @@ def entomb_meeseeks(
     # Write ancestor file
     ancestor_path = ANCESTORS_DIR / f"{ancestor_id}.md"
     ancestor_path.write_text(ancestor_content, encoding="utf-8")
+    
+    # Check for bloodline evolution after entombment
+    evolution_result = None
+    if BLOODLINE_EVOLUTION_AVAILABLE:
+        try:
+            evolution_result = evolve_bloodlines(ANCESTORS_DIR)
+        except Exception as e:
+            # Don't fail entombment if evolution fails
+            evolution_result = f"Evolution check failed: {e}"
     
     return str(ancestor_path)
 
