@@ -2,12 +2,19 @@
 
 ## Model Selection for Meeseeks
 
-| Task Type | Model | Why |
-|-----------|-------|-----|
-| **Visual/Grid/ARC** | `glm-4.6v` | Vision model for images, grids |
-| **Code/Text** | `glm-4.7` | Best coding performance |
-| **General** | `glm-5` | Balanced reasoning |
-| **Main/Manager** | `glm-5` | Sloth_rog default, best overall |
+| Task Type | Model | Fallback | Why |
+|-----------|-------|----------|-----|
+| **Main/Manager** | `glm-5` | `glm-4.7` | Sloth_rog default, best overall |
+| **Visual/Grid/ARC** | `glm-4.6v` | `glm-4.7` | Vision model for images, grids |
+| **Code/Text** | `glm-4.7` | `glm-5` | Best coding performance |
+| **General** | `glm-5` | `glm-4.7` | Balanced reasoning |
+
+### Fallback Chain
+
+If primary model unavailable or rate-limited:
+1. Try primary model
+2. Fall back to secondary
+3. Adjust thinking level if needed
 
 ### Spawning with Vision Model
 
@@ -21,7 +28,7 @@ sessions_spawn(
 
 **ARC-AGI-2 tasks require vision. Always use GLM-4.6V for grid analysis.**
 
-**Main session (Sloth_rog) uses GLM-5 as the manager model.**
+**Main session (Sloth_rog) uses GLM-5 with fallback to GLM-4.7.**
 
 ---
 
