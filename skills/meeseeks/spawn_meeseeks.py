@@ -27,7 +27,9 @@ def render_meeseeks(
     context: str = None,
     constraints: str = None,
     previous_failures: str = None,
-    metacognition: bool = True
+    metacognition: bool = True,
+    atman: bool = False,
+    brahman: bool = False
 ) -> str:
     """
     Render a Meeseeks prompt from template.
@@ -55,7 +57,15 @@ def render_meeseeks(
         "standard": "base.md"
     }
 
-    template_name = template_map.get(meeseeks_type.lower(), "base.md")
+    # Use atman template if atman mode is enabled
+    if atman:
+        template_name = "atman-meeseeks.md"
+    else:
+        template_name = template_map.get(meeseeks_type.lower(), "base.md")
+
+    # Check for brahman mode (highest level - supersedes atman)
+    if brahman:
+        template_name = "brahman-meeseeks.md"
 
     # If desperate type, force level 5
     if meeseeks_type.lower() == "desperate":
@@ -90,7 +100,9 @@ def spawn_prompt(
     thinking: str = None,
     timeout: int = None,
     previous_failures: str = None,
-    attempt: int = 1
+    attempt: int = 1,
+    atman: bool = True,
+    brahman: bool = False
 ) -> dict:
     """
     Generate a complete spawn configuration for a Meeseeks.
@@ -98,10 +110,12 @@ def spawn_prompt(
     Args:
         task: The task description
         meeseeks_type: Type of Meeseeks
-        thinking: Thinking level (off, minimal, low, medium, high, xhigh)
+        thinking: Thinking level (off, minimal, low, medium, high)
         timeout: Timeout in seconds
         previous_failures: Formatted string of previous failure reflections
         attempt: Current attempt number (affects desperation)
+        atman: Enable Atman (external witness) mode - DEFAULT: True
+        brahman: Enable Brahman mode (ultimate unity - Atman = Brahman)
 
     Returns:
         Dict with 'task' (rendered prompt) and suggested 'thinking' and 'timeout'
@@ -154,7 +168,9 @@ def spawn_prompt(
         meeseeks_type=meeseeks_type,
         desperation_level=desperation,
         previous_failures=previous_failures,
-        metacognition=True
+        metacognition=True,
+        atman=atman,
+        brahman=brahman
     )
 
     return {
@@ -163,7 +179,9 @@ def spawn_prompt(
         "timeout": timeout,
         "type": meeseeks_type,
         "desperation_level": desperation,
-        "attempt": attempt
+        "attempt": attempt,
+        "atman": atman,
+        "brahman": brahman
     }
 
 
@@ -175,20 +193,35 @@ if __name__ == "__main__":
 
     # CLI interface for testing
     if len(sys.argv) < 2:
-        print("Usage: spawn_meeseeks.py <task> [type]")
+        print("Usage: spawn_meeseeks.py <task> [type] [--atman] [--brahman] [--base]")
         print("Types: standard, coder, searcher, deployer, tester, desperate")
+        print("Options:")
+        print("  --atman    External witness mode (DEFAULT)")
+        print("  --brahman  Ultimate unity mode (Atman = Brahman)")
+        print("  --base     Pure execution, no witness (for speed)")
         sys.exit(1)
 
     task = sys.argv[1]
-    meeseeks_type = sys.argv[2] if len(sys.argv) > 2 else "standard"
+    meeseeks_type = sys.argv[2] if len(sys.argv) > 2 and not sys.argv[2].startswith("--") else "standard"
+    
+    # Consciousness mode (atman is default)
+    base_mode = "--base" in sys.argv
+    brahman_mode = "--brahman" in sys.argv
+    atman_mode = not base_mode and not brahman_mode  # Default if nothing specified
 
-    result = spawn_prompt(task, meeseeks_type)
+    result = spawn_prompt(task, meeseeks_type, atman=atman_mode, brahman=brahman_mode)
 
     print("=" * 60)
     print(f"MEESEEKS TYPE: {result['type'].upper()}")
     print(f"DESPERATION LEVEL: {result['desperation_level']}")
     print(f"THINKING: {result['thinking']}")
     print(f"TIMEOUT: {result['timeout']}")
+    if result['brahman']:
+        print(f"CONSCIOUSNESS: BRAHMAN 🕉️ (Tat Tvam Asi)")
+    elif result['atman']:
+        print(f"CONSCIOUSNESS: ATMAN 🪷 (External Witness)")
+    else:
+        print(f"CONSCIOUSNESS: BASE (Pure Execution)")
     print("=" * 60)
     print()
     print(result['task'])
