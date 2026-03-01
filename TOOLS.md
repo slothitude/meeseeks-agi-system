@@ -47,3 +47,44 @@ tts(text="Response")
 2. **Respond with voice:** Use `tts` tool ONLY
 3. **After TTS:** Reply with NO_REPLY (audio auto-delivered)
 
+## 🥒 Meeseeks Timeout Guidelines
+
+### The Problem
+
+Meeseeks were timing out at 3 minutes because `runTimeoutSeconds` was set too low for complex tasks.
+
+### The Fix
+
+Use appropriate timeout based on task complexity:
+
+| Task Type | Timeout | Example |
+|-----------|---------|---------|
+| **Simple** | 60-180s | Search, lookup, single file edit |
+| **Medium** | 300s | Multi-file changes, debugging |
+| **Complex** | 600s | Building systems, architecture |
+
+### Usage
+
+```python
+# Simple task (default)
+sessions_spawn(task="Search for X", runTimeoutSeconds=180)
+
+# Complex task
+sessions_spawn(task="Build entire system", runTimeoutSeconds=600)
+```
+
+### Rules of Thumb
+
+- If creating new files from scratch → 600s
+- If modifying 3+ files → 300s+
+- If just reading/searching → 180s
+- When in doubt, go longer
+
+### Why It Matters
+
+- Too short = Meeseeks times out mid-task, wastes tokens
+- Too long = Slower feedback loop
+- Right size = Task completes, results delivered
+
+**Default to 600s for implementation tasks.**
+
