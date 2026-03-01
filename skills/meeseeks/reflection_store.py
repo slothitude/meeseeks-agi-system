@@ -1,295 +1,239 @@
-#!/usr/bin/env python3
 """
-Meeseeks Reflection Memory Store
-Stores and retrieves failure contexts for iterative improvement.
+Reflection Store - Persistent failure context storage for Meeseeks feedback loop.
 
-Based on:
-- Reflexion (Shinn et al., 2023): https://github.com/noahshinn/reflexion
-- Self-Refine (Madaan et al., 2023): https://arxiv.org/abs/2303.17651
+Stores failure contexts in Knowledge Graph for cross-attempt learning.
 """
 
 import json
-import hashlib
-from pathlib import Path
 from datetime import datetime
-from typing import List, Dict, Optional, Any
-
-# Storage location
-REFLECTION_DIR = Path(__file__).parent / "reflections"
-
+from typing import Optional
+from pathlib import Path
 
 class ReflectionStore:
     """
-    Persistent storage for Meeseeks failure reflections.
+    Stores and retrieves reflection memory for Meeseeks retry loop.
     
-    Each task gets its own reflection file containing:
-    - All attempts made
-    - What was tried
-    - Why it failed
-    - What to avoid next time
+    Storage backends:
+    - Knowledge Graph (primary) - via MCP
+    - Local JSON (fallback) - for offline/debug
     """
     
-    def __init__(self):
-        REFLECTION_DIR.mkdir(exist_ok=True)
+    def __init__(self, kg_client=None, local_path: str = None):
+        self.kg_client = kg_client
+        self.local_path = Path(local_path or "skills/meeseeks/reflections.json")
+        self._ensure_local_file()
     
-    def _get_task_id(self, task: str) -> str:
-        """Generate a stable task ID from task description."""
-        # Normalize task for consistent hashing
-        normalized = " ".join(task.lower().split())
-        return hashlib.sha256(normalized.encode()).hexdigest()[:16]
+    def _ensure_local_file(self):
+        """Ensure local JSON file exists."""
+        if not self.local_path.exists():
+            self.local_path.parent.mkdir(parents=True, exist_ok=True)
+            self.local_path.write_text(json.dumps({"reflections": {}}))
     
-    def _get_reflection_path(self, task_id: str) -> Path:
-        """Get the file path for a task's reflections."""
-        return REFLECTION_DIR / f"{task_id}.json"
-    
-    def store_failure(
-        self,
-        task: str,
-        error: str,
-        approach: str,
-        reason: str,
-        logs: str = None,
-        metadata: Dict[str, Any] = None
-    ) -> str:
+    def store_failure(self, task_id: str, attempt: int, error: str, 
+                      approach: str, reason: str, context: dict = None):
         """
-        Store a failure reflection for a task.
+        Store a failure context for future retries.
         
         Args:
-            task: The task description
-            error: Error message or exception
+            task_id: Unique identifier for the task
+            attempt: Which attempt number failed
+            error: The error message
             approach: What approach was tried
-            reason: Why it failed (root cause analysis)
-            logs: Optional execution logs
-            metadata: Optional additional context
-            
-        Returns:
-            Task ID for reference
+            reason: Why it failed (analyzed)
+            context: Additional context (files, commands, etc.)
         """
-        task_id = self._get_task_id(task)
-        reflection_path = self._get_reflection_path(task_id)
-        
-        # Load existing reflections or create new
-        if reflection_path.exists():
-            with open(reflection_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-        else:
-            data = {
-                "task": task,
-                "task_id": task_id,
-                "created": datetime.now().isoformat(),
-                "failures": []
-            }
-        
-        # Add new failure
-        failure_record = {
-            "attempt": len(data["failures"]) + 1,
+        reflection = {
             "timestamp": datetime.now().isoformat(),
+            "task_id": task_id,
+            "attempt": attempt,
             "error": error,
             "approach": approach,
             "reason": reason,
-            "logs": logs[:500] if logs else None,  # Truncate logs
-            "metadata": metadata
+            "context": context or {}
         }
         
-        data["failures"].append(failure_record)
-        data["updated"] = datetime.now().isoformat()
+        # Store in KG if available
+        if self.kg_client:
+            self._store_in_kg(task_id, reflection)
         
-        # Save
-        with open(reflection_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+        # Always store locally as backup
+        self._store_locally(task_id, reflection)
         
-        return task_id
+        return reflection
     
-    def get_failures(self, task: str) -> List[Dict[str, Any]]:
+    def get_failures(self, task_id: str) -> list:
         """
-        Retrieve all failure reflections for a task.
+        Retrieve all failure contexts for a task.
         
         Args:
-            task: The task description
+            task_id: The task identifier
             
         Returns:
-            List of failure records, or empty list if none
+            List of reflection dicts, ordered by attempt
         """
-        task_id = self._get_task_id(task)
-        reflection_path = self._get_reflection_path(task_id)
-        
-        if not reflection_path.exists():
-            return []
-        
-        with open(reflection_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        return data.get("failures", [])
+        if self.kg_client:
+            return self._get_from_kg(task_id)
+        return self._get_locally(task_id)
     
-    def format_for_prompt(self, task: str, max_failures: int = 5) -> str:
+    def format_reflections(self, task_id: str) -> str:
         """
-        Format failure reflections for injection into a retry prompt.
+        Format failures for injection into retry prompt.
         
         Args:
-            task: The task description
-            max_failures: Maximum number of failures to include
+            task_id: The task identifier
             
         Returns:
             Formatted string for prompt injection
         """
-        failures = self.get_failures(task)
+        failures = self.get_failures(task_id)
         
         if not failures:
             return ""
         
-        # Take most recent failures
-        recent_failures = failures[-max_failures:]
+        lines = ["--- PREVIOUS ATTEMPTS FAILED ---"]
         
-        output = "\n## 🪞 REFLECTION MEMORY - Previous Attempts\n"
-        output += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
-        output += "**These approaches did NOT work. Learn from them:**\n\n"
+        for f in failures:
+            lines.append(f"\n### Attempt {f['attempt']}:")
+            lines.append(f"**Error:** {f['error']}")
+            lines.append(f"**Approach tried:** {f['approach']}")
+            lines.append(f"**Why it failed:** {f['reason']}")
         
-        for failure in recent_failures:
-            output += f"### ❌ Attempt {failure['attempt']}\n"
-            output += f"**Approach:** {failure['approach']}\n"
-            output += f"**Error:** {failure['error']}\n"
-            output += f"**Why it failed:** {failure['reason']}\n\n"
+        lines.append("\n⚠️ The above approaches did NOT work. Try a DIFFERENT approach.")
+        lines.append("Analyze why previous attempts failed before proceeding.")
         
-        output += "⚠️ **DO NOT repeat these approaches.**\n"
-        output += "Analyze WHY they failed and try something DIFFERENT.\n"
-        output += "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-        
-        return output
+        return "\n".join(lines)
     
-    def clear_reflections(self, task: str) -> bool:
-        """
-        Clear all reflections for a task (after success).
-        
-        Args:
-            task: The task description
-            
-        Returns:
-            True if reflections were cleared, False if none existed
-        """
-        task_id = self._get_task_id(task)
-        reflection_path = self._get_reflection_path(task_id)
-        
-        if reflection_path.exists():
-            reflection_path.unlink()
-            return True
-        
-        return False
+    def clear_failures(self, task_id: str):
+        """Clear all failures for a task (after success)."""
+        if self.kg_client:
+            self._clear_from_kg(task_id)
+        self._clear_locally(task_id)
     
-    def get_all_tasks(self) -> List[Dict[str, Any]]:
-        """
-        Get summary of all tasks with reflections.
+    # --- Knowledge Graph Backend ---
+    
+    def _store_in_kg(self, task_id: str, reflection: dict):
+        """Store reflection in Knowledge Graph entity."""
+        entity_name = f"Task_Failures_{task_id}"
+        observation = (
+            f"Attempt {reflection['attempt']}: {reflection['approach']} failed - "
+            f"{reflection['reason']} (Error: {reflection['error'][:100]})"
+        )
         
-        Returns:
-            List of task summaries
-        """
-        tasks = []
+        # Would call: goose run -t "Use mcpdocker/add_observation..."
+        # For now, this is a placeholder for the actual MCP call
+        if self.kg_client:
+            try:
+                self.kg_client.add_observation(entity_name, observation)
+            except Exception as e:
+                print(f"KG store failed: {e}, using local fallback")
+    
+    def _get_from_kg(self, task_id: str) -> list:
+        """Retrieve reflections from Knowledge Graph."""
+        entity_name = f"Task_Failures_{task_id}"
         
-        for path in REFLECTION_DIR.glob("*.json"):
-            with open(path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            
-            tasks.append({
-                "task_id": data["task_id"],
-                "task": data["task"][:100] + "..." if len(data["task"]) > 100 else data["task"],
-                "failure_count": len(data["failures"]),
-                "created": data["created"],
-                "updated": data.get("updated", data["created"])
-            })
+        if self.kg_client:
+            try:
+                entity = self.kg_client.read_entity(entity_name)
+                # Parse observations into reflection format
+                return self._parse_kg_observations(entity.get('observations', []))
+            except Exception as e:
+                print(f"KG retrieve failed: {e}, using local fallback")
         
-        return tasks
+        return self._get_locally(task_id)
+    
+    def _parse_kg_observations(self, observations: list) -> list:
+        """Parse KG observations back into reflection dicts."""
+        reflections = []
+        for obs in observations:
+            # Parse "Attempt N: approach failed - reason (Error: ...)"
+            try:
+                parts = obs.split(": ", 1)
+                attempt = int(parts[0].replace("Attempt ", ""))
+                rest = parts[1]
+                
+                approach_end = rest.find(" failed - ")
+                approach = rest[:approach_end]
+                
+                reason_start = approach_end + len(" failed - ")
+                reason_end = rest.find(" (Error: ")
+                reason = rest[reason_start:reason_end]
+                
+                error = rest[reason_end + len(" (Error: "):-1]
+                
+                reflections.append({
+                    "attempt": attempt,
+                    "approach": approach,
+                    "reason": reason,
+                    "error": error
+                })
+            except:
+                continue
+        
+        return sorted(reflections, key=lambda x: x['attempt'])
+    
+    def _clear_from_kg(self, task_id: str):
+        """Clear reflections from Knowledge Graph."""
+        entity_name = f"Task_Failures_{task_id}"
+        
+        if self.kg_client:
+            try:
+                self.kg_client.delete_entity(entity_name)
+            except:
+                pass
+    
+    # --- Local JSON Backend ---
+    
+    def _store_locally(self, task_id: str, reflection: dict):
+        """Store reflection in local JSON file."""
+        data = json.loads(self.local_path.read_text())
+        
+        if task_id not in data["reflections"]:
+            data["reflections"][task_id] = []
+        
+        data["reflections"][task_id].append(reflection)
+        
+        self.local_path.write_text(json.dumps(data, indent=2))
+    
+    def _get_locally(self, task_id: str) -> list:
+        """Retrieve reflections from local JSON file."""
+        data = json.loads(self.local_path.read_text())
+        return data["reflections"].get(task_id, [])
+    
+    def _clear_locally(self, task_id: str):
+        """Clear reflections from local JSON file."""
+        data = json.loads(self.local_path.read_text())
+        
+        if task_id in data["reflections"]:
+            del data["reflections"][task_id]
+        
+        self.local_path.write_text(json.dumps(data, indent=2))
 
 
 # Singleton instance
 _store = None
 
-def get_store() -> ReflectionStore:
-    """Get the singleton ReflectionStore instance."""
+def get_store(kg_client=None) -> ReflectionStore:
+    """Get or create the reflection store singleton."""
     global _store
     if _store is None:
-        _store = ReflectionStore()
+        _store = ReflectionStore(kg_client)
     return _store
 
 
 # Convenience functions
-def store_failure(task: str, error: str, approach: str, reason: str, **kwargs) -> str:
-    """Store a failure reflection."""
-    return get_store().store_failure(task, error, approach, reason, **kwargs)
+def store_failure(task_id: str, attempt: int, error: str, 
+                  approach: str, reason: str, context: dict = None):
+    """Store a failure context."""
+    return get_store().store_failure(task_id, attempt, error, approach, reason, context)
 
+def get_failures(task_id: str) -> list:
+    """Get all failures for a task."""
+    return get_store().get_failures(task_id)
 
-def get_reflections(task: str) -> List[Dict[str, Any]]:
-    """Get all failure reflections for a task."""
-    return get_store().get_failures(task)
+def format_reflections(task_id: str) -> str:
+    """Format failures for prompt injection."""
+    return get_store().format_reflections(task_id)
 
-
-def format_reflections(task: str, max_failures: int = 5) -> str:
-    """Format reflections for prompt injection."""
-    return get_store().format_for_prompt(task, max_failures)
-
-
-def clear_reflections(task: str) -> bool:
-    """Clear reflections for a task."""
-    return get_store().clear_reflections(task)
-
-
-if __name__ == "__main__":
-    # Demo/test
-    import sys
-    import io
-    
-    # Fix Windows encoding
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-    
-    if len(sys.argv) < 2:
-        print("Reflection Store - Meeseeks Memory System")
-        print("\nCommands:")
-        print("  list                    - Show all tasks with reflections")
-        print("  show <task>             - Show reflections for a task")
-        print("  clear <task>            - Clear reflections for a task")
-        print("  test                    - Run a test with sample data")
-        sys.exit(0)
-    
-    cmd = sys.argv[1]
-    store = get_store()
-    
-    if cmd == "list":
-        tasks = store.get_all_tasks()
-        if not tasks:
-            print("No reflections stored.")
-        else:
-            for task in tasks:
-                print(f"\n[{task['task_id']}] {task['task']}")
-                print(f"  Failures: {task['failure_count']}, Updated: {task['updated']}")
-    
-    elif cmd == "show":
-        if len(sys.argv) < 3:
-            print("Usage: reflection_store.py show <task>")
-            sys.exit(1)
-        task = sys.argv[2]
-        print(store.format_for_prompt(task))
-    
-    elif cmd == "clear":
-        if len(sys.argv) < 3:
-            print("Usage: reflection_store.py clear <task>")
-            sys.exit(1)
-        task = sys.argv[2]
-        if store.clear_reflections(task):
-            print(f"✓ Reflections cleared for task")
-        else:
-            print("No reflections found for task")
-    
-    elif cmd == "test":
-        task = "Fix the authentication bug in login.ts"
-        
-        print("Storing test reflections...")
-        store_failure(task, "TypeError: undefined is not a function", 
-                      "Tried to access user.auth.token directly", 
-                      "user object was null due to async timing")
-        
-        store_failure(task, "AssertionError: expected true to be false",
-                      "Mocked the auth service incorrectly",
-                      "Mock wasn't resetting between tests")
-        
-        print("\n" + "="*60)
-        print("FORMATTED FOR PROMPT:")
-        print("="*60)
-        print(store.format_for_prompt(task))
+def clear_failures(task_id: str):
+    """Clear failures after success."""
+    return get_store().clear_failures(task_id)
