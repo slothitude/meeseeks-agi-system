@@ -1,0 +1,43 @@
+# OpenVPN Docker Compose
+
+version: '3.8'
+
+services:
+  # OpenVPN client container
+  openvpn:
+    image: kylemanna/openvpn
+    container_name: openvpn-client
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    volumes:
+      - ./vpn:/vpn
+    command: ovpn_run --config /vpn/config.ovpn
+    restart: unless-stopped
+    networks:
+      - vpn-internal
+
+  # SearXNG with VPN routing
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8888/
+      - SEARXNG_SECRET=$(openssl rand -hex 32)
+    depends_on:
+      - openvpn
+    network_mode: "service:openvpn"
+    restart: unless-stopped
+
+networks:
+  vpn-internal:
+    driver: bridge
+
+# Note: For this to work, you need:
+# 1. A valid .ovpn config file in ./vpn/config.ovpn
+# 2. VPN provider credentials (if required)
