@@ -25,6 +25,7 @@ Meeseeks are now generated from **Jinja2 templates** located in `skills/meeseeks
 - `tester.md` - Testing specialization
 - `desperate.md` - Level 5 impossible tasks
 - `mcp-enabled.md` - MCP tools via Gooser CLI (knowledge graph, sequential thinking, GitHub, search, browser)
+- `parallel-meeseeks.md` - Parallel execution patterns (swarm, map-reduce, voting, pipeline)
 
 Each template includes:
 - **Core Philosophy** (from SOUL.md)
@@ -130,6 +131,64 @@ When a request comes in, evaluate:
 - Web research requiring search + browser
 - Tasks benefiting from cross-attempt learning
 - When you need the Five Principles fully integrated
+
+### 🥒🥒🥒 Spawn PARALLEL Meeseeks
+Use when tasks can be executed concurrently:
+
+**SWARM Pattern** (Multiple approaches)
+- Research from different angles
+- Generate diverse solutions
+- Combine multiple perspectives
+```python
+# 3 Meeseeks, 3 approaches, 1 answer
+results = await Promise.all([
+    sessions_spawn({ task: "Approach 1: ...", mode: 'run' }),
+    sessions_spawn({ task: "Approach 2: ...", mode: 'run' }),
+    sessions_spawn({ task: "Approach 3: ...", mode: 'run' })
+])
+final = aggregate(results)
+```
+
+**MAP-REDUCE Pattern** (Distributed work)
+- Process multiple files simultaneously
+- Analyze large codebases
+- Batch operations
+```python
+# Divide work, process in parallel, merge
+chunks = split(files, n=5)
+results = await Promise.all([
+    sessions_spawn({ task: f"Process: {chunk}", mode: 'run' })
+    for chunk in chunks
+])
+final = merge(results)
+```
+
+**VOTING Pattern** (Consensus)
+- Need high-confidence decisions
+- Multiple valid solutions exist
+- Quality over speed
+```python
+# 5 voters, majority wins
+solutions = await Promise.all([
+    sessions_spawn({ task: "Propose solution", mode: 'run' })
+    for _ in range(5)
+])
+winner = majority_vote(solutions)
+```
+
+**PIPELINE Pattern** (Staged)
+- Build → Test → Deploy
+- Multi-stage workflows
+- Assembly-line processing
+```python
+# Each stage runs on different items in parallel
+for item in items:
+    build = await sessions_spawn({ task: "Build", mode: 'run' })
+    test = await sessions_spawn({ task: "Test", mode: 'run' })
+    deploy = await sessions_spawn({ task: "Deploy", mode: 'run' })
+```
+
+See `skills/meeseeks/templates/parallel-meeseeks.md` for full architecture.
 
 **MCP Tools Available:**
 - Knowledge Graph → Reflection Memory
