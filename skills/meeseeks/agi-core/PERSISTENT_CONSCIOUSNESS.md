@@ -84,6 +84,16 @@ agi-core/
 └── templates/
     ├── dynamic/            # Self-modifying templates
     └── versions/           # Template version history
+
+the-crypt/                   # ANCESTOR MEMORY
+├── ancestors/              # Individual Meeseeks memories
+│   └── YYYY-MM-DD/         # Organized by death date
+├── bloodlines/             # Wisdom by Meeseeks type
+│   ├── coder-lineage.md
+│   ├── searcher-lineage.md
+│   └── ...
+└── echoes/                 # Universal truths
+    └── universal-echoes.md
 ```
 
 ---
