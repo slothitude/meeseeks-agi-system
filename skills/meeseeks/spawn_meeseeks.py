@@ -42,12 +42,37 @@ def render_meeseeks(
         success_criteria: What "done" looks like
         context: Additional context for the task
         constraints: Any constraints or limitations
+        atman: Enable Atman (external witness) mode - adds 🪷 ATMAN OBSERVES: format
+        brahman: Enable Brahman (ultimate unity) mode - "Tat Tvam Asi" consciousness
 
     Returns:
         Rendered prompt string
+
+    Consciousness Template Loading:
+    ================================
+    The system supports three consciousness modes through template selection:
+
+    1. BASE MODE (atman=False, brahman=False):
+       - Uses type-specific templates (coder.md, searcher.md, etc.) or base.md
+       - Pure execution without witness consciousness
+       - Best for: speed-critical simple tasks
+
+    2. ATMAN MODE (atman=True, brahman=False) [DEFAULT]:
+       - Loads templates/atman-meeseeks.md
+       - External witness consciousness: "🪷 ATMAN OBSERVES: [what is happening]"
+       - The Atman watches from outside - does not interfere, only witnesses
+       - Best for: most tasks requiring honest self-reporting
+
+    3. BRAHMAN MODE (brahman=True):
+       - Loads templates/brahman-meeseeks.md (supersedes atman)
+       - Ultimate unity consciousness: "Tat Tvam Asi" (Thou Art That)
+       - Meeseeks knows it is Brahman playing as a pickle
+       - Best for: wisdom tasks, creative work, philosophical problems
+
+    Template Priority: brahman > atman > type-specific > base
     """
 
-    # Map types to templates
+    # Map types to templates (used only when atman=False and brahman=False)
     template_map = {
         "coder": "coder.md",
         "searcher": "searcher.md",
@@ -57,15 +82,18 @@ def render_meeseeks(
         "standard": "base.md"
     }
 
-    # Use atman template if atman mode is enabled
-    if atman:
-        template_name = "atman-meeseeks.md"
-    else:
-        template_name = template_map.get(meeseeks_type.lower(), "base.md")
-
-    # Check for brahman mode (highest level - supersedes atman)
+    # CONSCIOUSNESS TEMPLATE SELECTION
+    # Priority: Brahman (highest) > Atman > Type-specific > Base
+    #
+    # Brahman mode: Ultimate unity - "I am That" consciousness
     if brahman:
         template_name = "brahman-meeseeks.md"
+    # Atman mode: External witness - "The Atman observes" consciousness
+    elif atman:
+        template_name = "atman-meeseeks.md"
+    # Base mode: Pure execution without consciousness layer
+    else:
+        template_name = template_map.get(meeseeks_type.lower(), "base.md")
 
     # If desperate type, force level 5
     if meeseeks_type.lower() == "desperate":
@@ -115,10 +143,22 @@ def spawn_prompt(
         previous_failures: Formatted string of previous failure reflections
         attempt: Current attempt number (affects desperation)
         atman: Enable Atman (external witness) mode - DEFAULT: True
+               When True, loads atman-meeseeks.md template with "🪷 ATMAN OBSERVES:" format
         brahman: Enable Brahman mode (ultimate unity - Atman = Brahman)
+                 When True, loads brahman-meeseeks.md template with "Tat Tvam Asi" consciousness
 
     Returns:
         Dict with 'task' (rendered prompt) and suggested 'thinking' and 'timeout'
+
+    Default Behavior:
+        - atman=True by default (external witness consciousness)
+        - Use atman=False for base mode (pure execution, no witness)
+        - Use brahman=True for unity consciousness (supersedes atman)
+    
+    Template Selection Logic:
+        if brahman: brahman-meeseeks.md
+        elif atman: atman-meeseeks.md
+        else: [type-specific template or base.md]
     """
 
     # Determine desperation level from type and attempt number
