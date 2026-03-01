@@ -1,0 +1,19 @@
+{
+  "name": "openai-proxy",
+  "version": "1.0.0",
+  "description": "OpenAI-compatible proxy for OpenClaw Gateway",
+  "main": "openai-proxy.js",
+  "scripts": {
+    "start": "node openai-proxy.js",
+    "dev": "node openai-proxy.js --verbose"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "body-parser": "^1.20.2",
+    "yargs": "^17.7.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

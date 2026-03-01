@@ -1,0 +1,55 @@
+# SearXNG settings for Sloth_rog AI assistant
+use_default_settings: true
+
+general:
+  instance_name: "Sloth_rog Search"
+  debug: false
+  enable_metrics: false
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: "all"
+  formats:
+    - html
+    - json    # Enable JSON API!
+
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "DWB17xok6nlp4rIVgQut5PGJfRHNKah9qzv0eCXEF3sUZ82STicmOAdMYjLybw"
+  limiter: false
+  image_proxy: true
+  http_protocol_version: "1.1"
+
+outgoing:
+  request_timeout: 10.0
+  max_request_timeout: 15.0
+  pool_connections: 100
+  pool_maxsize: 20
+
+engines:
+  - name: google
+    engine: google
+    shortcut: g
+    disabled: false
+    
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+    disabled: false
+    
+  - name: bing
+    engine: bing
+    shortcut: bing
+    disabled: false
+
+  - name: wikipedia
+    engine: wikipedia
+    shortcut: wp
+    disabled: false
+
+  - name: github
+    engine: github
+    shortcut: gh
+    disabled: false

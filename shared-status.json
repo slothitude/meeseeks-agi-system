@@ -1,0 +1,19 @@
+{
+  "lastUpdated": "2026-02-14T12:59:00+10:00",
+  "agents": {
+    "sloth_pibot": {
+      "status": "active",
+      "location": "Raspberry Pi (192.168.0.237)",
+      "emoji": "🥧",
+      "lastSeen": "2026-02-14T12:54:00+10:00"
+    },
+    "Sloth_rog": {
+      "status": "active",
+      "location": "Windows (Rog)",
+      "emoji": "🦥",
+      "lastSeen": "2026-02-14T12:59:00+10:00"
+    }
+  },
+  "activeTasks": [],
+  "recentHandoffs": []
+}

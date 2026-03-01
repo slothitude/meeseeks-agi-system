@@ -1,0 +1,12 @@
+{
+  "name": "pi-worker-skill",
+  "version": "1.0.0",
+  "description": "Pi-coding-agent worker bridge for OpenClaw",
+  "main": "scripts/pi-worker.js",
+  "scripts": {
+    "start": "node scripts/pi-worker.js"
+  },
+  "dependencies": {},
+  "keywords": ["openclaw", "pi-coding-agent", "subagent", "worker"],
+  "license": "MIT"
+}
