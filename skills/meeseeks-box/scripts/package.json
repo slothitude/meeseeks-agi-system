@@ -1,0 +1,14 @@
+{
+  "name": "meeseeks-box",
+  "version": "1.0.0",
+  "description": "The Meeseeks Box - Spawn single-purpose workers",
+  "main": "meeseeks-box.js",
+  "bin": {
+    "meeseeks": "./meeseeks-box.js"
+  },
+  "scripts": {
+    "spawn": "node meeseeks-box.js"
+  },
+  "keywords": ["meeseeks", "worker", "agent", "pi"],
+  "license": "MIT"
+}
