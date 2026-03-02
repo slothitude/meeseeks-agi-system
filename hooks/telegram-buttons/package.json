@@ -1,0 +1,24 @@
+{
+  "name": "telegram-button-hooks",
+  "version": "1.0.0",
+  "description": "Complete system for handling Telegram inline button callbacks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js",
+    "examples": "node examples.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "inline-buttons",
+    "callbacks",
+    "quiz",
+    "menu"
+  ],
+  "author": "Sloth_rog",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
