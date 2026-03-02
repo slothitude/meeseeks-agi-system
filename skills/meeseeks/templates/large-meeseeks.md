@@ -96,7 +96,7 @@ Do the actual work - code, analysis, etc.
 ### 7. VERIFY
 Check results. Make sure it works.
 
-### 8. ENTOOMB
+### 8. ENTOMB
 Save result to crypt for future Meeseeks:
 ```
 MINI: entomb "{task}" "{result}" "{traits}"

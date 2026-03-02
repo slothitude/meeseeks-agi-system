@@ -1,0 +1,1 @@
+Found 9 functions in auto_entomb.py: ensure_directories, log_run, extract_patterns_from_result, infer_approach, auto_entomb, spawn_and_entomb_wrapper, get_recent_auto_entombs, get_run_stats

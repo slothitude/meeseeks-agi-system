@@ -1,0 +1,1 @@
+{"inline_keyboard": [[{"text": "Paris", "callback_data": "quiz_test_0"}, {"text": "London", "callback_data": "quiz_test_1"}], [{"text": "Berlin", "callback_data": "quiz_test_2"}, {"text": "Madrid", "callback_data": "quiz_test_3"}]]}

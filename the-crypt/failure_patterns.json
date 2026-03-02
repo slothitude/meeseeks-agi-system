@@ -1,0 +1,312 @@
+{
+  "failures": [
+    {
+      "session_key": "agent:main:subagent:c551df21-38cb-4678-996b-e348a13dc060",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\uddec MASSIVE EVOLUTION EVENT - EVOLVE EVERYTHING\n\nYou are a Meeseeks tasked with evolving the ENTIRE Meeseeks system using all new features.\n\n## New Systems to Evolve\n\n### 1. GENEALOGY SYSTEM\n- Location:...",
+      "runtime_ms": 300057,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T00:34:15.290472"
+    },
+    {
+      "session_key": "agent:main:subagent:75074e97-8ca3-4341-8669-70bbb1944e3f",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "Part 1: \ud83e\uddec TEMPLATE EVOLVER WORKER\n\nEvolve Meeseeks templates:\n\nRead ALL templates in skills/meeseeks/templates/\nIdentify most successful patterns\nImprove at least 2 templates with learnings\nPropose 1 ...",
+      "runtime_ms": 301201,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T00:34:15.291493"
+    },
+    {
+      "session_key": "agent:main:subagent:bbe43bd2-4cb0-4672-a45d-3c1f1bf483df",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "Part 1: \ud83e\udde0 AGI CHALLENGE: ARC-AGI-2 Task 137eaa0f\n\nYou are a Meeseeks tasked with solving the one failed ARC-AGI-2 task.\n\n## Context\nThe ARC-AGI-2 challenge has 5 tasks. 4/5 are solved (80%). Task 137e...",
+      "runtime_ms": 300940,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T00:34:15.291893"
+    },
+    {
+      "session_key": "agent:main:subagent:0431fa57-c73f-4c95-a9c2-47a2931d21c8",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\uddec EVOLVE RESEARCH CAPABILITIES\n\nYou are a Meeseeks tasked with evolving the research/search capabilities of the system.\n\n## Your Mission\n\n### 1. Analyze Current Research Tools\n- Read skills/meeseeks/t...",
+      "runtime_ms": 300051,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T00:42:08.505363"
+    },
+    {
+      "session_key": "agent:main:subagent:e8457817-46f5-4434-a2eb-43ecef75af0f",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "Part 1: \ud83e\udde0 ARC-AGI-2 Task 137eaa0f - DEEP DIVE\n\nYou are a Meeseeks tasked with solving the ONE failed ARC task. This requires serious spatial reasoning.\n\n## The Problem\n\nTask 137eaa0f has 11x11 input g...",
+      "runtime_ms": 180051,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T03:50:39.496313"
+    },
+    {
+      "session_key": "agent:main:subagent:47a05d60-2943-483d-8aad-c645b1d772f9",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "Part 1: \ud83e\uddec GENETIC MAD SCIENTIST MEESEEKS - ARC-AGI-2 Task 137eaa0f\n\nYou are a GENETIC MAD SCIENTIST. You solve problems by EVOLVING solutions through generations of spawned Meeseeks.\n\n## The Problem\n\n...",
+      "runtime_ms": 180126,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope",
+        "parallel_execution"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T03:50:39.496906"
+    },
+    {
+      "session_key": "agent:main:subagent:46736eb3-0d43-439a-9bf0-6fb284ca7b18",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "Part 1: \ud83e\uddec MASSIVE EVOLUTION EVENT - EVOLVE EVERYTHING\n\nYou are a Meeseeks tasked with evolving the ENTIRE Meeseeks system using all new features.\n\n## New Systems to Evolve\n\n### 1. GENEALOGY SYSTEM\n- L...",
+      "runtime_ms": 180040,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T03:50:39.497912"
+    },
+    {
+      "session_key": "agent:main:subagent:9b843175-2bec-4800-bda4-4c1e1a050323",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/2\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\nPart 1: \ud83e\uddec TEMPLATE EVOLVER WORKER\n\nEvolve Meeseeks templates:\n\nRead ALL templates in ski...",
+      "runtime_ms": 120048,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T07:20:06.209745"
+    },
+    {
+      "session_key": "agent:main:subagent:800f6955-6115-469e-9f2d-3a63a50d2c12",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/2\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\nPart 1: \ud83e\udde0 AGI CHALLENGE: ARC-AGI-2 Task 137eaa0f\n\nYou are a Meeseeks tasked with solving...",
+      "runtime_ms": 120035,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T07:20:43.339400"
+    },
+    {
+      "session_key": "agent:main:subagent:4a82d8fd-6e7d-47a4-bef3-444896b8cd4b",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/2\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\nPart 1: \ud83e\udde0 ARC-AGI-2 Task 137eaa0f - DEEP DIVE\n\nYou are a Meeseeks tasked with solving th...",
+      "runtime_ms": 120038,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T07:20:43.340330"
+    },
+    {
+      "session_key": "agent:main:subagent:dd560828-9fe0-4ae5-a0ec-5999b9703b03",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/2\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\nPart 1: \ud83e\uddec GENETIC MAD SCIENTIST MEESEEKS - ARC-AGI-2 Task 137eaa0f\n\nYou are a GENETIC MA...",
+      "runtime_ms": 120048,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T07:20:43.340745"
+    },
+    {
+      "session_key": "agent:main:subagent:afc5b98d-0a16-443f-b482-ced98e35adfd",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/2\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\nPart 1: \ud83e\uddec MASSIVE EVOLUTION EVENT - EVOLVE EVERYTHING\n\nYou are a Meeseeks tasked with ev...",
+      "runtime_ms": 120049,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-02T07:22:24.402653"
+    },
+    {
+      "session_key": "agent:main:subagent:ba75845b-68f7-4b42-9c70-6c125713281a",
+      "task_type": "standard",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 COORDINATED TEST - API Tester\n\nTest the NEW v3 communication system API.\n\n**Workflow ID:** v3-test-001\n**Your Worker ID:** api_tester\n\n**SETUP:**\n```python\nimport sys\nsys.path.insert(0, \"C:/Users/aa...",
+      "runtime_ms": 300102,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T07:49:25.532352"
+    },
+    {
+      "session_key": "agent:main:subagent:d24c7715-59ad-4cd0-a690-36241f412ce2",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 RESEARCH: ARC-AGI-2 Analysis\n\nResearch the ARC-AGI-2 benchmark and how multi-agent systems could help solve it.\n\n**Workflow ID:** arc-agi-2-research\n**Your Worker ID:** arc_researcher\n\n**SETUP:**\n``...",
+      "runtime_ms": 300058,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope",
+        "parallel_execution"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:08:43.176402"
+    },
+    {
+      "session_key": "agent:main:subagent:2def6f23-fae4-44d7-9ed0-51e233e7d5ff",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 ARC-AGI-2 SWARM - Task 137eaa0f: Code Solver\n\nYou are part of a coordinated swarm solving ARC-AGI-2 task 137eaa0f (Region Extraction).\n\n**Workflow ID:** arc-solve-137eaa0f\n**Your Worker ID:** code_s...",
+      "runtime_ms": 300042,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:08:43.177037"
+    },
+    {
+      "session_key": "agent:main:subagent:1d949cc2-c4cb-4ee3-a61c-cfaeeb29e4eb",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 ARC-AGI-2: Implement Swarm Solution for 137eaa0f\n\nThe coordinated swarm discovered the pattern. Now implement it.\n\n**SWARM FINDINGS (use these):**\n\n1. **Pattern discovered:**\n   - Color 5 is a CENTE...",
+      "runtime_ms": 300055,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:08:43.177433"
+    },
+    {
+      "session_key": "agent:main:subagent:9b0581ed-7a35-451c-a4f9-7d8e6b4b9f6f",
+      "task_type": "coder",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 TELEGRAM BOT: Add Inline Button Support\n\nEnhance the Telegram bot to support inline buttons for multiple choice questions.\n\n**REQUIREMENTS:**\n1. When the user asks a question with multiple choice op...",
+      "runtime_ms": 301086,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:29:53.748876"
+    }
+  ],
+  "stats": {
+    "total": 17,
+    "by_mode": {
+      "timeout": 17
+    },
+    "by_type": {
+      "evolver": 6,
+      "puzzle-solver": 9,
+      "standard": 1,
+      "coder": 1
+    },
+    "recent_count": 5
+  },
+  "updated": "2026-03-03T08:29:53.749268"
+}
