@@ -1,0 +1,152 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Research Citation Tracking Schema",
+  "description": "Schema for tracking citations and provenance in research",
+  "type": "object",
+  "properties": {
+    "research_id": {
+      "type": "string",
+      "description": "Unique identifier for this research session"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Research topic/question"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When research was conducted"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique claim ID (e.g., claim-1, claim-2)"
+          },
+          "claim_text": {
+            "type": "string",
+            "description": "The actual claim/statement"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Source URL"
+                },
+                "title": {
+                  "type": "string",
+                  "description": "Source title"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": ["academic", "official_docs", "tech_blog", "forum", "news", "personal_blog", "social_media"],
+                  "description": "Source type"
+                },
+                "credibility": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "Credibility score (0-1)"
+                },
+                "accessed": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "When source was accessed"
+                },
+                "snippet": {
+                  "type": "string",
+                  "description": "Relevant excerpt from source"
+                }
+              },
+              "required": ["url", "type", "credibility", "accessed"]
+            },
+            "minItems": 1
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Overall confidence in this claim"
+          },
+          "confidence_reasoning": {
+            "type": "string",
+            "description": "Why this confidence level?"
+          },
+          "contradicted_by": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {"type": "string"},
+                "reason": {"type": "string"}
+              }
+            },
+            "description": "Sources that contradict this claim"
+          }
+        },
+        "required": ["id", "claim_text", "sources", "confidence"]
+      }
+    },
+    "queries_used": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string"},
+          "source": {
+            "type": "string",
+            "enum": ["searxng", "playwright", "manual"],
+            "description": "Where query was executed"
+          },
+          "results_count": {"type": "number"},
+          "useful_results": {"type": "number"}
+        }
+      }
+    },
+    "source_summary": {
+      "type": "object",
+      "properties": {
+        "total_sources": {"type": "number"},
+        "by_type": {
+          "type": "object",
+          "properties": {
+            "academic": {"type": "number"},
+            "official_docs": {"type": "number"},
+            "tech_blog": {"type": "number"},
+            "forum": {"type": "number"},
+            "news": {"type": "number"},
+            "personal_blog": {"type": "number"},
+            "social_media": {"type": "number"}
+          }
+        },
+        "by_credibility": {
+          "type": "object",
+          "properties": {
+            "high": {"type": "number", "description": "0.8-1.0"},
+            "medium": {"type": "number", "description": "0.5-0.7"},
+            "low": {"type": "number", "description": "0.0-0.4"}
+          }
+        }
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "topic": {"type": "string", "description": "What we couldn't find"},
+          "reason": {"type": "string", "description": "Why we couldn't find it"},
+          "attempted": {"type": "array", "items": {"type": "string"}, "description": "Queries tried"}
+        }
+      }
+    }
+  },
+  "required": ["research_id", "topic", "created", "claims"]
+}

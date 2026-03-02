@@ -18,6 +18,83 @@ from jinja2 import Environment, FileSystemLoader, Template
 # Template directory
 TEMPLATE_DIR = Path(__file__).parent / "templates"
 
+# Import genealogy system
+try:
+    from genealogy import spawn_with_genealogy, MeeseeksGenealogy, SpeciesManager
+    GENEALOGY_AVAILABLE = True
+except ImportError:
+    GENEALOGY_AVAILABLE = False
+
+# Import trick library
+try:
+    from trick_library import TrickLibrary
+    TRICKS_AVAILABLE = True
+except ImportError:
+    TRICKS_AVAILABLE = False
+
+# Import AGI integration
+try:
+    from agi_integration import create_agi_for_task
+    AGI_AVAILABLE = True
+except ImportError:
+    AGI_AVAILABLE = False
+
+# Import failure patterns
+try:
+    from failure_capture import get_failure_capture
+    FAILURE_CAPTURE_AVAILABLE = True
+except ImportError:
+    FAILURE_CAPTURE_AVAILABLE = False
+
+def get_meeseeks_identity(session_key: str = None, traits: list = None) -> dict:
+    """
+    Get or create a Meeseeks identity with name and species.
+    
+    Args:
+        session_key: Session ID (if exists, load identity; if new, create)
+        traits: List of trait strings for classification
+        
+    Returns:
+        dict with name, species, pokemon_type, generation, traits
+    """
+    if not GENEALOGY_AVAILABLE:
+        return {
+            "name": "Fred Meeseeks",
+            "species": "Morphling",
+            "pokemon_type": "Shapeshifter",
+            "generation": 0,
+            "traits": ["+adaptable"]
+        }
+    
+    if traits is None:
+        traits = ["+adaptable", "+versatile"]
+    
+    # Generate or retrieve identity
+    if session_key:
+        genealogy = MeeseeksGenealogy()
+        if session_key in genealogy.genealogy:
+            entry = genealogy.genealogy[session_key]
+            return {
+                "name": entry.get("name", "Fred Meeseeks"),
+                "species": entry.get("species", "Morphling"),
+                "pokemon_type": entry.get("pokemon_type", "Shapeshifter"),
+                "generation": entry.get("generation", 0),
+                "traits": entry.get("traits", ["+adaptable"])
+            }
+    
+    # Create new identity
+    species = SpeciesManager.classify(traits)
+    genealogy = MeeseeksGenealogy()
+    name = genealogy.generate_name(species, traits)
+    
+    return {
+        "name": name,
+        "species": species,
+        "pokemon_type": SpeciesManager.get_species_type(species),
+        "generation": 0,
+        "traits": traits
+    }
+
 def render_meeseeks(
     purpose: str,
     meeseeks_type: str = "standard",
@@ -29,7 +106,9 @@ def render_meeseeks(
     previous_failures: str = None,
     metacognition: bool = True,
     atman: bool = False,
-    brahman: bool = False
+    brahman: bool = False,
+    session_key: str = None,
+    traits: list = None
 ) -> str:
     """
     Render a Meeseeks prompt from template.
@@ -118,7 +197,15 @@ def render_meeseeks(
 
     template = env.get_template(template_name)
 
-    # Render with variables
+    # Get Meeseeks identity (name, species, etc.)
+    identity = get_meeseeks_identity(session_key, traits)
+    
+    # Get inherited tricks
+    inherited_tricks = ""
+    if TRICKS_AVAILABLE:
+        inherited_tricks = TrickLibrary.get_inherited_wisdom(meeseeks_type, limit=5)
+
+    # Render with variables including identity
     return template.render(
         purpose=purpose,
         meeseeks_type=meeseeks_type,
@@ -128,7 +215,15 @@ def render_meeseeks(
         context=context,
         constraints=constraints,
         previous_failures=previous_failures,
-        metacognition=metacognition
+        metacognition=metacognition,
+        # Identity variables
+        name=identity["name"],
+        species=identity["species"],
+        pokemon_type=identity["pokemon_type"],
+        generation=identity["generation"],
+        traits=identity["traits"],
+        # Inherited wisdom
+        inherited_tricks=inherited_tricks
     )
 
 
@@ -141,7 +236,8 @@ def spawn_prompt(
     attempt: int = 1,
     atman: bool = True,
     brahman: bool = False,
-    inherit: bool = True  # NEW: Pull ancestor wisdom
+    inherit: bool = True,  # NEW: Pull ancestor wisdom
+    agi: bool = True  # NEW: Enable AGI cognitive patterns
 ) -> dict:
     """
     Generate a complete spawn configuration for a Meeseeks.
@@ -158,6 +254,7 @@ def spawn_prompt(
         brahman: Enable Brahman mode (ultimate unity - Atman = Brahman)
                  When True, loads brahman-meeseeks.md template with "Tat Tvam Asi" consciousness
         inherit: Pull ancestor wisdom from Crypt embeddings - DEFAULT: True
+        agi: Enable AGI cognitive patterns (BDI, Global Workspace, HTN, etc.) - DEFAULT: True
 
     Returns:
         Dict with 'task' (rendered prompt) and suggested 'thinking' and 'timeout'
@@ -256,6 +353,37 @@ def spawn_prompt(
     if inherited_wisdom:
         enhanced_task = f"{task}\n\n{inherited_wisdom}"
 
+    # ⚠️ FAILURE AWARENESS: Get suggested fixes from past failures
+    failure_warnings = ""
+    if FAILURE_CAPTURE_AVAILABLE:
+        try:
+            capture = get_failure_capture()
+            suggested_fixes = capture.get_suggested_fixes(task)
+            if suggested_fixes:
+                failure_warnings = "\n\n## ⚠️ Failure Prevention Tips\n\nBased on similar past failures:\n"
+                for fix in suggested_fixes:
+                    fix_text = fix.replace("_", " ").title()
+                    failure_warnings += f"- {fix_text}\n"
+        except:
+            failure_warnings = ""
+
+    # Prepend failure warnings to task
+    if failure_warnings:
+        enhanced_task = f"{failure_warnings}\n\n---\n\n{enhanced_task}"
+
+    # 🧠 AGI INTEGRATION: Add cognitive patterns
+    agi_block = ""
+    if agi and AGI_AVAILABLE:
+        try:
+            agi_system = create_agi_for_task(task, context={"type": meeseeks_type})
+            agi_block = agi_system.to_unified_prompt()
+        except Exception as e:
+            agi_block = ""
+
+    # Prepend AGI block to task
+    if agi_block:
+        enhanced_task = f"{agi_block}\n\n---\n\n{enhanced_task}"
+
     rendered = render_meeseeks(
         purpose=enhanced_task,
         meeseeks_type=meeseeks_type,
@@ -274,7 +402,8 @@ def spawn_prompt(
         "desperation_level": desperation,
         "attempt": attempt,
         "atman": atman,
-        "brahman": brahman
+        "brahman": brahman,
+        "agi": agi
     }
 
 

@@ -1,0 +1,355 @@
+{
+  "genealogy": {
+    "test-alpha-1": {
+      "session_key": "test-alpha-1",
+      "name": "Dusk Meeseeks",
+      "generation": 0,
+      "approach": "systematic",
+      "traits": [
+        "+systematic",
+        "+careful"
+      ],
+      "innovation_id": 0,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Glimworm",
+      "pokemon_type": "Burrower",
+      "fitness": 0.72,
+      "status": "completed",
+      "born": "2026-03-01T23:49:48.160470",
+      "behavior": {}
+    },
+    "test-beta-1": {
+      "session_key": "test-beta-1",
+      "name": "Jolt Meeseeks",
+      "generation": 0,
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+fast"
+      ],
+      "innovation_id": 1,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Sparkmote",
+      "pokemon_type": "Elemental",
+      "fitness": 0.68,
+      "status": "completed",
+      "born": "2026-03-01T23:49:48.169883",
+      "behavior": {}
+    },
+    "test-child-1": {
+      "session_key": "test-child-1",
+      "name": "Fred Meeseeks",
+      "generation": 1,
+      "approach": "creative",
+      "traits": [
+        "+patient",
+        "+systematic",
+        "+unpredictable",
+        "+creative"
+      ],
+      "innovation_id": 10,
+      "parent_id": "test-slow-steady",
+      "second_parent_id": "test-fast-wild",
+      "species": "Sparkmote",
+      "pokemon_type": "Elemental",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:50:43.587022"
+    },
+    "test-slow-steady": {
+      "session_key": "test-slow-steady",
+      "name": "Steady Meeseeks",
+      "generation": 0,
+      "approach": "methodical",
+      "traits": [
+        "+systematic",
+        "+careful",
+        "+patient"
+      ],
+      "innovation_id": 5,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Slogturtle",
+      "pokemon_type": "Reptile",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:50:43.551188"
+    },
+    "test-fast-wild": {
+      "session_key": "test-fast-wild",
+      "name": "Jolt Meeseeks",
+      "generation": 0,
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+fast",
+        "+unpredictable"
+      ],
+      "innovation_id": 6,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Sparkmote",
+      "pokemon_type": "Elemental",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:50:43.561936"
+    },
+    "test-hybrid": {
+      "session_key": "test-hybrid",
+      "name": "Every Meeseeks",
+      "generation": 0,
+      "approach": "hybrid",
+      "traits": [
+        "+adaptable",
+        "+versatile",
+        "+balanced"
+      ],
+      "innovation_id": 7,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Omnikin",
+      "pokemon_type": "Versatile",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:50:43.574805"
+    },
+    "test-parent-a": {
+      "session_key": "test-parent-a",
+      "name": "Flit Meeseeks",
+      "generation": 0,
+      "approach": "fast",
+      "traits": [
+        "+fast",
+        "+efficient",
+        "+precise"
+      ],
+      "innovation_id": 8,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Swiftmoth",
+      "pokemon_type": "Flyer",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:50:36.178138"
+    },
+    "test-parent-b": {
+      "session_key": "test-parent-b",
+      "name": "Jolt Meeseeks",
+      "generation": 0,
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+unpredictable",
+        "+wild"
+      ],
+      "innovation_id": 9,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Sparkmote",
+      "pokemon_type": "Elemental",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:50:36.188477"
+    },
+    "test-parent-a-1772373073": {
+      "session_key": "test-parent-a-1772373073",
+      "name": "Wing Meeseeks",
+      "generation": 0,
+      "approach": "fast",
+      "traits": [
+        "+fast",
+        "+efficient",
+        "+precise"
+      ],
+      "innovation_id": 8,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Swiftmoth",
+      "pokemon_type": "Flyer",
+      "fitness": 0.85,
+      "status": "completed",
+      "born": "2026-03-01T23:51:13.257420",
+      "behavior": {}
+    },
+    "test-parent-b-1772373073": {
+      "session_key": "test-parent-b-1772373073",
+      "name": "Tingle Meeseeks",
+      "generation": 0,
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+unpredictable",
+        "+wild"
+      ],
+      "innovation_id": 9,
+      "parent_id": null,
+      "second_parent_id": null,
+      "species": "Sparkmote",
+      "pokemon_type": "Elemental",
+      "fitness": 0.75,
+      "status": "completed",
+      "born": "2026-03-01T23:51:13.267748",
+      "behavior": {}
+    },
+    "test-offspring-1772373073": {
+      "session_key": "test-offspring-1772373073",
+      "name": "Shimmer Meeseeks",
+      "generation": 1,
+      "approach": "fast",
+      "traits": [
+        "+efficient",
+        "+fast",
+        "+precise",
+        "+creative",
+        "+wild"
+      ],
+      "innovation_id": 11,
+      "parent_id": "test-parent-a-1772373073",
+      "second_parent_id": "test-parent-b-1772373073",
+      "species": "Swiftmoth",
+      "pokemon_type": "Flyer",
+      "fitness": null,
+      "status": "active",
+      "born": "2026-03-01T23:51:13.290715"
+    }
+  },
+  "innovations": {
+    "0": {
+      "key": "2bfdba3e",
+      "approach": "systematic",
+      "traits": [
+        "+systematic",
+        "+careful"
+      ],
+      "created": "2026-03-01T23:31:52.552935",
+      "count": 1
+    },
+    "1": {
+      "key": "ae526403",
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+fast"
+      ],
+      "created": "2026-03-01T23:31:52.562840",
+      "count": 1
+    },
+    "2": {
+      "key": "1a40fd1f",
+      "approach": "systematic",
+      "traits": [
+        "+systematic",
+        "+fast"
+      ],
+      "created": "2026-03-01T23:31:52.582416",
+      "count": 1
+    },
+    "3": {
+      "key": "1361ba23",
+      "approach": "systematic",
+      "traits": [
+        "+careful",
+        "+systematic",
+        "+creative",
+        "+fast"
+      ],
+      "created": "2026-03-01T23:36:07.065641",
+      "count": 1
+    },
+    "4": {
+      "key": "95e52548",
+      "approach": "systematic",
+      "traits": [
+        "+systematic",
+        "+careful",
+        "+fast"
+      ],
+      "created": "2026-03-01T23:49:48.191384",
+      "count": 1
+    },
+    "5": {
+      "key": "f7af9720",
+      "approach": "methodical",
+      "traits": [
+        "+systematic",
+        "+careful",
+        "+patient"
+      ],
+      "created": "2026-03-01T23:50:18.271421",
+      "count": 1
+    },
+    "6": {
+      "key": "cf69c729",
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+fast",
+        "+unpredictable"
+      ],
+      "created": "2026-03-01T23:50:18.281446",
+      "count": 1
+    },
+    "7": {
+      "key": "0d55a292",
+      "approach": "hybrid",
+      "traits": [
+        "+adaptable",
+        "+versatile",
+        "+balanced"
+      ],
+      "created": "2026-03-01T23:50:18.292464",
+      "count": 1
+    },
+    "8": {
+      "key": "5f3334f1",
+      "approach": "fast",
+      "traits": [
+        "+fast",
+        "+efficient",
+        "+precise"
+      ],
+      "created": "2026-03-01T23:50:36.177615",
+      "count": 1
+    },
+    "9": {
+      "key": "de70cd41",
+      "approach": "creative",
+      "traits": [
+        "+creative",
+        "+unpredictable",
+        "+wild"
+      ],
+      "created": "2026-03-01T23:50:36.187917",
+      "count": 1
+    },
+    "10": {
+      "key": "af51ae00",
+      "approach": "creative",
+      "traits": [
+        "+patient",
+        "+systematic",
+        "+unpredictable",
+        "+creative"
+      ],
+      "created": "2026-03-01T23:50:43.586323",
+      "count": 1
+    },
+    "11": {
+      "key": "e74c0370",
+      "approach": "fast",
+      "traits": [
+        "+efficient",
+        "+fast",
+        "+precise",
+        "+creative",
+        "+wild"
+      ],
+      "created": "2026-03-01T23:51:13.289828",
+      "count": 1
+    }
+  },
+  "next_innovation": 12,
+  "updated": "2026-03-01T23:51:13.290730"
+}

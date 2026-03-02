@@ -1,0 +1,48 @@
+{
+  "test-session-001": {
+    "session_key": "test-session-001",
+    "current_task": "Fix the authentication bug in login.py",
+    "active_agents": [
+      "Debugger-Meeseeks",
+      "Coordinator-Meeseeks",
+      "Reader-Meeseeks"
+    ],
+    "history": [
+      {
+        "task": "Fix the authentication bug in login.py",
+        "coordinator": "Coordinator-Meeseeks",
+        "recommended_agents": [
+          {
+            "name": "Debugger-Meeseeks",
+            "role": "debugger",
+            "confidence": 0.72
+          },
+          {
+            "name": "Coordinator-Meeseeks",
+            "role": "coordinator",
+            "confidence": 0.0
+          },
+          {
+            "name": "Reader-Meeseeks",
+            "role": "reader",
+            "confidence": 0.0
+          }
+        ],
+        "recommended_agency": "Bug Fix Agency",
+        "agency_members": [
+          "planner",
+          "reader",
+          "debugger",
+          "tester"
+        ],
+        "execution_order": [
+          "Reader-Meeseeks",
+          "Debugger-Meeseeks",
+          "Coordinator-Meeseeks"
+        ],
+        "timestamp": "2026-03-02T00:36:35.254811"
+      }
+    ],
+    "timestamp": "2026-03-02T00:36:35.312273"
+  }
+}
