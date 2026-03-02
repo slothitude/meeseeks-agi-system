@@ -1,0 +1,1963 @@
+{
+  "meta": {
+    "created_at": "2026-03-02T21:28:50.048046Z",
+    "workflow_id": "test-comm-001",
+    "coordinator": "sloth_rog"
+  },
+  "workers": {
+    "mee_docs": {
+      "task": "Documentation checker",
+      "status": "complete",
+      "progress": 100,
+      "started_at": "2026-03-02T21:29:20.298655Z",
+      "last_update": "2026-03-02T21:29:23.701375Z",
+      "findings": [],
+      "needs_help": false,
+      "doc_count": 24,
+      "result": null,
+      "summary": "Found 24 documentation files",
+      "completed_at": "2026-03-02T21:29:23.701133Z"
+    },
+    "mee_security": {
+      "task": "Security pattern scanner",
+      "status": "complete",
+      "progress": 100,
+      "started_at": "2026-03-02T21:29:20.901274Z",
+      "last_update": "2026-03-02T21:29:38.561495Z",
+      "findings": [
+        "C:/Users/aaron/.openclaw/workspace\\.env: password, secret, credential",
+        "C:/Users/aaron/.openclaw/workspace\\.mcp.json: token",
+        "C:/Users/aaron/.openclaw/workspace\\008-analysis.md: token, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\AGENTS.md: secret, token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\docker-compose.purevpn.yml: password, secret, credential",
+        "C:/Users/aaron/.openclaw/workspace\\docker-compose.searxng.yml: secret",
+        "C:/Users/aaron/.openclaw/workspace\\docker-compose.vpn.yml: secret, credential",
+        "C:/Users/aaron/.openclaw/workspace\\DYNAMIC_JINJA_PROPOSAL.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\DYNAMIC_MEMORY_PROPOSAL.md: password, api_key, secret, token, private_key",
+        "C:/Users/aaron/.openclaw/workspace\\DYNAMIC_SOUL_PROPOSAL.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\MCP_SETUP.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\MEEESEEKS_TASK_COMPLETE.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-complete-final-report.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-mcp-test-final.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-mcp-test-results.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-quick-reference.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-readme.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\MEESEEKS_TEST_RESULTS.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\MEMORY.md: password",
+        "C:/Users/aaron/.openclaw/workspace\\security_scan_test.py: password, api_key, secret, token, private_key, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_agi.py: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_agi_spawn.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_agi_spawn.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_agi_unified.md: token, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_bdi.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_prompt.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_prompt_with_tricks.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_society.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\test_workspace.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\TOOLS.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\package.json: auth",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\README.md: token, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\dist\\betfair-client.d.ts: token",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\dist\\betfair-client.js: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\dist\\index.js: token",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\src\\betfair-client.ts: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\src\\index.ts: token",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-communication\\test-comm-001\\shared-state.json: password, api_key, secret, token, private_key, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\MCP_TEST_RESULTS.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\QUICK_REFERENCE.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\README.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\2026-02-14.md: password",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-01-0448.md: credential",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-01-2139.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-02-0942.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-02.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-03-meeseeks-communication-research.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\docker-network-diagnostic-pattern.md: credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\memory\\vpn-diagnosis-2026-03-01.md: credential",
+        "C:/Users/aaron/.openclaw/workspace\\searxng\\docker-compose.yml: secret",
+        "C:/Users/aaron/.openclaw/workspace\\searxng\\settings.yml: password, api_key, secret, token, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\searxng\\searxng\\settings.yml: secret",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi_integration.py: token, credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\AGI_PATTERNS.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\auto_entomb.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\bdi_model.py: credential, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\bloodline_evolution.py: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\BUILD_REPORT.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\entomb_meeseeks.py: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\feedback_loop.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\GENEALOGY_INTEGRATION.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\global_workspace.py: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\htn_planner.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\LEARNING_HOOK.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\memory_prediction.py: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\README.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\SKILL.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\society_of_mind.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\TEMPLATES.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\test_system.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\trick_library.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\GOAL_GENERATION.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\WISDOM_SYSTEM.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\safety\\SAFETY_RULES.md: secret, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\reflections\\8a1e2bd1e11fb2b2.json: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\deployer-v2.md: secret, token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\large-meeseeks.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\mcp-enabled.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\mini-meeseeks.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\README.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\researcher.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\README.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\ancestors\\index.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\bloodlines\\coder-lineage.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks-box\\scripts\\meeseeks-box.js: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks-manager\\SKILL.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\COMPLETE_IMPLEMENTATION.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\LLM_PROVIDER_MODE.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\openai-proxy-agentic.js: token",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\openai-proxy-multi.js: api_key, token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\openai-proxy.js: token",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\proxy-simple.js: token",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\streaming-gateway.js: token",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\pi-worker\\SKILL.md: api_key",
+        "C:/Users/aaron/.openclaw/workspace\\skills\\search-workflow\\SKILL.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\CHUNKING-COMPARISON.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\CHUNKING-STUDY.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\CHUNKING-WORKFLOW.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\global_workspace.json: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\MEESERE-DNA-V2.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\SMART-CHUNKING-IMPLEMENTATION.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\society_state.json: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260301-164450-95ba.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260301-165055-34b6.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260301-224548-e03b.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260302-081235-9d52.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\bloodlines\\searcher-lineage.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\embeddings\\ancestor_embeddings.json: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\BLOODLINE-EVOLUTION-2026-03-02.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\bloodline-evolution.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\crypt-scan-results.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\DNA-EVOLUTION-2026-03-02.md: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\UNIVERSAL-WISDOM-2026-03-02.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\COMPLETE-MEESEEKS-ARCHITECTURE.md: secret, token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\evolve_templates.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\fast_mini_meeseeks.py: token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\ignite.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\LARGE-MINI-COMPLETE.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\mad_scientist.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\MINI-MEESEEKS-INTEGRATION.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\MINI-TEST-RESULTS.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\mini_meeseeks_pool.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\README.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-EVOLUTION-SYSTEM.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-LOOP-DESIGN.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-LOOP-V2-PART1.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-LOOP-V2.md: api_key, token, auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\spark_loop_v2.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\spark_observer.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPEED-TEST-RESULTS.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SUPPORT-WORKER.md: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\support_worker.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\test_local_meeseeks.py: token",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\test_phi3_mini.py: auth",
+        "C:/Users/aaron/.openclaw/workspace\\the-crypt\\test\\integration-test.md: auth",
+        "C:/Users/aaron/.openclaw/workspace\\vpn\\TROUBLESHOOTING.md: password, credential"
+      ],
+      "needs_help": false,
+      "result": null,
+      "summary": "Found 136 security patterns across workspace",
+      "completed_at": "2026-03-02T21:29:38.561076Z"
+    },
+    "mee_structure": {
+      "task": "File structure analyzer",
+      "status": "running",
+      "progress": 0,
+      "started_at": "2026-03-02T21:29:35.122465Z",
+      "last_update": "2026-03-02T21:29:35.122482Z",
+      "findings": [],
+      "needs_help": false
+    }
+  },
+  "shared": {
+    "discoveries": [
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "betfair-scalping-guide.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\betfair-scalping-guide.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.310108Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "readme.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\ARC-AGI-2\\readme.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.321494Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.384584Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.399168Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\searxng\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.412371Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\share\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.423173Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\mcp-meeseeks-bridge\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.434313Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.445372Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.456671Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.468120Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.480716Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.492979Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks-box\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.505676Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks-manager\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.518571Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.530671Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.544829Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\pi-worker\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.556166Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\search-workflow\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.568171Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\searxng-search\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.578976Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "SKILL.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\skills\\vpn-setup\\SKILL.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.590354Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.605101Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\bloodlines\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.618597Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.634859Z"
+      },
+      {
+        "from": "mee_docs",
+        "type": "doc_file",
+        "data": {
+          "file": "README.md",
+          "path": "C:/Users/aaron/.openclaw/workspace\\vpn\\README.md"
+        },
+        "timestamp": "2026-03-02T21:29:20.651608Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\.env",
+          "patterns": [
+            "password",
+            "secret",
+            "credential"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:20.921015Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\.mcp.json",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:20.947143Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\008-analysis.md",
+          "patterns": [
+            "token",
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:20.971399Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\AGENTS.md",
+          "patterns": [
+            "secret",
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.005727Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\docker-compose.purevpn.yml",
+          "patterns": [
+            "password",
+            "secret",
+            "credential"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.060772Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\docker-compose.searxng.yml",
+          "patterns": [
+            "secret"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.081016Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\docker-compose.vpn.yml",
+          "patterns": [
+            "secret",
+            "credential"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.102656Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\DYNAMIC_JINJA_PROPOSAL.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.136621Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\DYNAMIC_MEMORY_PROPOSAL.md",
+          "patterns": [
+            "password",
+            "api_key",
+            "secret",
+            "token",
+            "private_key"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.245461Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\DYNAMIC_SOUL_PROPOSAL.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.276129Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\MCP_SETUP.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.328198Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\MEEESEEKS_TASK_COMPLETE.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.351695Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-complete-final-report.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.373736Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-mcp-test-final.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.413451Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-mcp-test-results.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.438150Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-quick-reference.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.457832Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-readme.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.487331Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\MEESEEKS_TEST_RESULTS.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.509476Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\MEMORY.md",
+          "patterns": [
+            "password"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.553014Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\security_scan_test.py",
+          "patterns": [
+            "password",
+            "api_key",
+            "secret",
+            "token",
+            "private_key",
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.645166Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_agi.py",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.700518Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_agi_spawn.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.722120Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_agi_spawn.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.743792Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_agi_unified.md",
+          "patterns": [
+            "token",
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.763417Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_bdi.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.783679Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_prompt.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.827932Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_prompt_with_tricks.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.847282Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_society.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.867900Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\test_workspace.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.887695Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\TOOLS.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:21.911711Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\package.json",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.430450Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\README.md",
+          "patterns": [
+            "token",
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.456048Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\dist\\betfair-client.d.ts",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.491383Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\dist\\betfair-client.js",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.545740Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\dist\\index.js",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.595147Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\src\\betfair-client.ts",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.630354Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\betfair-mcp\\src\\index.ts",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.657388Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\MCP_TEST_RESULTS.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.747455Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\QUICK_REFERENCE.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.769918Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\meeseeks-temp\\README.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.797208Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\2026-02-14.md",
+          "patterns": [
+            "password"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.872780Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-01-0448.md",
+          "patterns": [
+            "credential"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.917740Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-01-2139.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.948864Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-02-0942.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:33.996137Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-02.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.026127Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\2026-03-03-meeseeks-communication-research.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.059394Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\docker-network-diagnostic-pattern.md",
+          "patterns": [
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.088729Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\memory\\vpn-diagnosis-2026-03-01.md",
+          "patterns": [
+            "credential"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.111251Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\searxng\\docker-compose.yml",
+          "patterns": [
+            "secret"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.133828Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\searxng\\settings.yml",
+          "patterns": [
+            "password",
+            "api_key",
+            "secret",
+            "token",
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.189936Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\searxng\\searxng\\settings.yml",
+          "patterns": [
+            "secret"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.211734Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi_integration.py",
+          "patterns": [
+            "token",
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.339050Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\AGI_PATTERNS.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.364976Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\auto_entomb.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.394377Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\bdi_model.py",
+          "patterns": [
+            "credential",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.417352Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\bloodline_evolution.py",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.447572Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\BUILD_REPORT.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.475439Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\entomb_meeseeks.py",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.536881Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\feedback_loop.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.578945Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\GENEALOGY_INTEGRATION.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.627924Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\global_workspace.py",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.652920Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\htn_planner.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.676481Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\LEARNING_HOOK.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.730731Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\memory_prediction.py",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.759548Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\README.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.800719Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\SKILL.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.850341Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\society_of_mind.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.889503Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\TEMPLATES.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.953801Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\test_system.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:34.991524Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\trick_library.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.027980Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\GOAL_GENERATION.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.074207Z"
+      },
+      {
+        "from": "mee_structure",
+        "type": "file_stats",
+        "data": {
+          "total_dirs": 96,
+          "top_extensions": {
+            ".json": 1156,
+            ".md": 272,
+            ".py": 67,
+            ".pyc": 25,
+            ".js": 10
+          }
+        },
+        "timestamp": "2026-03-02T21:29:35.151584Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\WISDOM_SYSTEM.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.166850Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\agi-core\\safety\\SAFETY_RULES.md",
+          "patterns": [
+            "secret",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.240535Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\reflections\\8a1e2bd1e11fb2b2.json",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.267476Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\deployer-v2.md",
+          "patterns": [
+            "secret",
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.381053Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\large-meeseeks.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.472932Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\mcp-enabled.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.494277Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\mini-meeseeks.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.515176Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\README.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.550659Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\templates\\researcher.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.578022Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\README.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.631007Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\ancestors\\index.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.651417Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks\\the-crypt\\bloodlines\\coder-lineage.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.674739Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks-box\\scripts\\meeseeks-box.js",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.734753Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\meeseeks-manager\\SKILL.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.799500Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\COMPLETE_IMPLEMENTATION.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.869513Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\LLM_PROVIDER_MODE.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.898457Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\openai-proxy-agentic.js",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:35.999954Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\openai-proxy-multi.js",
+          "patterns": [
+            "api_key",
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.051075Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\openai-proxy.js",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.085793Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\proxy-simple.js",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.164144Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\openai-proxy\\scripts\\streaming-gateway.js",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.213644Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\pi-worker\\SKILL.md",
+          "patterns": [
+            "api_key"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.249336Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\skills\\search-workflow\\SKILL.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.336340Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\CHUNKING-COMPARISON.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.442005Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\CHUNKING-STUDY.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.465352Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\CHUNKING-WORKFLOW.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.490909Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\global_workspace.json",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.586647Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\MEESERE-DNA-V2.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.609783Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\SMART-CHUNKING-IMPLEMENTATION.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.665467Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\society_state.json",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.689126Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260301-164450-95ba.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.704682Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260301-165055-34b6.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.722424Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260301-224548-e03b.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.737119Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\ancestors\\ancestor-20260302-081235-9d52.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.758929Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\bloodlines\\searcher-lineage.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.852581Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\embeddings\\ancestor_embeddings.json",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.892869Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\BLOODLINE-EVOLUTION-2026-03-02.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.939615Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\bloodline-evolution.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:36.965156Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\crypt-scan-results.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.010116Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\DNA-EVOLUTION-2026-03-02.md",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.035620Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\evolution\\UNIVERSAL-WISDOM-2026-03-02.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.092370Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\COMPLETE-MEESEEKS-ARCHITECTURE.md",
+          "patterns": [
+            "secret",
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.319312Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\evolve_templates.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.368475Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\fast_mini_meeseeks.py",
+          "patterns": [
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.417315Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\ignite.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.455342Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\LARGE-MINI-COMPLETE.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.497759Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\mad_scientist.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.547211Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\MINI-MEESEEKS-INTEGRATION.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.597270Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\MINI-TEST-RESULTS.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.620320Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\mini_meeseeks_pool.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.660744Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\README.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.705827Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-EVOLUTION-SYSTEM.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.728144Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-LOOP-DESIGN.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.749115Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-LOOP-V2-PART1.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.773835Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPARK-LOOP-V2.md",
+          "patterns": [
+            "api_key",
+            "token",
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.802889Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\spark_loop_v2.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.862548Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\spark_observer.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.895049Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SPEED-TEST-RESULTS.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.930003Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\SUPPORT-WORKER.md",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.953071Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\support_worker.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:37.986908Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\test_local_meeseeks.py",
+          "patterns": [
+            "token"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:38.016105Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\spark-loop\\test_phi3_mini.py",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:38.042485Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\the-crypt\\test\\integration-test.md",
+          "patterns": [
+            "auth"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:38.458456Z"
+      },
+      {
+        "from": "mee_security",
+        "type": "security_pattern",
+        "data": {
+          "file": "C:/Users/aaron/.openclaw/workspace\\vpn\\TROUBLESHOOTING.md",
+          "patterns": [
+            "password",
+            "credential"
+          ]
+        },
+        "timestamp": "2026-03-02T21:29:38.530359Z"
+      }
+    ],
+    "decisions": []
+  }
+}

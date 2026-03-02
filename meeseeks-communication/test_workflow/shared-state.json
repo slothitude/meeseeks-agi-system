@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "created_at": "2026-03-02T21:45:19.514516Z",
+    "workflow_id": "test_workflow",
+    "coordinator": "sloth_rog"
+  },
+  "workers": {
+    "test_worker": {
+      "task": "Security test",
+      "status": "running",
+      "progress": 0,
+      "started_at": "2026-03-02T21:45:19.514532Z",
+      "last_update": "2026-03-02T21:45:19.514534Z",
+      "findings": [],
+      "needs_help": false
+    }
+  },
+  "shared": {
+    "discoveries": [],
+    "decisions": []
+  }
+}

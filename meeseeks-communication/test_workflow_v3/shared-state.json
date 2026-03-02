@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "created_at": "2026-03-02T21:42:41.322203Z",
+    "workflow_id": "test_workflow_v3",
+    "coordinator": "sloth_rog"
+  },
+  "workers": {
+    "test_worker": {
+      "task": "Test task",
+      "status": "complete",
+      "progress": 100,
+      "started_at": "2026-03-02T21:42:41.322220Z",
+      "last_update": "2026-03-02T21:42:41.364402Z",
+      "findings": [],
+      "needs_help": false,
+      "current_step": "Testing",
+      "result": null,
+      "summary": "Test complete",
+      "completed_at": "2026-03-02T21:42:41.364217Z"
+    }
+  },
+  "shared": {
+    "discoveries": [
+      {
+        "from": "test_worker",
+        "type": "test_finding",
+        "data": {
+          "data": "test"
+        },
+        "timestamp": "2026-03-02T21:42:41.342396Z"
+      }
+    ],
+    "decisions": [
+      {
+        "from": "test_worker",
+        "type": "test",
+        "value": "value",
+        "confidence": 1.0,
+        "voters_for": [
+          "test_worker"
+        ],
+        "voters_against": [],
+        "timestamp": "2026-03-02T21:42:41.350874Z"
+      }
+    ]
+  }
+}
