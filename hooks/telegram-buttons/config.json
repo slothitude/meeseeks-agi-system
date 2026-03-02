@@ -1,94 +1,42 @@
 {
-  "botToken": "YOUR_BOT_TOKEN_HERE",
-  
-  "quizzes": {
-    "example_q1": {
-      "question": "What is the capital of France?",
-      "options": ["London", "Berlin", "Paris", "Madrid"],
-      "correctIndex": 2,
-      "explanation": "Paris is the capital and largest city of France."
-    },
-    "example_q2": {
-      "question": "Which planet is known as the Red Planet?",
-      "options": ["Venus", "Mars", "Jupiter", "Saturn"],
-      "correctIndex": 1,
-      "explanation": "Mars is called the Red Planet due to iron oxide on its surface."
-    },
-    "example_q3": {
-      "question": "What is 2 + 2?",
-      "options": ["3", "4", "5", "6"],
-      "correctIndex": 1,
-      "explanation": "Basic arithmetic: 2 + 2 = 4"
-    }
-  },
-  
-  "menus": {
-    "main": {
-      "text": "🏠 *Main Menu*\n\nSelect an option:",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {"text": "📊 Quiz", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"quiz\"}}"},
-            {"text": "ℹ️ Info", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"info\"}}"}
-          ],
-          [
-            {"text": "⚙️ Settings", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"settings\"}}"}
-          ]
-        ]
-      }
-    },
+  "pollInterval": 1000,
+  "timeout": 30,
+  "logInteractions": true,
+  "handlers": {
     "quiz": {
-      "text": "📝 *Quiz Menu*\n\nChoose a quiz to take:",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {"text": "🌍 Geography Quiz", "callback_data": "{\"type\":\"quiz_start\",\"payload\":{\"quizId\":\"geography\"}}"}
-          ],
-          [
-            {"text": "🔬 Science Quiz", "callback_data": "{\"type\":\"quiz_start\",\"payload\":{\"quizId\":\"science\"}}"}
-          ],
-          [
-            {"text": "⬅️ Back", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"main\"}}"}
-          ]
-        ]
-      }
+      "enabled": true,
+      "showCorrectAnswer": true
     },
-    "info": {
-      "text": "ℹ️ *Information*\n\nThis is a Telegram bot with interactive buttons!\n\nFeatures:\n• Interactive quizzes\n• Menu navigation\n• Confirmations\n\nBuilt with ❤️ using Node.js",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {"text": "⬅️ Back", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"main\"}}"}
-          ]
-        ]
-      }
+    "confirm": {
+      "enabled": true,
+      "deleteAfterConfirm": false
     },
-    "settings": {
-      "text": "⚙️ *Settings*\n\nConfigure your preferences:",
-      "keyboard": {
-        "inline_keyboard": [
-          [
-            {"text": "🔔 Notifications", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"notifications\"}}"}
-          ],
-          [
-            {"text": "🌐 Language", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"language\"}}"}
-          ],
-          [
-            {"text": "⬅️ Back", "callback_data": "{\"type\":\"menu\",\"payload\":{\"action\":\"main\"}}"}
-          ]
-        ]
-      }
+    "menu": {
+      "enabled": true,
+      "cacheMenus": true
     }
   },
-  
-  "confirmations": {
-    "delete_message": {
-      "text": "⚠️ *Confirm Deletion*\n\nAre you sure you want to delete this message?",
-      "action": "delete"
+  "buttons": {
+    "confirmYes": {
+      "text": "✅ Yes",
+      "callbackData": "confirm:{\"action\":\"yes\"}"
     },
-    "reset_progress": {
-      "text": "⚠️ *Confirm Reset*\n\nAre you sure you want to reset all your progress?",
-      "action": "reset"
+    "confirmNo": {
+      "text": "❌ No",
+      "callbackData": "confirm:{\"action\":\"no\"}"
+    },
+    "menuBack": {
+      "text": "◀️ Back",
+      "callbackData": "menu:{\"action\":\"back\"}"
+    },
+    "menuCancel": {
+      "text": "🚫 Cancel",
+      "callbackData": "menu:{\"action\":\"cancel\"}"
     }
+  },
+  "exampleQuiz": {
+    "question": "What is the capital of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+    "correctAnswer": 2
   }
 }

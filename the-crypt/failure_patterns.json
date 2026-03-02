@@ -293,20 +293,199 @@
         "reduce_scope"
       ],
       "timestamp": "2026-03-03T08:29:53.748876"
+    },
+    {
+      "session_key": "agent:main:subagent:52814b98-0e71-4043-abb3-fc5de2f607b1",
+      "task_type": "coder",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 OPENCLAW FIX: Make message tool support inline buttons\n\nInvestigate why OpenClaw's message tool doesn't pass buttons to the Telegram API and fix it.\n\n**PROBLEM:**\nWhen using the message tool with `b...",
+      "runtime_ms": 300047,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:40:40.161883"
+    },
+    {
+      "session_key": "agent:main:subagent:d740f4a2-1600-4314-9e70-1d86e2dc916f",
+      "task_type": "standard",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 TELEGRAM: Create Button Hooks System\n\nBuild a complete hooks system for Telegram inline button callbacks.\n\n**REQUIREMENTS:**\n1. Create a Node.js module that polls for Telegram callbacks\n2. Handle di...",
+      "runtime_ms": 252186,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:41:51.313250"
+    },
+    {
+      "session_key": "agent:main:subagent:8f0a9c2d-2fd7-41c1-a793-cb761b9db905",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 RESEARCH: ARC-AGI-2 Analysis (RETRY 3)\n\nResearch the ARC-AGI-2 benchmark and how multi-agent systems could help solve it.\n\n**Workflow ID:** arc-agi-2-research\n**Your Worker ID:** arc_researcher\n\n**S...",
+      "runtime_ms": 281142,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:41:51.314061"
+    },
+    {
+      "session_key": "agent:main:subagent:717bc98a-4d6a-4939-bf98-9a5eecdb6aab",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 ARC-AGI-2 SWARM - Task 137eaa0f: Code Solver (RETRY 3)\n\nYou are part of a coordinated swarm solving ARC-AGI-2 task 137eaa0f (Region Extraction).\n\n**Workflow ID:** arc-solve-137eaa0f\n**Your Worker ID...",
+      "runtime_ms": 300066,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:41:51.314520"
+    },
+    {
+      "session_key": "agent:main:subagent:a01e2771-5f07-4ede-8c52-5e9b66a4619a",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/3\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\n\ud83e\udd52 ARC-AGI-2 SWARM - Task 137eaa0f: Code Solver\n\nYou are part of a coordinated swarm solv...",
+      "runtime_ms": 120044,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "many_steps",
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T08:43:25.447465"
+    },
+    {
+      "session_key": "agent:main:subagent:41be4b0e-d906-414e-8c0b-aeb8cea61748",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/4\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\n\ud83e\udd52 ARC-AGI-2: Implement Swarm Solution for 137eaa0f\n\nThe coordinated swarm discovered the...",
+      "runtime_ms": 120046,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T08:43:25.448201"
+    },
+    {
+      "session_key": "agent:main:subagent:7bab043b-62c2-456c-bd9f-ebaec1c15158",
+      "task_type": "coder",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/4\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\n\ud83e\udd52 TELEGRAM BOT: Add Inline Button Support\n\nEnhance the Telegram bot to support inline bu...",
+      "runtime_ms": 120046,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "many_steps"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T08:45:01.894302"
+    },
+    {
+      "session_key": "agent:main:subagent:21fd9fc7-4532-40fc-bc4f-3e9ab87b8c96",
+      "task_type": "coder",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/4\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\n\ud83e\udd52 OPENCLAW FIX: Make message tool support inline buttons\n\nInvestigate why OpenClaw's mes...",
+      "runtime_ms": 120040,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:45:01.895167"
+    },
+    {
+      "session_key": "agent:main:subagent:eb60c703-3393-4ec9-80ee-3dc99eec81e6",
+      "task_type": "standard",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/3\n\nThis is a retry of a timed-out task, broken into smaller pieces.\n\nORIGINAL TASK (timed out):\n\ud83e\udd52 TELEGRAM: Create Button Hooks System\n\nBuild a complete hooks system for Telegram inlin...",
+      "runtime_ms": 113972,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "many_steps"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T08:45:43.440724"
+    },
+    {
+      "session_key": "agent:main:subagent:e6e7a714-bea1-4fc4-a507-421284347bff",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83d\udd04 RETRY CHUNK 1/5 - ARC-AGI-2 Implement Swarm Solution\n\nThe coordinated swarm discovered the pattern for task 137eaa0f. \n\n**SWARM FINDINGS:**\n1. Color 5 is a CENTER MARKER - always at output[1][1]\n2. ...",
+      "runtime_ms": 114836,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T08:46:30.085514"
     }
   ],
   "stats": {
-    "total": 17,
+    "total": 27,
     "by_mode": {
-      "timeout": 17
+      "timeout": 27
     },
     "by_type": {
       "evolver": 6,
-      "puzzle-solver": 9,
-      "standard": 1,
-      "coder": 1
+      "puzzle-solver": 14,
+      "standard": 3,
+      "coder": 4
     },
-    "recent_count": 5
+    "recent_count": 15
   },
-  "updated": "2026-03-03T08:29:53.749268"
+  "updated": "2026-03-03T08:46:30.085741"
 }

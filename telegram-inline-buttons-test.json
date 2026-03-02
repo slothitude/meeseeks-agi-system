@@ -1,0 +1,15 @@
+{
+  "action": "send",
+  "channel": "telegram",
+  "message": "What is the capital of France?",
+  "buttons": [
+    [
+      { "text": "Paris", "callback_data": "paris" },
+      { "text": "London", "callback_data": "london" }
+    ],
+    [
+      { "text": "Berlin", "callback_data": "berlin" },
+      { "text": "Madrid", "callback_data": "madrid" }
+    ]
+  ]
+}
