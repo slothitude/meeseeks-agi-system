@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "created_at": "2026-03-02T21:33:09.413332Z",
+    "workflow_id": "real-review-001",
+    "coordinator": "sloth_rog"
+  },
+  "workers": {
+    "reviewer_performance": {
+      "task": "Performance code reviewer",
+      "status": "complete",
+      "progress": 100,
+      "started_at": "2026-03-02T21:33:09.413349Z",
+      "last_update": "2026-03-02T21:33:09.496553Z",
+      "findings": [],
+      "needs_help": false,
+      "lines_reviewed": 198,
+      "issues_found": 4,
+      "result": null,
+      "summary": "Performance review complete: 4 findings",
+      "completed_at": "2026-03-02T21:33:09.485281Z"
+    },
+    "reviewer_security": {
+      "task": "Security code reviewer",
+      "status": "complete",
+      "progress": 100,
+      "started_at": "2026-03-02T21:33:09.701789Z",
+      "last_update": "2026-03-02T21:33:09.765086Z",
+      "findings": [],
+      "needs_help": false,
+      "lines_reviewed": 198,
+      "issues_found": 3,
+      "result": null,
+      "summary": "Security review complete: 3 findings",
+      "completed_at": "2026-03-02T21:33:09.755757Z"
+    },
+    "reviewer_design": {
+      "task": "Design/quality reviewer",
+      "status": "complete",
+      "progress": 100,
+      "started_at": "2026-03-02T21:33:27.712953Z",
+      "last_update": "2026-03-02T21:33:27.806185Z",
+      "findings": [],
+      "needs_help": false,
+      "lines_reviewed": 198,
+      "issues_found": 5,
+      "result": null,
+      "summary": "Design review complete: 5 findings",
+      "completed_at": "2026-03-02T21:33:27.795825Z"
+    }
+  },
+  "shared": {
+    "discoveries": [
+      {
+        "from": "reviewer_performance",
+        "type": "performance_review",
+        "data": {
+          "type": "info",
+          "issue": "Full file reads - consider chunked reads for large files"
+        },
+        "timestamp": "2026-03-02T21:33:09.437112Z"
+      },
+      {
+        "from": "reviewer_performance",
+        "type": "performance_review",
+        "data": {
+          "type": "info",
+          "issue": "JSON serialization on every operation - could cache"
+        },
+        "timestamp": "2026-03-02T21:33:09.448488Z"
+      },
+      {
+        "from": "reviewer_performance",
+        "type": "performance_review",
+        "data": {
+          "type": "positive",
+          "issue": "Uses async patterns for I/O"
+        },
+        "timestamp": "2026-03-02T21:33:09.458836Z"
+      },
+      {
+        "from": "reviewer_performance",
+        "type": "performance_review",
+        "data": {
+          "type": "review",
+          "issue": "Lock scope covers entire read/write - could be refined"
+        },
+        "timestamp": "2026-03-02T21:33:09.471574Z"
+      },
+      {
+        "from": "reviewer_security",
+        "type": "security_review",
+        "data": {
+          "type": "positive",
+          "issue": "Uses asyncio.Lock for race condition prevention"
+        },
+        "timestamp": "2026-03-02T21:33:09.723922Z"
+      },
+      {
+        "from": "reviewer_security",
+        "type": "security_review",
+        "data": {
+          "type": "info",
+          "issue": "Path operations present - verify no traversal"
+        },
+        "timestamp": "2026-03-02T21:33:09.733588Z"
+      },
+      {
+        "from": "reviewer_security",
+        "type": "security_review",
+        "data": {
+          "type": "positive",
+          "issue": "Atomic write pattern (temp + replace)"
+        },
+        "timestamp": "2026-03-02T21:33:09.743885Z"
+      },
+      {
+        "from": "reviewer_design",
+        "type": "design_review",
+        "data": {
+          "type": "positive",
+          "issue": "Uses type hints"
+        },
+        "timestamp": "2026-03-02T21:33:27.737532Z"
+      },
+      {
+        "from": "reviewer_design",
+        "type": "design_review",
+        "data": {
+          "type": "positive",
+          "issue": "Has docstrings"
+        },
+        "timestamp": "2026-03-02T21:33:27.749039Z"
+      },
+      {
+        "from": "reviewer_design",
+        "type": "design_review",
+        "data": {
+          "type": "warning",
+          "issue": "No error handling - file operations could fail"
+        },
+        "timestamp": "2026-03-02T21:33:27.761508Z"
+      },
+      {
+        "from": "reviewer_design",
+        "type": "design_review",
+        "data": {
+          "type": "info",
+          "issue": "14 async methods - good for I/O"
+        },
+        "timestamp": "2026-03-02T21:33:27.773848Z"
+      },
+      {
+        "from": "reviewer_design",
+        "type": "design_review",
+        "data": {
+          "type": "positive",
+          "issue": "Uses Optional for nullable types"
+        },
+        "timestamp": "2026-03-02T21:33:27.784792Z"
+      }
+    ],
+    "decisions": []
+  }
+}

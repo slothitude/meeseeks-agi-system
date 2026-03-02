@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "created_at": "2026-03-02T21:54:39.799431Z",
+    "workflow_id": "arc-agi-2-research",
+    "coordinator": "sloth_rog"
+  },
+  "workers": {
+    "arc_researcher": {
+      "task": "ARC-AGI-2 researcher",
+      "status": "running",
+      "progress": 0,
+      "started_at": "2026-03-02T21:55:31.683346Z",
+      "last_update": "2026-03-02T21:55:31.683355Z",
+      "findings": [],
+      "needs_help": false
+    }
+  },
+  "shared": {
+    "discoveries": [
+      {
+        "from": "arc_researcher",
+        "type": "arc_challenge",
+        "data": {
+          "type": "key_challenges",
+          "challenges": [
+            {
+              "name": "Symbolic Interpretation",
+              "description": "Understanding abstract patterns from few examples",
+              "difficulty": "EXTREME",
+              "examples": "Color mappings, spatial transformations, rule inference"
+            },
+            {
+              "name": "Compositional Reasoning",
+              "description": "Combining multiple simple rules into complex solutions",
+              "difficulty": "HIGH",
+              "examples": "Task 137eaa0f - region extraction with spatial mapping"
+            },
+            {
+              "name": "Contextual Rule Application",
+              "description": "Rules that change based on context/position",
+              "difficulty": "HIGH",
+              "examples": "Tiling patterns with alternating flips"
+            },
+            {
+              "name": "Efficiency Measurement",
+              "description": "Solving in minimal attempts (2 trials max)",
+              "difficulty": "MEDIUM",
+              "examples": "Need high first-try accuracy"
+            }
+          ]
+        },
+        "timestamp": "2026-03-02T21:55:31.692967Z"
+      },
+      {
+        "from": "arc_researcher",
+        "type": "local_assets",
+        "data": {
+          "type": "data_inventory",
+          "assets": {
+            "training_tasks": "1000 tasks in ARC-AGI-2/training/",
+            "evaluation_tasks": "120 tasks in ARC-AGI-2/evaluation/",
+            "existing_solutions": "5 solved tasks (80% success on subset)",
+            "failed_task": "137eaa0f - Region extraction with markers",
+            "analysis_tools": "Multiple solver iterations and analysis scripts"
+          }
+        },
+        "timestamp": "2026-03-02T21:55:31.703808Z"
+      },
+      {
+        "from": "arc_researcher",
+        "type": "multi_agent_strategy",
+        "data": {
+          "type": "coordination_patterns",
+          "strategies": [
+            {
+              "pattern": "Parallel Task Solving",
+              "description": "Spawn multiple agents for different task types",
+              "benefit": "10x speedup on batch solving"
+            },
+            {
+              "pattern": "Strategy Diversity",
+              "description": "Different agents use different solving approaches",
+              "benefit": "Higher coverage - what one fails, another solves"
+            },
+            {
+              "pattern": "Voting on Solutions",
+              "description": "Multiple agents propose solutions, vote on best",
+              "benefit": "Reduces errors, increases confidence"
+            },
+            {
+              "pattern": "Hierarchical Decomposition",
+              "description": "Manager agent decomposes complex tasks for workers",
+              "benefit": "Handles compositional reasoning"
+            }
+          ]
+        },
+        "timestamp": "2026-03-02T21:55:31.715083Z"
+      }
+    ],
+    "decisions": []
+  }
+}
