@@ -81,6 +81,13 @@ await shared.vote(decision_idx=6, agree=False)  # NEW: against vote
 - Voting improvements: ✅
 - Error handling: ✅
 
+### Test 4: ARK Test (New Methods)
+- `vote(agree=False)` - against votes: ✅
+- `fail(error)` - mark task failed: ✅
+- `propose_decision(confidence=0.85)` - confidence tracking: ✅
+- `update_status(progress, current_step, custom_field)` - typed params: ✅
+- All 8 new method tests passed
+
 ---
 
 ## Review Findings Applied (v3.0)
