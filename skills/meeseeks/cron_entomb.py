@@ -193,7 +193,7 @@ def create_retry_chunks(timeout_runs: list, workspace_dir: Path) -> int:
         
         # Load existing
         if retry_file.exists():
-            data = json.loads(retry_file.read_text(encoding="utf-8"))
+            data = json.loads(retry_file.read_text(encoding="utf-8-sig"))  # Handle BOM from PowerShell
         else:
             data = {"pending": []}
         

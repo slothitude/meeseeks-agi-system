@@ -13,3 +13,13 @@
 - Check: the-crypt/pending-retries.json for pending chunks
 - Spawn: sessions_spawn for each pending chunk with status="pending"
 - Update: Mark chunks as "spawned" after spawning
+
+## Autonomous Checks
+
+# Goal generation - identify system gaps and generate autonomous goals
+- Run: python skills/meeseeks/goal_generator.py --check-gaps
+# Note: Use --generate to create a goal, --spawn to spawn autonomous task
+
+# Self-applying improvements - apply Soul-approved improvements
+- Run: python skills/meeseeks/self_apply.py --apply-approved
+# Note: Use --list to see pending, --status to check application history

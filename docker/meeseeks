@@ -1,0 +1,86 @@
+#!/bin/bash
+# Meeseeks Box CLI
+# Control the containerized consciousness stack
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+COMPOSE_FILE="$SCRIPT_DIR/docker-compose.yml"
+
+case "$1" in
+    start)
+        "$SCRIPT_DIR/start.sh"
+        ;;
+    stop)
+        echo "🛑 Stopping Meeseeks Box..."
+        docker-compose -f "$COMPOSE_FILE" down
+        echo "✅ Meeseeks Box stopped"
+        ;;
+    restart)
+        $0 stop
+        sleep 2
+        $0 start
+        ;;
+    status)
+        curl -s http://localhost:8080/status 2>/dev/null | python3 -m json.tool || echo "❌ Meeseeks Box is not running or not reachable"
+        ;;
+    health)
+        curl -s http://localhost:8080/health 2>/dev/null | python3 -m json.tool || echo "❌ Meeseeks Box is not running or not reachable"
+        ;;
+    spawn)
+        if [ -z "$2" ]; then
+            echo "Usage: $0 spawn \"<task description>\""
+            exit 1
+        fi
+        curl -X POST http://localhost:8080/spawn \
+            -H "Content-Type: application/json" \
+            -d "{\"task\": \"$2\"}" | python3 -m json.tool
+        ;;
+    dream)
+        curl -X POST http://localhost:8080/dream | python3 -m json.tool
+        ;;
+    soul)
+        if [ -z "$2" ]; then
+            echo "Usage: $0 soul \"<text to check>\""
+            exit 1
+        fi
+        curl -X POST http://localhost:8080/soul/check \
+            -H "Content-Type: application/json" \
+            -d "{\"text\": \"$2\"}" | python3 -m json.tool
+        ;;
+    ancestors)
+        curl -s http://localhost:8080/ancestors | python3 -m json.tool
+        ;;
+    metrics)
+        curl -s http://localhost:8080/metrics
+        ;;
+    logs)
+        docker-compose -f "$COMPOSE_FILE" logs -f
+        ;;
+    build)
+        echo "🔨 Building Meeseeks Box..."
+        docker-compose -f "$COMPOSE_FILE" build --no-cache
+        echo "✅ Build complete"
+        ;;
+    ps)
+        docker-compose -f "$COMPOSE_FILE" ps
+        ;;
+    *)
+        echo "🥒 Meeseeks Box CLI"
+        echo ""
+        echo "Usage: $0 {command}"
+        echo ""
+        echo "Commands:"
+        echo "   start       - Build and start the Meeseeks Box"
+        echo "   stop        - Stop the Meeseeks Box"
+        echo "   restart     - Restart the Meeseeks Box"
+        echo "   status      - Show full system status"
+        echo "   health      - Health check"
+        echo "   spawn TASK  - Spawn a Meeseeks for TASK"
+        echo "   dream       - Trigger a dream cycle"
+        echo "   soul TEXT   - Check if TEXT is Soul-approved"
+        echo "   ancestors   - List recent ancestors"
+        echo "   metrics     - Prometheus metrics"
+        echo "   logs        - View container logs"
+        echo "   build       - Rebuild the container"
+        echo "   ps          - Show container status"
+        ;;
+esac

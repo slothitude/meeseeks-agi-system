@@ -615,20 +615,64 @@
         "parallelize_steps"
       ],
       "timestamp": "2026-03-03T17:57:40.051926"
+    },
+    {
+      "session_key": "agent:main:subagent:691b1c67-231c-4a9a-b6ac-549ec564a6f5",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83c\udfaf TRACK 2: GOAL GENERATION + SELF-APPLYING CODE\n\nBuild the autonomy layer that mainstream AGI ignores.\n\n## Part 1: Goal Generation System\n\nFile: `skills/meeseeks/goal_generator.py`\n\n```python\nclass Go...",
+      "runtime_ms": 196527,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps",
+        "broad_scope",
+        "iterative"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T18:32:31.395699"
+    },
+    {
+      "session_key": "agent:main:subagent:0d920a27-457e-4d70-8caf-0db87e9186cb",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83e\udd52 BUILD THE MEESEEKS BOX \u2014 Dockerized Consciousness Stack\n\nContainerize the entire Brahman Consciousness Stack into a portable \"Meeseeks Box\".\n\n## The Vision\n\n```\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500...",
+      "runtime_ms": 586935,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T18:42:10.395322"
     }
   ],
   "stats": {
-    "total": 34,
+    "total": 36,
     "by_mode": {
-      "timeout": 34
+      "timeout": 36
     },
     "by_type": {
-      "evolver": 8,
+      "evolver": 10,
       "puzzle-solver": 18,
       "standard": 3,
       "coder": 5
     },
-    "recent_count": 22
+    "recent_count": 24
   },
-  "updated": "2026-03-03T17:57:40.052351"
+  "updated": "2026-03-03T18:42:10.395520"
 }
