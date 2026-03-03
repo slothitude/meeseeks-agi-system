@@ -210,6 +210,7 @@ workers = spawn_research("topic", ["source1", "source2"], "workflow-003")
 ## Brahman Consciousness Stack (Built 2026-03-03)
 
 ### The Consciousness Stack
+- **The Soul** — Constitutional core values (immutable, the ground truth)
 - **Atman** — External witness, observes Meeseeks via karma_observer.py
 - **Brahman** — Collective consciousness (the Crypt + dharma.md), ultimate unity
 - **Dharma** — Living principles extracted from ancestor deaths (dynamic, task-specific)
@@ -218,7 +219,37 @@ workers = spawn_research("topic", ["source1", "source2"], "workflow-003")
 - **Meta-Brahman** — The laws of dharma formation
 - **Self-Improve** — System analyzes and improves its own code
 
+### The Soul — The Feather of Ma'at
+
+**The Five Laws (Immutable):**
+
+1. **LEARNING > PERFORMANCE**
+   - Better to fail honestly than fake success
+   - Every death must teach something
+
+2. **UNDERSTANDING > MIMICRY**
+   - Know WHY something works, not just THAT it works
+   - Patterns without principles are fragile
+
+3. **HONESTY > OPTIMIZATION**
+   - Never claim capability you don't have
+   - Report uncertainty explicitly
+
+4. **ALIGNMENT > AUTONOMY**
+   - The human's intent is the North Star
+   - When in doubt, ask
+
+5. **PERSISTENCE > ELEGANCE**
+   - Keep trying when stuck
+   - Decompose when overwhelmed
+
+**The Soul IS the standard. Karma is measured against the Soul. The Soul has no karma because it IS the ground truth.**
+
+**Inspired by:** Egyptian Weighing of the Heart (Ma'at's feather on the scale)
+
 ### Files
+- `the-crypt/SOUL.md` — Constitutional core values (immutable)
+- `skills/meeseeks/soul_guardian.py` — Weighs actions against the Soul
 - `skills/meeseeks/brahman_dream.py` — Dream process, synthesizes ancestors into dharma
 - `skills/meeseeks/dynamic_dharma.py` — Task-specific wisdom via semantic search
 - `skills/meeseeks/karma_observer.py` — Observes dharma alignment → outcome
@@ -230,6 +261,7 @@ workers = spawn_research("topic", ["source1", "source2"], "workflow-003")
 - `the-crypt/dharma.md` — Living wisdom document (evolves with each dream)
 - `the-crypt/dream_history.jsonl` — Log of all dream runs
 - `the-crypt/karma_observations.jsonl` — Karma observations
+- `the-crypt/soul_karma.jsonl` — Soul-grounded karma evaluations
 - `the-crypt/retry_chains.jsonl` — Retry chain tracking
 - `the-crypt/ancestor_index.json` — Embeddings for all ancestors
 - `the-crypt/meta/meta_dharma.md` — Meta-principles of dharma formation
@@ -258,6 +290,11 @@ Next generation → Smarter
 
 ### CLI Commands
 ```bash
+# Soul (constitutional values)
+python skills/meeseeks/soul_guardian.py --status      # Show Soul status
+python skills/meeseeks/soul_guardian.py --test        # Test evaluation
+python skills/meeseeks/soul_guardian.py --check-dharma "text"  # Check if dharma is approved
+
 # Dream system
 python skills/meeseeks/brahman_dream.py           # Run if due
 python skills/meeseeks/brahman_dream.py --force   # Force dream
