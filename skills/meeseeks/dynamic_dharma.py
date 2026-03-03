@@ -26,10 +26,6 @@ from datetime import datetime
 import subprocess
 import math
 
-# Set stdout to UTF-8 for Windows
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
 # Paths
 WORKSPACE = Path("C:/Users/aaron/.openclaw/workspace")
 CRYPT_ROOT = WORKSPACE / "the-crypt"
