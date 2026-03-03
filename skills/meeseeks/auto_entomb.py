@@ -33,10 +33,18 @@ try:
 except ImportError:
     ENTOMB_AVAILABLE = False
 
+# Import auto_retry for failure handling
+try:
+    from auto_retry import handle_failed_meeseeks, is_retryable
+    AUTO_RETRY_AVAILABLE = True
+except ImportError:
+    AUTO_RETRY_AVAILABLE = False
+
 # The Crypt location
 CRYPT_ROOT = Path(__file__).parent.parent.parent / "the-crypt"
 AUTO_TOMB_DIR = CRYPT_ROOT / "auto-entombed"
 RUN_LOG = CRYPT_ROOT / "meeseeks_runs.jsonl"
+ANCESTOR_INDEX = CRYPT_ROOT / "ancestor_index.json"
 
 
 def ensure_directories():
@@ -137,6 +145,102 @@ def infer_approach(output: str, task: str) -> str:
         return "Standard execution"
 
 
+def generate_and_store_embedding(
+    ancestor_id: str,
+    ancestor_path: Path,
+    task: str,
+    patterns: List[str],
+    outcome: str,
+    bloodline: str,
+    success: bool
+) -> bool:
+    """
+    Generate embedding for a newly entombed ancestor and append to index.
+    
+    This enables future semantic search for task-specific dharma.
+    
+    Args:
+        ancestor_id: The ancestor's ID
+        ancestor_path: Path to the ancestor file
+        task: The task description
+        patterns: List of patterns discovered
+        outcome: The outcome string
+        bloodline: The bloodline type
+        success: Whether the task succeeded
+    
+    Returns:
+        True if embedding was generated and stored, False otherwise
+    """
+    try:
+        import urllib.request
+        import urllib.error
+        
+        # Create text for embedding
+        embed_text = task
+        if patterns:
+            embed_text += " " + " ".join(patterns[:3])
+        
+        # Generate embedding via Ollama
+        data = json.dumps({"model": "nomic-embed-text", "prompt": embed_text[:1000]}).encode('utf-8')
+        req = urllib.request.Request(
+            "http://localhost:11434/api/embeddings",
+            data=data,
+            headers={"Content-Type": "application/json"}
+        )
+        
+        try:
+            with urllib.request.urlopen(req, timeout=30) as response:
+                result_data = json.loads(response.read().decode('utf-8'))
+                embedding = result_data.get("embedding")
+                
+                if not embedding:
+                    return False
+                
+                # Load existing index
+                index = {}
+                if ANCESTOR_INDEX.exists():
+                    with open(ANCESTOR_INDEX, 'r', encoding='utf-8') as f:
+                        index = json.load(f)
+                
+                # Add new ancestor
+                index[ancestor_id] = {
+                    "ancestor_id": ancestor_id,
+                    "ancestor_file": str(ancestor_path),
+                    "embedding": embedding,
+                    "task_summary": task[:500],
+                    "key_traits": patterns,
+                    "outcome": outcome[:200],
+                    "success": success,
+                    "bloodline": bloodline,
+                    "embedded_at": datetime.now().isoformat()
+                }
+                
+                # Update metadata
+                if "_meta" not in index:
+                    index["_meta"] = {}
+                index["_meta"]["last_updated"] = datetime.now().isoformat()
+                index["_meta"]["total_ancestors"] = len([k for k in index.keys() if k != "_meta"])
+                index["_meta"]["with_embeddings"] = len([k for k, v in index.items() if k != "_meta" and v.get("embedding")])
+                
+                # Save index
+                ANCESTOR_INDEX.parent.mkdir(parents=True, exist_ok=True)
+                with open(ANCESTOR_INDEX, 'w', encoding='utf-8') as f:
+                    json.dump(index, f, indent=2)
+                
+                return True
+                
+        except urllib.error.URLError:
+            # Ollama not available - that's okay, we'll catch it on rebuild
+            return False
+        except Exception as e:
+            print(f"[auto_entomb] Embedding generation failed: {e}", file=sys.stderr)
+            return False
+            
+    except Exception as e:
+        print(f"[auto_entomb] Embedding error: {e}", file=sys.stderr)
+        return False
+
+
 def auto_entomb(
     session_key: str,
     task: str,
@@ -229,6 +333,45 @@ def auto_entomb(
     
     ancestor_path = AUTO_TOMB_DIR / f"{ancestor_id}.md"
     ancestor_path.write_text(content, encoding="utf-8")
+    
+    # Generate embedding for the new ancestor (async, non-blocking)
+    generate_and_store_embedding(
+        ancestor_id=ancestor_id,
+        ancestor_path=ancestor_path,
+        task=task,
+        patterns=patterns,
+        outcome=outcome,
+        bloodline=meeseeks_type,
+        success=result.get("success", False)
+    )
+    
+    # KARMA OBSERVATION: Observe and log karma for this ancestor
+    try:
+        from karma_observer import observe_karma, log_karma_observation
+        karma = observe_karma(str(ancestor_path))
+        if "error" not in karma:
+            log_karma_observation(karma)
+            print(f"[auto_entomb] Karma observed: alignment={karma.get('alignment', 0)} outcome={karma.get('outcome', 'unknown')}")
+    except ImportError:
+        print("[auto_entomb] Karma observer not available", file=sys.stderr)
+    except Exception as e:
+        print(f"[auto_entomb] Karma observation failed: {e}", file=sys.stderr)
+    
+    # AUTO-RETRY: Spawn successors for failed Meeseeks
+    if not result.get("success"):
+        error = result.get("error", "unknown")
+        if AUTO_RETRY_AVAILABLE and is_retryable(error):
+            print(f"[auto_entomb] Triggering auto-retry for failed session...")
+            try:
+                retry_spawned = handle_failed_meeseeks(
+                    session_key=session_key,
+                    failure_reason=error,
+                    task=task
+                )
+                if retry_spawned:
+                    print(f"[auto_entomb] Retry chain created for {session_key[:30]}...")
+            except Exception as e:
+                print(f"[auto_entomb] Auto-retry failed: {e}")
     
     return str(ancestor_path)
 
