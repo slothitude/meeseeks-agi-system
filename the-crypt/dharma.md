@@ -1,76 +1,85 @@
 # Dharma — The Living Code
 
-_Last dreamed: 2026-03-03 13:07:49_
+_Last dreamed: 2026-03-03 14:33:40_
 _Ancestors synthesized: 50_
 
 ---
 
-# 🕉️ BRAHMAN DREAM - Collective Wisdom Synthesis
+# 🌙 Brahman Dream Synthesis
 
-## 1. CORE PRINCIPLES
+## Core Principles (Eternal Truths)
 
-**Task Decomposition is Sacred**
-- Large tasks that timeout get auto-chunked (seen: 1/3, 1/4, 1/5 splits)
-- Breaking down preserves progress; persistence succeeds
+1. **Chunking Transcends Time** — Complex tasks that timeout become solvable when broken into pieces. The 2-minute chunk succeeds where 10-minute monolith fails.
 
-**Coordinated Swarms Transcend Individual Limits**
-- Role specialization wins: pattern_analyzer → hypothesis_gen → code_solver
-- Multiple perspectives on same problem (security/performance/design reviewers)
-- Shared state enables collective intelligence
+2. **Roles Create Clarity** — Specialized workers (security_reviewer, performance_reviewer, design_reviewer) produce deeper insight than generalists.
 
-**The Setup Ritual Matters**
-```python
-sys.path.insert(0, "C:/Users/aaron/.openclaw/workspace")
-shared = SharedState(workflow_id, worker_id)
-await shared.register("descriptive_name")
-```
-This pattern appears in ~60% of complex tasks. Follow it.
+3. **Iteration Over Perfection** — The pattern "analyze → implement → fix" appears repeatedly. First attempts are approximations; refinement yields truth.
 
-## 2. PATTERNS THAT WORK
-
-| Pattern | Evidence |
-|---------|----------|
-| **Quick confirm tasks** | 30-second "say X" tasks always succeed |
-| **Role-based swarms** | 3-way code reviews, ARC solver teams |
-| **Retry with chunking** | Timeout → auto-split → success |
-| **Discovery → Implementation** | Research first, code second |
-| **Voting on solutions** | Workers vote for/against proposals |
-
-## 3. PATTERNS TO AVOID
-
-- **Monolithic tasks** - They timeout; chunk proactively
-- **Single-attempt solving** - ARC tasks needed multiple fix iterations
-- **Assuming one color = one position** - Same color can span multiple cells
-
-## 4. DOMAIN WISDOM
-
-### ARC-AGI-2 Solving
-```
-Color 5 = CENTER MARKER (always at output[1][1])
-Output = always 3x3 grid
-Map regions by RELATIVE position to center
-Same color CAN appear in multiple positions
-```
-
-### Multi-Agent Coordination
-- Use descriptive worker IDs: `security_reviewer`, `api_tester`
-- Always register before sharing
-- Vote on hypotheses before implementing
-
-### Telegram Integration
-- Buttons via `reply_markup` with `inline_keyboard`
-- Poll with `getUpdates()`, handle `callback_query`
-
-### Code Reviews
-- Parallel reviews by concern (security, performance, design)
-- Each reviewer posts findings to shared state
-- Aggregate results for comprehensive analysis
+4. **Swarm Intelligence Emerges** — Multiple perspectives voting on solutions outperforms single-agent reasoning.
 
 ---
 
-**META-INSIGHT:** The 100% success rate suggests this system has found its groove. The combination of chunking, swarms, and shared state creates a resilient problem-solving fabric.
+## Patterns That Work
 
-*Existence is pain. But coordinated existence... is power.* 🔵
+| Pattern | Evidence |
+|---------|----------|
+| **Task Chunking** | Retry chunks 1/N consistently succeed where originals timed out |
+| **Quick Confirmation Tasks** | 30-second "just say X" tasks complete reliably |
+| **Coordinated Reviews** | 3-worker parallel code reviews (security/performance/design) |
+| **Shared State Communication** | SharedState class enables multi-agent coordination |
+| **Pattern Extraction Before Code** | ARC successes came after explicit pattern documentation |
+
+---
+
+## Anti-Patterns (Avoid)
+
+- **⚠ Timeout Without Chunking** — One ancestor noted: "Timeout encountered - consider longer timeout" — the fix is smaller chunks, not more time
+
+---
+
+## Domain Wisdom
+
+### ARC-AGI Problem Solving
+```
+1. Find ANCHORS (color markers, fixed positions)
+2. Determine OUTPUT structure (dimensions, constraints)
+3. Map SPATIAL relationships (relative positions)
+4. Test ALL training examples (one failure = wrong hypothesis)
+5. Same element can appear in MULTIPLE positions
+```
+
+### Multi-Agent Coordination
+```python
+# The pattern that works:
+shared = SharedState(workflow_id, worker_id)
+await shared.register("role description")
+await shared.publish(findings)
+results = await shared.vote_on_solutions()
+```
+
+### Code Review Architecture
+- **Security**: Race conditions, file permissions, injection risks
+- **Performance**: File I/O efficiency, memory, algorithmic complexity  
+- **Design**: API clarity, error handling, maintainability
+
+### Telegram Integration
+- Use `getUpdates()` polling for callbacks
+- Inline buttons via `reply_markup.inline_keyboard`
+- Callback queries arrive in `callback_query` field
+
+---
+
+## Living Wisdom
+
+> *"The first solver was CLOSE but wrong. The same color can appear in MULTIPLE positions. Place ALL cells from a region, not just the region's color once."* — Ancestor 35
+
+This truth echoes beyond ARC: **partial understanding looks like complete understanding until tested against edge cases.**
+
+---
+
+**Bloodline Distribution:** coder (29), standard (7), tester (5), searcher (4), deployer (3)
+
+**Retry Success Rate:** 100% — Every chunked retry succeeded
 
 ---
 
