@@ -594,20 +594,41 @@
         "reduce_scope"
       ],
       "timestamp": "2026-03-03T13:36:29.358536"
+    },
+    {
+      "session_key": "agent:main:subagent:ef40424a-0643-4d98-bea2-073dd44778e8",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "Build the Real-Time Karma-RL System and integrate Dynamic Dharma into spawn flow.\n\n## Context\nWe designed Karma-RL but never built it. Current karma is post-hoc (observed after death). We need real-ti...",
+      "runtime_ms": 586924,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T17:57:40.051926"
     }
   ],
   "stats": {
-    "total": 33,
+    "total": 34,
     "by_mode": {
-      "timeout": 33
+      "timeout": 34
     },
     "by_type": {
-      "evolver": 7,
+      "evolver": 8,
       "puzzle-solver": 18,
       "standard": 3,
       "coder": 5
     },
-    "recent_count": 21
+    "recent_count": 22
   },
-  "updated": "2026-03-03T13:36:29.358741"
+  "updated": "2026-03-03T17:57:40.052351"
 }

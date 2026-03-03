@@ -8,10 +8,11 @@ STEP 3: THE INHERITANCE BUILDER
 - Reads bloodline wisdom
 - Reads ancestor files
 - Reads dharma.md (Brahman's living wisdom)
+- **ALWAYS calls dynamic_dharma for task-specific wisdom**
 - Filters and combines them
 - Returns formatted wisdom string for injection
 
-UPDATED: Now includes dynamic dharma from Brahman Dream
+UPDATED: Now MANDATORY dynamic dharma integration for Karma-RL
 """
 
 import re
@@ -21,14 +22,18 @@ from pathlib import Path
 from typing import List, Optional, Dict
 from datetime import datetime
 
-# Set stdout to UTF-8 for Windows
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-
 # Crypt locations (check both possible locations)
 WORKSPACE_CRYPT = Path("C:/Users/aaron/.openclaw/workspace/the-crypt")
 SKILLS_CRYPT = Path("C:/Users/aaron/.openclaw/workspace/skills/meeseeks/the-crypt")
 DHARMA_FILE = WORKSPACE_CRYPT / "dharma.md"
+
+# Import dynamic dharma - MANDATORY for Karma-RL
+try:
+    from dynamic_dharma import get_task_dharma
+    DYNAMIC_DHARMA_AVAILABLE = True
+except ImportError:
+    DYNAMIC_DHARMA_AVAILABLE = False
+    print("[inherit_wisdom] WARNING: dynamic_dharma not available", file=sys.stderr)
 
 
 def find_crypt_location(crypt_type: str = "bloodlines") -> Path:
@@ -361,22 +366,27 @@ def inherit_wisdom(
     bloodline: str = "coder",
     task_type: str = None,
     max_ancestors: int = 3,
-    include_dharma: bool = True
+    include_dharma: bool = True,
+    task: str = ""  # NEW: Task description for dynamic dharma
 ) -> str:
     """
     Gather wisdom from ancestors and bloodlines for a new Meeseeks.
     
     Args:
         bloodline: Which bloodline to inherit from (coder, searcher, tester, deployer, desperate, brahman)
-        task_type: Optional task type for more specific ancestors
+        task_type: Optional task type for more specific ancestors (deprecated, use task)
         max_ancestors: Maximum number of ancestors to include
         include_dharma: Whether to include wisdom from dharma.md (default: True)
+        task: Task description for dynamic dharma extraction (NEW - MANDATORY for Karma-RL)
     
     Returns:
         Wisdom string to inject into Meeseeks prompt
     
     Example Output:
         ## 🪦 Ancestral Wisdom
+        
+        ### 🎯 Task-Specific Dharma (Dynamic)
+        [Wisdom from similar ancestors via semantic search]
         
         ### 🕉️ Brahman's Dharma
         [Living wisdom from the dream]
@@ -394,7 +404,16 @@ def inherit_wisdom(
         
         ---
         *Inherit their wisdom. Do not repeat their failures.*
+    
+    KARMA-RL INTEGRATION:
+        If task is provided, ALWAYS calls get_task_dharma() to fetch
+        task-specific wisdom from ancestors using semantic search.
+        This enables real-time karma evaluation during execution.
     """
+    
+    # Use task as task_type if task_type not provided
+    if not task_type and task:
+        task_type = task
     
     # Find crypt locations
     bloodlines_dir = find_crypt_location("bloodlines")
@@ -404,7 +423,20 @@ def inherit_wisdom(
     wisdom_parts = []
     wisdom_parts.append("## 🪦 Ancestral Wisdom\n")
     
-    # 0. Read dharma.md (Brahman's living wisdom) - NEW!
+    # 0. NEW: ALWAYS get task-specific dharma via semantic search (KARMA-RL)
+    # This is MANDATORY for real-time karma evaluation
+    if task and DYNAMIC_DHARMA_AVAILABLE:
+        try:
+            task_dharma = get_task_dharma(task, top_k=5)
+            if task_dharma:
+                wisdom_parts.append("### 🎯 Task-Specific Dharma (Dynamic)\n")
+                wisdom_parts.append("*Wisdom from ancestors who faced similar tasks*\n\n")
+                wisdom_parts.append(task_dharma)
+                wisdom_parts.append("\n\n")
+        except Exception as e:
+            print(f"[inherit_wisdom] Failed to get task dharma: {e}", file=sys.stderr)
+    
+    # 1. Read dharma.md (Brahman's living wisdom)
     if include_dharma:
         dharma_wisdom = read_dharma_wisdom(task_type=task_type)
         if dharma_wisdom:
@@ -413,7 +445,7 @@ def inherit_wisdom(
             wisdom_parts.append(dharma_wisdom)
             wisdom_parts.append("\n\n")
     
-    # 1. Read bloodline wisdom
+    # 2. Read bloodline wisdom
     bloodline_file = bloodlines_dir / f"{bloodline.lower()}-lineage.md"
     bloodline_wisdom = extract_bloodline_wisdom(bloodline_file)
     
@@ -435,7 +467,7 @@ def inherit_wisdom(
                 if line.strip():
                     wisdom_parts.append(f"- {line.strip()}\n")
     
-    # 2. Read and filter ancestors
+    # 3. Read and filter ancestors
     ancestors = read_ancestor_index(ancestors_dir)
     
     if ancestors:
@@ -453,7 +485,7 @@ def inherit_wisdom(
                 insight = ancestor.get("insight", "No insight recorded")
                 wisdom_parts.append(f"**Ancestor {ancestor_id}**: {insight}\n")
     
-    # 3. Closing wisdom
+    # 4. Closing wisdom
     wisdom_parts.append("\n---\n")
     wisdom_parts.append("*Inherit their wisdom. Do not repeat their failures.*\n")
     
@@ -462,17 +494,29 @@ def inherit_wisdom(
 
 # CLI interface for testing
 if __name__ == "__main__":
-    import sys
+    import argparse
     
-    bloodline = sys.argv[1] if len(sys.argv) > 1 else "coder"
-    task_type = sys.argv[2] if len(sys.argv) > 2 else None
+    parser = argparse.ArgumentParser(description="Inherit Wisdom for Meeseeks")
+    parser.add_argument("bloodline", nargs="?", default="coder", help="Bloodline type")
+    parser.add_argument("--task", "-t", type=str, help="Task description for dynamic dharma")
+    parser.add_argument("--task-type", type=str, help="Task type (deprecated, use --task)")
+    parser.add_argument("--max-ancestors", type=int, default=3, help="Max ancestors to include")
+    
+    args = parser.parse_args()
     
     print("=" * 60)
-    print(f"INHERITING WISDOM FOR BLOODLINE: {bloodline.upper()}")
-    if task_type:
-        print(f"TASK TYPE: {task_type}")
+    print(f"INHERITING WISDOM FOR BLOODLINE: {args.bloodline.upper()}")
+    if args.task:
+        print(f"TASK: {args.task[:60]}...")
+    elif args.task_type:
+        print(f"TASK TYPE: {args.task_type}")
     print("=" * 60)
     print()
     
-    wisdom = inherit_wisdom(bloodline=bloodline, task_type=task_type)
+    wisdom = inherit_wisdom(
+        bloodline=args.bloodline,
+        task_type=args.task_type,
+        max_ancestors=args.max_ancestors,
+        task=args.task or ""
+    )
     print(wisdom)
