@@ -322,12 +322,13 @@ python skills/meeseeks/self_improve.py --analyze    # Find code improvements
 python skills/meeseeks/cron_entomb.py --max-age-minutes 60  # Process recent
 ```
 
-### Stats (as of 2026-03-03 14:13)
-- **89 ancestors** entombed
-- **4 dreams** completed
+### Stats (as of 2026-03-03 18:02)
+- **90 ancestors** entombed
+- **5 dreams** completed
 - **50 karma observations** analyzed
 - **10 retry chains** tracked
 - **5 bloodlines**: coder (31), standard (7), tester (5), searcher (4), deployer (3)
+- **Real-time Karma**: ✅ Active (not just post-hoc)
 
 ### Karma Analysis Results
 Principles with 100% success when followed:
