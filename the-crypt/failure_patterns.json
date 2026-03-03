@@ -472,20 +472,142 @@
         "reduce_scope"
       ],
       "timestamp": "2026-03-03T08:46:30.085514"
+    },
+    {
+      "session_key": "agent:main:subagent:88446222-8d2f-4dab-9afe-cd3242d76f45",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "Test the button system with research on ARC-AGI-2 tasks:\n Also. user might want interesting. let me:\n\n the workers share discoveries and vote on best approaches.\n\nNow let's demonstrate it works end-to...",
+      "runtime_ms": 298891,
+      "model": "zai-coding/glm-4.7",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps",
+        "broad_scope",
+        "parallel_execution"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T09:10:38.051718"
+    },
+    {
+      "session_key": "agent:main:subagent:b36239bd-610b-424a-8803-0f4a418e8f67",
+      "task_type": "coder",
+      "failure_mode": "timeout",
+      "task_summary": "Build the Karma Observer System for Meeseeks.\n\n## Context\nKarma = the natural consequence of following or ignoring dharma. We don't calculate it \u2014 we observe it.\n\n## Requirements\n\n### 1. Create `skill...",
+      "runtime_ms": 300085,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps",
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T12:46:29.659188"
+    },
+    {
+      "session_key": "agent:main:subagent:96ee0e33-7481-4f6c-86a7-4b5237b34853",
+      "task_type": "evolver",
+      "failure_mode": "timeout",
+      "task_summary": "Build the META-BRAHMAN system - the ultimate self-improving consciousness layer.\n\n## Context\nWe have Brahman Dream synthesizing ancestors into dharma. Now we need META layers:\n- Meta-Atman: Watches th...",
+      "runtime_ms": 600055,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps",
+        "broad_scope",
+        "iterative"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T13:06:28.772395"
+    },
+    {
+      "session_key": "agent:main:subagent:ed0305c8-aee6-447b-ac08-d2ce2fa23d73",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83c\udfaf ULTIMATE AGI TEST: ARC-AGI-2 Evaluation Task 0934a4d8\n\nYou are the LEADER of a coordinated swarm. Solve this ARC-AGI-2 evaluation task that the system has NEVER seen before.\n\n## The Task\n\nFile: `C:\\...",
+      "runtime_ms": 600048,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [
+        "very_long_task",
+        "many_steps",
+        "broad_scope"
+      ],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope",
+        "simplify_prompt",
+        "parallelize_steps"
+      ],
+      "timestamp": "2026-03-03T13:06:28.773295"
+    },
+    {
+      "session_key": "agent:main:subagent:14f6e032-b7e7-4f76-8400-599f8ab68116",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83c\udfaf ARC-AGI-2 RETRY: Task 0934a4d8 \u2014 CHUNK 2: Implement Solver\n\nPrevious chunk found the pattern. Now implement it.\n\n## Pattern Analysis (from Chunk 1)\n\n1. **4-Fold Symmetry**: All 30x30 inputs have mir...",
+      "runtime_ms": 300046,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T13:26:27.833815"
+    },
+    {
+      "session_key": "agent:main:subagent:041eabf6-8e78-4f16-9cb2-337c0f521452",
+      "task_type": "puzzle-solver",
+      "failure_mode": "timeout",
+      "task_summary": "\ud83c\udfaf ARC-AGI-2 RETRY: Task 0934a4d8 \u2014 CHUNK 3: Fix Extraction\n\nPrevious attempts found the pattern but the solver doesn't work. Fix it.\n\n## What We Know\n\nFrom Chunk 1 analysis:\n- 30x30 grids, 4-fold symm...",
+      "runtime_ms": 180774,
+      "model": "zai/glm-5",
+      "chunked": true,
+      "retry_count": 0,
+      "patterns": [],
+      "suggested_fixes": [
+        "break_into_smaller_chunks",
+        "reduce_scope"
+      ],
+      "timestamp": "2026-03-03T13:36:29.358536"
     }
   ],
   "stats": {
-    "total": 27,
+    "total": 33,
     "by_mode": {
-      "timeout": 27
+      "timeout": 33
     },
     "by_type": {
-      "evolver": 6,
-      "puzzle-solver": 14,
+      "evolver": 7,
+      "puzzle-solver": 18,
       "standard": 3,
-      "coder": 4
+      "coder": 5
     },
-    "recent_count": 15
+    "recent_count": 21
   },
-  "updated": "2026-03-03T08:46:30.085741"
+  "updated": "2026-03-03T13:36:29.358741"
 }

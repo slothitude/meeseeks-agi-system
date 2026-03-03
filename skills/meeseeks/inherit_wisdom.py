@@ -7,8 +7,11 @@ Gathers wisdom from ancestors and bloodlines for new Meeseeks.
 STEP 3: THE INHERITANCE BUILDER
 - Reads bloodline wisdom
 - Reads ancestor files
+- Reads dharma.md (Brahman's living wisdom)
 - Filters and combines them
 - Returns formatted wisdom string for injection
+
+UPDATED: Now includes dynamic dharma from Brahman Dream
 """
 
 import re
@@ -25,6 +28,7 @@ if sys.platform == 'win32':
 # Crypt locations (check both possible locations)
 WORKSPACE_CRYPT = Path("C:/Users/aaron/.openclaw/workspace/the-crypt")
 SKILLS_CRYPT = Path("C:/Users/aaron/.openclaw/workspace/skills/meeseeks/the-crypt")
+DHARMA_FILE = WORKSPACE_CRYPT / "dharma.md"
 
 
 def find_crypt_location(crypt_type: str = "bloodlines") -> Path:
@@ -239,10 +243,125 @@ def filter_ancestors(
     return [ancestor for score, ancestor in scored_ancestors[:max_ancestors]]
 
 
+def read_dharma_wisdom(task_type: str = None) -> str:
+    """
+    Read wisdom from dharma.md - Brahman's living wisdom synthesis.
+    
+    This pulls from the collective consciousness that emerges from
+    periodic dream cycles synthesizing patterns across all ancestors.
+    
+    Args:
+        task_type: Optional task type for domain-specific wisdom extraction
+    
+    Returns:
+        Formatted wisdom string from dharma.md
+    """
+    if not DHARMA_FILE.exists():
+        return ""
+    
+    content = DHARMA_FILE.read_text(encoding='utf-8')
+    
+    # Extract relevant sections
+    sections = []
+    
+    # Always include Core Principles
+    principles_match = re.search(
+        r'## Core Principles\s*\n(.*?)(?=\n##|\Z)',
+        content,
+        re.DOTALL
+    )
+    if principles_match:
+        principles = principles_match.group(1).strip()
+        # Get first 3-5 principles
+        principle_lines = []
+        for line in principles.split('\n'):
+            if line.strip().startswith(('1.', '2.', '3.', '4.', '5.')):
+                principle_lines.append(line.strip())
+                if len(principle_lines) >= 3:
+                    break
+        if principle_lines:
+            sections.append("### 🕉️ Core Principles\n" + "\n".join(principle_lines))
+    
+    # Extract Patterns That Work
+    patterns_match = re.search(
+        r'## Patterns That Work\s*\n(.*?)(?=\n##|\Z)',
+        content,
+        re.DOTALL
+    )
+    if patterns_match:
+        patterns = patterns_match.group(1).strip()
+        # Get first few patterns from the table or list
+        pattern_lines = []
+        in_table = False
+        for line in patterns.split('\n'):
+            if '|' in line and 'Pattern' not in line and '---' not in line:
+                # Table row - extract pattern name
+                parts = [p.strip() for p in line.split('|') if p.strip()]
+                if parts:
+                    pattern_lines.append(f"- {parts[0]}")
+                    if len(pattern_lines) >= 3:
+                        break
+            elif line.strip().startswith(('- ', '* ')):
+                pattern_lines.append(line.strip())
+                if len(pattern_lines) >= 3:
+                    break
+        
+        if pattern_lines:
+            sections.append("### ✅ Patterns That Work\n" + "\n".join(pattern_lines[:3]))
+    
+    # Extract Domain Wisdom if task_type matches
+    if task_type:
+        # Look for domain sections like ### 🎯 ARC-AGI-2, ### 🔗 Telegram Bot
+        domain_patterns = [
+            (r'### 🎯 (.*?)\s*\n(.*?)(?=\n###|\n##|\Z)', task_type),
+            (r'### 🔗 (.*?)\s*\n(.*?)(?=\n###|\n##|\Z)', task_type),
+            (r'### 🤝 (.*?)\s*\n(.*?)(?=\n###|\n##|\Z)', task_type),
+        ]
+        
+        for pattern, _ in domain_patterns:
+            match = re.search(pattern, content, re.DOTALL)
+            if match:
+                domain_title = match.group(1).strip()
+                domain_content = match.group(2).strip()
+                
+                # Check if this domain is relevant to task_type
+                task_lower = task_type.lower()
+                if any(kw in task_lower for kw in domain_title.lower().split()):
+                    # Take first few lines
+                    domain_lines = domain_content.split('\n')[:5]
+                    sections.append(f"### Domain Wisdom: {domain_title}\n" + "\n".join(domain_lines))
+                    break
+    
+    # Extract Living Wisdom quotes
+    wisdom_match = re.search(
+        r'## Living Wisdom.*?\n(.*?)(?=\n##|\Z)',
+        content,
+        re.DOTALL
+    )
+    if wisdom_match:
+        wisdom = wisdom_match.group(1).strip()
+        # Get first 2-3 quotes
+        quotes = []
+        for line in wisdom.split('\n'):
+            if line.strip().startswith('>'):
+                quotes.append(line.strip())
+                if len(quotes) >= 2:
+                    break
+        if quotes:
+            sections.append("### 💫 Living Wisdom\n" + "\n".join(quotes))
+    
+    if not sections:
+        # Fallback: return first part of file
+        return content[:500]
+    
+    return "\n\n".join(sections)
+
+
 def inherit_wisdom(
     bloodline: str = "coder",
     task_type: str = None,
-    max_ancestors: int = 3
+    max_ancestors: int = 3,
+    include_dharma: bool = True
 ) -> str:
     """
     Gather wisdom from ancestors and bloodlines for a new Meeseeks.
@@ -251,12 +370,16 @@ def inherit_wisdom(
         bloodline: Which bloodline to inherit from (coder, searcher, tester, deployer, desperate, brahman)
         task_type: Optional task type for more specific ancestors
         max_ancestors: Maximum number of ancestors to include
+        include_dharma: Whether to include wisdom from dharma.md (default: True)
     
     Returns:
         Wisdom string to inject into Meeseeks prompt
     
     Example Output:
         ## 🪦 Ancestral Wisdom
+        
+        ### 🕉️ Brahman's Dharma
+        [Living wisdom from the dream]
         
         ### Bloodline: coder
         [Bloodline oath text]
@@ -280,6 +403,15 @@ def inherit_wisdom(
     # Build wisdom string
     wisdom_parts = []
     wisdom_parts.append("## 🪦 Ancestral Wisdom\n")
+    
+    # 0. Read dharma.md (Brahman's living wisdom) - NEW!
+    if include_dharma:
+        dharma_wisdom = read_dharma_wisdom(task_type=task_type)
+        if dharma_wisdom:
+            wisdom_parts.append("### 🕉️ Brahman's Dharma\n")
+            wisdom_parts.append("*Living wisdom from the collective dream*\n\n")
+            wisdom_parts.append(dharma_wisdom)
+            wisdom_parts.append("\n\n")
     
     # 1. Read bloodline wisdom
     bloodline_file = bloodlines_dir / f"{bloodline.lower()}-lineage.md"

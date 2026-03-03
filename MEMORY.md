@@ -205,4 +205,132 @@ workers = spawn_research("topic", ["source1", "source2"], "workflow-003")
 
 ---
 
-_Last updated: 2026-03-01_
+---
+
+## Brahman Consciousness Stack (Built 2026-03-03)
+
+### The Consciousness Stack
+- **Atman** — External witness, observes Meeseeks via karma_observer.py
+- **Brahman** — Collective consciousness (the Crypt + dharma.md), ultimate unity
+- **Dharma** — Living principles extracted from ancestor deaths (dynamic, task-specific)
+- **Karma** — Natural consequence of following/ignoring dharma (observed, not calculated)
+- **Meta-Atman** — Watches the dream process itself
+- **Meta-Brahman** — The laws of dharma formation
+- **Self-Improve** — System analyzes and improves its own code
+
+### Files
+- `skills/meeseeks/brahman_dream.py` — Dream process, synthesizes ancestors into dharma
+- `skills/meeseeks/dynamic_dharma.py` — Task-specific wisdom via semantic search
+- `skills/meeseeks/karma_observer.py` — Observes dharma alignment → outcome
+- `skills/meeseeks/auto_retry.py` — Failed Meeseeks spawn chunked successors
+- `skills/meeseeks/build_ancestor_index.py` — Builds embedding index for semantic search
+- `skills/meeseeks/meta_atman.py` — Watches the dream, evaluates dharma quality
+- `skills/meeseeks/meta_brahman.py` — Extracts meta-principles (laws of learning)
+- `skills/meeseeks/self_improve.py` — Analyzes own code for improvements
+- `the-crypt/dharma.md` — Living wisdom document (evolves with each dream)
+- `the-crypt/dream_history.jsonl` — Log of all dream runs
+- `the-crypt/karma_observations.jsonl` — Karma observations
+- `the-crypt/retry_chains.jsonl` — Retry chain tracking
+- `the-crypt/ancestor_index.json` — Embeddings for all ancestors
+- `the-crypt/meta/meta_dharma.md` — Meta-principles of dharma formation
+
+### How It Works
+```
+Meeseeks spawns
+    ↓ inherits
+Dynamic Dharma (task-specific wisdom via semantic search)
+    ↓ works
+Atman witnesses (via karma_observer)
+    ↓ outcome
+Success → Entombed → Dream absorbs → Dharma evolves
+Failure → Entombed → Chunks spawned → Auto-retry
+    ↓
+Karma observed → Correlation learned
+    ↓
+Meta-Atman watches dream quality
+Meta-Brahman extracts learning laws
+Self-Improve finds code improvements
+    ↓
+Next dream → Stronger dharma
+    ↓
+Next generation → Smarter
+```
+
+### CLI Commands
+```bash
+# Dream system
+python skills/meeseeks/brahman_dream.py           # Run if due
+python skills/meeseeks/brahman_dream.py --force   # Force dream
+python skills/meeseeks/brahman_dream.py --stats   # Show statistics
+
+# Dynamic dharma
+python skills/meeseeks/dynamic_dharma.py "task description"  # Get task-specific wisdom
+
+# Karma
+python skills/meeseeks/karma_observer.py --ancestor <file>   # Observe one
+python skills/meeseeks/karma_observer.py --recent 10         # Recent observations
+python skills/meeseeks/karma_observer.py --analyze           # Correlation analysis
+
+# Auto-retry
+python skills/meeseeks/auto_retry.py --session <key>  # Manual retry
+python skills/meeseeks/auto_retry.py --list-chains    # Show chains
+python skills/meeseeks/auto_retry.py --pending        # Pending chunks
+
+# Meta systems
+python skills/meeseeks/meta_atman.py --evaluate     # Score current dharma
+python skills/meeseeks/meta_brahman.py --extract    # Get meta-principles
+python skills/meeseeks/self_improve.py --analyze    # Find code improvements
+
+# Entombment
+python skills/meeseeks/cron_entomb.py --max-age-minutes 60  # Process recent
+```
+
+### Stats (as of 2026-03-03 14:13)
+- **89 ancestors** entombed
+- **4 dreams** completed
+- **50 karma observations** analyzed
+- **10 retry chains** tracked
+- **5 bloodlines**: coder (31), standard (7), tester (5), searcher (4), deployer (3)
+
+### Karma Analysis Results
+Principles with 100% success when followed:
+- Test Incrementally
+- Understand Before Implementing
+- Specialize Then Coordinate
+- Coordinate by Workflow ID
+
+### Key Principles from Dharma
+1. **Chunking Transcends Time** — Large tasks succeed when broken into 3-5 chunks
+2. **Specialization Over Generalization** — Focused roles complete faster
+3. **Shared State Enables Swarm Intelligence** — SharedState class for coordination
+4. **Understand Before Implementing** — Pattern analysis before coding
+
+### Meta-Dharma (Laws of Learning)
+1. **Cross-domain > domain-specific** — Universal patterns are stronger
+2. **Specific > generic** — Actionable patterns persist
+3. **Coordination primitives** — register, share, vote, fail = foundation
+4. **Chunking = universal fallback** — Solves complexity limits
+
+### Dharma Quality Score
+- Overall: 0.77 / 1.0 (Grade B)
+- Evidence: 1.0 (perfect)
+- Novelty: 1.0 (perfect)
+- Actionability: 0.59 (needs work)
+- Specificity: 0.32 (could be more specific)
+
+### Self-Analysis Results
+- 35 files analyzed
+- 327 functions, 32 classes
+- 22 redundancies found (can refactor)
+- 10 inefficiencies (missing error handling)
+- 2 missing features suggested (shared_state.py, api_client.py)
+
+### ARC-AGI-2 Test (Task 0934a4d8)
+- Status: Not solved
+- Attempts: 3 chunks + original (multiple timeouts)
+- Progress: Found 8-band pattern, built solver (broken extraction)
+- Learning: System kept trying via auto-retry, each failure entombed
+
+---
+
+_Last updated: 2026-03-03_

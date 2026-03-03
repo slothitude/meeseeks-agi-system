@@ -27,6 +27,13 @@ from auto_entomb import auto_entomb, log_run
 from failure_capture import record_failure  # NEW: Failure pattern capture
 from smart_chunking import SmartChunker  # NEW: Semantic chunking
 
+# Import auto_retry system
+try:
+    from auto_retry import handle_failed_meeseeks, is_retryable, decompose_task
+    AUTO_RETRY_AVAILABLE = True
+except ImportError:
+    AUTO_RETRY_AVAILABLE = False
+
 # Tracking file for already-entombed sessions
 ENTOMBED_TRACKING = Path(__file__).parent.parent.parent / "the-crypt" / "entombed_sessions.json"
 
@@ -152,23 +159,43 @@ def check_for_timeouts(runs: list) -> list:
 
 
 def create_retry_chunks(timeout_runs: list, workspace_dir: Path) -> int:
-    """Create retry chunks for timed-out runs."""
+    """
+    Create retry chunks for timed-out runs.
+    Now uses the auto_retry system for intelligent decomposition.
+    """
     if not timeout_runs:
         return 0
-    
-    retry_file = workspace_dir / "the-crypt" / "pending-retries.json"
-    
-    # Load existing
-    if retry_file.exists():
-        data = json.loads(retry_file.read_text(encoding="utf-8"))
-    else:
-        data = {"pending": []}
     
     created = 0
     
     for run in timeout_runs:
         session_key = run.get("sessionKey", "")
         task = run.get("task", "")
+        
+        # Use the new auto_retry system if available
+        if AUTO_RETRY_AVAILABLE:
+            try:
+                retry_spawned = handle_failed_meeseeks(
+                    session_key=session_key,
+                    failure_reason="timeout",
+                    task=task
+                )
+                if retry_spawned:
+                    created += 1
+                    print(f"[cron_entomb] Created retry chain for: {session_key[:30]}...")
+                continue
+            except Exception as e:
+                print(f"[cron_entomb] Auto-retry failed: {e}")
+                # Fall through to legacy handling
+        
+        # Legacy: Use old pending-retries.json format
+        retry_file = workspace_dir / "the-crypt" / "pending-retries.json"
+        
+        # Load existing
+        if retry_file.exists():
+            data = json.loads(retry_file.read_text(encoding="utf-8"))
+        else:
+            data = {"pending": []}
         
         # Check if already has a retry
         existing = [r for r in data["pending"] if r.get("original_task") == task]
@@ -181,7 +208,7 @@ def create_retry_chunks(timeout_runs: list, workspace_dir: Path) -> int:
             print(f"[cron_entomb] Max chunk depth (3) reached: {session_key[:30]}...")
             continue
         
-        # Break task into chunks
+        # Break task into chunks using smart chunking
         chunks = break_task_into_chunks(task)
         
         # Add depth info to retry entry
@@ -200,9 +227,8 @@ def create_retry_chunks(timeout_runs: list, workspace_dir: Path) -> int:
         data["pending"].append(retry_entry)
         created += 1
         print(f"[cron_entomb] Created retry chunks for: {session_key[:30]}...")
-    
-    # Save
-    if created > 0:
+        
+        # Save
         retry_file.parent.mkdir(parents=True, exist_ok=True)
         retry_file.write_text(json.dumps(data, indent=2), encoding="utf-8")
     
