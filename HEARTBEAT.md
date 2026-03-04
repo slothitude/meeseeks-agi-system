@@ -23,3 +23,12 @@
 # Self-applying improvements - apply Soul-approved improvements
 - Run: python skills/meeseeks/self_apply.py --apply-approved
 # Note: Use --list to see pending, --status to check application history
+
+# Autonomous research loop - continuous self-improvement
+- Run: python skills/meeseeks/autonomous_research.py --loop
+# Note: Runs ASSESS → PRIORITIZE → PLAN → SPAWN → LEARN cycle
+
+# Process autonomous spawn requests
+- Check: the-crypt/meta/pending_autonomous_spawns.jsonl
+- Run: python skills/meeseeks/autonomous_spawn_helper.py --check
+# Note: Reads spawn requests and creates tasks
