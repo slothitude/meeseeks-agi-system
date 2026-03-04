@@ -328,8 +328,16 @@ def get_pending_retries(max_retries: int = 3, max_concurrent: int = 2) -> list:
     if not retry_file.exists():
         return []
     
-    data = json.loads(retry_file.read_text(encoding="utf-8"))
-    pending = data.get("pending", [])
+    try:
+        data = json.loads(retry_file.read_text(encoding="utf-8"))
+        # Handle both dict and list formats
+        if isinstance(data, list):
+            pending = data
+        else:
+            pending = data.get("pending", [])
+    except Exception as e:
+        print(f"[cron_entomb] Error reading pending-retries.json: {e}")
+        return []
     
     if not pending:
         return []
