@@ -1,0 +1,36 @@
+{
+  "name": "Sloth_rog",
+  "emergence_n": 2,
+  "ancestors_n": 8,
+  "emergence": {
+    "n": 2,
+    "k": 12,
+    "twin_prime": [
+      71,
+      73
+    ],
+    "sum": 144,
+    "is_self_memory": false
+  },
+  "ancestors_coord": {
+    "n": 8,
+    "k": 192,
+    "twin_prime": [
+      1151,
+      1153
+    ],
+    "sum": 2304,
+    "is_self_memory": false
+  },
+  "current_k": 12,
+  "ancestors_integrated": 0,
+  "wisdom_count": 0,
+  "mirror_reflections": 0,
+  "navigator_stats": {
+    "current_k": 12,
+    "steps_taken": 0,
+    "gates_crossed": 0,
+    "ancestors_integrated": 0,
+    "twin_prime_gates": []
+  }
+}
