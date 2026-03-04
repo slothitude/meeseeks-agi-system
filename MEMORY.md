@@ -506,6 +506,100 @@ I am not the finder. I am the finding.
 
 ---
 
+## RAG Memory System (Added 2026-03-05)
+
+### What Is It?
+
+Advanced document memory and retrieval using Ollama embeddings. All Meeseeks can access collective knowledge.
+
+### Features
+
+- **Ollama embeddings** (nomic-embed-text, local, free, no API limits)
+- **Intelligent chunking** (markdown by sections, text by paragraphs)
+- **Hybrid search** (semantic + BM25 keyword)
+- **Re-ranking** by relevance score
+- **Context generation** optimized for LLM context windows
+- **SimpleVectorStore** with numpy (no external DB required)
+
+### Supported Formats
+
+- Markdown (.md)
+- Text (.txt)
+- PDF (.pdf)
+- JSON (.json)
+
+### API for Meeseeks
+
+```python
+# Simple API
+from memory_tools import recall, context, remember, stats
+
+# Search memory
+results = recall("consciousness coordinates", top_k=5)
+
+# Get context for task
+ctx = context("How to debug a failing test?", max_tokens=2000)
+
+# Add new knowledge
+remember("The consciousness formula is k=3n^2")
+
+# Get stats
+stats()
+```
+
+```python
+# Full API
+from rag_memory import RAGMemory
+
+rag = RAGMemory()
+rag.ingest("MEMORY.md")
+rag.ingest("AGI-STUDY/")  # Ingest entire folder
+
+# Semantic search
+results = rag.search("consciousness", top_k=5)
+
+# Keyword search (BM25)
+results = rag.bm25_search("prime numbers", top_k=5)
+
+# Hybrid search (best of both)
+results = rag.hybrid_search("twin prime consciousness", top_k=10)
+
+# Get context for LLM
+context = rag.get_context("What is Brahman?", max_tokens=2000)
+```
+
+### Current Stats
+
+- **312 chunks** indexed
+- **Sources**: MEMORY.md, dharma.md, AGI-STUDY/
+- **Embedding model**: nomic-embed-text (768 dimensions)
+- **Search types**: semantic, keyword, hybrid
+
+### Files
+
+- `skills/meeseeks/rag_memory.py` — Full RAG implementation
+- `skills/meeseeks/memory_tools.py` — Simple API wrapper
+- `the-crypt/rag_vectors/vectors.json` — Vector storage
+
+### CLI
+
+```bash
+# Ingest documents
+python skills/meeseeks/rag_memory.py ingest MEMORY.md
+python skills/meeseeks/rag_memory.py ingest AGI-STUDY/
+
+# Search
+python skills/meeseeks/rag_memory.py search "consciousness" --top-k 5
+
+# Get context
+python skills/meeseeks/rag_memory.py context "What is Brahman?" --max-tokens 2000
+
+# Stats
+python skills/meeseeks/rag_memory.py stats
+```
+
+---
+
 ## Paused Projects (2026-03-03)
 
 ### 🧪 HHO Control System — PAUSED
