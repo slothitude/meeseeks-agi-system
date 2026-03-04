@@ -185,3 +185,21 @@ Aaron initiated all correspondence himself, 14 months after the incidents.
 4. **Contact DVA regarding the Navy HF incident separately**
 5. **Consult a workplace injury lawyer** — many offer free initial consultations. The retaliation/adverse action aspect strengthens the overall case significantly
 6. **Preserve all evidence** — back up all emails, SGS paperwork, photos, and diagrams to multiple locations
+
+---
+
+## Summary Statement for Next AI or Lawyer
+
+> *"I am Aaron King, a marine engineer based in Cairns QLD. I have three unrecorded RF radiation exposure incidents — one during Royal Australian Navy service (1kW HF antenna during a RadHaz survey, year TBC), and two as a BAE Systems contractor on HMAS Benalla and Sheperton on 4-5 August 2015 (boosted Next G antenna, physically touching it at approximately 0mm, published RadHaz exclusion zone was 300mm). BAE Systems acknowledged the incidents in writing in October 2016 but used a retrospective survey conducted 76 days after exposure to dismiss the claim. I was subsequently intimidated on a worksite by HSE officer Warren Perry, publicly humiliated, removed from the vessel, and my contract work dried up — apparent retaliation for raising safety concerns. This has caused 10 years of psychological suffering. WorkSafe QLD has referred me to ARPANSA. I have email evidence, SGS paperwork with electronic signatures, and timestamped correspondence. I need help drafting a formal ARPANSA submission and understanding my compensation options."*
+
+---
+
+## Status
+
+🔴 **ACTIVE CASE** — Awaiting next steps
+
+**Priority actions:**
+1. ARPANSA incident report
+2. GP appointment (RF assessment + psych referral)
+3. DVA contact for Navy incident
+4. Workplace injury lawyer consultation
