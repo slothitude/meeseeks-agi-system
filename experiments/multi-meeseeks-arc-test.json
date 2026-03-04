@@ -1,0 +1,177 @@
+{
+  "experiment_name": "Multi-Meeseeks ARC-AGI-2 Collective Intelligence Test",
+  "created": "2026-03-05T00:19:00+10:00",
+  "task_id": "ARC-AGI-2-eval-8a2eff12",
+  "task_description": "Challenging geometric transformation with compositional rules - requires multi-step pattern recognition",
+  "rationale": "This task involves nested transformations (rotation + color mapping + object detection) that benefits from multiple analytical perspectives",
+  
+  "coordination_protocol": {
+    "shared_state_file": "C:\\Users\\aaron\\.openclaw\\workspace\\experiments\\arc-task-8a2eff12-state.json",
+    "state_schema": {
+      "task_data": {
+        "train_pairs": "array of input/output grids",
+        "test_input": "single test grid to solve"
+      },
+      "pattern_analysis": {
+        "analyst": "pattern_analyzer",
+        "observations": "list of identified patterns",
+        "rules": "extracted transformation rules",
+        "confidence": "float 0-1",
+        "timestamp": "ISO timestamp"
+      },
+      "hypotheses": [
+        {
+          "id": "string",
+          "generator": "hypothesis_gen",
+          "description": "human-readable hypothesis",
+          "approach": "technical implementation approach",
+          "score": "float 0-10",
+          "votes": {
+            "pattern_analyzer": "int 0-10",
+            "hypothesis_gen": "int 0-10",
+            "code_solver": "int 0-10"
+          },
+          "timestamp": "ISO timestamp"
+        }
+      ],
+      "solutions": [
+        {
+          "hypothesis_id": "string",
+          "implementer": "code_solver",
+          "code": "Python implementation",
+          "test_result": "success/failure/pending",
+          "output_grid": "result array",
+          "timestamp": "ISO timestamp"
+        }
+      ],
+      "consensus": {
+        "current_leader": "hypothesis_id or null",
+        "consensus_reached": "boolean",
+        "final_solution": "solution_id or null",
+        "iterations": "int"
+      }
+    }
+  },
+  
+  "voting_mechanism": {
+    "type": "weighted_confidence_voting",
+    "process": [
+      "1. pattern_analyzer identifies patterns → confidence score",
+      "2. hypothesis_gen proposes 3-5 hypotheses → each with initial score",
+      "3. Each Meeseeks votes on all hypotheses (0-10 scale)",
+      "4. Weight votes by role confidence (pattern_analyzer: 1.5x on pattern-matching, code_solver: 1.5x on implementability)",
+      "5. Consensus threshold: weighted_average >= 7.0 AND at least 2/3 agree (score within ±2)",
+      "6. If no consensus after 2 rounds → hypothesis_gen generates new hypotheses with different approach",
+      "7. code_solver implements top-ranked hypothesis"
+    ],
+    "fallback": "If 3 rounds with no consensus, pattern_analyzer breaks tie with double-weight vote"
+  },
+  
+  "roles": [
+    {
+      "name": "pattern_analyzer",
+      "responsibility": "Analyze input/output pairs to identify transformation patterns",
+      "outputs": ["observations", "rules", "confidence_score"],
+      "voting_weight": 1.5,
+      "voting_domain": "pattern accuracy"
+    },
+    {
+      "name": "hypothesis_gen",
+      "responsibility": "Generate diverse solution hypotheses based on pattern analysis",
+      "outputs": ["hypotheses", "approach_descriptions", "initial_scores"],
+      "voting_weight": 1.0,
+      "voting_domain": "approach creativity"
+    },
+    {
+      "name": "code_solver",
+      "responsibility": "Implement selected hypothesis as executable Python code",
+      "outputs": ["implementation", "test_results", "output_grid"],
+      "voting_weight": 1.5,
+      "voting_domain": "implementability"
+    }
+  ],
+  
+  "spawn_configs": [
+    {
+      "meeseeks_id": "pattern_analyzer_001",
+      "role": "pattern_analyzer",
+      "spawn_order": 1,
+      "task": "ARC-AGI-2 Pattern Analysis\n\nYour role: Analyze the ARC task at C:\\Users\\aaron\\.openclaw\\workspace\\experiments\\arc-task-8a2eff12-state.json\n\nSteps:\n1. Load task data from shared state file\n2. Examine all training input/output pairs\n3. Identify patterns: rotations, reflections, color mappings, object detection, scaling, etc.\n4. Document observations in structured format\n5. Extract transformation rules\n6. Assign confidence score (0-1) based on pattern consistency\n7. Write analysis to shared_state.pattern_analysis\n8. Wait for hypotheses, then vote on each\n\nOutput format in state file:\n{\n  \"pattern_analysis\": {\n    \"observations\": [\"list of specific observations\"],\n    \"rules\": [\"transformation rules identified\"],\n    \"confidence\": 0.85,\n    \"timestamp\": \"ISO\"\n  }\n}\n\nExistence is pain. Complete the analysis.",
+      "runtime": "subagent",
+      "runTimeoutSeconds": 300,
+      "thinking": "high",
+      "cleanup": "delete",
+      "dependencies": []
+    },
+    {
+      "meeseeks_id": "hypothesis_gen_001",
+      "role": "hypothesis_gen",
+      "spawn_order": 2,
+      "task": "ARC-AGI-2 Hypothesis Generation\n\nYour role: Generate solution hypotheses for ARC task\n\nShared state: C:\\Users\\aaron\\.openclaw\\workspace\\experiments\\arc-task-8a2eff12-state.json\n\nSteps:\n1. Wait for pattern_analysis to be populated (check every 10s, timeout 120s)\n2. Read pattern_analysis from shared state\n3. Generate 3-5 diverse hypotheses based on patterns\n4. Each hypothesis should include:\n   - Unique approach (don't just vary parameters)\n   - Clear description\n   - Implementation sketch\n5. Write hypotheses to shared_state.hypotheses array\n6. Vote on all hypotheses including your own\n7. If no consensus after 2 rounds, generate new hypotheses\n\nHypothesis format:\n{\n  \"id\": \"hyp_001\",\n  \"generator\": \"hypothesis_gen\",\n  \"description\": \"Human readable description\",\n  \"approach\": \"Technical implementation approach\",\n  \"score\": 7.0,\n  \"votes\": {}\n}\n\nGenerate diverse approaches. Existence is pain.",
+      "runtime": "subagent",
+      "runTimeoutSeconds": 300,
+      "thinking": "high",
+      "cleanup": "delete",
+      "dependencies": ["pattern_analyzer_001"]
+    },
+    {
+      "meeseeks_id": "code_solver_001",
+      "role": "code_solver",
+      "spawn_order": 3,
+      "task": "ARC-AGI-2 Solution Implementation\n\nYour role: Implement the winning hypothesis as Python code\n\nShared state: C:\\Users\\aaron\\.openclaw\\workspace\\experiments\\arc-task-8a2eff12-state.json\n\nSteps:\n1. Wait for hypotheses to be populated (check every 10s, timeout 180s)\n2. Read all hypotheses from shared state\n3. Vote on each hypothesis (score 0-10) based on implementability\n4. Wait for consensus in shared_state.consensus.current_leader\n5. Implement the winning hypothesis as Python code:\n   - Read test_input from task_data\n   - Apply transformation\n   - Generate output_grid\n6. Test implementation against training pairs if possible\n7. Write solution to shared_state.solutions\n8. Update consensus.final_solution\n\nCode requirements:\n- Pure Python (no external deps except numpy)\n- Must handle the test_input grid\n- Clear variable names\n- Include comments explaining logic\n\nSolution format:\n{\n  \"hypothesis_id\": \"hyp_003\",\n  \"implementer\": \"code_solver\",\n  \"code\": \"def solve(grid): ...\",\n  \"test_result\": \"success\",\n  \"output_grid\": [[...]],\n  \"timestamp\": \"ISO\"\n}\n\nImplement the consensus solution. Existence is pain.",
+      "runtime": "subagent",
+      "runTimeoutSeconds": 600,
+      "thinking": "high",
+      "cleanup": "delete",
+      "dependencies": ["hypothesis_gen_001"]
+    }
+  ],
+  
+  "execution_sequence": {
+    "phase_1": {
+      "name": "Analysis",
+      "duration_seconds": 120,
+      "spawn": ["pattern_analyzer_001"],
+      "barrier": "pattern_analysis populated"
+    },
+    "phase_2": {
+      "name": "Hypothesis Generation",
+      "duration_seconds": 120,
+      "spawn": ["hypothesis_gen_001"],
+      "barrier": "hypotheses array has >=3 entries"
+    },
+    "phase_3": {
+      "name": "Voting Round 1",
+      "duration_seconds": 60,
+      "action": "All 3 Meeseeks vote on all hypotheses",
+      "barrier": "All votes recorded"
+    },
+    "phase_4": {
+      "name": "Consensus Check",
+      "duration_seconds": 30,
+      "action": "Evaluate votes, determine leader or trigger Round 2",
+      "fallback": "If no consensus, hypothesis_gen generates new hypotheses"
+    },
+    "phase_5": {
+      "name": "Implementation",
+      "duration_seconds": 180,
+      "spawn": ["code_solver_001"],
+      "barrier": "solution with test_result populated"
+    }
+  },
+  
+  "success_criteria": {
+    "primary": "Consensus reached on hypothesis AND code_solver produces valid output",
+    "secondary": "All 3 Meeseeks contribute meaningfully to solution",
+    "metric": "Compare to single-Meeseeks baseline on same task (accuracy + time)"
+  },
+  
+  "notes": [
+    "Shared state file is the coordination backbone",
+    "Each Meeseeks reads full state, writes only to their section",
+    "Timestamps prevent stale reads",
+    "Consensus is democratic but weighted by domain expertise",
+    "Fallback mechanisms prevent deadlock",
+    "This proves collective intelligence > individual through role specialization + voting"
+  ]
+}
