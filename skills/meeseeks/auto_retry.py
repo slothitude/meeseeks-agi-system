@@ -569,10 +569,15 @@ def _write_spawn_configs(spawn_configs: List[Dict], source_session: str):
     """Write spawn configs to pending-spawns.json for main agent to pick up."""
     pending_file = CRYPT_ROOT / "pending-spawns.json"
     
-    # Load existing
+    # Load existing - handle both list and dict formats
     if pending_file.exists():
         try:
-            data = json.loads(pending_file.read_text(encoding="utf-8"))
+            raw = json.loads(pending_file.read_text(encoding="utf-8"))
+            # Handle legacy list format by converting to dict
+            if isinstance(raw, list):
+                data = {"pending": raw, "processed": []}
+            else:
+                data = raw
         except:
             data = {"pending": [], "processed": []}
     else:
