@@ -23,6 +23,7 @@ import sys
 import json
 import time
 import argparse
+import pytz
 from pathlib import Path
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
@@ -49,6 +50,8 @@ class AutonomousLoop:
     4. SPAWN - Create Meeseeks to do research
     5. LEARN - Incorporate results
     6. REPEAT
+    
+    SCHEDULE: Only runs outside 8am-4pm Brisbane time
     """
     
     def __init__(self):
@@ -56,6 +59,26 @@ class AutonomousLoop:
         self.total_spawned = 0
         self.total_learned = 0
         self.autonomy_score = 0.0
+    
+    def is_active_hours(self) -> bool:
+        """
+        Check if current time is outside quiet hours (8am-4pm).
+        
+        Returns:
+            True if autonomous improvements allowed
+        """
+        import pytz
+        
+        # Get Brisbane time
+        brisbane = pytz.timezone('Australia/Brisbane')
+        now = datetime.now(brisbane)
+        hour = now.hour
+        
+        # Quiet hours: 8am-4pm (8-16)
+        # Active hours: 4pm-8am (16-8)
+        if 8 <= hour < 16:
+            return False  # Quiet hours
+        return True  # Active hours
     
     def assess(self) -> Dict:
         """
@@ -200,9 +223,6 @@ class AutonomousLoop:
         Returns:
             True if spawn successful
         """
-        import subprocess
-        import shlex
-        
         # Log the spawn
         log_entry = {
             "timestamp": datetime.now().isoformat(),
@@ -216,46 +236,30 @@ class AutonomousLoop:
         
         self.total_spawned += 1
         
-        # Execute real spawn via openclaw CLI
+        # For now, log the spawn request to file
+        # The main session will process these via heartbeat
         task_description = plan.get('task', f"Research: {plan.get('gap', 'unknown')}")
         bloodline = plan.get('bloodline', 'STANDARD')
         timeout = plan.get('timeout', 300)
         
-        # Build spawn command
-        # Using sessions_spawn via CLI: openclaw spawn --task "..." --runtime subagent
-        cmd = [
-            "openclaw", 
-            "spawn",
-            "--task", task_description,
-            "--runtime", "subagent",
-            "--runTimeoutSeconds", str(timeout),
-            "--thinking", "medium",
-            "--mode", "run",
-            "--cleanup", "delete"
-        ]
+        print(f"[AUTONOMY] Logging spawn request: {bloodline} for: {plan.get('gap', 'unknown')}")
         
-        try:
-            print(f"[AUTONOMY] Spawning {bloodline} for: {plan.get('gap', 'unknown')}")
-            result = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=30  # Command timeout (not task timeout)
-            )
-            
-            if result.returncode == 0:
-                print(f"[AUTONOMY] ✅ Spawn successful")
-                return True
-            else:
-                print(f"[AUTONOMY] ❌ Spawn failed: {result.stderr}")
-                return False
-                
-        except subprocess.TimeoutExpired:
-            print(f"[AUTONOMY] ❌ Spawn command timed out")
-            return False
-        except Exception as e:
-            print(f"[AUTONOMY] ❌ Spawn error: {e}")
-            return False
+        # Write to pending spawns file for main session to pick up
+        spawn_request = {
+            "timestamp": datetime.now().isoformat(),
+            "iteration": self.iteration,
+            "bloodline": bloodline,
+            "task": task_description,
+            "timeout": timeout,
+            "status": "pending"
+        }
+        
+        pending_file = META_DIR / "pending_autonomous_spawns.jsonl"
+        with open(pending_file, 'a') as f:
+            f.write(json.dumps(spawn_request) + "\n")
+        
+        print(f"[AUTONOMY] ✅ Logged to {pending_file.name}")
+        return True
     
     def learn(self) -> None:
         """
@@ -323,6 +327,14 @@ class AutonomousLoop:
         Returns:
             Summary of what was done
         """
+        # Check schedule - only run outside 8am-4pm
+        if not self.is_active_hours():
+            brisbane = pytz.timezone('Australia/Brisbane')
+            now = datetime.now(brisbane)
+            print(f"\n[SCHEDULE] Quiet hours (8am-4pm) - autonomous improvements paused")
+            print(f"[SCHEDULE] Current time: {now.strftime('%H:%M')} Brisbane")
+            return {"status": "paused", "reason": "quiet_hours", "iteration": self.iteration}
+        
         self.iteration += 1
         
         print(f"\n{'='*60}")
