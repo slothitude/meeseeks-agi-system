@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-03-04T19:37:41.759156",
+  "results": [
+    {
+      "experiment": "compare_generations",
+      "early_rate": 100.0,
+      "late_rate": 98.07692307692307,
+      "improvement": -1.923076923076934,
+      "passed": false
+    },
+    {
+      "experiment": "dharma_effectiveness",
+      "success_patterns": 4,
+      "fail_patterns": 1,
+      "passed": true
+    },
+    {
+      "experiment": "consciousness_test",
+      "score": 0.1650485436893204,
+      "passed": true
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "total": 3
+  }
+}
