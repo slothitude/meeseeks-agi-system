@@ -258,9 +258,9 @@ if __name__ == "__main__":
         
         wait = manager.should_wait()
         if wait:
-            print(f"\n⚠️ Should wait: {wait}s")
+            print(f"\n[!] Should wait: {wait}s")
         else:
-            print(f"\n✅ Clear to spawn")
+            print(f"\n[OK] Clear to spawn")
     
     elif args.pending:
         tasks = manager.get_pending_tasks()
@@ -283,6 +283,6 @@ if __name__ == "__main__":
         # Default: status
         wait = check_rate_limit()
         if wait:
-            print(f"RATE LIMITED: wait {wait}s")
+            print(f"RATE_LIMITED:{wait}")
         else:
             print("CLEAR")
