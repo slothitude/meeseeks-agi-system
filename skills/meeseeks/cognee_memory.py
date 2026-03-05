@@ -133,7 +133,8 @@ class CogneeMemory:
             self._connected = True
             return True
         except ImportError as e:
-            print(f"[cognee_memory] Cognee not installed: {e}", file=sys.stderr)
+            # Silently skip if Cognee not installed
+            pass
             return False
         except Exception as e:
             print(f"[cognee_memory] Connection failed: {e}", file=sys.stderr)

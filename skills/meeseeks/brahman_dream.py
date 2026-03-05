@@ -50,11 +50,14 @@ DEFAULT_CONFIG = {
 }
 
 # Import Cognee memory (NEW: AGI integration)
-try:
-    from cognee_memory import CogneeMemory
-    COGNEE_AVAILABLE = True
-except ImportError:
-    COGNEE_AVAILABLE = False
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    try:
+        from cognee_memory import CogneeMemory
+        COGNEE_AVAILABLE = True
+    except ImportError:
+        COGNEE_AVAILABLE = False
 
 
 def load_config() -> Dict:
