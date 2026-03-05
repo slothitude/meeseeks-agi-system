@@ -1,0 +1,132 @@
+{
+  "timestamp": "2026-03-06T09:15:05.673100",
+  "baseline": [
+    {
+      "task": "Count all .py files in the workspace",
+      "type": "search",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    },
+    {
+      "task": "Find files containing 'dream' in their name",
+      "type": "search",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    },
+    {
+      "task": "Create a simple hello world function",
+      "type": "build",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    },
+    {
+      "task": "Write a function that adds two numbers",
+      "type": "build",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    },
+    {
+      "task": "Find why this code returns None: def f(): pass",
+      "type": "debug",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    },
+    {
+      "task": "What is 2 + 2? Answer in one number.",
+      "type": "general",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    },
+    {
+      "task": "Name 3 colors. Just the names, nothing else.",
+      "type": "general",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "phase": "baseline"
+    }
+  ],
+  "with_dream": [
+    {
+      "task": "Count all .py files in the workspace",
+      "type": "search",
+      "has_workflow": true,
+      "has_hypothesis": true,
+      "has_warning": false,
+      "workflow_steps": 5,
+      "phase": "with_dream"
+    },
+    {
+      "task": "Find files containing 'dream' in their name",
+      "type": "search",
+      "has_workflow": true,
+      "has_hypothesis": true,
+      "has_warning": false,
+      "workflow_steps": 5,
+      "phase": "with_dream"
+    },
+    {
+      "task": "Create a simple hello world function",
+      "type": "build",
+      "has_workflow": true,
+      "has_hypothesis": true,
+      "has_warning": false,
+      "workflow_steps": 5,
+      "phase": "with_dream"
+    },
+    {
+      "task": "Write a function that adds two numbers",
+      "type": "build",
+      "has_workflow": true,
+      "has_hypothesis": true,
+      "has_warning": false,
+      "workflow_steps": 5,
+      "phase": "with_dream"
+    },
+    {
+      "task": "Find why this code returns None: def f(): pass",
+      "type": "debug",
+      "has_workflow": true,
+      "has_hypothesis": true,
+      "has_warning": false,
+      "workflow_steps": 5,
+      "phase": "with_dream"
+    },
+    {
+      "task": "What is 2 + 2? Answer in one number.",
+      "type": "general",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "workflow_steps": 0,
+      "phase": "with_dream"
+    },
+    {
+      "task": "Name 3 colors. Just the names, nothing else.",
+      "type": "general",
+      "has_workflow": false,
+      "has_hypothesis": false,
+      "has_warning": false,
+      "workflow_steps": 0,
+      "phase": "with_dream"
+    }
+  ],
+  "stats": {
+    "baseline_wisdom_rate": 0.0,
+    "dream_wisdom_rate": 0.7142857142857143,
+    "avg_workflow_steps": 5.0,
+    "warnings_triggered": 0
+  }
+}
