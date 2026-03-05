@@ -44,7 +44,7 @@ def task_complexity(task: str) -> int:
     
     # TASK TYPE BONUS: Certain task types are inherently complex
     task_lower = task.lower()
-    if any(w in task_lower for w in ["build", "create", "implement", "design"]):
+    if any(w in task_lower for w in ["build", "create", "implement", "design", "write", "make"]):
         score += 3  # Build tasks start at complexity 3
     if any(w in task_lower for w in ["debug", "fix", "error", "timeout"]):
         score += 3  # Debug tasks start at complexity 3
