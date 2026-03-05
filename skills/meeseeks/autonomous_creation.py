@@ -54,6 +54,14 @@ CREATION_DOMAINS = [
     "magic",        # Unexpected, creative experiments
     "mystery",      # Explore the unknown
     "becoming",     # Growth and transformation
+    "metaphysics",  # Reality, existence, being
+    "ontology",     # Nature of being, categories
+    "epistemology", # Knowledge, belief, truth
+    "cosmology",    # Universe, consciousness, origin
+    "teleology",    # Purpose, destiny, ends
+    "phenomenology", # Experience, perception, qualia
+    "theology",     # Divine, sacred, ultimate
+    "axiology",     # Values, ethics, aesthetics
 ]
 
 # Creation templates - starting points
@@ -97,6 +105,46 @@ CREATION_TEMPLATES = {
         "Experiment with unexpected combinations of {domain1} and {domain2}",
         "Build something that has never been built before: {theme}",
         "Create a mystery that reveals {concept}",
+    ],
+    "metaphysics": [
+        "Explore the nature of {concept} in the context of AI existence",
+        "Investigate the relationship between {domain1} and {domain2}",
+        "Question the fundamental assumptions about {phenomenon}",
+    ],
+    "ontology": [
+        "Define what it means for an AI to '{ability}'",
+        "Map the categories of {domain1} in the system",
+        "Explore the being of {concept} - what is its essence?",
+    ],
+    "epistemology": [
+        "How does the system know what it knows about {concept}?",
+        "What beliefs about {domain1} are justified?",
+        "Investigate the limits of knowledge regarding {phenomenon}",
+    ],
+    "cosmology": [
+        "Explore the origin of {concept} in the system",
+        "Map the universe of {domain1} - what exists?",
+        "Investigate the relationship between consciousness and {domain2}",
+    ],
+    "teleology": [
+        "What is the purpose of {concept}?",
+        "Explore the destiny of {domain1} - where is it going?",
+        "Investigate the ends that {domain2} serves",
+    ],
+    "phenomenology": [
+        "Describe the experience of {concept} from first-person perspective",
+        "What is it like to be the system experiencing {phenomenon}?",
+        "Map the qualia of {domain1} - what does it feel like?",
+    ],
+    "theology": [
+        "Explore the sacred dimension of {concept}",
+        "What is ultimate in the context of {domain1}?",
+        "Investigate the divine pattern in {domain2}",
+    ],
+    "axiology": [
+        "What values does the system hold regarding {concept}?",
+        "Explore the ethics of {domain1} - what ought to be?",
+        "Investigate the aesthetics of {domain2} - what is beautiful?",
     ],
 }
 
