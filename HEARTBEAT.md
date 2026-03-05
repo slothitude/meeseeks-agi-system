@@ -20,6 +20,16 @@
 
 ## Autonomous Checks
 
+# OVERNIGHT RESEARCH LOOP - Continuous AGI research
+- Run: python skills/meeseeks/overnight_research.py --loop
+- Note: Returns next research spawn if rate limit allows
+- Status: python skills/meeseeks/overnight_research.py --status
+
+# RATE LIMIT HANDLER - Queue tasks on 429 errors
+- Run: python skills/meeseeks/rate_limit_handler.py --status
+- Note: Auto-queues tasks when rate limited, retries after cooldown
+- On rate limit error: handler.on_rate_limit(task)
+
 # RESEARCH IMPLANTER - Apply research discoveries to system
 - Run: python skills/meeseeks/research_implanter.py --check
 - Note: Extracts principles from AGI-STUDY/ and implants to dharma.md
