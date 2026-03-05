@@ -63,14 +63,24 @@ class RateLimitManager:
         
         # Log it
         RATE_LIMIT_LOG.parent.mkdir(parents=True, exist_ok=True)
+        entry = {
+            "timestamp": datetime.now().isoformat(),
+            "task": task[:100] if task else None,
+            "backoff_seconds": self.current_backoff,
+            "consecutive": self.consecutive_limits
+        }
         with open(RATE_LIMIT_LOG, 'a', encoding='utf-8') as f:
-            json.dump({
-                "timestamp": datetime.now().isoformat(),
-                "task": task[:100] if task else None,
-                "backoff_seconds": self.current_backoff,
-                "consecutive": self.consecutive_limits
-            }, f)
+            json.dump(entry, f)
             f.write('\n')
+        
+        # Also save state for persistence
+        state_file = RATE_LIMIT_LOG.parent / "rate_limit_state.json"
+        with open(state_file, 'w', encoding='utf-8') as f:
+            json.dump({
+                "last_rate_limit": self.last_rate_limit.isoformat(),
+                "consecutive_limits": self.consecutive_limits,
+                "current_backoff": self.current_backoff
+            }, f)
     
     def should_wait(self) -> Optional[int]:
         """Check if we should wait before next request"""
@@ -150,6 +160,18 @@ def get_manager() -> RateLimitManager:
     global _manager
     if _manager is None:
         _manager = RateLimitManager()
+        # Load persisted state
+        state_file = RATE_LIMIT_LOG.parent / "rate_limit_state.json"
+        if state_file.exists():
+            try:
+                with open(state_file, 'r', encoding='utf-8') as f:
+                    state = json.load(f)
+                    if state.get("last_rate_limit"):
+                        _manager.last_rate_limit = datetime.fromisoformat(state["last_rate_limit"])
+                    _manager.consecutive_limits = state.get("consecutive_limits", 0)
+                    _manager.current_backoff = state.get("current_backoff", RATE_LIMIT_COOLDOWN)
+            except:
+                pass
     return _manager
 
 
