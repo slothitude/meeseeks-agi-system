@@ -6,6 +6,10 @@
 
 ## Periodic Tasks
 
+# AUTO-COMPACT: Prevent context overflow (every heartbeat)
+- Run: python skills/meeseeks/auto_compact.py --check --max-size 10
+- Note: Keeps MEMORY.md under 10KB, archives excess to memory/archive/
+
 # Auto-entomb completed Meeseeks (every heartbeat)
 - Run: python skills/meeseeks/cron_entomb.py --max-age-minutes 60
 
