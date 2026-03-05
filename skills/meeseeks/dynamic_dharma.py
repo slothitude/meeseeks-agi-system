@@ -42,7 +42,18 @@ def task_complexity(task: str) -> int:
     """
     score = 0
     
-    # Word count
+    # TASK TYPE BONUS: Certain task types are inherently complex
+    task_lower = task.lower()
+    if any(w in task_lower for w in ["build", "create", "implement", "design"]):
+        score += 3  # Build tasks start at complexity 3
+    if any(w in task_lower for w in ["debug", "fix", "error", "timeout"]):
+        score += 3  # Debug tasks start at complexity 3
+    if any(w in task_lower for w in ["analyze", "review", "examine"]):
+        score += 2  # Analysis tasks start at complexity 2
+    if any(w in task_lower for w in ["search", "find", "locate", "count"]):
+        score += 2  # Search tasks start at complexity 2
+    
+    # Word count (add to base score)
     words = len(task.split())
     if words <= 5:
         score += 0  # Very simple
@@ -51,24 +62,20 @@ def task_complexity(task: str) -> int:
     elif words <= 20:
         score += 2
     elif words <= 40:
-        score += 4
+        score += 3
     else:
-        score += 6
+        score += 4
     
     # Multiple steps?
-    if re.search(r'\d+\.|\bthen\b|\bafter\b|\bfirst\b|\bnext\b', task.lower()):
-        score += 2
-    
-    # Multiple domains/files?
-    if re.search(r'\band\b|\balso\b|\bplus\b|\bmultiple\b', task.lower()):
+    if re.search(r'\d+\.|\bthen\b|\bafter\b|\bfirst\b|\bnext\b', task_lower):
         score += 1
     
-    # Code/build keywords (complex actions)
-    if re.search(r'build|create|implement|design|refactor|debug|fix|architect', task.lower()):
-        score += 2
+    # Multiple domains/files?
+    if re.search(r'\band\b|\balso\b|\bplus\b|\bmultiple\b', task_lower):
+        score += 1
     
     # Simple format constraints (actually make it EASIER)
-    if re.search(r'\b(one word|3 words|single|exactly|just)\b', task.lower()):
+    if re.search(r'\b(one word|3 words|single|exactly|just)\b', task_lower):
         score -= 2
     
     return max(0, min(score, 10))
@@ -78,6 +85,9 @@ WORKSPACE = Path("C:/Users/aaron/.openclaw/workspace")
 CRYPT_ROOT = WORKSPACE / "the-crypt"
 ANCESTORS_DIR = CRYPT_ROOT / "ancestors"
 DHARMA_FILE = CRYPT_ROOT / "dharma.md"
+WORKFLOWS_FILE = CRYPT_ROOT / "workflows.json"
+HYPOTHESES_FILE = CRYPT_ROOT / "hypotheses.json"
+SIGNALS_FILE = CRYPT_ROOT / "signals.json"
 ANCESTOR_INDEX = CRYPT_ROOT / "ancestor_index.json"
 EMBEDDINGS_FILE = CRYPT_ROOT / "embeddings" / "ancestor_embeddings.json"
 
@@ -232,6 +242,48 @@ def extract_patterns_from_ancestor(ancestor_path: Path) -> Tuple[str, List[str],
     return task, patterns, outcome
 
 
+def load_workflows() -> List[Dict[str, Any]]:
+    """Load workflow checklists from dream v2."""
+    if WORKFLOWS_FILE.exists():
+        with open(WORKFLOWS_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
+
+
+def load_hypotheses() -> List[Dict[str, Any]]:
+    """Load testable hypotheses from dream v2."""
+    if HYPOTHESES_FILE.exists():
+        with open(HYPOTHESES_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
+
+
+def load_signals() -> List[Dict[str, Any]]:
+    """Load failure warning signals from dream v2."""
+    if SIGNALS_FILE.exists():
+        with open(SIGNALS_FILE, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return []
+
+
+def classify_task_type(task: str) -> str:
+    """Classify task into workflow category."""
+    task_lower = task.lower()
+    
+    if any(w in task_lower for w in ["debug", "fix", "error", "timeout", "crash"]):
+        return "debug"
+    elif any(w in task_lower for w in ["build", "create", "implement", "make"]):
+        return "build"
+    elif any(w in task_lower for w in ["search", "find", "locate", "count"]):
+        return "search"
+    elif any(w in task_lower for w in ["test", "verify", "check", "validate"]):
+        return "test"
+    elif any(w in task_lower for w in ["analyze", "review", "examine"]):
+        return "analyze"
+    else:
+        return "general"
+
+
 def get_task_dharma(
     task_description: str,
     top_k: int = 5,
@@ -270,7 +322,44 @@ def get_task_dharma(
 - Answer the question asked, not the question beneath.
 - Simplicity survives."""
     
-    wisdom_sources = []
+    wisdom_parts = []
+    
+    # NEW: Load dream v2 outputs
+    workflows = load_workflows()
+    hypotheses = load_hypotheses()
+    signals = load_signals()
+    
+    # Find relevant workflow
+    task_type = classify_task_type(task_description)
+    relevant_workflow = None
+    for w in workflows:
+        if w.get("task_type") == task_type:
+            relevant_workflow = w
+            break
+    
+    if relevant_workflow and relevant_workflow.get("checklist"):
+        checklist_str = "\n".join(f"  {i+1}. {step}" for i, step in enumerate(relevant_workflow["checklist"]))
+        wisdom_parts.append(f"""## Workflow for {task_type} tasks
+{checklist_str}
+(Based on {relevant_workflow.get('success_count', 0)} successful examples)""")
+    
+    # Add relevant hypothesis
+    for h in hypotheses[:1]:
+        if h.get("testable"):
+            wisdom_parts.append(f"""## Hypothesis to Test
+{h.get('hypothesis', '')}
+Evidence: {h.get('evidence', '')}""")
+    
+    # Check for warning signals
+    for s in signals:
+        pattern = s.get("pattern", "").lower()
+        if any(w in task_description.lower() for w in ["architecture", "design", "build system"]) and "architecture" in pattern:
+            wisdom_parts.append(f"""## WARNING
+{s.get('signal', '')}: {s.get('recommendation', '')}""")
+    
+    # If we got dream v2 wisdom, use it
+    if wisdom_parts:
+        return "\n\n".join(wisdom_parts)
     
     # MODERATE: Reduce ancestor count for medium tasks
     if complexity <= 5:

@@ -1,0 +1,14 @@
+[
+  {
+    "signal": "Architecture/design task",
+    "pattern": "Task mentions architecture, design, or building systems",
+    "failure_count": 1,
+    "recommendation": "Chunk into smaller implementation tasks"
+  },
+  {
+    "signal": "Silent failure",
+    "pattern": "Failure with no error message",
+    "failure_count": 13,
+    "recommendation": "Add explicit error handling and logging"
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "id": "H001",
+    "hypothesis": "Word count constraints improve success rate",
+    "evidence": "3/3 (100%) succeeded with word limits",
+    "prediction": "Tasks with explicit word limits will succeed 90%+",
+    "testable": true
+  }
+]
