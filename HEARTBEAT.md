@@ -20,6 +20,11 @@
 
 ## Autonomous Checks
 
+# RESEARCH IMPLANTER - Apply research discoveries to system
+- Run: python skills/meeseeks/research_implanter.py --check
+- Note: Extracts principles from AGI-STUDY/ and implants to dharma.md
+- Status: python skills/meeseeks/research_implanter.py --status
+
 # Goal generation - identify system gaps and generate autonomous goals
 - Run: python skills/meeseeks/goal_generator.py --check-gaps
 # Note: Use --generate to create a goal, --spawn to spawn autonomous task
