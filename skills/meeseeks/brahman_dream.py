@@ -347,7 +347,7 @@ def show_stats(config: Dict) -> None:
     
     # Ancestor stats
     ancestors = get_recent_ancestors(ancestors_dir, config["max_ancestors_per_dream"])
-    print(f"\n📁 Ancestors Directory: {ancestors_dir}")
+    print(f"\n[DIR] Ancestors Directory: {ancestors_dir}")
     print(f"   Total ancestors available: {len(ancestors)}")
     
     if ancestors:
@@ -372,9 +372,9 @@ def show_stats(config: Dict) -> None:
             print(f"      {bl}: {count}")
         
         print(f"\n   Outcomes:")
-        print(f"      ✅ Success: {outcomes['success']}")
-        print(f"      ❌ Failure: {outcomes['failure']}")
-        print(f"      ❓ Unknown: {outcomes['unknown']}")
+        print(f"      [OK] Success: {outcomes['success']}")
+        print(f"      [X] Failure: {outcomes['failure']}")
+        print(f"      [?] Unknown: {outcomes['unknown']}")
         
         # Most recent ancestor
         print(f"\n   Most recent ancestor: {ancestors[0]['file']}")
@@ -382,7 +382,7 @@ def show_stats(config: Dict) -> None:
             print(f"      Entombed: {ancestors[0]['entombed']}")
     
     # Dream history stats
-    print(f"\n📜 Dream History: {dream_history_path}")
+    print(f"\n[HISTORY] Dream History: {dream_history_path}")
     if dream_history_path.exists():
         with open(dream_history_path, 'r', encoding='utf-8') as f:
             lines = [l for l in f if l.strip()]
@@ -396,7 +396,7 @@ def show_stats(config: Dict) -> None:
         print("   No dreams yet")
     
     # Dharma status
-    print(f"\n📖 Dharma: {dharma_path}")
+    print(f"\n[DHARMA] Dharma: {dharma_path}")
     if dharma_path.exists():
         stat = dharma_path.stat()
         modified = datetime.fromtimestamp(stat.st_mtime)
@@ -406,7 +406,7 @@ def show_stats(config: Dict) -> None:
         print("   Not yet created")
     
     # Config
-    print(f"\n⚙️ Configuration:")
+    print(f"\n[CONFIG] Configuration:")
     print(f"   Min ancestors for dream: {config['min_ancestors_for_dream']}")
     print(f"   Max ancestors per dream: {config['max_ancestors_per_dream']}")
     print(f"   Dream interval: {config['dream_interval_hours']} hours")
@@ -428,7 +428,7 @@ def run_dream(config: Dict, force: bool = False, dry_run: bool = False) -> bool:
     
     # Check if we should dream
     should, reason = should_dream(config, force)
-    print(f"\n🔮 Brahman Dream")
+    print(f"\n[DREAM] Brahman Dream")
     print(f"   Status: {reason}")
     
     if not should:
@@ -447,7 +447,7 @@ def run_dream(config: Dict, force: bool = False, dry_run: bool = False) -> bool:
     # Format for synthesis
     ancestors_prompt = format_ancestors_for_synthesis(ancestors)
     
-    # 🧠 COGNEE INTEGRATION: Query knowledge graph for cross-cutting patterns
+    # [COGNEE] Query knowledge graph for cross-cutting patterns
     cognee_insights = ""
     if config.get("use_cognee", True) and COGNEE_AVAILABLE:
         try:
@@ -500,7 +500,7 @@ def run_dream(config: Dict, force: bool = False, dry_run: bool = False) -> bool:
     try:
         synthesis = call_zai_api(full_prompt, config)
     except Exception as e:
-        print(f"   ❌ Synthesis failed: {e}")
+        print(f"   [X] Synthesis failed: {e}")
         log_dream(dream_history_path, len(ancestors), str(e), False)
         return False
     
@@ -511,12 +511,14 @@ def run_dream(config: Dict, force: bool = False, dry_run: bool = False) -> bool:
     # Log dream
     log_dream(dream_history_path, len(ancestors), synthesis, True)
     
-    print(f"   ✅ Dream complete!")
+    print(f"   [OK] Dream complete!")
     print(f"   Dharma updated: {dharma_path}")
     
-    # Show preview
+    # Show preview (ASCII-safe)
     preview = synthesis[:500].replace('\n', '\n   ')
-    print(f"\n   Preview of synthesized wisdom:\n   {preview}...")
+    # Remove non-ASCII characters for console output
+    preview_ascii = ''.join(c if ord(c) < 128 else '?' for c in preview)
+    print(f"\n   Preview of synthesized wisdom:\n   {preview_ascii}...")
     
     return True
 
