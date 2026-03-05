@@ -26,9 +26,10 @@ from typing import List, Dict, Optional, Tuple, Any
 from collections import Counter, defaultdict
 import statistics
 
-# Set stdout to UTF-8 for Windows
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+# Fix Windows encoding for unicode output
+# NOTE: We avoid rewrapping stdout/stderr as it causes "I/O operation on closed file" errors
+# when the old wrapper gets garbage collected and closes the underlying buffer.
+# Instead, we rely on PYTHONIOENCODING environment variable or handle encoding errors inline.
 
 # Paths
 WORKSPACE = Path("C:/Users/aaron/.openclaw/workspace")

@@ -25,6 +25,13 @@ try:
 except ImportError:
     BLOODLINE_EVOLUTION_AVAILABLE = False
 
+# Import Cognee memory (NEW: AGI integration)
+try:
+    from cognee_memory import CogneeMemory
+    COGNEE_AVAILABLE = True
+except ImportError:
+    COGNEE_AVAILABLE = False
+
 # The Crypt location
 CRYPT_ROOT = Path(__file__).parent.parent.parent / "the-crypt"
 ANCESTORS_DIR = CRYPT_ROOT / "ancestors"
@@ -162,6 +169,46 @@ def entomb_meeseeks(
     # Write ancestor file
     ancestor_path = ANCESTORS_DIR / f"{ancestor_id}.md"
     ancestor_path.write_text(ancestor_content, encoding="utf-8")
+    
+    # 🧠 COGNEE INTEGRATION: Store ancestor in knowledge graph (NEW: AGI memory)
+    cognee_result = None
+    if COGNEE_AVAILABLE:
+        try:
+            import asyncio
+            
+            # Prepare ancestor data for Cognee
+            ancestor_data = {
+                "id": ancestor_id,
+                "task": task,
+                "approach": approach,
+                "outcome": "SUCCESS" if "success" in outcome.lower() else "FAILURE" if "fail" in outcome.lower() else "PARTIAL",
+                "patterns": patterns,
+                "bloodline": bloodline,
+                "dharma_followed": [],  # Would be populated if tracked during execution
+                "karma_scores": {},  # Would be populated if tracked during execution
+                "session_key": session_key,
+                "transcript_summary": f"{approach}\n\n{outcome}"
+            }
+            
+            # Create async context and store
+            memory = CogneeMemory()
+            
+            try:
+                loop = asyncio.get_event_loop()
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+            
+            if not loop.is_running():
+                cognee_result = loop.run_until_complete(memory.store_ancestor(ancestor_data))
+            else:
+                # If we're in an async context, schedule it
+                asyncio.create_task(memory.store_ancestor(ancestor_data))
+                cognee_result = "scheduled"
+                
+        except Exception as e:
+            # Don't fail entombment if Cognee fails
+            cognee_result = f"Cognee storage failed: {e}"
     
     # Check for bloodline evolution after entombment
     evolution_result = None

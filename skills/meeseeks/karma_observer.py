@@ -31,9 +31,9 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from collections import defaultdict
 
-# Set stdout to UTF-8 for Windows
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+# Fix Windows encoding - use PYTHONIOENCODING environment variable instead
+# of wrapping stdout/stderr, which causes "I/O operation on closed file" errors
+# when modules are imported by other scripts.
 
 # Paths
 WORKSPACE = Path("C:/Users/aaron/.openclaw/workspace")

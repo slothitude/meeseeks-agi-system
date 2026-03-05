@@ -357,6 +357,30 @@ def auto_entomb(
     except Exception as e:
         print(f"[auto_entomb] Karma observation failed: {e}", file=sys.stderr)
     
+    # COGNEE STORAGE: Store ancestor in knowledge graph
+    try:
+        from cognee_memory import CogneeMemory
+        import asyncio
+        
+        memory = CogneeMemory()
+        if asyncio.run(memory.connect()):
+            ancestor_data = {
+                "id": ancestor_id,
+                "session_key": session_key,
+                "task": task,
+                "approach": approach,
+                "outcome": outcome,
+                "patterns": patterns,
+                "bloodline": meeseeks_type,
+                "success": result.get("success", False)
+            }
+            asyncio.run(memory.store_ancestor(ancestor_data))
+            print(f"[auto_entomb] Stored in Cognee: {ancestor_id}")
+    except ImportError:
+        pass  # Cognee not available
+    except Exception as e:
+        print(f"[auto_entomb] Cognee storage failed: {e}", file=sys.stderr)
+    
     # AUTO-RETRY: Spawn successors for failed Meeseeks
     if not result.get("success"):
         error = result.get("error", "unknown")
