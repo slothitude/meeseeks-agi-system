@@ -187,7 +187,7 @@ class Chunker:
     def __init__(self, 
                  chunk_size: int = DEFAULT_CONFIG["chunk_size"],
                  overlap: int = DEFAULT_CONFIG["chunk_overlap"]):
-        self.chunk_size = chunk_size
+        self.chunk_size = 256  # Smaller for embedding model context limits
         self.overlap = overlap
     
     def chunk_text(self, text: str, source: str, metadata: Dict = None) -> List[Chunk]:

@@ -565,8 +565,14 @@ def _get_task_from_session(session_key: str) -> Optional[str]:
     return None
 
 
+# Maximum retries per task before giving up
+MAX_RETRIES_PER_TASK = 3
+
 def _write_spawn_configs(spawn_configs: List[Dict], source_session: str):
-    """Write spawn configs to pending-spawns.json for main agent to pick up."""
+    """Write spawn configs to pending-spawns.json for main agent to pick up.
+    
+    Includes deduplication and max retry limits to prevent runaway spawn cascades.
+    """
     pending_file = CRYPT_ROOT / "pending-spawns.json"
     
     # Load existing - handle both list and dict formats
@@ -583,10 +589,32 @@ def _write_spawn_configs(spawn_configs: List[Dict], source_session: str):
     else:
         data = {"pending": [], "processed": []}
     
+    # Count existing pending spawns for this session (deduplication)
+    existing_for_session = sum(
+        1 for c in data["pending"] 
+        if c.get("_source_session") == source_session
+    )
+    
+    # Check retry chains for total retry count
+    chains = get_retry_chains()
+    session_chains = [c for c in chains if c.get("original_session") == source_session]
+    total_retries = len(session_chains)
+    
+    # Prevent runaway cascades - max retries per task
+    if total_retries >= MAX_RETRIES_PER_TASK:
+        print(f"[auto_retry] ⚠️ Max retries ({MAX_RETRIES_PER_TASK}) reached for {source_session[:20]}... - skipping")
+        return
+    
+    # Don't add more if there are already pending spawns for this session
+    if existing_for_session > 0:
+        print(f"[auto_retry] ⚠️ Already {existing_for_session} pending spawns for {source_session[:20]}... - skipping")
+        return
+    
     # Add new configs with metadata
     for config in spawn_configs:
         config["_added_at"] = datetime.now().isoformat()
         config["_source_session"] = source_session
+        config["_retry_number"] = total_retries + 1
         data["pending"].append(config)
     
     # Save

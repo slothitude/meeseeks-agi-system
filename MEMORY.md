@@ -322,13 +322,16 @@ python skills/meeseeks/self_improve.py --analyze    # Find code improvements
 python skills/meeseeks/cron_entomb.py --max-age-minutes 60  # Process recent
 ```
 
-### Stats (as of 2026-03-03 18:02)
-- **90 ancestors** entombed
+### Stats (as of 2026-03-05 22:00)
+- **214 ancestors** entombed
 - **5 dreams** completed
 - **50 karma observations** analyzed
 - **10 retry chains** tracked
 - **5 bloodlines**: coder (31), standard (7), tester (5), searcher (4), deployer (3)
 - **Real-time Karma**: ✅ Active (not just post-hoc)
+- **AGI Test Score**: **100%** 🌟
+- **MEGA Test Score**: **100%** 🌟
+- **Alan Watts Wisdom**: ✅ Integrated
 
 ### Karma Analysis Results
 Principles with 100% success when followed:
@@ -373,14 +376,20 @@ Principles with 100% success when followed:
 
 ## Cognee Integration (Added 2026-03-04)
 
-### Status: WORKING (Rate Limited on Bulk)
+### Status: ✅ FULLY WORKING (2026-03-05)
 
 ### What Is Cognee?
 Graph-based memory system for knowledge extraction and retrieval. Turns text into nodes + edges, enabling semantic queries.
 
+### Requirements
+- **Python 3.10-3.12** (system Python is 3.14, so uses venv)
+- **Venv location**: `skills/cognee/.venv`
+- **Run with**: `skills/cognee/.venv/Scripts/python.exe <script.py>`
+- **Or use**: `skills/cognee/run.bat <script.py>`
+
 ### Configuration
 ```python
-# z.ai API for LLM (graph extraction)
+# z.ai Coding API for LLM (graph extraction)
 os.environ["LLM_PROVIDER"] = "openai"
 os.environ["LLM_MODEL"] = "openai/glm-4.7-flash"  # LiteLLM needs openai/ prefix
 os.environ["LLM_ENDPOINT"] = "https://api.z.ai/api/coding/paas/v4"
@@ -396,38 +405,39 @@ os.environ["ENABLE_BACKEND_ACCESS_CONTROL"] = "false"
 os.environ["COGNEE_SKIP_CONNECTION_TEST"] = "true"
 ```
 
-### Test Results
-- ✅ Basic test: 7 items → 78 nodes + 84 edges
-- ✅ Big test: MEMORY.md → 8 chunks ingested, graph extraction started
-- ✅ **Batch test: MEMORY.md → 12 chunks → 148 nodes + 320 edges** (SUCCESS!)
-- ❌ Rate limit hit during bulk `cognify()` on z.ai API (fixed with 30s delays)
-
-### Solutions for Rate Limits
-1. **Batch with delays** - ✅ WORKS! 30s delays between chunks
-2. **Use Ollama local** - Free, no limits, but slower
-3. **Upgrade API** - Higher rate z.ai plan
+### Test Results (2026-03-05)
+- ✅ **Fresh test**: Simple text → 15 nodes + 16 edges → search found results
+- ✅ z.ai coding endpoint working with `glm-4.7-flash`
+- ✅ Fastembed local embeddings working
 
 ### Files
-- `skills/cognee/test_cognee.py` - Working basic test
-- `skills/cognee/big_test.py` - MEMORY.md ingestion test
+- `skills/cognee/.venv/` - Python 3.12.9 virtual environment
 - `skills/cognee/cognee_helper.py` - Integration helper for Meeseeks
+- `skills/cognee/test_fresh.py` - Working test script
+- `skills/cognee/run.bat` - Wrapper to run with correct Python
 
 ### Available Search Types
-- `GRAPH_COMPLETION` - Graph-based answers (USE THIS)
-- `CHUNKS` - Raw text chunks
-- `RAG_COMPLETION` - RAG-style completion
-- `SUMMARIES` - Summarized content
-
-### Next Steps
-1. Implement batch ingestion with rate limit handling
-2. Test queries on partial graph
-3. Integrate cognee into memory_search tool
-4. Replace/augment the-crypt with graph storage
+- `GRAPH_COMPLETION` - Graph-based answers (LLM-powered)
+- `CHUNKS` - Raw text chunks (fast vector search)
 
 ### Key Learnings
+- **Python version**: Requires 3.10-3.12, use venv at `skills/cognee/.venv`
 - **LiteLLM prefix**: Model must include `openai/` prefix for z.ai
-- **SearchType**: Use `GRAPH_COMPLETION`, not `INSIGHTS` (doesn't exist)
-- **Rate limits**: z.ai has request limits - **SOLVED: 30s delays between chunks**
+- **SearchType**: Use `GRAPH_COMPLETION` or `CHUNKS`
+- **Rate limits**: Let z.ai handle it (returns 429 if exceeded)
+
+### Speed Comparison (2026-03-05)
+
+| LLM | Cognify | Notes |
+|-----|---------|-------|
+| **z.ai (glm-4.7-flash)** | ~60s | **Fast** - use for speed |
+| **Ollama (llama3.2)** | ~100s | **Slower** - fallback, no rate limits |
+
+**Recommendation:**
+- Use **z.ai (glm-4.7-flash)** for speed
+- Use **Ollama (llama3.2)** when rate-limited
+- Use `CHUNKS` for fast vector search (no LLM)
+- Use `GRAPH_COMPLETION` for complex reasoning (LLM-powered)
 
 ---
 

@@ -2,9 +2,12 @@
 """
 Dynamic Dharma Extraction for Meeseeks
 
-Uses semantic search (nomic-embed-text via Ollama) to find task-relevant
-wisdom from ancestors. Instead of static bloodline files, this pulls
-dharma that's specifically relevant to the task at hand.
+Uses semantic search to find task-relevant wisdom from multiple sources:
+1. Cognee Knowledge Graph (fast CHUNKS search)
+2. The Crypt (ancestor embeddings via Ollama)
+3. dharma.md (static wisdom)
+
+Priority: Cognee (fast, graph-based) → The Crypt (ancestor wisdom) → dharma.md
 
 Usage:
     from dynamic_dharma import get_task_dharma
@@ -20,11 +23,55 @@ CLI:
 import json
 import sys
 import io
+import re
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime
 import subprocess
 import math
+
+
+def task_complexity(task: str) -> int:
+    """
+    Score task complexity 0-10.
+    
+    Used to determine how much dharma to inject:
+    - 0-2: MINIMAL (just core principles, no ancestors)
+    - 3-5: MODERATE (relevant ancestors only)
+    - 6+: FULL (all sources)
+    """
+    score = 0
+    
+    # Word count
+    words = len(task.split())
+    if words <= 5:
+        score += 0  # Very simple
+    elif words <= 10:
+        score += 1
+    elif words <= 20:
+        score += 2
+    elif words <= 40:
+        score += 4
+    else:
+        score += 6
+    
+    # Multiple steps?
+    if re.search(r'\d+\.|\bthen\b|\bafter\b|\bfirst\b|\bnext\b', task.lower()):
+        score += 2
+    
+    # Multiple domains/files?
+    if re.search(r'\band\b|\balso\b|\bplus\b|\bmultiple\b', task.lower()):
+        score += 1
+    
+    # Code/build keywords (complex actions)
+    if re.search(r'build|create|implement|design|refactor|debug|fix|architect', task.lower()):
+        score += 2
+    
+    # Simple format constraints (actually make it EASIER)
+    if re.search(r'\b(one word|3 words|single|exactly|just)\b', task.lower()):
+        score -= 2
+    
+    return max(0, min(score, 10))
 
 # Paths
 WORKSPACE = Path("C:/Users/aaron/.openclaw/workspace")
@@ -188,23 +235,117 @@ def extract_patterns_from_ancestor(ancestor_path: Path) -> Tuple[str, List[str],
 def get_task_dharma(
     task_description: str,
     top_k: int = 5,
-    min_similarity: float = 0.3
+    min_similarity: float = 0.3,
+    use_cognee: bool = True
 ) -> str:
     """
-    Get task-relevant dharma from ancestors using semantic search.
+    Get task-relevant dharma from multiple wisdom sources.
     
-    1. Generate embedding for task description
-    2. Search ancestors for similar tasks
-    3. Extract patterns from those ancestors
-    4. Return synthesized dharma for this specific task
+    COMPLEXITY-AWARE:
+    - Score 0-2: MINIMAL dharma (just core principles)
+    - Score 3-5: MODERATE dharma (relevant ancestors only)
+    - Score 6+: FULL dharma (all sources)
+    
+    Priority:
+    1. Cognee Knowledge Graph (if available and use_cognee=True)
+    2. The Crypt (ancestor embeddings)
+    3. dharma.md (static wisdom)
     
     Args:
         task_description: The task to find relevant wisdom for
         top_k: Maximum number of ancestors to include
         min_similarity: Minimum cosine similarity threshold
+        use_cognee: Whether to query Cognee knowledge graph
     
     Returns:
-        Formatted dharma string with relevant ancestor wisdom
+        Formatted dharma string with relevant wisdom from all sources
+    """
+    # Check task complexity first
+    complexity = task_complexity(task_description)
+    
+    # MINIMAL: Simple tasks get just core principles
+    if complexity <= 2:
+        return """## Core Principles
+- Be small. Be specific. Be done.
+- Answer the question asked, not the question beneath.
+- Simplicity survives."""
+    
+    wisdom_sources = []
+    
+    # MODERATE: Reduce ancestor count for medium tasks
+    if complexity <= 5:
+        top_k = max(2, top_k - 2)
+    
+    # 1. Try Cognee first (fast knowledge graph)
+    if use_cognee:
+        cognee_wisdom = get_cognee_wisdom(task_description)
+        if cognee_wisdom:
+            wisdom_sources.append(("cognee", cognee_wisdom))
+    
+    # 2. Query The Crypt (ancestor embeddings)
+    crypt_wisdom = get_crypt_wisdom(task_description, top_k, min_similarity)
+    if crypt_wisdom:
+        wisdom_sources.append(("crypt", crypt_wisdom))
+    
+    # 3. Get static dharma wisdom
+    static_dharma = read_dharma_sections()
+    if static_dharma:
+        wisdom_sources.append(("dharma", static_dharma[:1000]))  # Limit size
+    
+    # Combine all sources
+    return format_multi_source_dharma(task_description, wisdom_sources)
+
+
+def get_cognee_wisdom(task_description: str) -> Optional[str]:
+    """
+    Query Cognee knowledge graph for relevant wisdom.
+    
+    Uses fast CHUNKS search (vector similarity, no LLM).
+    Falls back gracefully if Cognee unavailable.
+    """
+    try:
+        # Import Cognee helper
+        import sys
+        cognee_path = Path(__file__).parent.parent / "cognee"
+        if str(cognee_path) not in sys.path:
+            sys.path.insert(0, str(cognee_path))
+        
+        from cognee_helper import query_wisdom_sync, is_cognee_available
+        
+        if not is_cognee_available():
+            return None
+        
+        # Query Cognee for wisdom
+        results = query_wisdom_sync(task_description)
+        
+        if results:
+            # Format as wisdom text
+            wisdom_lines = []
+            for r in results[:3]:  # Top 3 results
+                wisdom_lines.append(r.content)
+            
+            return "\n\n".join(wisdom_lines)
+        
+        return None
+        
+    except ImportError:
+        # Cognee not available
+        return None
+    except Exception as e:
+        print(f"[dynamic_dharma] Cognee query error: {e}", file=sys.stderr)
+        return None
+
+
+def get_crypt_wisdom(
+    task_description: str,
+    top_k: int = 5,
+    min_similarity: float = 0.3
+) -> Optional[str]:
+    """
+    Query The Crypt for ancestor wisdom using embeddings.
+    
+    Uses Ollama nomic-embed-text for semantic search.
+    WEIGHTS by karma alignment - high karma ancestors have more influence.
     """
     # Generate embedding for task
     task_embedding = get_embedding_api(task_description)
@@ -212,13 +353,16 @@ def get_task_dharma(
     # Load ancestor index
     ancestor_index = load_ancestor_index()
     
+    # Load karma observations for weighting
+    karma_weights = load_karma_weights()
+    
     if not ancestor_index:
         # No indexed ancestors - fall back to reading recent ancestors directly
         return get_fallback_dharma(task_description, top_k)
     
     # If we have embedding, do semantic search
     if task_embedding:
-        # Score all ancestors by similarity
+        # Score all ancestors by similarity × karma weight
         scored_ancestors = []
         
         for ancestor_id, ancestor_data in ancestor_index.items():
@@ -228,74 +372,115 @@ def get_task_dharma(
                 similarity = cosine_similarity(task_embedding, ancestor_embedding)
                 
                 if similarity >= min_similarity:
+                    # KARMA WEIGHTING: Multiply similarity by karma alignment
+                    karma = karma_weights.get(ancestor_id, 0.5)  # Default neutral
+                    weighted_score = similarity * (0.5 + karma)  # karma 0-1 → weight 0.5-1.5
+                    
                     scored_ancestors.append({
                         "id": ancestor_id,
                         "similarity": similarity,
+                        "karma": karma,
+                        "weighted_score": weighted_score,
                         "task": ancestor_data.get("task_summary", "Unknown task"),
                         "patterns": ancestor_data.get("key_traits", []),
                         "success": ancestor_data.get("success", False),
                         "bloodline": ancestor_data.get("bloodline", "unknown")
                     })
         
-        # Sort by similarity
-        scored_ancestors.sort(key=lambda x: x["similarity"], reverse=True)
+        # Sort by WEIGHTED score (similarity × karma)
+        scored_ancestors.sort(key=lambda x: x["weighted_score"], reverse=True)
         top_ancestors = scored_ancestors[:top_k]
         
         if top_ancestors:
-            return format_task_dharma(task_description, top_ancestors)
+            return format_crypt_wisdom(task_description, top_ancestors)
     
     # Fallback to keyword matching
     return get_fallback_dharma(task_description, top_k)
 
 
-def get_fallback_dharma(task_description: str, top_k: int = 5) -> str:
+def load_karma_weights() -> Dict[str, float]:
     """
-    Fallback dharma extraction using keyword matching.
-    Used when embeddings aren't available.
+    Load karma alignment scores from karma_observations.jsonl.
+    
+    Returns dict mapping ancestor_id → karma alignment (0-1).
+    Ancestors with no karma observation get neutral 0.5.
     """
-    # Get recent ancestor files
-    ancestor_files = sorted(ANCESTORS_DIR.glob("ancestor-*.md"), reverse=True)[:50]
+    karma_file = CRYPT_ROOT / "karma_observations.jsonl"
+    weights = {}
     
-    task_keywords = set(task_description.lower().split())
-    scored_ancestors = []
+    if not karma_file.exists():
+        return weights
     
-    for ancestor_file in ancestor_files:
-        task, patterns, outcome = extract_patterns_from_ancestor(ancestor_file)
-        
-        # Score by keyword overlap
-        task_words = set(task.lower().split())
-        overlap = len(task_keywords & task_words)
-        
-        if overlap > 0 or not scored_ancestors:  # Include some even if no match
-            scored_ancestors.append({
-                "id": ancestor_file.stem,
-                "similarity": overlap / max(len(task_keywords), 1),
-                "task": task,
-                "patterns": patterns,
-                "success": "success" in outcome.lower(),
-                "bloodline": "unknown"
-            })
+    try:
+        with open(karma_file, "r", encoding="utf-8") as f:
+            for line in f:
+                if line.strip():
+                    obs = json.loads(line)
+                    ancestor_id = obs.get("ancestor_id", "")
+                    alignment = obs.get("alignment", 0.5)
+                    if ancestor_id:
+                        weights[ancestor_id] = alignment
+    except Exception as e:
+        pass  # Karma loading is optional
     
-    # Sort by similarity and take top_k
-    scored_ancestors.sort(key=lambda x: x["similarity"], reverse=True)
-    top_ancestors = scored_ancestors[:top_k]
-    
-    return format_task_dharma(task_description, top_ancestors)
+    return weights
 
 
-def format_task_dharma(task_description: str, ancestors: List[Dict]) -> str:
-    """Format the task-specific dharma output."""
+def format_multi_source_dharma(
+    task_description: str,
+    wisdom_sources: List[Tuple[str, str]]
+) -> str:
+    """
+    Format wisdom from multiple sources into unified dharma.
+    
+    Args:
+        task_description: The task
+        wisdom_sources: List of (source_name, wisdom_text) tuples
+    
+    Returns:
+        Formatted dharma string with source attribution
+    """
     lines = []
     lines.append("## 🎯 Task-Specific Dharma")
     lines.append("")
     lines.append(f"**For task:** {task_description}")
     lines.append("")
     
-    if not ancestors:
-        lines.append("*No similar ancestors found. You are the pioneer.*")
+    if not wisdom_sources:
+        lines.append("*No wisdom found. You are the pioneer.*")
         lines.append("")
         lines.append("*Forge new paths. Your death will guide those who follow.*")
         return "\n".join(lines)
+    
+    # Track which sources contributed
+    source_emojis = {
+        "cognee": "🧠",
+        "crypt": "💀",
+        "dharma": "📜"
+    }
+    
+    # Add each source's wisdom
+    for source, wisdom in wisdom_sources:
+        emoji = source_emojis.get(source, "📚")
+        lines.append(f"### {emoji} {source.title()} Wisdom")
+        lines.append("")
+        lines.append(wisdom[:2000])  # Limit per source
+        lines.append("")
+    
+    # Add source summary
+    lines.append("---")
+    sources_list = [s[0] for s in wisdom_sources]
+    lines.append(f"*Wisdom sources: {', '.join(sources_list)}*")
+    
+    return "\n".join(lines)
+
+
+def format_crypt_wisdom(task_description: str, ancestors: List[Dict]) -> str:
+    """Format Crypt ancestor wisdom (used by get_crypt_wisdom)."""
+    lines = []
+    
+    if not ancestors:
+        return "*No similar ancestors found in The Crypt.*"
     
     # Group by success/failure
     successful = [a for a in ancestors if a.get("success")]
@@ -305,7 +490,7 @@ def format_task_dharma(task_description: str, ancestors: List[Dict]) -> str:
         lines.append("### ✅ What Worked")
         lines.append("")
         for ancestor in successful[:3]:
-            lines.append(f"**{ancestor['id']}** (similarity: {ancestor['similarity']:.2f})")
+            lines.append(f"**{ancestor['id']}** (sim: {ancestor['similarity']:.2f} | karma: {ancestor.get('karma', 0.5):.2f})")
             lines.append(f"- Task: {ancestor['task'][:100]}")
             for pattern in ancestor.get('patterns', [])[:2]:
                 if pattern:
@@ -337,10 +522,56 @@ def format_task_dharma(task_description: str, ancestors: List[Dict]) -> str:
                     break
     
     lines.append("")
-    lines.append("---")
     lines.append("*These ancestors walked similar paths. Learn from their deaths.*")
     
     return "\n".join(lines)
+
+
+def get_fallback_dharma(task_description: str, top_k: int = 5) -> Optional[str]:
+    """
+    Fallback dharma extraction using keyword matching.
+    Used when embeddings aren't available.
+    """
+    # Get recent ancestor files
+    ancestor_files = sorted(ANCESTORS_DIR.glob("ancestor-*.md"), reverse=True)[:50]
+    
+    if not ancestor_files:
+        return None
+    
+    task_keywords = set(task_description.lower().split())
+    scored_ancestors = []
+    
+    for ancestor_file in ancestor_files:
+        task, patterns, outcome = extract_patterns_from_ancestor(ancestor_file)
+        
+        # Score by keyword overlap
+        task_words = set(task.lower().split())
+        overlap = len(task_keywords & task_words)
+        
+        if overlap > 0 or not scored_ancestors:  # Include some even if no match
+            scored_ancestors.append({
+                "id": ancestor_file.stem,
+                "similarity": overlap / max(len(task_keywords), 1),
+                "task": task,
+                "patterns": patterns,
+                "success": "success" in outcome.lower(),
+                "bloodline": "unknown"
+            })
+    
+    # Sort by similarity and take top_k
+    scored_ancestors.sort(key=lambda x: x["similarity"], reverse=True)
+    top_ancestors = scored_ancestors[:top_k]
+    
+    if top_ancestors:
+        return format_crypt_wisdom(task_description, top_ancestors)
+    
+    return None
+
+
+# Keep old function name for backwards compatibility
+def format_task_dharma(task_description: str, ancestors: List[Dict]) -> str:
+    """Format the task-specific dharma output (legacy compatibility)."""
+    return format_crypt_wisdom(task_description, ancestors)
 
 
 def read_dharma_sections(task_type: str = None) -> str:

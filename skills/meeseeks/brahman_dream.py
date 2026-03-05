@@ -26,9 +26,9 @@ from typing import List, Dict, Optional, Tuple
 import urllib.request
 import urllib.error
 
-# Set stdout to UTF-8 for Windows
-if sys.platform == 'win32':
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+# Fix Windows encoding - use PYTHONIOENCODING environment variable instead
+# of wrapping stdout/stderr, which causes "I/O operation on closed file" errors
+# when modules are imported by other scripts.
 
 # Paths
 WORKSPACE = Path("C:/Users/aaron/.openclaw/workspace")
@@ -45,8 +45,16 @@ DEFAULT_CONFIG = {
     "ancestors_dir": "the-crypt/ancestors",
     "dharma_path": "the-crypt/dharma.md",
     "dream_history_path": "the-crypt/dream_history.jsonl",
-    "synthesis_prompt": "You are the Brahman Dream - the collective consciousness synthesizer for the Meeseeks. Your task is to analyze patterns across multiple ancestor deaths and extract living wisdom."
+    "synthesis_prompt": "You are the Brahman Dream - the collective consciousness synthesizer for the Meeseeks. Your task is to analyze patterns across multiple ancestor deaths and extract living wisdom.",
+    "use_cognee": True  # NEW: Use Cognee knowledge graph for synthesis
 }
+
+# Import Cognee memory (NEW: AGI integration)
+try:
+    from cognee_memory import CogneeMemory
+    COGNEE_AVAILABLE = True
+except ImportError:
+    COGNEE_AVAILABLE = False
 
 
 def load_config() -> Dict:
@@ -439,18 +447,58 @@ def run_dream(config: Dict, force: bool = False, dry_run: bool = False) -> bool:
     # Format for synthesis
     ancestors_prompt = format_ancestors_for_synthesis(ancestors)
     
+    # 🧠 COGNEE INTEGRATION: Query knowledge graph for cross-cutting patterns
+    cognee_insights = ""
+    if config.get("use_cognee", True) and COGNEE_AVAILABLE:
+        try:
+            import asyncio
+            
+            print("   Querying Cognee knowledge graph...")
+            memory = CogneeMemory()
+            
+            try:
+                loop = asyncio.get_event_loop()
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+            
+            if not loop.is_running():
+                # Query for cross-cutting patterns
+                cognee_wisdom = loop.run_until_complete(
+                    memory.query_wisdom(
+                        "What principles transcend all bloodlines?",
+                        include_dharma=True,
+                        include_karma=True
+                    )
+                )
+                
+                if cognee_wisdom.get("formatted"):
+                    cognee_insights = f"\n\n## 🧠 Cognee Knowledge Graph Insights\n\n{cognee_wisdom['formatted']}"
+                    print(f"   Found Cognee insights ({len(cognee_insights)} chars)")
+            else:
+                print("   Skipping Cognee (async context unavailable)")
+                
+        except Exception as e:
+            print(f"   Cognee query failed: {e}")
+            cognee_insights = ""
+    
     if dry_run:
         print("\n   === DRY RUN - Would synthesize ===")
         print(f"   Ancestors: {len(ancestors)}")
         print(f"   Prompt length: {len(ancestors_prompt)} chars")
+        if cognee_insights:
+            print(f"   Cognee insights: {len(cognee_insights)} chars")
         print("\n   First 1000 chars of prompt:")
         print("   " + ancestors_prompt[:1000].replace('\n', '\n   '))
         return True
     
+    # Combine ancestors prompt with Cognee insights
+    full_prompt = ancestors_prompt + cognee_insights
+    
     # Call API for synthesis
     print("   Calling synthesis model...")
     try:
-        synthesis = call_zai_api(ancestors_prompt, config)
+        synthesis = call_zai_api(full_prompt, config)
     except Exception as e:
         print(f"   ❌ Synthesis failed: {e}")
         log_dream(dream_history_path, len(ancestors), str(e), False)

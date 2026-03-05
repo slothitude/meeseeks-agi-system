@@ -21,12 +21,9 @@ import os
 import io
 
 # Fix Windows encoding for unicode output
-if sys.platform == 'win32':
-    try:
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
-    except:
-        pass
+# NOTE: We avoid rewrapping stdout/stderr as it causes "I/O operation on closed file" errors
+# when the old wrapper gets garbage collected and closes the underlying buffer.
+# Instead, we rely on PYTHONIOENCODING environment variable or handle encoding errors inline.
 import json
 import argparse
 import re

@@ -13,6 +13,7 @@ Implements the Five Principles of Meeseeks Complete:
 
 import sys
 from pathlib import Path
+from typing import Dict, List, Optional, Any, Tuple
 from jinja2 import Environment, FileSystemLoader, Template
 
 # Template directory
@@ -45,6 +46,42 @@ try:
     FAILURE_CAPTURE_AVAILABLE = True
 except ImportError:
     FAILURE_CAPTURE_AVAILABLE = False
+
+# Import Cognee memory (NEW: AGI integration)
+try:
+    from cognee_memory import CogneeMemory, query_wisdom as cognee_query_wisdom
+    COGNEE_AVAILABLE = True
+except ImportError:
+    COGNEE_AVAILABLE = False
+
+# Import predictive karma (NEW: Predict outcome before spawning)
+try:
+    from predictive_karma import predict_outcome
+    PREDICTIVE_KARMA_AVAILABLE = True
+except ImportError:
+    PREDICTIVE_KARMA_AVAILABLE = False
+
+# Import cross-session memory (NEW: All Meeseeks share knowledge)
+try:
+    from cross_session_memory import get_all_wisdom
+    CROSS_SESSION_MEMORY_AVAILABLE = True
+except ImportError:
+    CROSS_SESSION_MEMORY_AVAILABLE = False
+
+# Import integrated wisdom system (Cognee + Crypt + dharma.md)
+try:
+    # Add skills/meeseeks to path for imports
+    import sys
+    from pathlib import Path
+    _meeseeks_dir = Path(__file__).parent
+    if str(_meeseeks_dir) not in sys.path:
+        sys.path.insert(0, str(_meeseeks_dir))
+    
+    from dynamic_dharma import get_task_dharma
+    DYNAMIC_DHARMA_AVAILABLE = True
+except ImportError as e:
+    print(f"[spawn_meeseeks] dynamic_dharma not available: {e}")
+    DYNAMIC_DHARMA_AVAILABLE = False
 
 def get_meeseeks_identity(session_key: str = None, traits: list = None) -> dict:
     """
@@ -317,36 +354,116 @@ def spawn_prompt(
         }
         timeout = timeout_map.get(meeseeks_type.lower(), None)
 
-    # 🧬 INHERITANCE: Pull ancestor wisdom from Ultra Crypt
+    # 🧠 INTEGRATED WISDOM: Query multiple sources for Meeseeks inheritance
+    # Priority: Predictive Karma → Cross-Session → Dynamic Dharma → Cognee → fallback
     inherited_wisdom = ""
-    if inherit:
+    prediction_data = None
+    
+    # NEW: Predictive Karma (predict outcome before spawning)
+    if inherit and PREDICTIVE_KARMA_AVAILABLE:
         try:
-            import sys
-            import hashlib
-            from pathlib import Path
-            spark_dir = Path(__file__).parent.parent.parent / "the-crypt" / "spark-loop"
-            if str(spark_dir) not in sys.path:
-                sys.path.insert(0, str(spark_dir))
+            import asyncio
+            prediction_data = asyncio.run(predict_outcome(task, meeseeks_type))
             
-            from ultra_crypt import UltraCrypt
-            crypt = UltraCrypt()
-            
-            # Map meeseeks_type to bloodline
-            bloodline_map = {
-                "coder": "coder",
-                "searcher": "searcher",
-                "tester": "tester",
-                "deployer": "deployer",
-                "desperate": "coder",
-                "standard": None
-            }
-            bloodline = bloodline_map.get(meeseeks_type.lower())
-            
-            inherited_wisdom = crypt.get_inheritance_for_task(task, bloodline)
-            
+            if prediction_data and prediction_data.get("confidence", 0) < 0.4:
+                # Low confidence - add warning
+                inherited_wisdom += "\n\n## ⚠️ Predictive Karma Warning\n"
+                inherited_wisdom += f"**Predicted Outcome:** {prediction_data.get('predicted_outcome', 'UNKNOWN')}\n"
+                inherited_wisdom += f"**Confidence:** {prediction_data.get('confidence', 0):.0%}\n"
+                if prediction_data.get("warning"):
+                    inherited_wisdom += f"**Warning:** {prediction_data['warning']}\n"
+                if prediction_data.get("risk_factors"):
+                    inherited_wisdom += "\n**Risk Factors:**\n"
+                    for rf in prediction_data["risk_factors"][:3]:
+                        inherited_wisdom += f"- {rf}\n"
         except Exception as e:
-            # Inheritance is optional - don't fail spawn if it fails
-            inherited_wisdom = ""
+            pass  # Prediction failed, continue without
+    
+    # NEW: Cross-Session Memory (all Meeseeks share knowledge)
+    if inherit and CROSS_SESSION_MEMORY_AVAILABLE:
+        try:
+            import asyncio
+            cross_wisdom = asyncio.run(get_all_wisdom(task, sources=["rag", "crypt", "dharma"]))
+            if cross_wisdom:
+                inherited_wisdom += "\n\n## 🧠 Cross-Session Memory\n"
+                inherited_wisdom += cross_wisdom[:1500]  # Limit size
+        except Exception as e:
+            pass  # Cross-session failed, continue without
+    
+    # Try integrated wisdom system first (Cognee + Crypt + dharma.md)
+    if inherit:
+        # Try integrated wisdom system first (Cognee + Crypt + dharma.md)
+        if DYNAMIC_DHARMA_AVAILABLE:
+            try:
+                inherited_wisdom = get_task_dharma(
+                    task,
+                    top_k=5,
+                    use_cognee=True  # Enable Cognee knowledge graph
+                )
+            except Exception as e:
+                # Dynamic dharma failed, try other sources
+                inherited_wisdom = ""
+        
+        # Fallback to Cognee directly if dynamic dharma not available
+        if not inherited_wisdom and COGNEE_AVAILABLE:
+            try:
+                import asyncio
+                bloodline_map = {
+                    "coder": "coder",
+                    "searcher": "searcher",
+                    "tester": "tester",
+                    "deployer": "deployer",
+                    "desperate": "coder",
+                    "standard": None
+                }
+                bloodline = bloodline_map.get(meeseeks_type.lower())
+                
+                # Use async query in sync context
+                try:
+                    loop = asyncio.get_event_loop()
+                except RuntimeError:
+                    loop = asyncio.new_event_loop()
+                    asyncio.set_event_loop(loop)
+                
+                if not loop.is_running():
+                    cognee_wisdom = loop.run_until_complete(
+                        cognee_query_wisdom(task, bloodline)
+                    )
+                    if cognee_wisdom:
+                        inherited_wisdom = cognee_wisdom
+            except Exception as e:
+                # Cognee failed, try UltraCrypt
+                pass
+        
+        # Fallback to UltraCrypt if other sources didn't return wisdom
+        if not inherited_wisdom:
+            try:
+                import sys
+                import hashlib
+                from pathlib import Path
+                spark_dir = Path(__file__).parent.parent.parent / "the-crypt" / "spark-loop"
+                if str(spark_dir) not in sys.path:
+                    sys.path.insert(0, str(spark_dir))
+                
+                from ultra_crypt import UltraCrypt
+                crypt = UltraCrypt()
+                
+                # Map meeseeks_type to bloodline
+                bloodline_map = {
+                    "coder": "coder",
+                    "searcher": "searcher",
+                    "tester": "tester",
+                    "deployer": "deployer",
+                    "desperate": "coder",
+                    "standard": None
+                }
+                bloodline = bloodline_map.get(meeseeks_type.lower())
+                
+                inherited_wisdom = crypt.get_inheritance_for_task(task, bloodline)
+                
+            except Exception as e:
+                # Inheritance is optional - don't fail spawn if it fails
+                inherited_wisdom = ""
     
     # Combine task with inherited wisdom
     enhanced_task = task
