@@ -1,0 +1,89 @@
+[
+  {
+    "task_type": "general",
+    "success_count": 21,
+    "examples": [
+      {
+        "trigger": "general",
+        "task_example": "AUTONOMOUS TIME",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260306-012315-30d2.md"
+      },
+      {
+        "trigger": "general",
+        "task_example": "TASK: Define \"consciousness\" in exactly 3 words. No explanation. Just 3 words.",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260305-183612-d831.md"
+      },
+      {
+        "trigger": "general",
+        "task_example": "TASK: Define \"consciousness\" in exactly 3 words. No explanation. Just 3 words.",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260305-182341-b40f.md"
+      }
+    ],
+    "checklist": [
+      "Understand the task completely",
+      "Break into steps if complex",
+      "Execute systematically",
+      "Verify results",
+      "Report clearly"
+    ]
+  },
+  {
+    "task_type": "search",
+    "success_count": 8,
+    "examples": [
+      {
+        "trigger": "search",
+        "task_example": "\ud83d\udd2c MINI RESEARCH: Dharma Principles Count",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260306-005815-e825.md"
+      },
+      {
+        "trigger": "search",
+        "task_example": "\ud83d\udd2c MINI RESEARCH: Ancestor Success Rate",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260306-005314-7075.md"
+      },
+      {
+        "trigger": "search",
+        "task_example": "\ud83c\udf19 OVERNIGHT RESEARCH #7: Chunking & Decomposition",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260306-004816-08cb.md"
+      }
+    ],
+    "checklist": [
+      "Define what you're looking for in one sentence",
+      "Identify the scope (which files/directories)",
+      "Use appropriate search tools",
+      "Count and report results",
+      "Verify findings match requirements"
+    ]
+  },
+  {
+    "task_type": "build",
+    "success_count": 2,
+    "examples": [
+      {
+        "trigger": "build",
+        "task_example": "Build an auto-learning system for Meeseeks that continuously extracts wisdom from documents and upda",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260305-025030-95f6.md"
+      },
+      {
+        "trigger": "build",
+        "task_example": "Research and document the most advanced RAG (Retrieval Augmented Generation) techniques for building",
+        "bloodline": "unknown",
+        "evidence": "ancestor-20260305-023116-35fc.md"
+      }
+    ],
+    "checklist": [
+      "Understand the requirements completely",
+      "Break into smallest possible pieces",
+      "Implement one piece at a time",
+      "Test each piece before moving on",
+      "Integrate and verify end-to-end"
+    ]
+  }
+]
