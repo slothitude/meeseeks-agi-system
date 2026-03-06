@@ -136,11 +136,37 @@ GET  /queue           # View pending spawns
 
 ## Implementation Priority
 
-1. ✅ n8n container running
-2. ⏳ n8n-mcp in `.mcp.json`
-3. ⏳ FastAPI MCP server for coordination
+1. ✅ n8n container running (localhost:5678)
+2. ✅ n8n-mcp in `.mcp.json`
+3. ✅ FastAPI MCP server for coordination (`meeseeks_api/`)
 4. ⏳ n8n workflows for spawn/entomb
 5. ⏳ Test full spawn → entomb cycle
+
+## Betfair Integration (2026-03-06)
+
+### Status: ✅ READY
+
+**Files:**
+- `betfair_api/` - FastAPI MCP wrapper
+- `research/betfair_api_research.md` - Full documentation
+
+**Endpoints:**
+- POST `/login` - Authenticate
+- GET `/event-types` - List sports
+- POST `/markets` - List markets
+- GET `/market/{id}` - Market details
+- POST `/bet/place` - Place bet
+- GET `/account/balance` - Balance check
+
+**Integration:**
+- n8n workflows for automated betting
+- Meeseeks for market monitoring
+- MCP tools for AI-driven strategies
+
+**Requirements:**
+- Betfair account
+- App key (delayed or live)
+- SSL certificates for bot login
 
 ## Neural Network Integration (Future)
 
