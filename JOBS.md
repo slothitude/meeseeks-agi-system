@@ -117,6 +117,16 @@ _Ideas for future projects_
 
 ---
 
+## Hobbies / Investigation
+
+_OpenClaw buttons research_
+- [ ] Figure out why `buttons` parameter isn't exposed in message tool
+- [ ] Check if config needs updating (channels.telegram.capabilities.inlineButtons)
+- [ ] Check OpenClaw version vs docs version
+- [ ] Report finding to OpenClaw team if genuine gap
+
+---
+
 ## How to Use
 
 **Add a project:**

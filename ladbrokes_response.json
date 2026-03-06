@@ -1,0 +1,1990 @@
+{
+  "header": {
+    "title": "Race Meetings",
+    "generated_time": "2026-03-06T14:32:40.496937144Z",
+    "url": "/affiliates/v1/racing/meetings?date_from=today&category=H"
+  },
+  "params": {
+    "enc": "json",
+    "ids": null,
+    "date_from": "2026-03-06T00:00:00Z",
+    "date_to": "2026-03-06T14:32:00Z",
+    "type": "H",
+    "country": " ",
+    "limit": 100,
+    "offset": 0,
+    "futures": false,
+    "meeting_numbers": null
+  },
+  "data": {
+    "meetings": [
+      {
+        "meeting": "12b62839-b48b-421c-8897-8907509d55a6",
+        "name": "Laval",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Synthetic",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "FR",
+        "state": "FR",
+        "races": [
+          {
+            "id": "bf1ba411-457b-4e1e-8c61-aac2b1437bec",
+            "race_number": 1,
+            "name": "Prix Alain Gerbault - Attele",
+            "start_time": "2026-03-05T15:27:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2650,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final",
+            "protest": true,
+            "protest_reason": "#8 Must De Lou was DSQ from 3rd"
+          },
+          {
+            "id": "d6136411-b6ff-4b5f-bc79-a093dff73a4a",
+            "race_number": 2,
+            "name": "Prix Jean Chouan - Attele",
+            "start_time": "2026-03-05T15:56:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2650,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "38c82612-07d7-4361-a133-e4f9ea75d562",
+            "race_number": 3,
+            "name": "Prix Francois Pyrard - Attele",
+            "start_time": "2026-03-05T16:29:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2850,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "4a3fe937-1bd1-44a8-a366-0e1559c37259",
+            "race_number": 4,
+            "name": "Prix Ambroise Pare - Attele",
+            "start_time": "2026-03-05T17:02:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2850,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "bdf574f9-90d2-4f88-a37e-20dc608e09bc",
+            "race_number": 5,
+            "name": "Prix Du Douanier Rousseau - Attele",
+            "start_time": "2026-03-05T17:45:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2650,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "c2bfb113-bea9-4b98-a32d-422faf09cf8d",
+            "race_number": 6,
+            "name": "Prix Des Jeunes Agriculteurs 53 - Attele",
+            "start_time": "2026-03-05T18:15:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2650,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "8c299a19-f187-4dea-a75f-8f7b741ca801",
+            "race_number": 7,
+            "name": "Prix Alfred Jarry - Monte",
+            "start_time": "2026-03-05T18:45:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2850,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "e6a84a0a-4991-407d-938c-6886903f48a5",
+            "race_number": 8,
+            "name": "Prix Geo Ham - Attele",
+            "start_time": "2026-03-05T19:15:00Z",
+            "track_condition": "Synthetic",
+            "distance": 2850,
+            "weather": "Cloudy",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          }
+        ],
+        "video_channels": [
+          "Live1",
+          "Live2"
+        ]
+      },
+      {
+        "meeting": "83b90802-e6e2-4595-8cd3-647d0e393920",
+        "name": "Hoosier Park",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "USA",
+        "state": "IN",
+        "races": [
+          {
+            "id": "0c0ace33-52ce-44eb-b5ab-228fe316b838",
+            "race_number": 1,
+            "name": "Race 1",
+            "start_time": "2026-03-05T22:38:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "2fbf46aa-a7e7-455f-9d16-3035a44ef357",
+            "race_number": 2,
+            "name": "Race 2",
+            "start_time": "2026-03-05T23:05:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "bc93352a-48cd-4d5a-822b-2f729ef7fd90",
+            "race_number": 3,
+            "name": "Race 3",
+            "start_time": "2026-03-05T23:36:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "61d94712-431e-488a-9b2e-f01645da6b14",
+            "race_number": 4,
+            "name": "Race 4",
+            "start_time": "2026-03-06T00:01:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "1f5f9387-c3dd-48d3-9e1b-d8f2ccc25194",
+            "race_number": 5,
+            "name": "Race 5",
+            "start_time": "2026-03-06T00:20:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "c217e3d4-5948-4280-8f0b-e2d0ce004b55",
+            "race_number": 6,
+            "name": "Race 6",
+            "start_time": "2026-03-06T00:40:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "7fda7d54-2019-488c-ad27-a8c07d22f886",
+            "race_number": 7,
+            "name": "Race 7",
+            "start_time": "2026-03-06T01:13:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "76163349-8063-4074-8a75-6d1852de8017",
+            "race_number": 8,
+            "name": "Race 8",
+            "start_time": "2026-03-06T01:42:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "d7f94b72-5a2b-48b4-a4ac-270ce90c96f5",
+            "race_number": 9,
+            "name": "Race 9",
+            "start_time": "2026-03-06T02:07:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "94809361-5eab-4370-8166-0b1af0bf96df",
+            "race_number": 10,
+            "name": "Race 10",
+            "start_time": "2026-03-06T02:29:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "ffa0a84b-4066-442f-bce8-f97f9d143b5a",
+            "race_number": 11,
+            "name": "Race 11",
+            "start_time": "2026-03-06T02:56:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "ba16f0c6-064f-463b-8fce-5b24f780d73b",
+            "race_number": 12,
+            "name": "Race 12",
+            "start_time": "2026-03-06T03:20:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "1d79e633-794d-43d2-8954-4cb05171f99b",
+            "race_number": 13,
+            "name": "Race 13",
+            "start_time": "2026-03-06T03:36:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          },
+          {
+            "id": "a1c5e392-9763-451c-881c-fe5431248e51",
+            "race_number": 14,
+            "name": "Race 14",
+            "start_time": "2026-03-06T04:00:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "USA",
+            "state": "IN",
+            "status": "Final"
+          }
+        ]
+      },
+      {
+        "meeting": "e85d568e-2e57-4aa4-8c54-72033a103954",
+        "name": "Flamboro Downs",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "CA",
+        "state": "ON",
+        "races": [
+          {
+            "id": "9ec82cb5-5a3e-47cd-bc46-1e610afd6390",
+            "race_number": 1,
+            "name": "Race 1",
+            "start_time": "2026-03-05T23:30:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "1fa66564-f751-4ace-a2fc-a7f756ccd87b",
+            "race_number": 2,
+            "name": "Race 2",
+            "start_time": "2026-03-05T23:44:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "69620930-96f2-4bed-b609-6016d0de911e",
+            "race_number": 3,
+            "name": "Race 3",
+            "start_time": "2026-03-06T00:03:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "d9ff1e28-0249-46a6-97ba-1f816d5205de",
+            "race_number": 4,
+            "name": "Race 4",
+            "start_time": "2026-03-06T00:28:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "cb2abb53-bcb9-48cd-ac1b-b08b1a616ed6",
+            "race_number": 5,
+            "name": "Race 5",
+            "start_time": "2026-03-06T00:41:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "57d45850-bac4-42d1-a424-574a4e8c1775",
+            "race_number": 6,
+            "name": "Race 6",
+            "start_time": "2026-03-06T01:01:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "dd4dc41c-69fe-4a2e-a681-d5f08d1a228a",
+            "race_number": 7,
+            "name": "Race 7",
+            "start_time": "2026-03-06T01:19:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          },
+          {
+            "id": "5b17c701-25bc-430d-ac8c-4e2318199865",
+            "race_number": 8,
+            "name": "Race 8",
+            "start_time": "2026-03-06T01:37:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "",
+            "country": "CA",
+            "state": "ON",
+            "status": "Final"
+          }
+        ]
+      },
+      {
+        "meeting": "6cf49f14-5ce5-4ab5-9356-77eee7c2f50d",
+        "name": "Yonkers Raceway",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "USA",
+        "state": "NY",
+        "races": [
+          {
+            "id": "7127ce7b-b95d-4346-b0ee-1763f705c6fb",
+            "race_number": 1,
+            "name": "Race 1",
+            "start_time": "2026-03-05T23:52:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "00d779d8-2db9-44e7-8bb8-1abf00e16554",
+            "race_number": 2,
+            "name": "Race 2",
+            "start_time": "2026-03-06T00:10:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "f03d0de4-1f74-45f5-81f6-0c2c3b12b447",
+            "race_number": 3,
+            "name": "Race 3",
+            "start_time": "2026-03-06T00:26:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "04b43ef5-3190-4805-a2d3-088c74548fe6",
+            "race_number": 4,
+            "name": "Race 4",
+            "start_time": "2026-03-06T00:43:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "db85b2b1-3f56-4afd-8155-53abb46c02c4",
+            "race_number": 5,
+            "name": "Race 5",
+            "start_time": "2026-03-06T00:56:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "2b698350-d45f-44cc-a0c0-4383b9709c9c",
+            "race_number": 6,
+            "name": "Race 6",
+            "start_time": "2026-03-06T01:16:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "afacd7ad-edbf-43d1-921c-533ec93c4f22",
+            "race_number": 7,
+            "name": "Race 7",
+            "start_time": "2026-03-06T01:31:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "9ec09f28-896b-4435-bdbe-4a3cc3620486",
+            "race_number": 8,
+            "name": "Race 8",
+            "start_time": "2026-03-06T01:46:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          },
+          {
+            "id": "6be60172-b12c-44ed-980a-d2df4bc836f0",
+            "race_number": 9,
+            "name": "Race 9",
+            "start_time": "2026-03-06T02:06:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Showery",
+            "country": "USA",
+            "state": "NY",
+            "status": "Final"
+          }
+        ]
+      },
+      {
+        "meeting": "5c3c063d-c87e-4972-bd8c-7dae5a473ba9",
+        "name": "Westport",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "NZ",
+        "state": "NZ",
+        "races": [
+          {
+            "id": "8f1ce094-5eea-4da1-9a0b-a7374e78bb51",
+            "race_number": 1,
+            "name": "STU BAILEY MEM SPONSORED BY MARK JONES HCP TROT",
+            "start_time": "2026-03-06T01:27:00Z",
+            "track_condition": "Fast",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "049ca207-c850-4d0c-99a4-07cc74a85453",
+            "race_number": 2,
+            "name": "QUAY MARINE - MANY THANKS LORRAINE SCANLON PACE",
+            "start_time": "2026-03-06T02:02:00Z",
+            "track_condition": "Good",
+            "distance": 2000,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final",
+            "protest": true,
+            "protest_reason": "Protest DISMISSED - 4th (#7) & 5th (#5) vs 3rd (#1) "
+          },
+          {
+            "id": "ff567efd-a73e-44e6-bbc9-aa7bf8519b04",
+            "race_number": 3,
+            "name": "NORTHWEST LIVESTOCK MOBILE PACE",
+            "start_time": "2026-03-06T02:29:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "bc0051a2-9746-409e-aa5b-fb91840ee541",
+            "race_number": 4,
+            "name": "TRT BUILDERS (TEAM TEAL) TROT",
+            "start_time": "2026-03-06T02:54:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "1f61bdff-bbb6-46af-b795-047b81ab22a0",
+            "race_number": 5,
+            "name": "CRITERION HOTEL MOBILE PACE",
+            "start_time": "2026-03-06T03:22:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "9ba6d425-f310-4487-9e44-f98dc285dc1e",
+            "race_number": 6,
+            "name": "SAM KYDD MEMORIAL JENNIAN HOMES TEAM TEAL MBL PCE",
+            "start_time": "2026-03-06T03:49:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "f75ca024-a60b-44bd-adde-804e82a2d687",
+            "race_number": 7,
+            "name": "HAZLET INSURANCE (TEAM TEAL) HANDICAP TROT",
+            "start_time": "2026-03-06T04:29:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "03d5a52f-cc22-49c0-af4d-e9f04549e798",
+            "race_number": 8,
+            "name": "BULLER CHARTERED ACCOUNTANTS KAWATIRI CUP HCP PCE",
+            "start_time": "2026-03-06T05:04:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "10dbe2b5-53af-47c4-941d-74d6cc4c0e0a",
+            "race_number": 9,
+            "name": "HUNTSMAN OPTIC TREVOR CRADDOCK MEM SERIES HCP TROT",
+            "start_time": "2026-03-06T05:29:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "Fine",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "76c1cf7e-55c9-4130-9918-7d549db3e444",
+            "race_number": 10,
+            "name": "WESTPORT NEW WORLD HANDICAP PACE",
+            "start_time": "2026-03-06T06:03:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "dc0ddcdd-9037-43c7-9119-429775f6d84e",
+            "race_number": 11,
+            "name": "COSMOPOLITAN HOTEL MOBILE PACE",
+            "start_time": "2026-03-06T06:28:00Z",
+            "track_condition": "Good",
+            "distance": 2600,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          }
+        ],
+        "video_channels": [
+          "Live1",
+          "Live2"
+        ],
+        "quaddie": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "early_quaddie": [
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "meeting": "782046bb-523b-4b55-aadf-fb85468c6206",
+        "name": "Wagga",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "FAST",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "NSW",
+        "races": [
+          {
+            "id": "5f3a8c38-1760-4e50-a792-97a69051e5ea",
+            "race_number": 1,
+            "name": "Tab Venue Mode Mobile Pace",
+            "start_time": "2026-03-06T02:25:00Z",
+            "track_condition": "Fast",
+            "distance": 2270,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "fe5bc5da-c0ad-4340-b96f-f080b6412055",
+            "race_number": 2,
+            "name": "Dachshund Dash Easter Saturday Mobile Pace",
+            "start_time": "2026-03-06T03:03:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "c57cb607-007d-4942-a473-b8c45c442f42",
+            "race_number": 3,
+            "name": "Mataranka Park Standardbreds 2Yo Mobile Pace",
+            "start_time": "2026-03-06T03:37:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "2ba42730-d275-41f2-b5f5-e5454a0d6f71",
+            "race_number": 4,
+            "name": "Success Stud Mobile Pace",
+            "start_time": "2026-03-06T04:16:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "3912b1dd-d78b-44d6-bae9-095d8dca5720",
+            "race_number": 5,
+            "name": "Benstud Standardbreds 3Yo Mobile Pace",
+            "start_time": "2026-03-06T04:53:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "cfb6bd5b-aede-49f9-b75a-2c93abdaac81",
+            "race_number": 6,
+            "name": "Medowie Lodge Mobile Pace",
+            "start_time": "2026-03-06T05:33:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "b4e22f6b-d7c0-4138-a005-c33fb81ad09d",
+            "race_number": 7,
+            "name": "Nutrien Equine St'bred Sydney Sale Sun Mobile Pace",
+            "start_time": "2026-03-06T06:07:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "e355f3e3-3d95-4b05-ac16-bc2a8010ca11",
+            "race_number": 8,
+            "name": "Yirribee Stud Mobile Pace",
+            "start_time": "2026-03-06T06:45:00Z",
+            "track_condition": "Fast",
+            "distance": 1740,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          }
+        ],
+        "quaddie": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "f8beeef5-31cd-4fb9-a343-142a3f967357",
+        "name": "Alexandra Park",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Fast",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "NZ",
+        "state": "NZ",
+        "races": [
+          {
+            "id": "a8bfb419-5ba0-4141-9b60-4ba75887c139",
+            "race_number": 1,
+            "name": "TOP OF THE PARK  - BOOK FOR 20 MARCH MOBILE PACE",
+            "start_time": "2026-03-06T04:06:00Z",
+            "track_condition": "Fast",
+            "distance": 2200,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "abf5eff2-6e3f-4573-b94b-e899affaddf5",
+            "race_number": 2,
+            "name": "RUAKAKA APR 6 - HARNESS ON THE GRASS MOBILE PACE",
+            "start_time": "2026-03-06T04:45:00Z",
+            "track_condition": "Fast",
+            "distance": 2200,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "a9e4c39c-559a-4f84-b970-2f19095400e1",
+            "race_number": 3,
+            "name": "LONE STAR ALEXANDRA PARK HANDICAP TROT",
+            "start_time": "2026-03-06T05:19:00Z",
+            "track_condition": "Fast",
+            "distance": 2200,
+            "weather": "Fine",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "77606796-0b7f-41a8-aff0-dca32f04ccf1",
+            "race_number": 4,
+            "name": "HYDROFLOW MOBILE PACE",
+            "start_time": "2026-03-06T05:49:00Z",
+            "track_condition": "Fast",
+            "distance": 1700,
+            "weather": "Fine",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "cef904dd-338c-41ea-87d7-c6c211f85d61",
+            "race_number": 5,
+            "name": "BORDER FENCING SERVICES HANDICAP TROT",
+            "start_time": "2026-03-06T06:19:00Z",
+            "track_condition": "Fast",
+            "distance": 2200,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "f7a52662-79fa-4df7-9ed2-aa658e000bc8",
+            "race_number": 6,
+            "name": "BRECKON FARMS YOUNG GUNS 2YO C&G HT 3 MOBILE PACE",
+            "start_time": "2026-03-06T06:44:00Z",
+            "track_condition": "Fast",
+            "distance": 1700,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "b95b6794-92ec-4391-9964-aa33bb6982b1",
+            "race_number": 7,
+            "name": "GALLAGHER INSURANCE YOUNG GUNS 2YF HT 3 MBL PACE",
+            "start_time": "2026-03-06T07:09:00Z",
+            "track_condition": "Fast",
+            "distance": 1700,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          },
+          {
+            "id": "52b40631-9a46-45ba-9791-bcfaf3b5f01a",
+            "race_number": 8,
+            "name": "WOODLANDS STUD NORTHERN MARES GATEWAY MOBILE PACE",
+            "start_time": "2026-03-06T07:34:00Z",
+            "track_condition": "Fast",
+            "distance": 1700,
+            "weather": "FINE",
+            "country": "NZ",
+            "state": "NZ",
+            "status": "Final"
+          }
+        ],
+        "video_channels": [
+          "Live1",
+          "Live2"
+        ],
+        "quaddie": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "8f151c4e-139c-4c16-be79-2579e01a577e",
+        "name": "Parkes",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "FAST",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "NSW",
+        "races": [
+          {
+            "id": "b65cf380-71ea-480f-9636-c1bd34298c84",
+            "race_number": 1,
+            "name": "Radio 2Pk/ Rok Fm Pace",
+            "start_time": "2026-03-06T06:14:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "f0695454-672b-45de-ba78-4963600ca5ae",
+            "race_number": 2,
+            "name": "Clarinda Park It Leading Driver/ Jett Turnbull Pace",
+            "start_time": "2026-03-06T06:50:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final",
+            "protest": true,
+            "protest_reason": "Change of placings from 2-9-1-8 to 9-1-8-7 due to #2 being DQ'd "
+          },
+          {
+            "id": "773dea55-65d2-4f1e-9158-ce47708c5ce5",
+            "race_number": 3,
+            "name": "Deans Hydraulics Leading Trainer/ Nathan Turnbull Pace",
+            "start_time": "2026-03-06T07:25:00Z",
+            "track_condition": "Fast",
+            "distance": 2040,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "80a827b2-0a87-48f7-bf0d-f79ff6e18205",
+            "race_number": 4,
+            "name": "Harness Breeders Nsw Sapphire Series",
+            "start_time": "2026-03-06T07:55:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "a6cf88be-04d8-4c37-8735-9e03d5f1b334",
+            "race_number": 5,
+            "name": "Worklocker Parkes Local Trainer/ Grant Jones Pace",
+            "start_time": "2026-03-06T08:25:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "ca6af04a-f6f0-43cd-a13a-dec960d91d9a",
+            "race_number": 6,
+            "name": "Terry Brothers 3Yo Nsw Bred Pace",
+            "start_time": "2026-03-06T08:55:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "150f58a3-1011-461e-82ca-3fd0d90a5a15",
+            "race_number": 7,
+            "name": "Golden Boys Stables/ Jett Turnbull Pace",
+            "start_time": "2026-03-06T09:25:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "a0d4e4b0-ca3a-46b5-b552-f3f6f1fb6862",
+            "race_number": 8,
+            "name": "Parkes Leagues Club Juvenile Horse/ Sanders Pace",
+            "start_time": "2026-03-06T09:59:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "5b2f5c8b-8610-42f1-8b26-3a1311cf427a",
+            "race_number": 9,
+            "name": "Tab.com.au Pace",
+            "start_time": "2026-03-06T10:33:00Z",
+            "track_condition": "Fast",
+            "distance": 1660,
+            "weather": "Showery",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          }
+        ],
+        "quaddie": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "55a41264-06f5-4219-9925-b7876a650464",
+        "name": "Launceston",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "TAS",
+        "races": [
+          {
+            "id": "e3cc918f-e4af-433f-9c38-993c326a57b3",
+            "race_number": 1,
+            "name": "Find Us On Facebook And Instagram Mobile Pace",
+            "start_time": "2026-03-06T06:25:00Z",
+            "track_condition": "Good",
+            "distance": 1680,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          },
+          {
+            "id": "82f633a9-e4e0-4d86-9b05-2163e29b4e32",
+            "race_number": 2,
+            "name": "Ladbrokes Two-Year-Old Mobile Pace",
+            "start_time": "2026-03-06T06:55:00Z",
+            "track_condition": "Good",
+            "distance": 1680,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          },
+          {
+            "id": "65596a4a-b8c0-4517-9f30-52a4ed4331da",
+            "race_number": 3,
+            "name": "Tasmanian Horse Transport Mobile Pace",
+            "start_time": "2026-03-06T07:25:00Z",
+            "track_condition": "Synthetic",
+            "distance": 1680,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          },
+          {
+            "id": "6abd3a80-8cf7-4a1c-9eda-42babe1f0672",
+            "race_number": 4,
+            "name": "Be At The Easter Cup Sat 4 April Stakes Mobile Pace",
+            "start_time": "2026-03-06T08:05:00Z",
+            "track_condition": "Good",
+            "distance": 1680,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          },
+          {
+            "id": "d4e64775-afc4-43dc-a46a-15e5f07a66d1",
+            "race_number": 5,
+            "name": "Victory Images Photography Stakes Mobile Pace",
+            "start_time": "2026-03-06T08:36:00Z",
+            "track_condition": "Good",
+            "distance": 1680,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          },
+          {
+            "id": "37a27d2b-eedf-4ca9-8596-3df6994506e1",
+            "race_number": 6,
+            "name": "Ladbrokes Odds Surge Handicap Pace",
+            "start_time": "2026-03-06T09:06:00Z",
+            "track_condition": "Good",
+            "distance": 2200,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          },
+          {
+            "id": "e13653b5-3a45-4701-aa74-627c461d47be",
+            "race_number": 7,
+            "name": "Family Fun Night Saturday 4 April Mobile Pace",
+            "start_time": "2026-03-06T09:37:00Z",
+            "track_condition": "Good",
+            "distance": 1680,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "TAS",
+            "status": "Final"
+          }
+        ],
+        "video_channels": [
+          "Live1",
+          "Live2"
+        ],
+        "quaddie": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "1fe6ad98-e950-4890-bf88-3ff273d1ce0d",
+        "name": "Melton",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "VIC",
+        "races": [
+          {
+            "id": "7059d5f4-8c66-44c7-9801-eed29eef2bad",
+            "race_number": 1,
+            "name": "2Construct Mobile Trot",
+            "start_time": "2026-03-06T07:02:00Z",
+            "track_condition": "Good",
+            "distance": 2240,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          },
+          {
+            "id": "d1507117-a677-4eee-80d0-818de66600fe",
+            "race_number": 2,
+            "name": "Prydes Easifeed Mobile Pace",
+            "start_time": "2026-03-06T07:33:00Z",
+            "track_condition": "Good",
+            "distance": 1720,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          },
+          {
+            "id": "8daa24d0-380f-497e-9832-6298eaf2afa1",
+            "race_number": 3,
+            "name": "Swift Signs Mobile Pace",
+            "start_time": "2026-03-06T08:03:00Z",
+            "track_condition": "Good",
+            "distance": 2240,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          },
+          {
+            "id": "1ddcefc0-528f-48eb-92f3-8f63ba0a389d",
+            "race_number": 4,
+            "name": "Lamaros Hotel Mobile Pace",
+            "start_time": "2026-03-06T08:33:00Z",
+            "track_condition": "Good",
+            "distance": 1720,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          },
+          {
+            "id": "41eb3ba4-e9af-4895-bab6-e322ae2ed447",
+            "race_number": 5,
+            "name": "Apg Mobile Pace",
+            "start_time": "2026-03-06T09:03:00Z",
+            "track_condition": "Good",
+            "distance": 2240,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          },
+          {
+            "id": "f179aeb7-6d9d-4b84-9629-ab4a8a036c0c",
+            "race_number": 6,
+            "name": "Hertz Melton Mobile Pace",
+            "start_time": "2026-03-06T09:33:00Z",
+            "track_condition": "Good",
+            "distance": 1720,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          },
+          {
+            "id": "a5e67397-ecab-43ed-a674-ffb5dd62ff4e",
+            "race_number": 7,
+            "name": "Mimosa Homes Maiden Mobile Pace",
+            "start_time": "2026-03-06T10:03:00Z",
+            "track_condition": "Good",
+            "distance": 1720,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "VIC",
+            "status": "Final"
+          }
+        ],
+        "quaddie": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "9910072e-474c-4d21-966d-713b9ac3259b",
+        "name": "Mount Gambier",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "SA",
+        "races": [
+          {
+            "id": "a19a64d6-d31d-400f-812e-a3e74a085f51",
+            "race_number": 1,
+            "name": "Matthews Petroleum Mt Gambier Gold Cup H1 Mbl Pce",
+            "start_time": "2026-03-06T07:05:00Z",
+            "track_condition": "Good",
+            "distance": 2190,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "SA",
+            "status": "Final"
+          },
+          {
+            "id": "7f7744d0-4f6d-42ee-8257-0370021d2173",
+            "race_number": 2,
+            "name": "Matthews Petroleum Mt Gambier Gold Cup H2 Mbl Pce",
+            "start_time": "2026-03-06T07:44:00Z",
+            "track_condition": "Good",
+            "distance": 2190,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "SA",
+            "status": "Final"
+          },
+          {
+            "id": "c54e5690-b364-4780-b2c0-c6323886854b",
+            "race_number": 3,
+            "name": "Melton Saddlery Mobile Pace",
+            "start_time": "2026-03-06T08:17:00Z",
+            "track_condition": "Good",
+            "distance": 1780,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "SA",
+            "status": "Final"
+          },
+          {
+            "id": "a69bf4eb-bc48-4b2d-a2f5-7da6ed956a36",
+            "race_number": 4,
+            "name": "The Tack Room Mobile Pace",
+            "start_time": "2026-03-06T08:47:00Z",
+            "track_condition": "Good",
+            "distance": 1780,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "SA",
+            "status": "Final"
+          },
+          {
+            "id": "8d83896c-ea50-40d3-82b5-048afe730b9c",
+            "race_number": 5,
+            "name": "Carbine Chemicals Mobile Pace",
+            "start_time": "2026-03-06T09:19:00Z",
+            "track_condition": "Good",
+            "distance": 1780,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "SA",
+            "status": "Final"
+          },
+          {
+            "id": "aeab4df0-1a15-43f6-b95a-a51b348a287f",
+            "race_number": 6,
+            "name": "Jc Milton & Co Farrier Supplies Mobile Pace",
+            "start_time": "2026-03-06T09:45:00Z",
+            "track_condition": "Good",
+            "distance": 2190,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "SA",
+            "status": "Final"
+          }
+        ],
+        "video_channels": [
+          "Live1",
+          "Live2"
+        ],
+        "quaddie": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "0d752981-8100-45fa-9f10-45dd7f78f0b5",
+        "name": "Newcastle",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "fast",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "NSW",
+        "races": [
+          {
+            "id": "ddf22348-17b4-44c6-8014-8b1eee27245b",
+            "race_number": 1,
+            "name": "Ave Technologies Pace",
+            "start_time": "2026-03-06T07:10:00Z",
+            "track_condition": "Fast",
+            "distance": 1609,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "28fae828-ea85-4d06-bf67-d243737048aa",
+            "race_number": 2,
+            "name": "Harness Breeders Nsw Sapphire Series",
+            "start_time": "2026-03-06T07:40:00Z",
+            "track_condition": "Fast",
+            "distance": 1609,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "6d9efdad-2ffe-46c4-a38d-fd49efc10022",
+            "race_number": 3,
+            "name": "Happy Birthday Ben Scott Pace",
+            "start_time": "2026-03-06T08:10:00Z",
+            "track_condition": "Fast",
+            "distance": 2030,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "a46d2c69-9d45-47f5-8e42-67438010240d",
+            "race_number": 4,
+            "name": "Chamberlain Brown Pace",
+            "start_time": "2026-03-06T08:40:00Z",
+            "track_condition": "Fast",
+            "distance": 2030,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final",
+            "protest": true,
+            "protest_reason": "Protest DISMISSED"
+          },
+          {
+            "id": "022814d6-92aa-49ae-91c2-109ac57f888a",
+            "race_number": 5,
+            "name": "Garrard Horse And Hound Pace",
+            "start_time": "2026-03-06T09:10:00Z",
+            "track_condition": "Fast",
+            "distance": 1609,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "b38f12f3-3c17-451c-bcd2-1c81dbfd0aa4",
+            "race_number": 6,
+            "name": "Tooheys Pace",
+            "start_time": "2026-03-06T09:40:00Z",
+            "track_condition": "Fast",
+            "distance": 2030,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "8fa47fb8-ab00-47a9-81fa-d9851f67e9db",
+            "race_number": 7,
+            "name": "Bonvilla Estate Pace",
+            "start_time": "2026-03-06T10:10:00Z",
+            "track_condition": "Fast",
+            "distance": 2030,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          },
+          {
+            "id": "30a55f37-3da3-4a53-9c55-0f9490e88e70",
+            "race_number": 8,
+            "name": "The Tab App 2Yo Pace",
+            "start_time": "2026-03-06T10:40:00Z",
+            "track_condition": "Fast",
+            "distance": 1609,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "NSW",
+            "status": "Final"
+          }
+        ],
+        "quaddie": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "9e511b79-2a22-4202-a98d-4253adafe07e",
+        "name": "Albion Park",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "QLD",
+        "races": [
+          {
+            "id": "0874ec7b-8550-4b00-b389-2d52551d2d3d",
+            "race_number": 1,
+            "name": "Garrards Horse & Hound Mobile Pace",
+            "start_time": "2026-03-06T07:52:00Z",
+            "track_condition": "Good",
+            "distance": 2138,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "41c24fcd-a365-4002-996b-e243c7ca9dce",
+            "race_number": 2,
+            "name": "Ladbrokes Racing Extras In Multi Mobile Pace",
+            "start_time": "2026-03-06T08:22:00Z",
+            "track_condition": "Good",
+            "distance": 1660,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "0f7a464c-3682-4915-ab08-8b26242feed8",
+            "race_number": 3,
+            "name": "Racing & Sports.com Mobile Pace",
+            "start_time": "2026-03-06T08:52:00Z",
+            "track_condition": "Good",
+            "distance": 1660,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "a5f220bc-ba8a-41df-8f8a-430b7407ed20",
+            "race_number": 4,
+            "name": "Psp Friday Frenzy Mobile Pace",
+            "start_time": "2026-03-06T09:22:00Z",
+            "track_condition": "Good",
+            "distance": 1660,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "5f240162-a21b-4f2e-a27a-daae8d6b29e2",
+            "race_number": 5,
+            "name": "Garrards Redcliffe Yearling Sale March 29 Mbl Pce",
+            "start_time": "2026-03-06T09:48:00Z",
+            "track_condition": "Good",
+            "distance": 2138,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "fa370b6c-fad1-414e-abda-e10f98316163",
+            "race_number": 6,
+            "name": "Outkast National Design & Construction Mobile Pace",
+            "start_time": "2026-03-06T10:18:00Z",
+            "track_condition": "Good",
+            "distance": 1660,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "9c84824c-73d0-496d-900d-b77c16388616",
+            "race_number": 7,
+            "name": "Wolf Signs Mobile Pace",
+            "start_time": "2026-03-06T10:52:00Z",
+            "track_condition": "Good",
+            "distance": 1660,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          },
+          {
+            "id": "53eb1fd8-8db7-475c-9d03-1f55d3c0aefb",
+            "race_number": 8,
+            "name": "Pryde's Easifeed Racing Cube Handicap Trot",
+            "start_time": "2026-03-06T11:22:00Z",
+            "track_condition": "Good",
+            "distance": 2138,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "QLD",
+            "status": "Final"
+          }
+        ],
+        "video_channels": [
+          "Live1"
+        ],
+        "quaddie": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "4d2a67eb-5f8f-408a-96a2-fbf7b38fef8e",
+        "name": "Gloucester Park",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "WA",
+        "races": [
+          {
+            "id": "3b550d1a-b3e3-4743-bbfe-9cce60974b9c",
+            "race_number": 1,
+            "name": "Westside Auto Cars Fixed Price,Fair Price Mbl Pce",
+            "start_time": "2026-03-06T09:55:00Z",
+            "track_condition": "Good",
+            "distance": 2130,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "ec47539a-721a-4f5d-8daf-a53282a4811e",
+            "race_number": 2,
+            "name": "Westside Auto 24/7 Online Enquiry Mobile Pace",
+            "start_time": "2026-03-06T10:25:00Z",
+            "track_condition": "Good",
+            "distance": 1730,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "21469c26-815c-4e99-9eab-542ae736041a",
+            "race_number": 3,
+            "name": "Westside Auto We Buy Cars Mobile Pace",
+            "start_time": "2026-03-06T11:02:00Z",
+            "track_condition": "Good",
+            "distance": 2130,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "8d2fefc8-3894-4d89-9d73-cf58a6eeaca3",
+            "race_number": 4,
+            "name": "Westside Auto Fixed Price Servicing Mobile Pace",
+            "start_time": "2026-03-06T11:32:00Z",
+            "track_condition": "Good",
+            "distance": 2536,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "f231a861-b4ec-4821-9557-b3c417012e44",
+            "race_number": 5,
+            "name": "Westside Auto Wholesale - The Lombardo Mobile Pace (G3)",
+            "start_time": "2026-03-06T12:00:00Z",
+            "track_condition": "Good",
+            "distance": 2130,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "21010a40-6633-40b4-88e8-b6d5025a873a",
+            "race_number": 6,
+            "name": "Westside Auto Wholesale, Australia's Largest Mobile Pace",
+            "start_time": "2026-03-06T12:25:00Z",
+            "track_condition": "Good",
+            "distance": 2130,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "84020bc3-10c4-4cf4-bed4-12f69cfba654",
+            "race_number": 7,
+            "name": "Westside Auto For Your Tyres Mobile Pace",
+            "start_time": "2026-03-06T12:55:00Z",
+            "track_condition": "Good",
+            "distance": 2130,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "563c4f6b-a292-47e8-9d30-78191ae2aa7f",
+            "race_number": 8,
+            "name": "3000 + Vehicles Westside Auto Wholesale Mobile Pace",
+            "start_time": "2026-03-06T13:24:00Z",
+            "track_condition": "Good",
+            "distance": 2130,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          }
+        ],
+        "quaddie": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "955c1cac-3ed6-47ea-85e4-205a4a2b31bc",
+        "name": "Bunbury",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "AUS",
+        "state": "WA",
+        "races": [
+          {
+            "id": "909db664-e09e-4f2a-bb34-6c89372ce573",
+            "race_number": 1,
+            "name": "Tabtouch Mobile Pace",
+            "start_time": "2026-03-06T10:07:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "a7c43cb6-7ab1-4dba-851e-4e5fc0f8b2e6",
+            "race_number": 2,
+            "name": "Gen X Engineering Mobile Pace",
+            "start_time": "2026-03-06T10:37:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "487bd44e-1fcb-4ad7-b58b-ded1670a01a2",
+            "race_number": 3,
+            "name": "Combined Team Services Mobile Pace",
+            "start_time": "2026-03-06T11:12:00Z",
+            "track_condition": "Good",
+            "distance": 2100,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "1c30ce8b-6be3-4638-a6d6-64d9f83324c2",
+            "race_number": 4,
+            "name": "Oakford Stockfeeds Mobile Pace",
+            "start_time": "2026-03-06T11:38:00Z",
+            "track_condition": "Good",
+            "distance": 1609,
+            "weather": "Fine",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "7b33b5d1-8304-4f9d-9df0-c4f4764b2688",
+            "race_number": 5,
+            "name": "Swan Draught Bunbury Cup 28Th March Mobile Pace",
+            "start_time": "2026-03-06T12:10:00Z",
+            "track_condition": "Good",
+            "distance": 2100,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "dad9ba36-03e7-4087-b99d-d7d833afe365",
+            "race_number": 6,
+            "name": "Retravision Mobile Pace",
+            "start_time": "2026-03-06T12:37:00Z",
+            "track_condition": "Good",
+            "distance": 2100,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          },
+          {
+            "id": "3c0676d3-3220-440d-b390-f2f3c0eb3502",
+            "race_number": 7,
+            "name": "Happy 81St Birthday Peter Trefort Mobile Pace",
+            "start_time": "2026-03-06T13:11:00Z",
+            "track_condition": "Good",
+            "distance": 2100,
+            "weather": "FINE",
+            "country": "AUS",
+            "state": "WA",
+            "status": "Final"
+          }
+        ],
+        "quaddie": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "early_quaddie": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "meeting": "2bb157b7-9546-4814-afdb-742a6543ada4",
+        "name": "Pontchateau",
+        "date": "2026-03-06T00:00:00Z",
+        "track_condition": "Good",
+        "category": "H",
+        "category_name": "Harness Horse Racing",
+        "country": "FR",
+        "state": "FR",
+        "races": [
+          {
+            "id": "814a0283-a8e7-4bd7-a2e2-279c1f9b2c36",
+            "race_number": 1,
+            "name": "Prix Maurice Sambron - Attele",
+            "start_time": "2026-03-06T10:37:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "OCAST",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "2f91c11c-6af0-464f-8f4f-9c8eec6d1b0b",
+            "race_number": 2,
+            "name": "Prix Des Courses De Chateaubriant - Monte",
+            "start_time": "2026-03-06T11:10:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "OCAST",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "9ffa970b-ed64-48f8-9964-0309aec6ac0d",
+            "race_number": 3,
+            "name": "Prix Du Pmu L'escale-Ste-Anne-Sur-Brivet ",
+            "start_time": "2026-03-06T11:41:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "OCAST",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "48c9a804-59fa-4f67-9d8f-2cf6a5736904",
+            "race_number": 4,
+            "name": "Prix De Savenay Raceandcare - Attele",
+            "start_time": "2026-03-06T12:15:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "SHWRY",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "fef5b1da-2721-4aed-828a-bf5865e4e826",
+            "race_number": 5,
+            "name": "Prix De Vannes - Monte",
+            "start_time": "2026-03-06T12:48:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "SHWRY",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "24d839ba-5514-4b65-a1ef-7d8489025348",
+            "race_number": 6,
+            "name": "Prix De Sainte-Reine-De-Bretagne - Attele",
+            "start_time": "2026-03-06T13:19:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "SHWRY",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "e603ec37-486a-49bd-9c58-5d50617ed49c",
+            "race_number": 7,
+            "name": "Prix Des Courses De Ploermel - Attele",
+            "start_time": "2026-03-06T13:52:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "SHWRY",
+            "country": "FR",
+            "state": "FR",
+            "status": "Final"
+          },
+          {
+            "id": "74147e94-c639-45bf-86f0-ff9ffcc79b37",
+            "race_number": 8,
+            "name": "Prix Des Sables D'olonne - Attele",
+            "start_time": "2026-03-06T14:29:00Z",
+            "track_condition": "Good",
+            "distance": 2800,
+            "weather": "SHWRY",
+            "country": "FR",
+            "state": "FR",
+            "status": "Closed"
+          }
+        ],
+        "video_channels": [
+          "Live1",
+          "Live2"
+        ]
+      }
+    ]
+  }
+}

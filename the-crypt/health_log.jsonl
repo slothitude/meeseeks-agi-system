@@ -1,0 +1,8 @@
+{"timestamp": "2026-03-06T01:19:24.661755", "status": "warning", "cpu_percent": 2.3, "memory_percent": 49.7, "active_workers": 1, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 10 in last 24h"]}
+{"timestamp": "2026-03-06T01:19:44.757853", "status": "warning", "cpu_percent": 0.9, "memory_percent": 49.6, "active_workers": 1, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 10 in last 24h"]}
+{"timestamp": "2026-03-06T01:19:51.404089", "status": "warning", "cpu_percent": 2.0, "memory_percent": 49.9, "active_workers": 1, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 10 in last 24h"]}
+{"timestamp": "2026-03-06T01:20:07.755699", "status": "warning", "cpu_percent": 0.9, "memory_percent": 49.8, "active_workers": 1, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 10 in last 24h"]}
+{"timestamp": "2026-03-06T01:22:02.971261", "status": "warning", "cpu_percent": 0.7, "memory_percent": 49.8, "active_workers": 0, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 10 in last 24h"]}
+{"timestamp": "2026-03-06T01:22:10.675831", "status": "warning", "cpu_percent": 1.6, "memory_percent": 49.8, "active_workers": 0, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 10 in last 24h"]}
+{"timestamp": "2026-03-06T06:32:35.390116", "status": "warning", "cpu_percent": 0.2, "memory_percent": 50.1, "active_workers": 0, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 11 in last 24h"]}
+{"timestamp": "2026-03-06T06:32:41.369343", "status": "warning", "cpu_percent": 0.3, "memory_percent": 50.1, "active_workers": 0, "alerts": ["WARNING: Disk usage at 86.1%", "High failure rate: 11 in last 24h"]}

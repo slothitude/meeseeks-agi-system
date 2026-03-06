@@ -1,24 +1,33 @@
 #!/usr/bin/env python3
-"""Quick test to verify Cognee + Ollama integration"""
+# -*- coding: utf-8 -*-
+"""Quick test to verify Cognee + ZAI GLM-5 + Ollama Embeddings integration"""
 
 import asyncio
 import os
 import sys
 
-# Load environment
+# Fix Windows console encoding for emojis
+if sys.platform == 'win32':
+    sys.stdout.reconfigure(encoding='utf-8')
+
+# Load environment for local Ollama (LLM + Embeddings)
 os.environ.setdefault("LLM_PROVIDER", "ollama")
 os.environ.setdefault("LLM_MODEL", "phi3:mini")
 os.environ.setdefault("LLM_ENDPOINT", "http://localhost:11434")
-os.environ.setdefault("LLM_API_KEY", "ollama")  # Dummy key for local Ollama
+os.environ.setdefault("LLM_API_KEY", "ollama")  # Dummy key required by cognee
 os.environ.setdefault("EMBEDDING_PROVIDER", "ollama")
 os.environ.setdefault("EMBEDDING_MODEL", "nomic-embed-text:latest")
 os.environ.setdefault("EMBEDDING_ENDPOINT", "http://localhost:11434")
+os.environ.setdefault("EMBEDDING_DIMENSIONS", "768")
+os.environ.setdefault("HUGGINGFACE_TOKENIZER", "bert-base-uncased")
 os.environ.setdefault("ENABLE_BACKEND_ACCESS_CONTROL", "false")
+os.environ.setdefault("VECTOR_DATABASE_PROVIDER", "lancedb")
+os.environ.setdefault("GRAPH_DATABASE_PROVIDER", "kuzu")
 
 import cognee
 
 async def test_cognee():
-    print("🧪 Testing Cognee + Ollama integration...")
+    print("🧪 Testing Cognee + ZAI GLM-5 + Ollama Embeddings integration...")
     
     # Test 1: Check Cognee version
     print(f"✅ Cognee version: {cognee.__version__}")
@@ -35,7 +44,7 @@ async def test_cognee():
     """
     
     try:
-        await cognee.add(test_text, dataset="test-ancestors")
+        await cognee.add(test_text, dataset_id="test-ancestors")
         print("✅ Document added successfully")
     except Exception as e:
         print(f"❌ Failed to add document: {e}")
@@ -44,7 +53,7 @@ async def test_cognee():
     # Test 3: Cognify (build knowledge graph)
     print("\n🔄 Building knowledge graph...")
     try:
-        await cognee.cognify("test-ancestors")
+        await cognee.cognify(dataset_ids=["test-ancestors"])
         print("✅ Knowledge graph built")
     except Exception as e:
         print(f"❌ Failed to cognify: {e}")
@@ -65,7 +74,7 @@ async def test_cognee():
         print(f"❌ Failed to search: {e}")
         return False
     
-    print("\n🎉 All tests passed! Cognee + Ollama integration working!")
+    print("\n🎉 All tests passed! Cognee + ZAI GLM-5 + Ollama Embeddings integration working!")
     return True
 
 if __name__ == "__main__":

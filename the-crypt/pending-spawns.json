@@ -5,5 +5,6 @@
     "result": "sections:8, chunk:7, bullets:39",
     "resolved_at": "2026-03-06T14:35:00",
     "resolved_by": "main_session_direct"
-  }
+  },
+  "_note": "Cleared Betfair paper trading tasks (retry 3/3) - need persistent API connection + 30min monitoring, impossible with 3-min subagent timeout."
 }

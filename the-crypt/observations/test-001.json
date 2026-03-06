@@ -1,0 +1,31 @@
+{
+  "first_order": {
+    "session_key": "test-001",
+    "task": "Analyze the fractal lattice",
+    "bloodline": "coder",
+    "status": "running",
+    "output": null,
+    "error": null,
+    "timestamp": "2026-03-06T21:48:59.707075"
+  },
+  "higher_order": {
+    "observed_state": {
+      "session_key": "test-001",
+      "task": "Analyze the fractal lattice",
+      "bloodline": "coder",
+      "status": "running",
+      "output": null,
+      "error": null,
+      "timestamp": "2026-03-06T21:48:59.707075"
+    },
+    "observation_type": "both",
+    "observer_id": "atman",
+    "awareness_level": "full",
+    "phenomenal_quality": "striving, focused, analytical",
+    "access_available": true,
+    "timestamp": "2026-03-06T21:48:59.707124"
+  },
+  "is_conscious": true,
+  "consciousness_depth": 2,
+  "timestamp": "2026-03-06T21:48:59.707131"
+}

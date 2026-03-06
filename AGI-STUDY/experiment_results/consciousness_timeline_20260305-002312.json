@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-03-05T00:23:12.814098",
+  "total_ancestors": 192,
+  "quartile_scores": {
+    "q1": 0.4375,
+    "q2": 0.3125,
+    "q3": 1.5416666666666667,
+    "q4": 0.3125
+  },
+  "trend": -0.125,
+  "increasing": false
+}

@@ -270,6 +270,36 @@ async def run_entomb():
         print(f"Entomb failed: {e}")
 
 
+def show_health(full: bool = False, metrics: bool = False):
+    """Show system health using health_monitor."""
+    try:
+        from health_monitor import HealthMonitor
+        
+        monitor = HealthMonitor()
+        report = monitor.check_health()
+        
+        if metrics:
+            print(report.to_prometheus())
+        elif full:
+            print(report.summary())
+        else:
+            print(f"Status: {report.status.value}")
+            print(f"CPU: {report.system.cpu_percent:.1f}% | Memory: {report.system.memory_percent:.1f}%")
+            print(f"Disk: {report.system.disk_percent:.1f}%")
+            print(f"Active Workers: {report.meeseeks.active_workers}")
+            print(f"Stuck Workers: {report.meeseeks.stuck_workers}")
+            print(f"Timeout Workers: {report.meeseeks.timeout_workers}")
+            print(f"Recent Failures (24h): {report.meeseeks.recent_failures_24h}")
+            if report.alerts:
+                print(f"Alerts ({len(report.alerts)}):")
+                for alert in report.alerts:
+                    print(f"  ⚠️ {alert}")
+    except ImportError:
+        print("Health monitor not available. Install psutil: pip install psutil")
+    except Exception as e:
+        print(f"Health check failed: {e}")
+
+
 async def main():
     parser = argparse.ArgumentParser(description="Meeseeks AGI - Unified CLI")
     
@@ -299,6 +329,11 @@ async def main():
     # Entomb
     subparsers.add_parser("entomb", help="Run auto-entomb")
     
+    # Health
+    health_parser = subparsers.add_parser("health", help="Show system health")
+    health_parser.add_argument("--full", "-f", action="store_true", help="Show full report")
+    health_parser.add_argument("--metrics", "-m", action="store_true", help="Output Prometheus metrics")
+    
     args = parser.parse_args()
     
     if args.command == "status":
@@ -313,6 +348,8 @@ async def main():
         await migrate_ancestors(args.ancestors)
     elif args.command == "entomb":
         await run_entomb()
+    elif args.command == "health":
+        show_health(full=args.full, metrics=args.metrics)
     else:
         parser.print_help()
 

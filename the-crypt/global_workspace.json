@@ -287,5 +287,226 @@
       "reasoning",
       "creativity"
     ]
+  },
+  {
+    "content": "Task: Integrate Cognee with the dharma system",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-04T01:46:05.500875",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Integrate Cognee with the dharma system",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-04T01:46:51.442870",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Integrate Cognee with the dharma system",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-04T19:22:12.527415",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Test the AGI system",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-05T21:48:47.511278",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Test the AGI system integrations",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-05T21:57:23.563364",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Test the AGI system",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-05T21:57:37.720001",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Mega test: Verify all integrations work",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-05T22:00:07.356988",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Full workflow test",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-05T22:00:07.592463",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: debug a database timeout",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-06T09:04:57.001346",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: debug a database timeout",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-06T09:05:04.990163",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Test task: search GitHub for pi-agent repos",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-06T11:09:50.302292",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Test: Use sequentialthinking to reason through: problem: count the lines in dharma.md",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-06T11:41:01.375920",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
+  },
+  {
+    "content": "Task: Test task",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-06T13:21:33.178018",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
   }
 ]

@@ -3,9 +3,16 @@
 Cognee Helper for Sloth_rog Memory System
 Integrates graph-based memory with the existing file-based system.
 
+REQUIRES: Python 3.10-3.12 (uses venv at skills/cognee/.venv)
+RUN WITH: skills/cognee/.venv/Scripts/python.exe cognee_helper.py
+OR USE: skills/cognee/run.bat <script.py>
+
 Supports both:
 - GRAPH_COMPLETION: Slow but comprehensive LLM-powered answers
 - CHUNKS: Fast vector similarity search (no LLM, instant)
+
+LLM: z.ai coding endpoint (glm-4.7-flash)
+Embeddings: Fastembed local (BAAI/bge-small-en-v1.5)
 """
 
 import os
@@ -21,16 +28,18 @@ from datetime import datetime
 os.environ["ENABLE_BACKEND_ACCESS_CONTROL"] = "false"
 os.environ["COGNEE_SKIP_CONNECTION_TEST"] = "true"
 
-# Ollama local LLM (llama3.2 supports tool calling)
+# z.ai Coding endpoint for LLM (graph extraction)
 os.environ["LLM_PROVIDER"] = "openai"
-os.environ["LLM_MODEL"] = "openai/llama3.2"
-os.environ["LLM_ENDPOINT"] = "http://localhost:11434/v1"
-os.environ["LLM_API_KEY"] = "ollama"
+os.environ["LLM_MODEL"] = "openai/glm-4.7-flash"
+os.environ["LLM_ENDPOINT"] = "https://api.z.ai/api/coding/paas/v4"
+os.environ["LLM_API_KEY"] = "816abf286448462aa908983e02db8dcc.XAI9ZSyNK6VXphEi"
 
-# Fastembed local embeddings
-os.environ["EMBEDDING_PROVIDER"] = "fastembed"
-os.environ["EMBEDDING_MODEL"] = "BAAI/bge-small-en-v1.5"
-os.environ["EMBEDDING_DIMENSIONS"] = "384"
+# Ollama local embeddings (nomic-embed-text)
+os.environ["EMBEDDING_PROVIDER"] = "ollama"
+os.environ["EMBEDDING_MODEL"] = "nomic-embed-text:latest"
+os.environ["EMBEDDING_ENDPOINT"] = "http://localhost:11434/api/embed"
+os.environ["EMBEDDING_DIMENSIONS"] = "768"
+os.environ["HUGGINGFACE_TOKENIZER"] = "nomic-ai/nomic-embed-text-v1.5"
 
 # Cognee data directory (in The Crypt)
 COGNEE_DATA_DIR = Path("C:/Users/aaron/.openclaw/workspace/the-crypt/cognee")
@@ -215,6 +224,9 @@ async def search_graph(query: str) -> Optional[WisdomResult]:
     except Exception as e:
         print(f"[cognee_helper] Graph search error: {e}")
         return None
+
+
+async def add_memory(text: str, dataset_name: str = "sloth_rog_memory") -> bool:
     """Add a memory to the knowledge graph."""
     if not _ensure_cognee():
         return False

@@ -1,0 +1,113 @@
+{
+  "name": "Betfair Market Monitor",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "betfair/market",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "webhookId": "betfair-market-trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://api.betfair.com/exchange/betting/rest/v1.0/listMarketCatalogue/",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Application-Key",
+              "value": "={{$json.body.applicationKey}}"
+            },
+            {
+              "name": "X-Authentication",
+              "value": "={{$json.body.sessionToken}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "filter",
+              "value": "={{$json.body.filter || {}}}"
+            },
+            {
+              "name": "maxResults",
+              "value": "={{$json.body.maxResults || 100}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Betfair API Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse Betfair API response\nconst response = $input.item.json;\n\n// Extract market data\nconst markets = Array.isArray(response) ? response : [response];\n\n// Format output\nconst parsedMarkets = markets.map(market => ({\n  marketId: market.marketId,\n  marketName: market.marketName,\n  totalMatched: market.totalMatched,\n  event: market.event?.name || 'Unknown',\n  eventType: market.eventType?.name || 'Unknown',\n  competition: market.competition?.name || 'Unknown'\n}));\n\nreturn {\n  json: {\n    success: true,\n    count: parsedMarkets.length,\n    markets: parsedMarkets,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "name": "Parse Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{$json}}",
+        "options": {}
+      },
+      "name": "HTTP Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [850, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Betfair API Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Betfair API Request": {
+      "main": [
+        [
+          {
+            "node": "Parse Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Response": {
+      "main": [
+        [
+          {
+            "node": "HTTP Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "tags": []
+}

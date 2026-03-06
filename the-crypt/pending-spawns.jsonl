@@ -1,0 +1,3 @@
+{"timestamp": "2026-03-06T19:43:00", "task": "Black Hat Python download", "priority": 2, "reason": "rate_limited", "retry_after": "2026-03-06T20:00:00"}
+{"timestamp": "2026-03-06T19:43:00", "task": "Practical Malware Analysis download", "priority": 2, "reason": "rate_limited", "retry_after": "2026-03-06T20:00:00"}
+{"timestamp": "2026-03-06T19:43:00", "task": "Web Hacking 101 download", "priority": 2, "reason": "rate_limited", "retry_after": "2026-03-06T20:00:00"}

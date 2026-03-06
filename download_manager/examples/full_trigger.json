@@ -1,0 +1,12 @@
+{
+  "url": "https://example.com/file.zip",
+  "filename": "my_custom_file.zip",
+  "headers": {
+    "User-Agent": "AgentNetwork/1.0",
+    "Authorization": "Bearer your_token_here"
+  },
+  "subfolder": "projects/myproject",
+  "created_at": "2026-03-03T22:16:00",
+  "created_by": "example",
+  "notes": "This is a full example with all optional fields"
+}
