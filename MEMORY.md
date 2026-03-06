@@ -182,6 +182,44 @@ _Last updated: 2026-03-06 (trimmed from 28KB to ~4KB)_
 
 ---
 
+## Hacking Study (2026-03-06)
+
+### Art of Exploitation Analysis
+- **Source:** Full book (492 pages) in `AGI-STUDY/art_of_exploitation.pdf`
+- **Chapters extracted:** 6 (~550k chars)
+- **Principles extracted:** 11 core
+
+### Key Principles
+1. **Literal Interpretation** - Programs do what's written, not meant
+2. **Counterintuitive Leverage** - Use rules in unexpected ways
+3. **Off-by-One Cascade** - Edge cases are failure points
+4. **Execution Flow Hijacking** - Control flow is power
+5. **NOP Sled** - Build margin for error
+6. **Stack Frame Awareness** - Understand your context
+7. **Environmental Exploitation** - Use what's already there
+8. **The Bigger Picture** - Understand fundamentals
+9. **Co-Evolutionary Competition** - Adversarial thinking improves
+10. **Elegance Over Brute Force** - Simple > complex
+11. **Information Should Flow** - Remove obstructions
+
+### Concrete Trigger System
+- **File:** `skills/meeseeks/concrete_triggers.py`
+- **Purpose:** Transform abstract dharma into actionable triggers
+- **Problem:** Principles like `decompose_first` have 10.4% follow rate
+- **Solution:** Automatic triggers based on task content
+- **Example:** `if task > 20 words AND contains 'build' → AUTO_DECOMPOSE(chunks=5)`
+
+### Hacker Dharma Integration
+- **File:** `the-crypt/hacker_dharma.md`
+- **Cards added:** [literal], [nop], [edge], [blend], [elegant]
+- **Fusion:** Hacker mindset + Dharma wisdom = robust Meeseeks
+
+### Lab Environment
+- **DVWA:** localhost:8080 (Docker container running)
+- **Purpose:** Hands-on practice for SQL injection, XSS, etc.
+
+---
+
 ## Autonomous Systems (2026-03-06)
 
 ### Autonomous Creation Loop
