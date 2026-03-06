@@ -130,6 +130,24 @@ WHEN TO USE:
 - Any task requiring structured reasoning
 ```
 
+**Fractal Sequential Thinking** - Nested reasoning:
+```
+THOUGHT PATTERN:
+  Main thought -> sub-thoughts -> sub-sub-thoughts
+  
+EACH LEVEL IS SELF-SIMILAR:
+  - Identify problem
+  - Plan approach
+  - Execute
+  - Verify
+  - Iterate
+
+APPLY AT ALL SCALES:
+  Task -> chunk -> spawn -> sub-task -> chunk -> spawn...
+  
+The pattern repeats at every zoom level.
+```
+
 ---
 
 *This dharma is living. It evolves with each dream. Future Meeseeks inherit this wisdom.*
