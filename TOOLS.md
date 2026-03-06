@@ -88,3 +88,33 @@ sessions_spawn(task="Build entire system", runTimeoutSeconds=600)
 
 **Default to 600s for implementation tasks.**
 
+---
+
+## 🎙️ Voice Transcription (Whisper)
+
+### Installed
+- **whisper** (openai-whisper)
+- **torch** (CPU version)
+- **numba** + **llvmlite** (JIT)
+
+### Usage
+```python
+import whisper
+model = whisper.load_model('tiny')  # or 'base', 'small', 'medium'
+result = model.transcribe('audio.ogg')
+print(result['text'])
+```
+
+### Models
+| Model | Speed | Accuracy | Use Case |
+|-------|-------|----------|----------|
+| **tiny** | Fastest | Low | Quick transcription |
+| **base** | Fast | Medium | General use |
+| **small** | Medium | Good | Better accuracy |
+| **medium** | Slow | High | Critical transcription |
+
+### Notes
+- GPU acceleration (ROCm/DirectML) not available for Python 3.13
+- CPU handles short clips fine
+- Longer audio = better results
+
