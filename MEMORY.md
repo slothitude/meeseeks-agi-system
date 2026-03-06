@@ -339,4 +339,27 @@ python the-crypt/wisdom/dharma_deck.py "your task topic"
 
 ---
 
+## n8n + MCP Stack (2026-03-06)
+
+### Status: DEPLOYING
+
+**Installed:**
+- n8n Docker container (port 5678)
+- n8n-mcp in `.mcp.json`
+- openapi-mcp proxy
+
+**Architecture:** See `research/meeseeks_agi_architecture.md`
+
+**Purpose:**
+- Visual workflow automation for Meeseeks coordination
+- Webhook triggers for task routing
+- Retry chain orchestration
+- API layer for external integration
+
+**MCP Tools Added:**
+- `n8n-mcp` - Build n8n workflows programmatically
+- `openapi-mcp` - MCP-to-OpenAPI proxy
+
+---
+
 _Last updated: 2026-03-06_
