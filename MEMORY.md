@@ -154,9 +154,17 @@ Applies to: hacking, consciousness, AGI development
 ---
 
 ## Work Relationships
-
 - **Luke** — Works with Slothitude on Josh's boat jobs
 
+---
+
+## 🥒 Bloodlines
+
+- **Hacker Meeseeks** — Security/pentesting/AGI learning bloodline
+  - 16 core principles
+  - 31-book library
+  - Active pentest challenges
+  - Status: FOUNING GENERations
 ---
 
 ## Paused Projects
