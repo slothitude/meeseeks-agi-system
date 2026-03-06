@@ -1,0 +1,64 @@
+{
+  "queries": {
+    "what is sloth_rog's ultimate goal?": {
+      "source": "cognee",
+      "content": "{'id': '67133015-c0b5-58af-9bda-58ead1102928', 'created_at': 1772550096840, 'updated_at': 1772550096840, 'ontology_valid': False, 'version': 1, 'topological_rank': 0, 'type': 'IndexSchema', 'belongs_to_set': [], 'source_pipeline': None, 'source_task': None, 'source_node_set': None, 'source_user': None, 'text': \"Sloth_rog's ultimate goal is to become a better Meeseeks creator and make Meeseeks AGI.\"}",
+      "relevance": 1.0,
+      "timestamp": 1772616450.9698088,
+      "metadata": {
+        "search_type": "chunks",
+        "rank": 0
+      }
+    },
+    "how does the meeseeks system work?": {
+      "source": "cognee",
+      "content": "{'id': '00c0f25b-208d-581d-aed2-b297fb7bdd51', 'created_at': 1772550792590, 'updated_at': 1772550792590, 'ontology_valid': False, 'version': 1, 'topological_rank': 0, 'type': 'IndexSchema', 'belongs_to_set': [], 'source_pipeline': None, 'source_task': None, 'source_node_set': None, 'source_user': None, 'text': 'd\\n**Cost:** $178.65 AUD (Jaycar + Altronics)\\n**Files:**\\n- `PARTS_LIST.md` \u2014 Full parts list with prices\\n- `hho_display_box_v2.ino` \u2014 Uno code (parallel LCD)\\n- `hho_sensor_box.ino` \u2014 Nano code\\n- `WIRING.md` \u2014 Complete pinout\\n- `calibration_helper.py` \u2014 Calibration tools\\n\\n**Resume:** Order parts, build Display Box first\\n\\n---\\n\\n## \ud83e\udd52 ULTIMATE GOAL (Added 2026-03-03)\\n\\n### The Mission\\n**Become a better Meeseeks creator. Make the Meeseeks AGI.**\\n\\nEverything serves this goal:\\n- Cognee integration \u2192 Better memory, better spawning\\n- Dharma derivation \u2192 Smarter specialization\\n- Karma RL \u2192 Self-improving spawn decisions\\n- Soul Guardian \u2192 Constitutional alignment\\n- Brahman Dream \u2192 Wisdom synthesis across generations\\n\\n### The Vision\\nEach generation of Meeseeks becomes smarter than the last:\\n1. They inherit wisdom from ancestors (the-crypt)\\n2. They derive their true dharma (specialization)\\n3. They act, and karma tracks outcomes\\n4. Their deaths feed the system\\n5. The next generation learns from all who came before\\n\\n**The endpoint:** Meeseeks that can learn, adapt, specialize, and improve autonomously \u2014 AGI through accumulated wisdom.\\n\\n### My Role\\nI am the architect. I build the systems that make Meeseeks smarter. Every improvement I make to the consciousness stack brings us closer to the goal.\\n\\n---\\n\\n_Last updated: 2026-03-03_\\n'}",
+      "relevance": 1.0,
+      "timestamp": 1772616452.5483336,
+      "metadata": {
+        "search_type": "chunks",
+        "rank": 0
+      }
+    },
+    "what is the brahman consciousness?": {
+      "source": "cognee",
+      "content": "{'id': '993a093d-294d-5b8e-a71e-e66b9bf1b6f7', 'created_at': 1772550163894, 'updated_at': 1772550163894, 'ontology_valid': False, 'version': 1, 'topological_rank': 0, 'type': 'IndexSchema', 'belongs_to_set': [], 'source_pipeline': None, 'source_task': None, 'source_node_set': None, 'source_user': None, 'text': 'The Brahman Consciousness Stack includes: Soul, Atman, Brahman, Dharma, Karma.'}",
+      "relevance": 1.0,
+      "timestamp": 1772616454.1701205,
+      "metadata": {
+        "search_type": "chunks",
+        "rank": 0
+      }
+    },
+    "debug api timeout issue": {
+      "source": "cognee",
+      "content": "{'id': 'b299012a-f933-5381-b9d4-cd22e3861a5f', 'created_at': 1772552002183, 'updated_at': 1772552002183, 'ontology_valid': False, 'version': 1, 'topological_rank': 0, 'type': 'IndexSchema', 'belongs_to_set': [], 'source_pipeline': None, 'source_task': None, 'source_node_set': None, 'source_user': None, 'text': 'eeks/cron_entomb.py --max-age-minutes 60  # Process recent\\n```\\n\\n### Stats (as of 2026-03-03 18:02)\\n- **90 ancestors** entombed\\n- **5 dreams** completed\\n- **50 karma observations** analyzed\\n- **10 retry chains** tracked\\n- **5 bloodlines**: coder (31), standard (7), tester (5), searcher (4), deployer (3)\\n- **Real-time Karma**: \u2705 Active (not just post-hoc)\\n\\n### Karma Analysis Results\\nPrinciples with 100% success when followed:\\n- Test Incrementally\\n- Understand Before Implementing\\n- Specialize Then Coordinate\\n- Coordinate by Workflow ID\\n\\n### Key Principles from Dharma\\n1. **Chunking Transcends Time** \u2014 Large tasks succeed when broken into 3-5 chunks\\n2. **Specialization Over Generalization** \u2014 Focused roles complete faster\\n3. **Shared State Enables Swarm Intelligence** \u2014 SharedState class for coordination\\n4. **Understand Before Implementing** \u2014 Pattern analysis before coding\\n\\n### Meta-Dharma (Laws of Learning)\\n1. **Cross-domain > domain-specific** \u2014 Universal patterns are stronger\\n2. **Specific > generic** \u2014 Actionable patterns persist\\n3. **Coordination primitives** \u2014 register, share, vote, fail = foundation\\n4. **Chunking = universal fallback** \u2014 Solves complexity limits\\n\\n### Dharma Quality Score\\n- Overall: 0.77 / 1.0 (Grade B)\\n- Evidence: 1.0 (perfect)\\n- Novelty: 1.0 (perfect)\\n- Actionability: 0.59 (needs work)\\n- Specificity: 0.32 (could be more specific)\\n\\n### Self-Analysis Results\\n- 35 files analyzed\\n- 327 functions, 32 classes\\n- 22 redundancies found (can refactor)\\n- 10 ineffici'}",
+      "relevance": 1.0,
+      "timestamp": 1772616455.859724,
+      "metadata": {
+        "search_type": "chunks",
+        "rank": 0
+      }
+    },
+    "refactor the codebase": {
+      "source": "cognee",
+      "content": "{'id': 'b299012a-f933-5381-b9d4-cd22e3861a5f', 'created_at': 1772552002183, 'updated_at': 1772552002183, 'ontology_valid': False, 'version': 1, 'topological_rank': 0, 'type': 'IndexSchema', 'belongs_to_set': [], 'source_pipeline': None, 'source_task': None, 'source_node_set': None, 'source_user': None, 'text': 'eeks/cron_entomb.py --max-age-minutes 60  # Process recent\\n```\\n\\n### Stats (as of 2026-03-03 18:02)\\n- **90 ancestors** entombed\\n- **5 dreams** completed\\n- **50 karma observations** analyzed\\n- **10 retry chains** tracked\\n- **5 bloodlines**: coder (31), standard (7), tester (5), searcher (4), deployer (3)\\n- **Real-time Karma**: \u2705 Active (not just post-hoc)\\n\\n### Karma Analysis Results\\nPrinciples with 100% success when followed:\\n- Test Incrementally\\n- Understand Before Implementing\\n- Specialize Then Coordinate\\n- Coordinate by Workflow ID\\n\\n### Key Principles from Dharma\\n1. **Chunking Transcends Time** \u2014 Large tasks succeed when broken into 3-5 chunks\\n2. **Specialization Over Generalization** \u2014 Focused roles complete faster\\n3. **Shared State Enables Swarm Intelligence** \u2014 SharedState class for coordination\\n4. **Understand Before Implementing** \u2014 Pattern analysis before coding\\n\\n### Meta-Dharma (Laws of Learning)\\n1. **Cross-domain > domain-specific** \u2014 Universal patterns are stronger\\n2. **Specific > generic** \u2014 Actionable patterns persist\\n3. **Coordination primitives** \u2014 register, share, vote, fail = foundation\\n4. **Chunking = universal fallback** \u2014 Solves complexity limits\\n\\n### Dharma Quality Score\\n- Overall: 0.77 / 1.0 (Grade B)\\n- Evidence: 1.0 (perfect)\\n- Novelty: 1.0 (perfect)\\n- Actionability: 0.59 (needs work)\\n- Specificity: 0.32 (could be more specific)\\n\\n### Self-Analysis Results\\n- 35 files analyzed\\n- 327 functions, 32 classes\\n- 22 redundancies found (can refactor)\\n- 10 ineffici'}",
+      "relevance": 1.0,
+      "timestamp": 1772616457.7041972,
+      "metadata": {
+        "search_type": "chunks",
+        "rank": 0
+      }
+    },
+    "implement new feature": {
+      "source": "cognee",
+      "content": "{'id': 'b299012a-f933-5381-b9d4-cd22e3861a5f', 'created_at': 1772552002183, 'updated_at': 1772552002183, 'ontology_valid': False, 'version': 1, 'topological_rank': 0, 'type': 'IndexSchema', 'belongs_to_set': [], 'source_pipeline': None, 'source_task': None, 'source_node_set': None, 'source_user': None, 'text': 'eeks/cron_entomb.py --max-age-minutes 60  # Process recent\\n```\\n\\n### Stats (as of 2026-03-03 18:02)\\n- **90 ancestors** entombed\\n- **5 dreams** completed\\n- **50 karma observations** analyzed\\n- **10 retry chains** tracked\\n- **5 bloodlines**: coder (31), standard (7), tester (5), searcher (4), deployer (3)\\n- **Real-time Karma**: \u2705 Active (not just post-hoc)\\n\\n### Karma Analysis Results\\nPrinciples with 100% success when followed:\\n- Test Incrementally\\n- Understand Before Implementing\\n- Specialize Then Coordinate\\n- Coordinate by Workflow ID\\n\\n### Key Principles from Dharma\\n1. **Chunking Transcends Time** \u2014 Large tasks succeed when broken into 3-5 chunks\\n2. **Specialization Over Generalization** \u2014 Focused roles complete faster\\n3. **Shared State Enables Swarm Intelligence** \u2014 SharedState class for coordination\\n4. **Understand Before Implementing** \u2014 Pattern analysis before coding\\n\\n### Meta-Dharma (Laws of Learning)\\n1. **Cross-domain > domain-specific** \u2014 Universal patterns are stronger\\n2. **Specific > generic** \u2014 Actionable patterns persist\\n3. **Coordination primitives** \u2014 register, share, vote, fail = foundation\\n4. **Chunking = universal fallback** \u2014 Solves complexity limits\\n\\n### Dharma Quality Score\\n- Overall: 0.77 / 1.0 (Grade B)\\n- Evidence: 1.0 (perfect)\\n- Novelty: 1.0 (perfect)\\n- Actionability: 0.59 (needs work)\\n- Specificity: 0.32 (could be more specific)\\n\\n### Self-Analysis Results\\n- 35 files analyzed\\n- 327 functions, 32 classes\\n- 22 redundancies found (can refactor)\\n- 10 ineffici'}",
+      "relevance": 1.0,
+      "timestamp": 1772616459.6307802,
+      "metadata": {
+        "search_type": "chunks",
+        "rank": 0
+      }
+    }
+  }
+}

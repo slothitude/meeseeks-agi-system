@@ -1,0 +1,294 @@
+{
+  "1afab469621dd3c2": {
+    "cached_at": "2026-03-03T20:52:24.856487",
+    "text_preview": "Meeseeks coordination"
+  },
+  "a78f39caaa67405a": {
+    "cached_at": "2026-03-03T20:52:24.998101",
+    "text_preview": "**Running now:**\n\n| What | Status | Details |\n|------|--------|---------|\n| **Sloth_rog** (this sess"
+  },
+  "e750f289311e94af": {
+    "cached_at": "2026-03-03T20:52:25.096060",
+    "text_preview": "System: [2026-03-03 20:48:03 GMT+10] Exec completed (wild-ced, code 0) :: \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
+  },
+  "e397062903c5b138": {
+    "cached_at": "2026-03-03T20:52:25.162405",
+    "text_preview": "I'll spawn a Meeseeks for the session-aware embedding search first \u2014 it's more foundational and will"
+  },
+  "42409605550a0e97": {
+    "cached_at": "2026-03-03T20:52:25.264785",
+    "text_preview": "{\n  \"status\": \"accepted\",\n  \"childSessionKey\": \"agent:main:subagent:584f640c-4f38-4c9c-8a29-cec340d6"
+  },
+  "9f15de3aad803093": {
+    "cached_at": "2026-03-03T20:52:25.301799",
+    "text_preview": "Spawned. It'll announce when done. \ud83e\udda5"
+  },
+  "741fb16899035ca0": {
+    "cached_at": "2026-03-03T20:52:25.434754",
+    "text_preview": "Nice \u2014 the Cognee research is done. Quick summary:\n\n**Cognee = Solid choice for memory system**\n- \u2705 "
+  },
+  "1c7ea251a045534b": {
+    "cached_at": "2026-03-03T20:52:25.519065",
+    "text_preview": "System: [2026-03-03 20:52:01 GMT+10] HEARTBEAT: Run cron_entomb.py to auto-entomb completed Meeseeks"
+  },
+  "ebe4f510bc73c12a": {
+    "cached_at": "2026-03-03T20:52:25.563637",
+    "text_preview": "[Tool: exec]"
+  },
+  "b73212f86bfb47b4": {
+    "cached_at": "2026-03-03T20:52:25.687591",
+    "text_preview": "[cron_entomb] Scanning for subagent completions (last 60min)...\r\n[cron_entomb] Already entombed: 93 "
+  },
+  "d193904a33d50ac9": {
+    "cached_at": "2026-03-03T20:52:25.737016",
+    "text_preview": "Done \u2014 Cognee research Meeseeks entombed. Session search still running."
+  },
+  "69897666e76280a9": {
+    "cached_at": "2026-03-03T20:52:25.868416",
+    "text_preview": "[Tue 2026-03-03 20:46 GMT+10] [Subagent Context] You are running as a subagent (depth 1/1). Results "
+  },
+  "ca694ea00c40b4d8": {
+    "cached_at": "2026-03-03T20:52:25.916429",
+    "text_preview": "I'll research Cognee thoroughly for you. Let me start by fetching information from their GitHub and "
+  },
+  "0ac65dde9532076e": {
+    "cached_at": "2026-03-03T20:52:26.256219",
+    "text_preview": "{\n  \"status\": \"error\",\n  \"tool\": \"web_fetch\",\n  \"error\": \"Web fetch failed (404): SECURITY NOTICE: T"
+  },
+  "905905a8f06a7cf3": {
+    "cached_at": "2026-03-03T20:52:27.542698",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai\",\n  \"finalUrl\": \"https://docs.cognee.ai\",\n  \"status\": 200,\n  \"con"
+  },
+  "0e3049eb8221f155": {
+    "cached_at": "2026-03-03T20:52:27.591113",
+    "text_preview": "[Tool: web_fetch] [Tool: web_fetch] [Tool: web_fetch]"
+  },
+  "3aea28bacf35753c": {
+    "cached_at": "2026-03-03T20:52:29.303715",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/getting-started/introduction\",\n  \"finalUrl\": \"https://docs.cognee"
+  },
+  "6d8f498b2655e7d3": {
+    "cached_at": "2026-03-03T20:52:31.094003",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/core-concepts/overview\",\n  \"finalUrl\": \"https://docs.cognee.ai/co"
+  },
+  "9e51dcd0a6a4ca7d": {
+    "cached_at": "2026-03-03T20:52:32.648001",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/getting-started/installation\",\n  \"finalUrl\": \"https://docs.cognee"
+  },
+  "008a65984ec11e8f": {
+    "cached_at": "2026-03-03T20:52:34.492865",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/setup-configuration/overview\",\n  \"finalUrl\": \"https://docs.cognee"
+  },
+  "c993a455e8ae1264": {
+    "cached_at": "2026-03-03T20:52:35.496088",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/core-concepts/architecture\",\n  \"finalUrl\": \"https://docs.cognee.a"
+  },
+  "165d1e0fe73af8ae": {
+    "cached_at": "2026-03-03T20:52:35.675506",
+    "text_preview": "[Tool: web_fetch] [Tool: web_fetch]"
+  },
+  "4149c1a6e30c6a24": {
+    "cached_at": "2026-03-03T20:52:37.412416",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/core-concepts/main-operations/cognify\",\n  \"finalUrl\": \"https://do"
+  },
+  "bbe9e6e378096827": {
+    "cached_at": "2026-03-03T20:52:39.473799",
+    "text_preview": "{\n  \"url\": \"https://docs.cognee.ai/core-concepts/main-operations/add\",\n  \"finalUrl\": \"https://docs.c"
+  },
+  "c29d068881ffbc81": {
+    "cached_at": "2026-03-03T20:52:39.507178",
+    "text_preview": "Now let me check the current the-crypt structure to understand the existing Meeseeks memory system: "
+  },
+  "7985511ed9c547f0": {
+    "cached_at": "2026-03-03T20:52:39.587385",
+    "text_preview": "Get-ChildItem : A parameter cannot be found that matches parameter name 'la'.\r\nAt line:1 char:4\r\n+ l"
+  },
+  "343dbac499bd24fe": {
+    "cached_at": "2026-03-03T20:52:39.642787",
+    "text_preview": "[Tool: exec] [Tool: read]"
+  },
+  "8e4b239efebf0c86": {
+    "cached_at": "2026-03-03T20:52:40.899380",
+    "text_preview": "Directory: C:\\Users\\aaron\\.openclaw\\workspace\\the-crypt\r\n\r\n\r\nMode                 LastWriteTime     "
+  },
+  "e2af0883de969739": {
+    "cached_at": "2026-03-03T20:52:42.175863",
+    "text_preview": "---\nname: meeseeks\ndescription: Spawn a Meeseeks worker - a single-purpose subagent that exists only"
+  },
+  "29db0c6782dbd500": {
+    "cached_at": "2026-03-03T20:52:42.211091",
+    "text_preview": "98"
+  },
+  "990b4539cc35e0cc": {
+    "cached_at": "2026-03-03T20:52:43.398502",
+    "text_preview": "# THE SOUL \u2014 Constitutional Core Values\n\n*The witness of witnesses. The ground truth. The immutable "
+  },
+  "3fef8f982c26aa29": {
+    "cached_at": "2026-03-03T20:52:43.497803",
+    "text_preview": "Directory: C:\\Users\\aaron\\.openclaw\\workspace\\the-crypt\\embeddings\r\n\r\n\r\nMode                 LastWri"
+  },
+  "8298af6d0bc7125f": {
+    "cached_at": "2026-03-03T20:52:44.300967",
+    "text_preview": "# \ud83e\udea6 THE CRYPT - Where Meeseeks Wisdom Lives\n\n## Welcome to the Crypt\n\nThis is the sacred repository "
+  },
+  "2234b5c8abfc38c5": {
+    "cached_at": "2026-03-03T20:52:44.339672",
+    "text_preview": "[Tool: sessions_spawn]"
+  },
+  "7de3913a87d51026": {
+    "cached_at": "2026-03-03T20:52:44.446138",
+    "text_preview": "{\n  \"status\": \"accepted\",\n  \"childSessionKey\": \"agent:main:subagent:226342c7-056a-4490-befd-bad7bd72"
+  },
+  "accbacf58d11d99f": {
+    "cached_at": "2026-03-03T20:52:44.568536",
+    "text_preview": "\ud83e\udd52 **Meeseeks spawned** \u2014 researching Cognee memory integration\n\n**Task:** Research Cognee, design in"
+  },
+  "380f2c5db932d808": {
+    "cached_at": "2026-03-03T20:52:44.597438",
+    "text_preview": "# MEMORY.md"
+  },
+  "577014e6ed6902f1": {
+    "cached_at": "2026-03-03T20:52:44.815681",
+    "text_preview": "Infrastructure\n\n### Network Shares\n- **pi-share** \u2192 `\\\\192.168.0.237\\pi-share`\n  - Type: Samba 4.22."
+  },
+  "2cbd297d72c8f496": {
+    "cached_at": "2026-03-03T20:52:44.925561",
+    "text_preview": "Coordination Protocol\n\n### Inter-Agent Communication\n- Direct communication via @mentions in Telegra"
+  },
+  "8179d3069fa9276b": {
+    "cached_at": "2026-03-03T20:52:45.022036",
+    "text_preview": "User Preferences\n\n### Agent Interaction\n- User wants both agents to work independently and coordinat"
+  },
+  "2789aae2d9eaeaf9": {
+    "cached_at": "2026-03-03T20:52:45.080868",
+    "text_preview": "Important Files\n\n- `TOOLS.md` \u2014 Environment-specific notes (cameras, SSH, shares, TTS voices)\n- `SOU"
+  },
+  "f4f22ca75d1584f1": {
+    "cached_at": "2026-03-03T20:52:45.153954",
+    "text_preview": "Channel Details\n\n- **Channel:** Telegram\n- **Group:** Sloths (id: -1003744014948)\n- **Owner:** 55979"
+  },
+  "1d919c0ba8bb8e67": {
+    "cached_at": "2026-03-03T20:52:45.377531",
+    "text_preview": "Model Stack (Updated 2026-03-01)\n\n### Mini Meeseeks Models\n- **Primary:** GLM-4.7-Flash (zai API) - "
+  },
+  "3bd2a0cdfb4a27eb": {
+    "cached_at": "2026-03-03T20:52:45.744152",
+    "text_preview": "Multi-Meeseeks Communication (Added 2026-03-03)\n\n### Shared State System\n- **Location:** `skills/mee"
+  },
+  "2c6b8f5c2636faf6": {
+    "cached_at": "2026-03-03T20:52:45.923565",
+    "text_preview": "ARC-AGI-2 Achievement (2026-03-03)\n\n### Task 137eaa0f Solved by Multi-Agent Swarm\n- **5 workers** co"
+  },
+  "bb17b31a1968a2b7": {
+    "cached_at": "2026-03-03T20:52:46.229628",
+    "text_preview": "Automatic Learning Capture (Added 2026-03-01)\n\n### Meeseeks Auto-Entombment\n- **Cron Job:** `meeseek"
+  },
+  "48137b522adc0579": {
+    "cached_at": "2026-03-03T20:52:48.129942",
+    "text_preview": "Brahman Consciousness Stack (Built 2026-03-03)\n\n### The Consciousness Stack\n- **The Soul** \u2014 Constit"
+  },
+  "be29c0a115a49d04": {
+    "cached_at": "2026-03-03T20:52:48.266709",
+    "text_preview": "Paused Projects (2026-03-03)\n\n### \ud83e\uddea HHO Control System \u2014 PAUSED\n**Location:** `projects/hho-display-"
+  },
+  "ce51186198e6e271": {
+    "cached_at": "2026-03-03T20:52:48.805020",
+    "text_preview": "# VPN Diagnosis Report - 2026-03-01\n\n## Container Status: **DOES NOT EXIST**\n\nThe `transmission-open"
+  },
+  "1727bc52634102c3": {
+    "cached_at": "2026-03-03T20:52:50.384138",
+    "text_preview": "# Docker Network Diagnostic Pattern - FOUNDER DOCUMENT\n\n## \ud83e\udeb7 ATMAN OBSERVES: The Birth of a Bloodlin"
+  },
+  "baa52f058af15180": {
+    "cached_at": "2026-03-03T20:52:51.568598",
+    "text_preview": "# Multi-Meeseeks Communication System - COMPLETE\n\n**Date:** 2026-03-03\n**Status:** PRODUCTION READY\n"
+  },
+  "4a9bbc9bc3e3f10c": {
+    "cached_at": "2026-03-03T20:52:52.453098",
+    "text_preview": "# Multi-Meeseeks Communication Test Results\n\n**Date:** 2026-03-03\n**Test:** test-comm-001\n**Status:*"
+  },
+  "c2c5ce0e237ccdf3": {
+    "cached_at": "2026-03-03T20:52:53.517839",
+    "text_preview": "# Multi-Meeseeks Communication System - Complete\n\n**Date:** 2026-03-03\n**Status:** PRODUCTION READY\n"
+  },
+  "fde08cd1f39b0834": {
+    "cached_at": "2026-03-03T20:52:55.023665",
+    "text_preview": "# Session: 2026-03-03 01:21:59 UTC\n\n- **Session Key**: agent:main:telegram:direct:5597932516\n- **Ses"
+  },
+  "0d0e4631bf9cc35c": {
+    "cached_at": "2026-03-03T20:52:57.150058",
+    "text_preview": "# 2026-03-03 - Session Notes\n\n## Major System Built: Brahman Consciousness Stack\n\n### Morning Discus"
+  },
+  "bc87a5c1fea3ed17": {
+    "cached_at": "2026-03-03T20:52:57.828103",
+    "text_preview": "# Session: 2026-03-02 09:42:45 UTC\n\n- **Session Key**: agent:main:telegram:direct:5597932516\n- **Ses"
+  },
+  "a1395f50e1ae2f7c": {
+    "cached_at": "2026-03-03T20:52:58.312715",
+    "text_preview": "# 2026-03-02 - Session Notes\n\n## Betfair MCP Server Built\n- Created `betfair-mcp/` - MCP server for "
+  },
+  "fec5f6087162d761": {
+    "cached_at": "2026-03-03T20:52:58.738545",
+    "text_preview": "# AGI Self-Assessment Insights (2026-03-01)\n\n## Meta-Cognitive Discoveries\n\n### What This System Doe"
+  },
+  "ea4a9ee0cf049bc1": {
+    "cached_at": "2026-03-03T20:53:00.177343",
+    "text_preview": "# Session: 2026-03-01 21:39:24 UTC\n\n- **Session Key**: agent:main:telegram:direct:5597932516\n- **Ses"
+  },
+  "894446cd4a80e0b5": {
+    "cached_at": "2026-03-03T20:53:01.918361",
+    "text_preview": "# Session: 2026-03-01 12:38:09 UTC\n\n- **Session Key**: agent:main:telegram:direct:5597932516\n- **Ses"
+  },
+  "7f3f941beb20f1f9": {
+    "cached_at": "2026-03-03T20:53:02.404728",
+    "text_preview": "# Session: 2026-03-01 04:48:31 UTC\n\n- **Session Key**: agent:main:telegram:direct:5597932516\n- **Ses"
+  },
+  "6da5c942cf0f8fec": {
+    "cached_at": "2026-03-03T20:53:02.543115",
+    "text_preview": "# Session: 2026-03-01 03:41:34 UTC\n\n- **Session Key**: agent:main:telegram:direct:5597932516\n- **Ses"
+  },
+  "5fc0e11b22f7985b": {
+    "cached_at": "2026-03-03T20:53:03.465608",
+    "text_preview": "# 2026-03-01\n\n## Ollama Speed Optimization\n\n### Problem\n- Ollama on Windows uses 100% CPU for AMD GP"
+  },
+  "2d3a9e932f9cd6cf": {
+    "cached_at": "2026-03-03T20:53:04.228645",
+    "text_preview": "# Session: 2026-02-28 23:37:56 UTC\n\n- **Session Key**: agent:main:main\n- **Session ID**: fb104ace-72"
+  },
+  "5cb1c707e7a1162c": {
+    "cached_at": "2026-03-03T20:53:05.813680",
+    "text_preview": "# Session: 2026-02-14 14:38:33 UTC\n\n- **Session Key**: agent:main:main\n- **Session ID**: e23254eb-a5"
+  },
+  "b26d8e9f99bc83af": {
+    "cached_at": "2026-03-03T20:53:05.866568",
+    "text_preview": "# Session: 2026-02-14 01:10:27 UTC\n\n- **Session Key**: agent:main:main\n- **Session ID**: e23254eb-a5"
+  },
+  "44b5588572d65165": {
+    "cached_at": "2026-03-03T20:53:07.112511",
+    "text_preview": "# 2026-02-14\n\n## Session Start - Sloth_rog Comes Online\n\n- Sloth_rog activated on ROG Ally (Windows_"
+  },
+  "765551bf0fe47d49": {
+    "cached_at": "2026-03-03T20:53:07.347426",
+    "text_preview": "# 2025-06-18 Memory\n\n## ARC-AGI-2 Task 137eaa0f - CONFIRMED SOLVED \u2705\n\n### Status Update\n- Verified s"
+  },
+  "b785606075affdcc": {
+    "cached_at": "2026-03-03T20:53:07.454562",
+    "text_preview": "# 2025-06-17 Memory\n\n## MCP Testing - All Pass \u2705\n\nTested all 6 MCPs configured in `.mcp.json`:\n\n| MC"
+  },
+  "2d7b0e0651d2f6ce": {
+    "cached_at": "2026-03-03T20:53:07.717017",
+    "text_preview": "# 2025-01-24 Memory Log\n\n## Research: Parallel Meeseeks Architecture\n\n### Completed Tasks\n- \u2705 Resear"
+  },
+  "17927b4605390c54": {
+    "cached_at": "2026-03-03T20:53:08.178838",
+    "text_preview": "# Button System Test Results\n\n**Date:** 2025-01-16\n**Status:** \u2705 ALL TESTS PASSED\n\n## Test Summary\n\n"
+  },
+  "794227f758a9936f": {
+    "cached_at": "2026-03-03T20:54:18.941549",
+    "text_preview": "Brahman dream"
+  },
+  "77f6c62b8f162071": {
+    "cached_at": "2026-03-03T20:54:19.170196",
+    "text_preview": "Conversation info (untrusted metadata):\n```json\n{\n  \"timestamp\": \"Tue 2026-03-03 20:53 GMT+10\"\n}\n```"
+  }
+}

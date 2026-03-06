@@ -1,0 +1,1890 @@
+{
+  "header": {
+    "title": "Event Details: bf1ba411-457b-4e1e-8c61-aac2b1437bec",
+    "generated_time": "2026-03-06T14:34:04.477507773Z",
+    "url": "/affiliates/v1/racing/events/bf1ba411-457b-4e1e-8c61-aac2b1437bec"
+  },
+  "params": {
+    "enc": "json",
+    "id": "bf1ba411-457b-4e1e-8c61-aac2b1437bec",
+    "present_overlay": false,
+    "with_big_bets": false,
+    "with_live_bets": false,
+    "with_money_tracker": false,
+    "with_biggest_bet": false,
+    "will_pays": false,
+    "with_tote_trends_data": false,
+    "bet_type_filter": "",
+    "bets_limit": 10
+  },
+  "data": {
+    "race": {
+      "event_id": "bf1ba411-457b-4e1e-8c61-aac2b1437bec",
+      "meeting_name": "Laval",
+      "display_meeting_name": "Laval",
+      "meeting_id": "12b62839-b48b-421c-8897-8907509d55a6",
+      "status": "Final",
+      "description": "Prix Alain Gerbault - Attele",
+      "advertised_start": 1772724420,
+      "actual_start": 1772724490,
+      "advertised_start_string": "2026-03-05 15:27:00 +0000 UTC",
+      "actual_start_string": "2026-03-05 15:28:10 +0000 UTC",
+      "race_number": 1,
+      "type": "H",
+      "start_type": "Mobile",
+      "country": "FR",
+      "state": "FR",
+      "distance": 2650,
+      "weather": "Cloudy",
+      "form_guide": "",
+      "comment": "MONARQUE DU TRIEUX (4) returned after more than six months off the track running 0.75L second at this circuit. Selected to go one better and secure the first win of his career. MOVING QUICK (2) left two DQ behind registering a 3L second in a Class E race at Vincennes. Rates a major threat dropping in grade. MILZANO DU BOSSU (3) looks well placed to shine on the back of a 3.5L second at Nantes racing in this shoeing combination for the first time. Shortlist. With a new shoeing combination tried MISIDORE (12) is another with claims making his first appearance since finishing 22L eighth at Nantes in October.",
+      "silk_base_url": "drr38safykj6s.cloudfront.net",
+      "track_condition": "Synthetic",
+      "track_direction": "Left",
+      "silk_url": "https://cdn.prod.pricekinetics.com/silks/sprites/cerberus/betmakers-cmFjZToxOTQwOTAy_SPRITE_64x64.png",
+      "entrant_count": 13,
+      "positions_paid": 3,
+      "video_channels": [
+        "Live2"
+      ],
+      "video_channels_meta": {
+        "Live2": {
+          "RaceNo": 1,
+          "RaceType": "H",
+          "SlotType": "",
+          "SlotTitle": "",
+          "VenueName": "Laval",
+          "CrossPoint": 89,
+          "RacePriority": "4",
+          "SlotDuration": "",
+          "SchedulerNote": "P4 - Prize Money: $29,850",
+          "CrossPointName": "PMU ",
+          "SlotDescription": "",
+          "UtcRaceStartTime": "2026-03-05T15:23:00Z",
+          "VenueCountryCode": "FR",
+          "VenueProviderName": "PMU",
+          "DisplayRaceStartTime": "2026-03-06T01:23:00",
+          "SchedulerNotePriority": "Information"
+        }
+      },
+      "tips": [
+        "fe3c2a7a-20e2-4f36-b1d9-381b0604ce48",
+        "0d090587-dc01-46ae-a73e-4cc0fecb2de2",
+        "b43ef7ca-cd33-4bc3-8214-e87f4c84c835",
+        "3028d6c4-a262-4bb4-9698-d2d0f02ab21a"
+      ],
+      "rail_position": "",
+      "group": "",
+      "prize_monies": {
+        "total_value": 29851
+      },
+      "track_home_straight": 0,
+      "protest": true,
+      "protest_reason": "#8 Must De Lou was DSQ from 3rd"
+    },
+    "results": [
+      {
+        "position": 1,
+        "name": "Moving Quick",
+        "barrier": 2,
+        "runner_number": 2,
+        "margin_length": 0,
+        "entrant_id": "0d090587-dc01-46ae-a73e-4cc0fecb2de2"
+      },
+      {
+        "position": 2,
+        "name": "Monarque Du Trieux",
+        "barrier": 4,
+        "runner_number": 4,
+        "margin_length": 0,
+        "entrant_id": "fe3c2a7a-20e2-4f36-b1d9-381b0604ce48"
+      },
+      {
+        "position": 3,
+        "name": "Mickey De Crennes",
+        "barrier": 1,
+        "runner_number": 1,
+        "margin_length": 0,
+        "entrant_id": "0f630a60-a366-49e1-9e92-a7a5affb82c8"
+      },
+      {
+        "position": 4,
+        "name": "Mambo Meslois",
+        "barrier": 11,
+        "runner_number": 11,
+        "margin_length": 0,
+        "entrant_id": "e5a8f72e-03d5-4491-b782-ae9801552f03"
+      },
+      {
+        "position": 5,
+        "name": "Marco Des Gacheres",
+        "barrier": 13,
+        "runner_number": 13,
+        "margin_length": 0,
+        "entrant_id": "7b97ccc2-d5af-4583-9c8b-7dc5b6770582"
+      },
+      {
+        "position": 6,
+        "name": "Muscat Des Epines",
+        "barrier": 6,
+        "runner_number": 6,
+        "margin_length": 0,
+        "entrant_id": "db04dcba-621c-4f5c-8f79-2fd6e08ada99"
+      },
+      {
+        "position": 7,
+        "name": "Mitsuki Du Bourg",
+        "barrier": 5,
+        "runner_number": 5,
+        "margin_length": 0,
+        "entrant_id": "88199232-d121-424e-80dc-40834740714c"
+      },
+      {
+        "position": 8,
+        "name": "Must De Lou",
+        "barrier": 8,
+        "runner_number": 8,
+        "margin_length": 0,
+        "entrant_id": "aa1d570c-815f-4255-bca6-193bb13eae65"
+      }
+    ],
+    "dividends": [
+      {
+        "id": "80e35bc9-6895-5cdc-8e11-5bb3ede4c0b8",
+        "tote": "QLD",
+        "product_name": "Trifecta",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 15,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          },
+          {
+            "runner_number": 1,
+            "position": 3
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "3cf1e6a9-4995-5f6b-b2e7-cb279e3e03c4",
+        "tote": "VIC",
+        "product_name": "First Four",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 40,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          },
+          {
+            "runner_number": 1,
+            "position": 3
+          },
+          {
+            "runner_number": 11,
+            "position": 4
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "14ed9da1-3b49-52c2-9517-3f716d09bb5a",
+        "tote": "VIC",
+        "product_name": "Trifecta",
+        "status": "Final",
+        "dividend": 94,
+        "pool_size": 277,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          },
+          {
+            "runner_number": 1,
+            "position": 3
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "dff2d03e-73c4-5732-8a7a-169fad8195df",
+        "tote": "NSW",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 5.3,
+        "pool_size": 37,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 1,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "6c004beb-451c-5c88-807e-7c31d702c1c3",
+        "tote": "QLD",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 1,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "e99a6f97-8d46-5fa6-a9de-c0146a2af970",
+        "tote": "QLD",
+        "product_name": "First Four",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 0,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          },
+          {
+            "runner_number": 1,
+            "position": 3
+          },
+          {
+            "runner_number": 11,
+            "position": 4
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "fa7a61f4-25e2-5dd1-a7e3-1fe09c7d3508",
+        "tote": "NSW",
+        "product_name": "Tote Win",
+        "status": "Final",
+        "dividend": 3.5,
+        "pool_size": 135,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "c302e4dc-5a7e-5534-80de-4dfb0834dc5f",
+        "tote": "QLD",
+        "product_name": "Exacta",
+        "status": "Final",
+        "dividend": 11.2,
+        "pool_size": 7,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "c7e69c87-653a-5ae3-96b6-7ea3d85901b9",
+        "tote": "NSW",
+        "product_name": "Quinella",
+        "status": "Final",
+        "dividend": 1.04,
+        "pool_size": 7,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "1706d956-965f-5508-a23d-f44eb030d74f",
+        "tote": "QLD",
+        "product_name": "Quinella",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 0,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "5d270524-aada-5a62-818b-6e040d66943e",
+        "tote": "VIC",
+        "product_name": "Exacta",
+        "status": "Final",
+        "dividend": 13.6,
+        "pool_size": 11,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "9b1caeb1-51fc-5355-a065-6783c7270247",
+        "tote": "NSW",
+        "product_name": "Trifecta",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 10,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          },
+          {
+            "runner_number": 1,
+            "position": 3
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "cc2c4e9c-4954-5a0b-a264-888fefd4bf3c",
+        "tote": "NSW",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 2.6,
+        "pool_size": 37,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "d38b2e85-d3bb-59a8-bc0f-e7012292e16b",
+        "tote": "VIC",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 3.4,
+        "pool_size": 153968,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 1,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "69c08014-9804-5bca-8d91-b1296868e270",
+        "tote": "VIC",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 1.6,
+        "pool_size": 153968,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 4,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "ad008e49-b2c5-52dd-8dac-264bb8315049",
+        "tote": "VIC",
+        "product_name": "Tote Win",
+        "status": "Final",
+        "dividend": 3.1,
+        "pool_size": 255394,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "267b048e-2b27-57bc-afb8-2813fbbf7b3e",
+        "tote": "QLD",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 1,
+        "pool_size": 1,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 4,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "e8ec4dee-2f8d-5851-af72-3d1ad7865a56",
+        "tote": "VIC",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 1.7,
+        "pool_size": 153968,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "f6f545b4-daba-59f9-ac9d-71888f1f7d06",
+        "tote": "NSW",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 1.4,
+        "pool_size": 37,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 4,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "77bde7b5-0140-5d11-a07c-16d580d4a509",
+        "tote": "NSW",
+        "product_name": "First Four",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 2,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          },
+          {
+            "runner_number": 1,
+            "position": 3
+          },
+          {
+            "runner_number": 11,
+            "position": 4
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "a19ecb4e-e74a-5a39-a618-82af6b10f674",
+        "tote": "NSW",
+        "product_name": "Exacta",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 0,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "9937c924-6951-5099-8cb3-f1af477b8580",
+        "tote": "QLD",
+        "product_name": "Tote Place",
+        "status": "Final",
+        "dividend": 0,
+        "pool_size": 1,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 1,
+            "position": 1
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": "ee4d4346-34aa-5cb7-8337-71da870ad4dc",
+        "tote": "VIC",
+        "product_name": "Quinella",
+        "status": "Final",
+        "dividend": 8.4,
+        "pool_size": 48,
+        "jackpot_size": 0,
+        "positions": [
+          {
+            "runner_number": 2,
+            "position": 1
+          },
+          {
+            "runner_number": 4,
+            "position": 2
+          }
+        ],
+        "description": ""
+      }
+    ],
+    "substitutions": [
+      {
+        "entrant_id": "0d090587-dc01-46ae-a73e-4cc0fecb2de2",
+        "tote": "NSW",
+        "product_name": "Tote Win"
+      },
+      {
+        "entrant_id": "0d090587-dc01-46ae-a73e-4cc0fecb2de2",
+        "tote": "VIC",
+        "product_name": "Tote Win"
+      },
+      {
+        "entrant_id": "b43ef7ca-cd33-4bc3-8214-e87f4c84c835",
+        "tote": "QLD",
+        "product_name": "Tote Win"
+      }
+    ],
+    "favourite": {
+      "entrant_id": "0d090587-dc01-46ae-a73e-4cc0fecb2de2",
+      "market_name": "Final Field",
+      "primary_market": true,
+      "name": "Moving Quick",
+      "is_scratched": false,
+      "gear": "",
+      "odds": {
+        "fixed_win": 2.45,
+        "fixed_place": 1.28
+      },
+      "scratch_time": 0,
+      "barrier": 2,
+      "barrier_position": "",
+      "runner_number": 2,
+      "prize_money": "19948",
+      "age": 4,
+      "sex": "G",
+      "colour": "B",
+      "silk_colours": "NAVY, RED STRIPES SLEEVES, SEAMS CAP, BLACK PEAK",
+      "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/moving-quick_64x64.png",
+      "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/moving-quick_128x128.png",
+      "form_comment": null,
+      "class_level": "",
+      "jockey": "F Nivard",
+      "apprentice_indicator": "",
+      "allowance_weight": "",
+      "owners": "Ecurie Thierry RAFFEGEAU",
+      "country": "FR",
+      "trainer_name": "Thierry Raffegeau",
+      "last_twenty_starts": "0400x0x002",
+      "sire": "CHARLY DU NOYER (FR)",
+      "dam": "UMOURA QUICK (FR)",
+      "breeding": "4 g CHARLY DU NOYER (FR)-UMOURA QUICK (FR)",
+      "weight": {
+        "allocated": "",
+        "total": ""
+      },
+      "favourite": false,
+      "mover": false,
+      "speedmap": {},
+      "form_indicators": null,
+      "past_performances": null,
+      "jockey_past_performances": null,
+      "trainer_location": ""
+    },
+    "runners": [
+      {
+        "entrant_id": "0f630a60-a366-49e1-9e92-a7a5affb82c8",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Mickey De Crennes",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 21,
+          "fixed_place": 4.4
+        },
+        "scratch_time": 0,
+        "barrier": 1,
+        "barrier_position": "",
+        "runner_number": 1,
+        "prize_money": "17801",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "LIGHT BLUE, BLACK SEAMS, SEAMS SLEEVES, CAP",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/mickey-de-crennes_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/mickey-de-crennes_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "J P Maillard",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ecurie Haras de CRENNES",
+        "country": "FR",
+        "trainer_name": "Erno Szirmay",
+        "last_twenty_starts": "5903x3x505",
+        "sire": "LET'S GO ALONG (FR)",
+        "dam": "TRACE DE CRENNES (FR)",
+        "breeding": "4 g LET'S GO ALONG (FR)-TRACE DE CRENNES (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          11,
+          16,
+          21
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055923753Z",
+              "fluc": 11
+            },
+            {
+              "timestamp": "2026-03-05T15:09:03.260691646Z",
+              "fluc": 16
+            },
+            {
+              "timestamp": "2026-03-05T15:27:23.70720937Z",
+              "fluc": 21
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055923753Z",
+            "fluc": 11
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:27:23.70720937Z",
+            "fluc": 21
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.055923753Z",
+            "fluc": 11
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:27:23.70720937Z",
+            "fluc": 21
+          }
+        }
+      },
+      {
+        "entrant_id": "0d090587-dc01-46ae-a73e-4cc0fecb2de2",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Moving Quick",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 2.45,
+          "fixed_place": 1.28
+        },
+        "scratch_time": 0,
+        "barrier": 2,
+        "barrier_position": "",
+        "runner_number": 2,
+        "prize_money": "19948",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "NAVY, RED STRIPES SLEEVES, SEAMS CAP, BLACK PEAK",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/moving-quick_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/moving-quick_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "F Nivard",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ecurie Thierry RAFFEGEAU",
+        "country": "FR",
+        "trainer_name": "Thierry Raffegeau",
+        "last_twenty_starts": "0400x0x002",
+        "sire": "CHARLY DU NOYER (FR)",
+        "dam": "UMOURA QUICK (FR)",
+        "breeding": "4 g CHARLY DU NOYER (FR)-UMOURA QUICK (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": true,
+        "mover": true,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          3.2,
+          2.15,
+          2.5,
+          2.45
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055534487Z",
+              "fluc": 3.2
+            },
+            {
+              "timestamp": "2026-03-05T15:17:21.706853942Z",
+              "fluc": 2.15
+            },
+            {
+              "timestamp": "2026-03-05T15:27:39.059826394Z",
+              "fluc": 2.5
+            },
+            {
+              "timestamp": "2026-03-05T15:28:00.808531912Z",
+              "fluc": 2.45
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055534487Z",
+            "fluc": 3.2
+          },
+          "high": {
+            "timestamp": "2026-03-05T10:17:26.055534487Z",
+            "fluc": 3.2
+          },
+          "low": {
+            "timestamp": "2026-03-05T15:17:21.706853942Z",
+            "fluc": 2.15
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:28:00.808531912Z",
+            "fluc": 2.45
+          }
+        }
+      },
+      {
+        "entrant_id": "b43ef7ca-cd33-4bc3-8214-e87f4c84c835",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Milzano Du Bossu",
+        "is_scratched": false,
+        "gear": "pads rear.",
+        "odds": {
+          "fixed_win": 9,
+          "fixed_place": 2.6
+        },
+        "scratch_time": 0,
+        "barrier": 3,
+        "barrier_position": "",
+        "runner_number": 3,
+        "prize_money": "22035",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "SKY BLUE, GREY SLEEVES, SKY BLUE CHEVRONS, GREY CAP, BLACK PEAK ",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/milzano-du-bossu_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/milzano-du-bossu_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "R Gougeon",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Alexandre MARANTZ",
+        "country": "FR",
+        "trainer_name": "Romain Gougeon",
+        "last_twenty_starts": "07x8500072",
+        "sire": "CASH AND GO (FR)",
+        "dam": "VICTORIA DU NOYER (FR)",
+        "breeding": "4 g CASH AND GO (FR)-VICTORIA DU NOYER (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          9.5,
+          7.5,
+          9.5,
+          9
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055636881Z",
+              "fluc": 9.5
+            },
+            {
+              "timestamp": "2026-03-05T15:10:07.714904481Z",
+              "fluc": 7.5
+            },
+            {
+              "timestamp": "2026-03-05T15:23:42.46297153Z",
+              "fluc": 9.5
+            },
+            {
+              "timestamp": "2026-03-05T15:24:23.811072393Z",
+              "fluc": 9
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055636881Z",
+            "fluc": 9.5
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:23:42.46297153Z",
+            "fluc": 9.5
+          },
+          "low": {
+            "timestamp": "2026-03-05T15:10:07.714904481Z",
+            "fluc": 7.5
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:24:23.811072393Z",
+            "fluc": 9
+          }
+        }
+      },
+      {
+        "entrant_id": "fe3c2a7a-20e2-4f36-b1d9-381b0604ce48",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Monarque Du Trieux",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 3.5,
+          "fixed_place": 1.4
+        },
+        "scratch_time": 0,
+        "barrier": 4,
+        "barrier_position": "",
+        "runner_number": 4,
+        "prize_money": "19434",
+        "age": 4,
+        "sex": "H",
+        "colour": "B",
+        "silk_colours": "BLACK, YELLOW STARS, STRIPES SLEEVES, STARS CAP",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/monarque-du-trieux_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/monarque-du-trieux_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "M Bezier",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ecurie IMAGINE STALLION",
+        "country": "FR",
+        "trainer_name": "Maxime Bezier",
+        "last_twenty_starts": "53x6x530x2",
+        "sire": "UN MEC D'HERIPRE (FR)",
+        "dam": "FAMILLE DE REVE (FR)",
+        "breeding": "4 h UN MEC D'HERIPRE (FR)-FAMILLE DE REVE (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          3.7,
+          4.5,
+          3.5
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055117617Z",
+              "fluc": 3.7
+            },
+            {
+              "timestamp": "2026-03-05T14:59:41.85714662Z",
+              "fluc": 4.5
+            },
+            {
+              "timestamp": "2026-03-05T15:27:16.661071238Z",
+              "fluc": 3.5
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055117617Z",
+            "fluc": 3.7
+          },
+          "high": {
+            "timestamp": "2026-03-05T14:59:41.85714662Z",
+            "fluc": 4.5
+          },
+          "low": {
+            "timestamp": "2026-03-05T15:27:16.661071238Z",
+            "fluc": 3.5
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:27:16.661071238Z",
+            "fluc": 3.5
+          }
+        }
+      },
+      {
+        "entrant_id": "88199232-d121-424e-80dc-40834740714c",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Mitsuki Du Bourg",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 71,
+          "fixed_place": 7.5
+        },
+        "scratch_time": 0,
+        "barrier": 5,
+        "barrier_position": "",
+        "runner_number": 5,
+        "prize_money": "15033",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "NAVY, GREY EPAULETTES, NAVY SLEEVES, GREY STRIPES, BLACK PEAK",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/mitsuki-du-bourg_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/mitsuki-du-bourg_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "C H M Bruneau",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Alexandre ANGOT",
+        "country": "FR",
+        "trainer_name": "Charles Marcel Bruneau",
+        "last_twenty_starts": "87518657x",
+        "sire": "ROC MESLOIS (FR)",
+        "dam": "HIPPIE DU BOURG (FR)",
+        "breeding": "4 g ROC MESLOIS (FR)-HIPPIE DU BOURG (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          34,
+          51,
+          71
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055407976Z",
+              "fluc": 34
+            },
+            {
+              "timestamp": "2026-03-05T15:04:16.959810274Z",
+              "fluc": 51
+            },
+            {
+              "timestamp": "2026-03-05T15:23:43.157927303Z",
+              "fluc": 71
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055407976Z",
+            "fluc": 34
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:23:43.157927303Z",
+            "fluc": 71
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.055407976Z",
+            "fluc": 34
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:23:43.157927303Z",
+            "fluc": 71
+          }
+        }
+      },
+      {
+        "entrant_id": "db04dcba-621c-4f5c-8f79-2fd6e08ada99",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Muscat Des Epines",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 35,
+          "fixed_place": 5.5
+        },
+        "scratch_time": 0,
+        "barrier": 6,
+        "barrier_position": "",
+        "runner_number": 6,
+        "prize_money": "18648",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "NAVY,RED SASH,LIGHT BLUE SLEEVES, RED CAP, BLACK PEAK ",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/muscat-des-epines_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/muscat-des-epines_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "A G Maillard",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ecurie A.G. MAILLARD",
+        "country": "FR",
+        "trainer_name": "Arnaud G. Maillard",
+        "last_twenty_starts": "626971880x",
+        "sire": "UN MEC D'HERIPRE (FR)",
+        "dam": "TOQUADE DE FAEL (FR)",
+        "breeding": "4 g UN MEC D'HERIPRE (FR)-TOQUADE DE FAEL (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          17,
+          26,
+          35
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055732572Z",
+              "fluc": 17
+            },
+            {
+              "timestamp": "2026-03-05T15:17:10.458707774Z",
+              "fluc": 26
+            },
+            {
+              "timestamp": "2026-03-05T15:27:35.559498967Z",
+              "fluc": 35
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055732572Z",
+            "fluc": 17
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:27:35.559498967Z",
+            "fluc": 35
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.055732572Z",
+            "fluc": 17
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:27:35.559498967Z",
+            "fluc": 35
+          }
+        }
+      },
+      {
+        "entrant_id": "31fce1d8-8747-45eb-b48a-4e366c5e1ff0",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Maccambo",
+        "is_scratched": false,
+        "gear": "bare foot rear.",
+        "odds": {
+          "fixed_win": 10,
+          "fixed_place": 2.7
+        },
+        "scratch_time": 0,
+        "barrier": 7,
+        "barrier_position": "",
+        "runner_number": 7,
+        "prize_money": "17467",
+        "age": 4,
+        "sex": "H",
+        "colour": "CH",
+        "silk_colours": "BROWN, YELLOW SPOTS, SLEEVES, BLACK PEAK ",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/maccambo_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/maccambo_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "Alain Roussel",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Nicole ROUSSEL",
+        "country": "FR",
+        "trainer_name": "Alain Roussel",
+        "last_twenty_starts": "20x10x",
+        "sire": "UN CHARME FOU (FR)",
+        "dam": "COPACABANA (FR)",
+        "breeding": "4 h UN CHARME FOU (FR)-COPACABANA (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          9.5,
+          11,
+          10
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.054649255Z",
+              "fluc": 9.5
+            },
+            {
+              "timestamp": "2026-03-05T15:11:53.358994735Z",
+              "fluc": 11
+            },
+            {
+              "timestamp": "2026-03-05T15:24:53.158147876Z",
+              "fluc": 10
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.054649255Z",
+            "fluc": 9.5
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:11:53.358994735Z",
+            "fluc": 11
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.054649255Z",
+            "fluc": 9.5
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:24:53.158147876Z",
+            "fluc": 10
+          }
+        }
+      },
+      {
+        "entrant_id": "aa1d570c-815f-4255-bca6-193bb13eae65",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Must De Lou",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 15,
+          "fixed_place": 3.5
+        },
+        "scratch_time": 0,
+        "barrier": 8,
+        "barrier_position": "",
+        "runner_number": 8,
+        "prize_money": "17887",
+        "age": 4,
+        "sex": "H",
+        "colour": "BL",
+        "silk_colours": "GREY,BLACK HOOPS,SLEEVES,GREY HOOPS,BLACK CAP",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/must-de-lou_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/must-de-lou_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "D Delaroche",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Christian GERMAIN",
+        "country": "FR",
+        "trainer_name": "Daniel Delaroche",
+        "last_twenty_starts": "401404500",
+        "sire": "FABULOUS WOOD (FR)",
+        "dam": "DAIDA DE VANDEL (FR)",
+        "breeding": "4 h FABULOUS WOOD (FR)-DAIDA DE VANDEL (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          21,
+          13,
+          15
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.054378225Z",
+              "fluc": 21
+            },
+            {
+              "timestamp": "2026-03-05T15:12:42.36174551Z",
+              "fluc": 13
+            },
+            {
+              "timestamp": "2026-03-05T15:26:27.660559757Z",
+              "fluc": 15
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.054378225Z",
+            "fluc": 21
+          },
+          "high": {
+            "timestamp": "2026-03-05T10:17:26.054378225Z",
+            "fluc": 21
+          },
+          "low": {
+            "timestamp": "2026-03-05T15:12:42.36174551Z",
+            "fluc": 13
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:26:27.660559757Z",
+            "fluc": 15
+          }
+        }
+      },
+      {
+        "entrant_id": "c682ebac-b8d9-4a1c-b295-e687e17f176e",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Marche A L'ombre",
+        "is_scratched": true,
+        "gear": "bare foot.",
+        "odds": {
+          "fixed_win": 7.5,
+          "fixed_place": 0
+        },
+        "scratch_time": 1772722067,
+        "barrier": 9,
+        "barrier_position": "Fr-",
+        "runner_number": 9,
+        "prize_money": "1868",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "RED, WHITE ARMBANDS, GREEN CAP, BLACK PEAK",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/marche-a-l-ombre_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/marche-a-l-ombre_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "A Meriel",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ste. Ent. Fabrice SOULOY",
+        "country": "FR",
+        "trainer_name": "Fabrice Souloy",
+        "last_twenty_starts": "5",
+        "sire": "UHLAN DU VAL (FR)",
+        "dam": "DAKOTA RACE (FR)",
+        "breeding": "4 g UHLAN DU VAL (FR)-DAKOTA RACE (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          14,
+          7.5
+        ],
+        "scr_time": "2026-03-05T14:47:47Z",
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.054974288Z",
+              "fluc": 14
+            },
+            {
+              "timestamp": "2026-03-05T14:17:26.459198011Z",
+              "fluc": 7.5
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.054974288Z",
+            "fluc": 14
+          },
+          "high": {
+            "timestamp": "2026-03-05T10:17:26.054974288Z",
+            "fluc": 14
+          },
+          "low": {
+            "timestamp": "2026-03-05T14:17:26.459198011Z",
+            "fluc": 7.5
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T14:17:26.459198011Z",
+            "fluc": 7.5
+          }
+        }
+      },
+      {
+        "entrant_id": "4a64675a-0f11-4a8c-8d30-989e2d4cf4ff",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Max Meslois",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 91,
+          "fixed_place": 10
+        },
+        "scratch_time": 0,
+        "barrier": 10,
+        "barrier_position": "",
+        "runner_number": 10,
+        "prize_money": "10520",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "NAVY, WHITE EPAULETTES, SEAMS SLEEVES, BLACK PEAK",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/max-meslois_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/max-meslois_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "E Cive",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ecurie B",
+        "country": "FR",
+        "trainer_name": "Pierre Belloche",
+        "last_twenty_starts": "004600003x",
+        "sire": "ERIDAN (FR)",
+        "dam": "EUROPE MESLOISE (FR)",
+        "breeding": "4 g ERIDAN (FR)-EUROPE MESLOISE (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          61,
+          67,
+          101,
+          91
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.054157032Z",
+              "fluc": 61
+            },
+            {
+              "timestamp": "2026-03-05T15:14:50.457596401Z",
+              "fluc": 67
+            },
+            {
+              "timestamp": "2026-03-05T15:28:01.454192987Z",
+              "fluc": 101
+            },
+            {
+              "timestamp": "2026-03-05T15:28:02.860321419Z",
+              "fluc": 91
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.054157032Z",
+            "fluc": 61
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:28:01.454192987Z",
+            "fluc": 101
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.054157032Z",
+            "fluc": 61
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:28:02.860321419Z",
+            "fluc": 91
+          }
+        }
+      },
+      {
+        "entrant_id": "e5a8f72e-03d5-4491-b782-ae9801552f03",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Mambo Meslois",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 101,
+          "fixed_place": 10
+        },
+        "scratch_time": 0,
+        "barrier": 11,
+        "barrier_position": "",
+        "runner_number": 11,
+        "prize_money": "13232",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "NAVY, WHITE EPAULETTES, WHITE SEAMS SLEEVES, BLACK PEAK",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/mambo-meslois_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/mambo-meslois_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "P Belloche",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Ecurie B",
+        "country": "FR",
+        "trainer_name": "Pierre Belloche",
+        "last_twenty_starts": "065170500x",
+        "sire": "FAIRPLAY D'URZY (FR)",
+        "dam": "FORTUNA MESLOISE (FR)",
+        "breeding": "4 g FAIRPLAY D'URZY (FR)-FORTUNA MESLOISE (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          41,
+          61,
+          101
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.054843115Z",
+              "fluc": 41
+            },
+            {
+              "timestamp": "2026-03-05T15:03:41.956640535Z",
+              "fluc": 61
+            },
+            {
+              "timestamp": "2026-03-05T15:27:27.158911001Z",
+              "fluc": 101
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.054843115Z",
+            "fluc": 41
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:27:27.158911001Z",
+            "fluc": 101
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.054843115Z",
+            "fluc": 41
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:27:27.158911001Z",
+            "fluc": 101
+          }
+        }
+      },
+      {
+        "entrant_id": "3028d6c4-a262-4bb4-9698-d2d0f02ab21a",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Misidore",
+        "is_scratched": false,
+        "gear": "bare foot rear.",
+        "odds": {
+          "fixed_win": 101,
+          "fixed_place": 10
+        },
+        "scratch_time": 0,
+        "barrier": 12,
+        "barrier_position": "",
+        "runner_number": 12,
+        "prize_money": "14354",
+        "age": 4,
+        "sex": "G",
+        "colour": "CH",
+        "silk_colours": "BROWN, LIGHT BLUE STARS, CAP, BLACK PEAK ",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/misidore_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/misidore_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "Martial Viel",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Adrien SOURICE",
+        "country": "FR",
+        "trainer_name": "A Sourice",
+        "last_twenty_starts": "75901038x",
+        "sire": "CAID GRIFF (FR)",
+        "dam": "GUITARE FLEURIE (FR)",
+        "breeding": "4 g CAID GRIFF (FR)-GUITARE FLEURIE (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          51,
+          61,
+          101
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.055830057Z",
+              "fluc": 51
+            },
+            {
+              "timestamp": "2026-03-05T15:03:41.956613631Z",
+              "fluc": 61
+            },
+            {
+              "timestamp": "2026-03-05T15:28:00.808376483Z",
+              "fluc": 101
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.055830057Z",
+            "fluc": 51
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:28:00.808376483Z",
+            "fluc": 101
+          },
+          "low": {
+            "timestamp": "2026-03-05T10:17:26.055830057Z",
+            "fluc": 51
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:28:00.808376483Z",
+            "fluc": 101
+          }
+        }
+      },
+      {
+        "entrant_id": "7b97ccc2-d5af-4583-9c8b-7dc5b6770582",
+        "market_name": "Final Field",
+        "primary_market": true,
+        "name": "Marco Des Gacheres",
+        "is_scratched": false,
+        "gear": "",
+        "odds": {
+          "fixed_win": 5.5,
+          "fixed_place": 1.9
+        },
+        "scratch_time": 0,
+        "barrier": 13,
+        "barrier_position": "",
+        "runner_number": 13,
+        "prize_money": "12073",
+        "age": 4,
+        "sex": "G",
+        "colour": "B",
+        "silk_colours": "BLACK, SLEEVES, GREEN SEAMS,GREEN CAP, BLACK PEAK",
+        "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/marco-des-gacheres_64x64.png",
+        "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/marco-des-gacheres_128x128.png",
+        "form_comment": null,
+        "class_level": "",
+        "jockey": "K Champenois",
+        "apprentice_indicator": "",
+        "allowance_weight": "",
+        "owners": "Karl CHAMPENOIS",
+        "country": "FR",
+        "trainer_name": "Karl Champenois",
+        "last_twenty_starts": "2x83940",
+        "sire": "CLIF DU POMMEREUX (FR)",
+        "dam": "GELINIERE (FR)",
+        "breeding": "4 g CLIF DU POMMEREUX (FR)-GELINIERE (FR)",
+        "weight": {
+          "allocated": "",
+          "total": ""
+        },
+        "favourite": false,
+        "mover": false,
+        "speedmap": {},
+        "form_indicators": null,
+        "past_performances": null,
+        "jockey_past_performances": null,
+        "trainer_location": "",
+        "meta": null,
+        "flucs": [
+          5.5,
+          7,
+          5.5
+        ],
+        "scr_time": null,
+        "competitor_id": "",
+        "ride_guide_exists": false,
+        "ride_guide_thumbnail": "",
+        "ride_guide_file": "",
+        "flucs_with_timestamp": {
+          "last_six": [
+            {
+              "timestamp": "2026-03-05T10:17:26.054529061Z",
+              "fluc": 5.5
+            },
+            {
+              "timestamp": "2026-03-05T15:20:52.361861028Z",
+              "fluc": 7
+            },
+            {
+              "timestamp": "2026-03-05T15:28:00.808524596Z",
+              "fluc": 5.5
+            }
+          ],
+          "open": {
+            "timestamp": "2026-03-05T10:17:26.054529061Z",
+            "fluc": 5.5
+          },
+          "high": {
+            "timestamp": "2026-03-05T15:20:52.361861028Z",
+            "fluc": 7
+          },
+          "low": {
+            "timestamp": "2026-03-05T15:28:00.808524596Z",
+            "fluc": 5.5
+          },
+          "nine_am": {
+            "timestamp": "2026-03-05T15:28:00.808524596Z",
+            "fluc": 5.5
+          }
+        }
+      }
+    ],
+    "derivatives": null,
+    "mover": {
+      "entrant_id": "0d090587-dc01-46ae-a73e-4cc0fecb2de2",
+      "market_name": "Final Field",
+      "primary_market": true,
+      "name": "Moving Quick",
+      "is_scratched": false,
+      "gear": "",
+      "odds": {
+        "fixed_win": 2.45,
+        "fixed_place": 1.28
+      },
+      "scratch_time": 0,
+      "barrier": 2,
+      "barrier_position": "",
+      "runner_number": 2,
+      "prize_money": "19948",
+      "age": 4,
+      "sex": "G",
+      "colour": "B",
+      "silk_colours": "NAVY, RED STRIPES SLEEVES, SEAMS CAP, BLACK PEAK",
+      "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/moving-quick_64x64.png",
+      "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/betmakers-cmFjZToxOTQwOTAy/moving-quick_128x128.png",
+      "form_comment": null,
+      "class_level": "",
+      "jockey": "F Nivard",
+      "apprentice_indicator": "",
+      "allowance_weight": "",
+      "owners": "Ecurie Thierry RAFFEGEAU",
+      "country": "FR",
+      "trainer_name": "Thierry Raffegeau",
+      "last_twenty_starts": "0400x0x002",
+      "sire": "CHARLY DU NOYER (FR)",
+      "dam": "UMOURA QUICK (FR)",
+      "breeding": "4 g CHARLY DU NOYER (FR)-UMOURA QUICK (FR)",
+      "weight": {
+        "allocated": "",
+        "total": ""
+      },
+      "favourite": false,
+      "mover": true,
+      "speedmap": {},
+      "form_indicators": null,
+      "past_performances": null,
+      "jockey_past_performances": null,
+      "trainer_location": ""
+    },
+    "big_bets": null,
+    "live_bets": null,
+    "biggest_bet": null,
+    "money_tracker": null,
+    "error": ""
+  }
+}

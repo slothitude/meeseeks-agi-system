@@ -1,0 +1,6 @@
+{
+  "url": "https://httpbin.org/robots.txt",
+  "output": "test-robots.txt",
+  "id": "download-20260303-224056-d5a97d",
+  "timestamp": "2026-03-03T22:40:56.399567"
+}

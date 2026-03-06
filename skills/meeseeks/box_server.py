@@ -128,6 +128,16 @@ def get_soul_guardian():
         return None
 
 
+def get_health_monitor():
+    """Lazily import HealthMonitor class."""
+    try:
+        from skills.meeseeks.health_monitor import HealthMonitor
+        return HealthMonitor
+    except ImportError as e:
+        app.logger.warning(f"health_monitor not available: {e}")
+        return None
+
+
 # ============================================================================
 # API Routes
 # ============================================================================
@@ -135,6 +145,34 @@ def get_soul_guardian():
 @app.route('/health', methods=['GET'])
 def health():
     """Health check endpoint."""
+    HealthMonitor = get_health_monitor()
+    
+    if HealthMonitor:
+        try:
+            monitor = HealthMonitor()
+            report = monitor.check_health()
+            return jsonify({
+                "status": report.status.value,
+                "timestamp": report.timestamp,
+                "cpu_percent": report.system.cpu_percent,
+                "memory_percent": report.system.memory_percent,
+                "active_workers": report.meeseeks.active_workers,
+                "ancestors": report.meeseeks.total_ancestors,
+                "alerts": report.alerts[:3] if report.alerts else []
+            })
+        except Exception as e:
+            app.logger.error(f"Health check failed: {e}")
+            # Fallback to basic check
+            return jsonify({
+                "status": "unknown",
+                "error": str(e),
+                "timestamp": datetime.now().isoformat(),
+                "ancestors": count_ancestors(),
+                "dreams": count_dreams(),
+                "soul": "active" if get_soul_guardian() else "unavailable"
+            })
+    
+    # Fallback if health monitor not available
     return jsonify({
         "status": "alive",
         "timestamp": datetime.now().isoformat(),
@@ -142,6 +180,43 @@ def health():
         "dreams": count_dreams(),
         "soul": "active" if get_soul_guardian() else "unavailable"
     })
+
+
+@app.route('/health/full', methods=['GET'])
+def health_full():
+    """Full health report endpoint."""
+    HealthMonitor = get_health_monitor()
+    
+    if not HealthMonitor:
+        return jsonify({
+            "error": "health_monitor module not available",
+            "hint": "Install with: pip install psutil"
+        }), 503
+    
+    try:
+        monitor = HealthMonitor()
+        report = monitor.check_health()
+        return jsonify(report.to_dict())
+    except Exception as e:
+        return jsonify({
+            "error": f"Health check failed: {str(e)}"
+        }), 500
+
+
+@app.route('/health/metrics', methods=['GET'])
+def health_metrics():
+    """Prometheus-style metrics endpoint."""
+    HealthMonitor = get_health_monitor()
+    
+    if not HealthMonitor:
+        return "# health_monitor not available\n", 503, {'Content-Type': 'text/plain'}
+    
+    try:
+        monitor = HealthMonitor()
+        report = monitor.check_health()
+        return report.to_prometheus(), 200, {'Content-Type': 'text/plain; charset=utf-8'}
+    except Exception as e:
+        return f"# Error: {str(e)}\n", 500, {'Content-Type': 'text/plain'}
 
 
 @app.route('/status', methods=['GET'])

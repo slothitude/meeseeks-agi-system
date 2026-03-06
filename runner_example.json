@@ -1,0 +1,89 @@
+{
+  "entrant_id": "44aa288b-91cc-44ab-a898-1e3e02c2c368",
+  "market_name": "Final Field",
+  "primary_market": true,
+  "name": "Shemars Lady Havoc",
+  "is_scratched": false,
+  "gear": "",
+  "odds": {
+    "fixed_win": 12,
+    "fixed_place": 3
+  },
+  "scratch_time": 0,
+  "barrier": 1,
+  "barrier_position": "",
+  "runner_number": 1,
+  "prize_money": "41354",
+  "age": 11,
+  "sex": "M",
+  "colour": "B",
+  "silk_colours": "GREEN-YELLOW-WH",
+  "silk_url_64x64": "https://cdn.prod.pricekinetics.com/silks/events/racing/rns-466310774-1/1865603_64x64.png",
+  "silk_url_128x128": "https://cdn.prod.pricekinetics.com/silks/events/racing/rns-466310774-1/1865603_128x128.png",
+  "form_comment": null,
+  "class_level": "",
+  "jockey": "S Coulter",
+  "apprentice_indicator": "",
+  "allowance_weight": "",
+  "owners": "SHEILA D KNIBB",
+  "country": "CAN",
+  "trainer_name": "S Lewis",
+  "last_twenty_starts": "3953477666",
+  "sire": "DALI (USA)",
+  "dam": "ST LADS HAVOC",
+  "breeding": "11 m DALI (USA)-ST LADS HAVOC",
+  "weight": {
+    "allocated": "",
+    "total": ""
+  },
+  "favourite": false,
+  "mover": false,
+  "speedmap": {},
+  "form_indicators": null,
+  "past_performances": null,
+  "jockey_past_performances": null,
+  "trainer_location": "",
+  "meta": null,
+  "flucs": [
+    8,
+    7.5,
+    12
+  ],
+  "scr_time": null,
+  "competitor_id": "",
+  "ride_guide_exists": false,
+  "ride_guide_thumbnail": "",
+  "ride_guide_file": "",
+  "flucs_with_timestamp": {
+    "last_six": [
+      {
+        "timestamp": "2026-03-05T23:25:05.194262023Z",
+        "fluc": 8
+      },
+      {
+        "timestamp": "2026-03-05T23:25:06.543911178Z",
+        "fluc": 7.5
+      },
+      {
+        "timestamp": "2026-03-05T23:31:45.542971916Z",
+        "fluc": 12
+      }
+    ],
+    "open": {
+      "timestamp": "2026-03-05T23:25:05.194262023Z",
+      "fluc": 8
+    },
+    "high": {
+      "timestamp": "2026-03-05T23:31:45.542971916Z",
+      "fluc": 12
+    },
+    "low": {
+      "timestamp": "2026-03-05T23:25:06.543911178Z",
+      "fluc": 7.5
+    },
+    "nine_am": {
+      "timestamp": "2026-03-05T23:31:45.542971916Z",
+      "fluc": 12
+    }
+  }
+}

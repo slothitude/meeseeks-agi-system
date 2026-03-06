@@ -1,0 +1,6 @@
+{
+  "url": "https://example.com/sample-file.zip",
+  "output": "sample-file.zip",
+  "id": "download-001",
+  "notes": "Optional field for additional context"
+}

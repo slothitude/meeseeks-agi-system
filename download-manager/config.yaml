@@ -1,0 +1,67 @@
+# Download Manager Configuration
+# This file contains settings for the download manager system
+
+# aria2 RPC Settings
+rpc:
+  host: "192.168.0.237"
+  port: 6800
+  secret: "sloth_download_token"  # Change this on production!
+
+# Default Download Directories (on Pi)
+directories:
+  base: "/home/pi/downloads"
+  games: "/home/pi/downloads/games"
+  software: "/home/pi/downloads/software"
+  media: "/home/pi/downloads/media"
+  torrents: "/home/pi/downloads/torrents"
+  other: "/home/pi/downloads/other"
+
+# Download Settings
+defaults:
+  connections: 4  # Number of connections per download
+  max_concurrent: 3  # Maximum concurrent downloads
+  timeout: 60  # Connection timeout in seconds
+  retries: 5  # Number of retries on failure
+
+# Agent Integration
+agents:
+  sloth_rog:
+    name: "Sloth_rog"
+    type: "windows"
+    can_trigger: true
+    can_monitor: true
+  
+  sloth_pibot:
+    name: "sloth_pibot"
+    type: "raspberry_pi"
+    can_trigger: true
+    can_monitor: true
+    hosts_aria2: true
+
+# Notifications (optional)
+notifications:
+  enabled: false
+  on_complete: true
+  on_error: true
+  channels:
+    - telegram  # Send to Telegram
+    - log  # Write to log file
+
+# Logging
+logging:
+  aria2_log: "/home/pi/logs/aria2/aria2.log"
+  monitor_log: "/home/pi/logs/aria2/monitor.log"
+  level: "warn"  # debug, info, warn, error
+
+# Web UI (optional)
+webui:
+  enabled: false
+  port: 8080
+  path: "/var/www/html/webui-aria2"
+
+# Security
+security:
+  restrict_to_lan: true
+  allowed_networks:
+    - "192.168.0.0/24"
+  tls_enabled: false

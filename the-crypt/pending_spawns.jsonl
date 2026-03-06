@@ -1,0 +1,2 @@
+{"timestamp": "2026-03-06T17:09:00", "task": "Networking study from Art of Exploitation", "priority": 2, "reason": "rate_limited", "retry_after": "2026-03-06T17:15:00"}
+{"timestamp": "2026-03-06T17:09:00", "task": "Shellcode study from Art of Exploitation", "priority": 2, "reason": "rate_limited", "retry_after": "2026-03-06T17:15:00"}

@@ -223,8 +223,8 @@ def check_rate_limit() -> bool:
     """Check if we're rate limited"""
     from rate_limit_handler import RateLimitHandler
     handler = RateLimitHandler()
-    status = handler.get_status()
-    return not status["can_spawn"]
+    status = handler.status()
+    return status.get("rate_limited", False)
 
 
 def get_status() -> Dict:

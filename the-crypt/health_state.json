@@ -1,0 +1,8 @@
+{
+  "last_check": "2026-03-06T06:32:41.369343",
+  "status": "warning",
+  "cpu_percent": 0.3,
+  "memory_percent": 50.1,
+  "active_workers": 0,
+  "alerts_count": 2
+}

@@ -1,0 +1,15 @@
+{
+  "name": "SteamArb Safe Trader",
+  "description": "Paper trading with automatic exit before race starts",
+  "schedule": {
+    "enabled": true,
+    "delivery": {
+      "mode": "announce",
+    },
+    "payload": {
+      "name": "SteamArb Safe Trader",
+      "description": "Paper trading with safety checks - exits before race starts",
+      "task": "Scan markets during active hours (10am-5pm Brisbane), Detect opportunities and NEVER hold into race start. Exit all positions 2+ mins before start."
+    }
+  }
+}
