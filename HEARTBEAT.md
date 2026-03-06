@@ -6,14 +6,11 @@
 
 ## Periodic Tasks
 
-# RATE LIMIT CHECK - Prevent API overload (every heartbeat)
-- Run: python skills/meeseeks/rate_limit_manager.py --status
-- If rate limited: Wait or queue tasks
-- Process pending: python skills/meeseeks/rate_limit_manager.py --process
-
-# AUTO-COMPACT: Prevent context overflow (every heartbeat)
-- Run: python skills/meeseeks/auto_compact.py --check --max-size 10
-- Note: Keeps MEMORY.md under 10KB, archives excess to memory/archive/
+# PROCESS PENDING RETRY CHUNKS - Spawn queued retry chunks (every heartbeat)
+- Check: the-crypt/pending-spawns.json for pending chunks
+- Spawn: Up to 3 chunks per heartbeat with rate limiting
+- Update: Remove spawned chunks from pending list
+- Enforce: MAX_RETRIES_PER_TASK=3 limit
 
 # Auto-entomb completed Meeseeks (every heartbeat)
 - Run: python skills/meeseeks/cron_entomb.py --max-age-minutes 60
@@ -22,11 +19,6 @@
 - Run: python skills/meeseeks/rate_limit_handler.py --retry
 - Note: Returns pending tasks ready for retry after rate limit
 - Fallback: Uses phi3:mini (Ollama) when z.ai rate limited
-
-# Auto-spawn retry chunks (every heartbeat)
-- Check: the-crypt/pending-retries.json for pending chunks
-- Spawn: sessions_spawn for each pending chunk with status="pending"
-- Update: Mark chunks as "spawned" after spawning
 
 ## Autonomous Checks
 
