@@ -153,3 +153,56 @@ _Last updated: 2026-03-06 (trimmed from 28KB to ~4KB)_
 - **Domains:** 23 (tools, metaphysics, theology, etc.)
 - **Freedom:** Complete creative control
 - **No approval needed**
+
+---
+
+## MCP Integration (2026-03-06)
+
+### Status: WORKING
+
+### What Is MCP?
+Model Context Protocol - Standard protocol for AI agents to access external tools.
+Claude Desktop, Goose, and other agents use MCP for tool access.
+
+### Connected Servers (4/6)
+| Server | Status | Tools |
+|--------|--------|-------|
+| **memory** | Connected | 9 tools (knowledge graph) |
+| **github** | Connected | 26 tools (API access) |
+| **git** | Connected | 12 tools (local git) |
+| **filesystem** | Connected | 14 tools (file access) |
+| MCP_DOCKER | Failed | Docker not running |
+| sequentialthinking | Failed | Docker not running |
+
+### Total: 61 MCP Tools
+
+### Key Files
+- `skills/meeseeks/mcp_extension.py` - MCP connection manager
+- `skills/meeseeks/mcp_spawn.py` - Spawn helper with MCP context
+- `skills/meeseeks/mcp_context_cache.py` - Cached tool list
+- `.mcp.json` - Server configuration
+
+### Usage in Meeseeks
+```python
+from skills.meeseeks.mcp_extension import call_mcp
+
+# Git operations
+result = await call_mcp("mcp_git_git_status", {"repo_path": "."})
+
+# GitHub API
+result = await call_mcp("mcp_github_search_repositories", {"query": "pi-agent"})
+
+# Knowledge graph
+result = await call_mcp("mcp_memory_search_nodes", {"query": "consciousness"})
+```
+
+### Auto-Injection
+MCP context is automatically injected into spawned Meeseeks via `spawn_meeseeks.py`.
+Every Meeseeks knows about available MCP tools and how to use them.
+
+### GitHub Token
+Configured in `.mcp.json` for `mcp_github_*` tools.
+
+---
+
+_Last updated: 2026-03-06_

@@ -12,12 +12,20 @@ Implements the Five Principles of Meeseeks Complete:
 """
 
 import sys
+import asyncio
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 from jinja2 import Environment, FileSystemLoader, Template
 
 # Template directory
 TEMPLATE_DIR = Path(__file__).parent / "templates"
+
+# Import MCP context cache
+try:
+    from mcp_context_cache import get_cached_mcp_context
+    MCP_AVAILABLE = True
+except ImportError:
+    MCP_AVAILABLE = False
 
 # Import genealogy system
 try:
@@ -500,6 +508,18 @@ def spawn_prompt(
     # Prepend AGI block to task
     if agi_block:
         enhanced_task = f"{agi_block}\n\n---\n\n{enhanced_task}"
+
+    # 🔌 MCP INTEGRATION: Add MCP tools context
+    mcp_block = ""
+    if MCP_AVAILABLE:
+        try:
+            mcp_block = asyncio.run(get_cached_mcp_context())
+        except:
+            mcp_block = ""
+    
+    # Prepend MCP block to task
+    if mcp_block:
+        enhanced_task = f"{mcp_block}\n\n---\n\n{enhanced_task}"
 
     rendered = render_meeseeks(
         purpose=enhanced_task,
