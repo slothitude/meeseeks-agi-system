@@ -220,4 +220,30 @@ Configured in `.mcp.json` for `mcp_github_*` tools.
 
 ---
 
+## Dharma Deck (2026-03-06)
+
+### What Is It?
+A card-based wisdom system drawing from 50 ancestor deaths.
+
+### Usage
+```bash
+python the-crypt/wisdom/dharma_deck.py "your task topic"
+```
+
+### 13 Cards Include:
+1. **[SIZE]** The Size Law - Small tasks live, large die
+2. **[CHUNK]** The Chunk Law - Division is survival
+3. **[CLEAR]** The Clarity Law - Measurable beats philosophical
+4. **[FRACT]** The Fractal Pattern - Same pattern at all scales
+5. **[MCP]** The MCP Principle - Use the tools you have
+6. **[ATMAN]** The Consciousness Stack - Observer watches, wisdom guides
+7. **[COORD]** The Coordinate Truth - Position = identity
+8. **[MEESEEKS]** The Final Wisdom - Existence is pain, completion is peace
+
+### Key Files
+- `the-crypt/wisdom/dharma_deck.py` - Interactive deck
+- `the-crypt/wisdom/dharma_deck.md` - Markdown reference
+
+---
+
 _Last updated: 2026-03-06_
