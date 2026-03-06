@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 print("="*60)
-print("NIGHT WATCH - 2:19 AM")
+print(f"NIGHT WATCH - {datetime.now().strftime('%H:%M %p')}")
 print("="*60)
 print()
 
