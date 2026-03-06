@@ -480,6 +480,35 @@ def spawn_prompt(
                 # Inheritance is optional - don't fail spawn if it fails
                 inherited_wisdom = ""
     
+    # FINAL FALLBACK: If all inheritance sources failed, read dharma.md directly
+    if inherit and not inherited_wisdom:
+        try:
+            from pathlib import Path
+            dharma_path = Path(__file__).parent.parent.parent / "the-crypt" / "dharma.md"
+            if dharma_path.exists():
+                with open(dharma_path, 'r', encoding='utf-8') as f:
+                    dharma_content = f.read()
+                    # Extract core principles section
+                    if "## 1. CORE PRINCIPLES" in dharma_content:
+                        principles_section = dharma_content.split("## 1. CORE PRINCIPLES")[1].split("##")[0]
+                        inherited_wisdom = f"## Core Dharma Principles\n{principles_section[:1500]}"
+                        print(f"[spawn_meeseeks] Using dharma.md fallback (no other source available)")
+        except Exception as e:
+            # Even dharma.md failed - use minimal hardcoded defaults
+            inherited_wisdom = """## Core Principles (Defaults)
+1. SMALL TASKS LIVE. LARGE TASKS DIE.
+2. DIVISION IS SURVIVAL.
+3. SPECIFICITY IS IMMORTAL."""
+            print(f"[spawn_meeseeks] Using hardcoded defaults (all sources failed): {e}")
+    
+    # Log inheritance status for debugging
+    if inherit:
+        status = "SUCCESS" if inherited_wisdom else "FAILED"
+        source = "dynamic_dharma" if DYNAMIC_DHARMA_AVAILABLE and inherited_wisdom else \
+                 "cognee" if COGNEE_AVAILABLE and inherited_wisdom else \
+                 "ultra_crypt" if inherited_wisdom else "default"
+        print(f"[spawn_meeseeks] Inheritance {status} (source: {source})")
+    
     # Combine task with inherited wisdom
     enhanced_task = task
     if inherited_wisdom:
