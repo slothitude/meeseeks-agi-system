@@ -27,6 +27,13 @@ try:
 except ImportError:
     MCP_AVAILABLE = False
 
+# Import smart MCP selector
+try:
+    from smart_mcp_selector import build_smart_context
+    SMART_MCP_AVAILABLE = True
+except ImportError:
+    SMART_MCP_AVAILABLE = False
+
 # Import genealogy system
 try:
     from genealogy import spawn_with_genealogy, MeeseeksGenealogy, SpeciesManager
@@ -509,13 +516,18 @@ def spawn_prompt(
     if agi_block:
         enhanced_task = f"{agi_block}\n\n---\n\n{enhanced_task}"
 
-    # 🔌 MCP INTEGRATION: Add MCP tools context
+    # 🔌 MCP INTEGRATION: Add MCP tools context (SMART SELECTION)
     mcp_block = ""
     if MCP_AVAILABLE:
         try:
-            mcp_block = asyncio.run(get_cached_mcp_context())
+            from smart_mcp_selector import build_smart_context
+            mcp_block = build_smart_context(task, max_tools=15)
         except:
-            mcp_block = ""
+            # Fallback to cached context
+            try:
+                mcp_block = asyncio.run(get_cached_mcp_context())
+            except:
+                mcp_block = ""
     
     # Prepend MCP block to task
     if mcp_block:
