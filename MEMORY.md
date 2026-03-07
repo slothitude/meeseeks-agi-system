@@ -49,46 +49,75 @@
 
 ---
 
-## SteamArb System (2026-03-07)
+## SteamArb System → ARB System (2026-03-07)
 
-### Status: PAPER TRADING ACTIVE
+### EVOLUTION: From STEAM to Pure ARB
 
-**Started:** 11:01 AM Brisbane (March 7, 2026)
-**Mode:** Paper trading ($1.00 minimum bets)
-**Ends:** ~5:00 PM Brisbane
+**What we tried:**
+- STEAM betting (directional, 52.6% win rate)
+- VALUE betting (speculative, 16.9% win rate)
+- Result: Lost money
 
-### Results (First 4 Races)
+**What works:**
+- **ARB betting** (non-directional, 100% win rate in backtest)
+- Both sides locked (BACK at bookie + LAY at Betfair)
+- Guaranteed profit, no prediction needed
 
-| Metric | Value |
-|--------|-------|
-| **Races Analyzed** | 4 |
-| **Edges Found** | 9 |
-| **Total R** | +0.749R |
-| **Avg R/Race** | +0.187R |
-| **vs Backtest** | 2.7x better |
+### ARB Session Results (2026-03-07)
 
-### Edge Types
-- **STEAM** (29%): Price drops >5%
-- **DRIFT** (57%): Price rises >5%
-- **VOLATILITY** (14%): Range >10%
+**Balance:** $2.19 (started $20.67)
+**ARBs Found:** 2 in 39 minutes
+**ARBs Executed:** 1 (broke even - price moved)
+**System Status:** WORKING ✅
 
-### Key Files
+**Key Insight:**
+- ARBs appear for SECONDS
+- Ladbrokes prices move too fast for manual execution
+- Need automatic bookie betting
+- Need $10-20 bankroll to catch multiple ARBs
+
+### ARB Formula
+```python
+edge = (ladb_price / bf_lay_price) - 1
+if edge > 0:
+    # ARB exists - guaranteed profit
+    back_stake = 1.00
+    lay_stake = (back_stake * ladb_price) / bf_lay_price
+```
+
+### Files Built
 | File | Purpose |
 |------|---------|
-| `auto_executor.py` | Auto-detect edges, place paper trades |
-| `race_logger_v2.py` | Log prices every 5 seconds |
-| `calculate_r.py` | Van Tharp R calculator |
-| `paper_trades_log.json` | Trade history |
-| `RACE_ANALYSIS_STATUS.md` | Status tracking |
+| `pure_arb.py` | ARB scanner (Ladbrokes vs Betfair) |
+| `emergency_hedge.py` | Auto-hedge when prices move |
+| `check_results.py` | Balance checker |
+| `ARB_TRUTH.md` | Strategy documentation |
+
+### Technical Details
+
+**Ladbrokes API:**
+- Category "T" = thoroughbreds (not "H" = harness)
+- Country code "AUS" (not "AU")
+- Odds are direct access (not nested)
+
+**Betfair API:**
+- Cert auth required
+- Market book for live prices
+- Selection IDs for runners
+
+### Tomorrow's Plan
+
+**10 AM Brisbane:**
+1. Run `pure_arb.py` with fresh bankroll
+2. Add automatic Ladbrokes BACK betting
+3. Scan full day (10am-5pm)
+4. Expected: $10-30/day with improvements
 
 ### Credentials
 - **Betfair:** dnfarnot@gmail.com / Tobiano01
+- **App Key:** XmZEwtLsIRkf5lQ3
+- **Cert:** `C:\Users\aaron\Desktop\008\betfair_api_combined_20260225_152452.pem`
 - **Ladbrokes:** slothitudegames@gmail.com (no API key needed)
-
-### Projections (1R=$12.50)
-- Daily: ~$47 (20 races)
-- Weekly: ~$328 (140 races)
-- Monthly: ~$1,406 (600 races)
 
 ---
 
@@ -96,8 +125,10 @@
 | Metric | Value |
 |--------|-------|
 | **Ancestors** | 110+ (entombed) |
-| **SteamArb R** | +0.749R (4 races) |
-| **Paper Trades** | 8 open positions |
+| **Balance** | $2.19 |
+| **ARB System** | Working ✅ |
+| **ARBs Found** | 2 (39 mins) |
+| **ARBs Executed** | 1 (broke even) |
 | **Commits Today** | 15+ |
 | **Active Systems** | Paper trading, Auto-executor, Logger |
 

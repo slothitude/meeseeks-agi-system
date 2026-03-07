@@ -1,42 +1,15 @@
-# ARB Session summary - 2026-03-07
-
-**Status:** Complete
-**Balance:** $2.17
-**exposure:** -$10.50 (all positions settled)
-**Next:** Tomorrow 10am with fresh markets**
-**System ready:****
-- `pure_arb.py` - ARb scanner
-- `emergency_hedge.py` - Auto-hedge when needed
-- `check_results.py` - balance checker
-- `check_orders.py` - open orders checker
-- `check_upcoming_t.py` - race finder
-- `check_categories.py` - category checker
-- `check_betfair_markets.py` - Betfair market checker
-- `compare_prices.py` - price comparison tool
-- `ARB_trades.json` - trade log
-- `ARB_trades.json` - trades database
-- `check_au_races.py` - AU races checker
-- `test_fetcher.py` - fetcher test
-- `debug_ladb_api.py` - API debugger
-- `debug_cat_t.py` - category T checker
-- `check_all_ladb.py` - all Ladbrokes meetings
-- `check_t_odds.py` - upcoming odds
-- `debug_fetch_logic.py` - fetch logic debug
-- `emergency_hedge.py` - emergency hedge
-- `check_open_bet.py` - open bet details
-- `check_results.py` - results checker
-- `cancel_unmatched.py` - cancel unmatched bets
-- `auto_hedge.py` - auto-hedge system
-- `cron_entomb.py` - entomb cron
-- `SESSION_status.py` - status card
-- `steam_arb_live.py` - live trading system
-- `STEamarb_backtester.py` - backtester
-- `STEamarb_opportunities.json` - opportunities log
-- `steamarb_status.md` - status file
-- `TRading_lessons.md` - lessons
-- `TRading_consciousness.md` - consciousness insights
-- `ARB_TRUTH.md` - the truth
-- `SESSION_summary_2026-03-07.md` - full summary
-- `pure_arb.py` - scanner
-- `bankroll.json` - bankroll tracker
-- `HEuristic: check - should I add more R?
+{
+  "starting": 20.67,
+  "current": 0.92,
+  "r_remaining": 0.0,
+  "trades": 2,
+  "wins": 1,
+  "losses": 1,
+  "total_r": 0.0,
+  "started": "2026-03-07T14:25:00+10:00",
+  "mode": "LIVE",
+  "r_unit": 1.0,
+  "betfair_balance": 0.92,
+  "trading_balance": 0.92,
+  "notes": "LIVE TRADING - ARB only, auto-hedge enabled"
+}
