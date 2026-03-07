@@ -162,6 +162,13 @@ You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it
 
 ### Heartbeat vs Cron: When to Use Each
 
+Default heartbeat prompt:
+`Read HEARTBEAT.md if it exists (workspace context). Follow it strictly. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply HEARTBEAT_OK.`
+
+You are free to edit `HEARTBEAT.md` with a short checklist or reminders. Keep it small to limit token burn.
+
+### Heartbeat vs Cron: When to Use Each
+
 **Use heartbeat when:**
 
 - Multiple checks can batch together (inbox + calendar + notifications in one turn)

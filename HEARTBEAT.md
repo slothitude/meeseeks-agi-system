@@ -6,6 +6,10 @@
 
 ## Periodic Tasks
 
+# CONTEXT MONITOR - Check and compact if needed (every heartbeat)
+- Run: python context_monitor.py --check
+- Note: Auto-triggers compact at 127k/205k tokens
+
 # PROCESS PENDING RETRY CHUNKS - Spawn queued retry chunks (every heartbeat)
 - Check: the-crypt/pending-spawns.json for pending chunks
 - Spawn: Up to 3 chunks per heartbeat with rate limiting
