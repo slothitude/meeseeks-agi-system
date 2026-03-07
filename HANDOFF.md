@@ -3,14 +3,15 @@
 #
 # Context: Model limit reached. This file contains everything needed to continue.
 #
-# Date: 2026-03-07 1:35 PM Brisbane
-# Status: WORKING - Made +$0.38 profit
+# Date: 2026-03-07 1:45 PM Brisbane
+# Status: WORKING - Auto-hedge built, ready for next session
 
 ## Current State
 
 **Betfair Balance:** $21.05 AUD (started with $20.67)
 **Profit Today:** +$0.38 AUD
 **Bets Placed:** 3 (1 won, 2 lost)
+**Auto-Hedge:** BUILT AND TESTED (auto_hedge.py)
 
 ## System Components
 
@@ -129,10 +130,16 @@ if back_bet_success:
 
 ## Next Steps
 
-### Immediate (Next Session)
-1. Build auto-hedge system
-2. Test with small stake
-3. Run live with proper hedging
+### DONE: Auto-Hedge System (BUILT 1:45 PM)
+- Created `auto_hedge.py` - monitors open BACK positions
+- Auto-places LAY when target price reached (5% drop)
+- Calculates optimal stake for green book
+- Logs all hedges to `live_trades_log.json`
+
+### Immediate (Next Trading Session - Tomorrow 10am)
+1. Run live_trading_integrated.py to find edges
+2. Auto-hedge runs automatically after BACK placed
+3. Monitor results
 
 ### This Week
 1. Improve edge detection (15% threshold)
