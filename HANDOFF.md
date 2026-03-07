@@ -1,16 +1,16 @@
 # System Handoff - Live Trading System
 # =====================================
 #
-# Context: Model limit reached. This file contains everything needed to continue.
+# Context: Session handoff
 #
-# Date: 2026-03-07 1:45 PM Brisbane
-# Status: WORKING - Auto-hedge built, ready for next session
+# Date: 2026-03-07 2:05 PM Brisbane
+# Status: TRADING PAUSED - Issues identified, needs fixing
 
 ## Current State
 
-**Betfair Balance:** $21.05 AUD (started with $20.67)
-**Profit Today:** +$0.38 AUD
-**Bets Placed:** 3 (1 won, 2 lost)
+**Betfair Balance:** $17.05 AUD (started with $20.67)
+**Total P/L:** -$3.95 AUD
+**Bets Placed:** 5 (1 won, 4 lost)
 **Auto-Hedge:** BUILT AND TESTED (auto_hedge.py)
 
 ## System Components
