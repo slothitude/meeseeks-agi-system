@@ -1,0 +1,275 @@
+{
+  "20260307_120905_Rebel Tues": {
+    "id": "20260307_120905_Rebel Tues",
+    "timestamp": "2026-03-07T12:09:05.257882",
+    "track": "Flemington",
+    "race": "3",
+    "runner": "Rebel Tuesday",
+    "edge_type": "STEAM",
+    "entry_price": 7,
+    "target_price": 6.6499999999999995,
+    "open_price": 7.5,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 10.9
+  },
+  "20260307_120905_Doubtwilly": {
+    "id": "20260307_120905_Doubtwilly",
+    "timestamp": "2026-03-07T12:09:05.770499",
+    "track": "Eagle Farm",
+    "race": "1",
+    "runner": "Doubtwilly",
+    "edge_type": "DRIFT",
+    "entry_price": 9,
+    "target_price": 9.450000000000001,
+    "open_price": 7.5,
+    "stakes": {
+      "lay_stake": 1.0,
+      "back_stake": 0.95,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.045,
+    "status": "OPEN",
+    "mins_to_start": 3.9
+  },
+  "20260307_120906_Belgium La": {
+    "id": "20260307_120906_Belgium La",
+    "timestamp": "2026-03-07T12:09:06.196809",
+    "track": "Corowa",
+    "race": "1",
+    "runner": "Belgium Lad",
+    "edge_type": "STEAM",
+    "entry_price": 14,
+    "target_price": 13.299999999999999,
+    "open_price": 17,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 6.9
+  },
+  "20260307_120906_Delusional": {
+    "id": "20260307_120906_Delusional",
+    "timestamp": "2026-03-07T12:09:06.741779",
+    "track": "Alice Springs",
+    "race": "1",
+    "runner": "Delusionaldictator",
+    "edge_type": "STEAM",
+    "entry_price": 3,
+    "target_price": 2.8499999999999996,
+    "open_price": 4.2,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 12.9
+  },
+  "20260307_120938_Rebel Tues": {
+    "id": "20260307_120938_Rebel Tues",
+    "timestamp": "2026-03-07T12:09:38.042478",
+    "track": "Flemington",
+    "race": "3",
+    "runner": "Rebel Tuesday",
+    "edge_type": "STEAM",
+    "entry_price": 7,
+    "target_price": 6.6499999999999995,
+    "open_price": 7.5,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 10.4
+  },
+  "20260307_120938_Doubtwilly": {
+    "id": "20260307_120938_Doubtwilly",
+    "timestamp": "2026-03-07T12:09:38.630678",
+    "track": "Eagle Farm",
+    "race": "1",
+    "runner": "Doubtwilly",
+    "edge_type": "DRIFT",
+    "entry_price": 9.5,
+    "target_price": 9.975,
+    "open_price": 7,
+    "stakes": {
+      "lay_stake": 1.0,
+      "back_stake": 0.95,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.045,
+    "status": "OPEN",
+    "mins_to_start": 3.4
+  },
+  "20260307_120939_Belgium La": {
+    "id": "20260307_120939_Belgium La",
+    "timestamp": "2026-03-07T12:09:39.162635",
+    "track": "Corowa",
+    "race": "1",
+    "runner": "Belgium Lad",
+    "edge_type": "STEAM",
+    "entry_price": 13,
+    "target_price": 12.35,
+    "open_price": 18,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 6.3
+  },
+  "20260307_120939_Delusional": {
+    "id": "20260307_120939_Delusional",
+    "timestamp": "2026-03-07T12:09:39.803054",
+    "track": "Alice Springs",
+    "race": "1",
+    "runner": "Delusionaldictator",
+    "edge_type": "STEAM",
+    "entry_price": 3,
+    "target_price": 2.8499999999999996,
+    "open_price": 4.2,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 12.3
+  },
+  "Flemington_R3_Rebel Tuesday_121016": {
+    "id": "Flemington_R3_Rebel Tuesday_121016",
+    "timestamp": "2026-03-07T12:10:16.786474",
+    "track": "Flemington",
+    "race": "3",
+    "runner": "Rebel Tuesday",
+    "edge_type": "STEAM",
+    "entry_price": 7,
+    "target_price": 6.6499999999999995,
+    "open_price": 7.5,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 9.7
+  },
+  "Eagle Farm_R1_Martist_121017": {
+    "id": "Eagle Farm_R1_Martist_121017",
+    "timestamp": "2026-03-07T12:10:17.285023",
+    "track": "Eagle Farm",
+    "race": "1",
+    "runner": "Martist",
+    "edge_type": "STEAM",
+    "entry_price": 1.5,
+    "target_price": 1.4249999999999998,
+    "open_price": 1.65,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 2.7
+  },
+  "Corowa_R1_Belgium Lad_121017": {
+    "id": "Corowa_R1_Belgium Lad_121017",
+    "timestamp": "2026-03-07T12:10:17.727063",
+    "track": "Corowa",
+    "race": "1",
+    "runner": "Belgium Lad",
+    "edge_type": "STEAM",
+    "entry_price": 13,
+    "target_price": 12.35,
+    "open_price": 18,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 5.7
+  },
+  "Alice Springs_R1_Delusionaldictator_121018": {
+    "id": "Alice Springs_R1_Delusionaldictator_121018",
+    "timestamp": "2026-03-07T12:10:18.234498",
+    "track": "Alice Springs",
+    "race": "1",
+    "runner": "Delusionaldictator",
+    "edge_type": "STEAM",
+    "entry_price": 3,
+    "target_price": 2.8499999999999996,
+    "open_price": 4.2,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 11.7
+  },
+  "Hawkesbury_R1_Godsend_121018": {
+    "id": "Hawkesbury_R1_Godsend_121018",
+    "timestamp": "2026-03-07T12:10:18.707191",
+    "track": "Hawkesbury",
+    "race": "1",
+    "runner": "Godsend",
+    "edge_type": "STEAM",
+    "entry_price": 61,
+    "target_price": 57.949999999999996,
+    "open_price": 67,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 14.7
+  }
+}
