@@ -13,16 +13,17 @@
 - **Output:** `race_prices_clean.csv`
 - **Currently tracking:** Flemington R2
 
-### Manual Analysis Results (3 races)
+### Manual Analysis Results (4 races)
 
 | Race | Edges | R Potential |
 |------|-------|-------------|
 | Murray Bridge R1 | 3 | +0.167R |
 | Randwick R1 | 1 | +0.059R |
 | Flemington R2 | 3 | +0.321R |
-| **Total** | **7** | **+0.547R** |
+| Murray Bridge R2 | 2 | +0.202R |
+| **Total** | **9** | **+0.749R** |
 
-**Average:** +0.182R per race
+**Average:** +0.187R per race
 
 ---
 
