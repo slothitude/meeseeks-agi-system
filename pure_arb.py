@@ -132,53 +132,105 @@ def get_betfair_market_book(market_id: str) -> Optional[dict]:
 
 
 def get_ladbrokes_races() -> List[dict]:
-    """Get upcoming races from Ladbrokes using working fetcher."""
-    from ladbrokes_fetcher import fetch_all_prices
-    
+    """Get upcoming races from Ladbrokes - inline fetcher."""
+    BASE_URL = "https://api.ladbrokes.com.au/affiliates/v1"
+    HEADERS = {
+        "From": "slothitudegames@gmail.com",
+        "X-Partner": "Slothitude Games"
+    }
+
     try:
-        # Use the working fetcher
-        runners = fetch_all_prices(categories=["H"], au_only=True)
-        
-        # Filter for races 3-30 mins from now
+        # Get meetings
+        url = f"{BASE_URL}/racing/meetings"
+        params = {"date_from": "today", "date_to": "today", "category": "T"}
+
+        r = requests.get(url, headers=HEADERS, params=params, timeout=10)
+
+        if r.status_code != 200:
+            print(f"[ARB] Ladbrokes meetings error: {r.status_code}")
+            return []
+
+        data = r.json()
+        meetings = data.get("data", {}).get("meetings", [])
+
+        # Filter for AU
+        aus_meetings = [m for m in meetings if m.get('country') in ['AU', 'AUS']]
+        print(f"[ARB] Ladbrokes AU meetings: {len(aus_meetings)}")
+
         now = datetime.now(timezone.utc)
-        filtered = []
-        
-        # Group by race
-        races_by_key = defaultdict(list)
-        for runner in runners:
-            track = runner.get('meeting_name', '')
-            race_num = runner.get('race_number', 0)
-            start_time_str = runner.get('start_time', '')
-            
-            if not start_time_str:
-                continue
-            
-            try:
-                start_time = datetime.fromisoformat(start_time_str.replace('Z', '+00:00'))
-                mins_to_start = (start_time - now).total_seconds() / 60
-                
-                if 3 <= mins_to_start <= 30:
-                    key = f"{track}_R{race_num}"
-                    races_by_key[key].append({
-                        **runner,
-                        'mins_to_start': mins_to_start
+        all_races = []
+
+        for meeting in aus_meetings:
+            track = meeting.get('name')
+            races = meeting.get('races', [])
+
+            for race in races:
+                status = race.get('status')
+                if status != 'Open':  # Only upcoming races
+                    continue
+
+                start_time_str = race.get('start_time')
+                if not start_time_str:
+                    continue
+
+                try:
+                    start_time = datetime.fromisoformat(start_time_str.replace('Z', '+00:00'))
+                    mins_to_start = (start_time - now).total_seconds() / 60
+
+                    if not (3 <= mins_to_start <= 30):
+                        continue
+                except:
+                    continue
+
+                event_id = race.get('id')
+                race_number = race.get('race_number')
+
+                # Get event data with runners
+                event_url = f"{BASE_URL}/racing/events/{event_id}"
+                event_r = requests.get(event_url, headers=HEADERS, timeout=10)
+
+                if event_r.status_code != 200:
+                    continue
+
+                event_data = event_r.json()
+                runners_data = event_data.get('data', {}).get('runners', [])
+
+                if not runners_data:
+                    continue
+
+                # Build runner list with odds
+                runners_with_odds = []
+                for runner in runners_data:
+                    if runner.get('is_scratched'):
+                        continue
+
+                    odds = runner.get('odds', {})
+                    fixed_win = odds.get('fixed_win', 0)
+
+                    if not fixed_win:
+                        continue
+
+                    runners_with_odds.append({
+                        'name': runner.get('name'),
+                        'runner_number': runner.get('runner_number'),
+                        'fixed_win': float(fixed_win),
+                        'fixed_place': float(odds.get('fixed_place', 0))
                     })
-            except:
-                continue
-        
-        # Convert to race format
-        for key, runners_list in races_by_key.items():
-            if runners_list:
-                first = runners_list[0]
-                filtered.append({
-                    'meeting_name': first['meeting_name'],
-                    'race_number': first['race_number'],
-                    'start_time': first['start_time'],
-                    'mins_to_start': first['mins_to_start'],
-                    'runners': runners_list
-                })
-        
-        return filtered
+
+                if runners_with_odds:
+                    all_races.append({
+                        'meeting_name': track,
+                        'race_number': race_number,
+                        'start_time': start_time_str,
+                        'mins_to_start': mins_to_start,
+                        'runners': runners_with_odds
+                    })
+
+                time.sleep(0.15)  # Rate limit
+
+        print(f"[ARB] Ladbrokes races with odds: {len(all_races)}")
+        return all_races
+
     except Exception as e:
         print(f"[ARB] Error fetching Ladbrokes: {e}")
         return []
@@ -311,6 +363,8 @@ def find_arb_opportunities() -> List[dict]:
         bf_market = betfair_markets[market_key]
         market_id = bf_market['market_id']
 
+        print(f"  [{track} R{race_number}] Checking {len(runners)} runners...")
+
         # Get Betfair prices
         market_book = get_betfair_market_book(market_id)
         if not market_book:
@@ -336,10 +390,9 @@ def find_arb_opportunities() -> List[dict]:
             }
 
         # Find ARB opportunities
-        for runner in runners:
+        for i, runner in enumerate(runners):
             ladb_name = runner.get('name', '')
-            ladb_odds = runner.get('odds', {})
-            ladb_price = ladb_odds.get('fixed_win', 0)
+            ladb_price = runner.get('fixed_win', 0)  # Direct access, not nested
 
             if ladb_price <= 0:
                 continue
@@ -370,6 +423,10 @@ def find_arb_opportunities() -> List[dict]:
             # Calculate ARB edge
             # Ladbrokes BACK vs Betfair LAY
             edge = (ladb_price / bf_lay_price) - 1
+
+            # Debug: show comparison
+            if i < 3:  # First 3 runners
+                print(f"  {ladb_name}: LADB {ladb_price:.2f} vs BF LAY {bf_lay_price:.2f} = {edge*100:.2f}% edge")
 
             if edge >= MIN_ARB_EDGE:
                 # Calculate stakes for green book
