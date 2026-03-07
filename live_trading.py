@@ -33,15 +33,15 @@ HEADERS = {
 }
 
 # CONSERVATIVE TRADING PARAMETERS
-R_UNIT = 10.00  # $10.00 AUD per R
-MIN_BET = 5.00  # $5.00 minimum bet (Betfair minimum)
+R_UNIT = 1.00  # $1.00 AUD per R
+MIN_BET = 1.00  # $1.00 minimum bet
 STEAM_THRESHOLD = 0.10  # 10% drop (CONSERVATIVE)
 DRIFT_THRESHOLD = 0.10  # 10% rise (CONSERVATIVE)
 MAX_TRADES_PER_RACE = 2  # Reduced from 3
 MIN_TIME_TO_START = 3.0  # 3 minutes (increased from 2)
 MAX_HOLD_TIME = 120  # 2 minutes (reduced from 3)
 BETFAIR_COMMISSION = 0.05  # 5%
-STOP_LOSS_R = 0.05  # -0.05R = -$0.50
+STOP_LOSS_R = 0.05  # -0.05R = -$0.05
 
 # Bankroll tracking
 bankroll = {
