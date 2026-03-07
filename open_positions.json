@@ -271,5 +271,110 @@
     "r_potential": 0.05,
     "status": "OPEN",
     "mins_to_start": 14.7
+  },
+  "Hawkesbury_R1_Cosmora_121306": {
+    "id": "Hawkesbury_R1_Cosmora_121306",
+    "timestamp": "2026-03-07T12:13:06.041548",
+    "track": "Hawkesbury",
+    "race": "1",
+    "runner": "Cosmora",
+    "edge_type": "STEAM",
+    "entry_price": 9,
+    "target_price": 8.549999999999999,
+    "open_price": 10,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 11.9
+  },
+  "Hawkesbury_R1_Cinceritas_121727": {
+    "id": "Hawkesbury_R1_Cinceritas_121727",
+    "timestamp": "2026-03-07T12:17:27.754851",
+    "track": "Hawkesbury",
+    "race": "1",
+    "runner": "Cinceritas",
+    "edge_type": "STEAM",
+    "entry_price": 27,
+    "target_price": 25.65,
+    "open_price": 31,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 7.5
+  },
+  "Gunnedah_R1_Envisioned_121831": {
+    "id": "Gunnedah_R1_Envisioned_121831",
+    "timestamp": "2026-03-07T12:18:31.911184",
+    "track": "Gunnedah",
+    "race": "1",
+    "runner": "Envisioned",
+    "edge_type": "STEAM",
+    "entry_price": 8,
+    "target_price": 7.6,
+    "open_price": 9,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 14.5
+  },
+  "Gunnedah_R1_Satin Dragon_121904": {
+    "id": "Gunnedah_R1_Satin Dragon_121904",
+    "timestamp": "2026-03-07T12:19:04.194966",
+    "track": "Gunnedah",
+    "race": "1",
+    "runner": "Satin Dragon",
+    "edge_type": "STEAM",
+    "entry_price": 18,
+    "target_price": 17.099999999999998,
+    "open_price": 26,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 13.9
+  },
+  "Murray Bridge_R3_Golden Cloud_122231": {
+    "id": "Murray Bridge_R3_Golden Cloud_122231",
+    "timestamp": "2026-03-07T12:22:31.331376",
+    "track": "Murray Bridge",
+    "race": "3",
+    "runner": "Golden Cloud",
+    "edge_type": "STEAM",
+    "entry_price": 9,
+    "target_price": 8.549999999999999,
+    "open_price": 9.5,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 13.5
   }
 }
