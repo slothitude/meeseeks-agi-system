@@ -1,30 +1,4 @@
 {
-  "positions": [
-    {
-      "runner": "Popthebubbly",
-      "track": "Edenhope",
-      "race": 3,
-      "side": "BACK",
-      "entry_price": 3.40,
-      "stake": 1.00,
-      "target_price": 3.23,
-      "market_id": "1.226614153",
-      "selection_id": 95919103,
-      "bet_id": "420892759458",
-      "hedged": false
-    },
-    {
-      "runner": "Laydownlily",
-      "track": "Eagle Farm",
-      "race": 3,
-      "side": "BACK",
-      "entry_price": 5.50,
-      "stake": 1.00,
-      "target_price": 5.22,
-      "market_id": "1.226614155",
-      "selection_id": 59620122,
-      "bet_id": "420892810174",
-      "hedged": false
-    }
-  ]
+  "positions": [],
+  "note": "Old positions cleared - races finished. Auto-hedge system ready for next trading session."
 }

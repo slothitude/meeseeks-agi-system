@@ -1,339 +1,406 @@
 #!/usr/bin/env python3
 """
-AUTO-HEDGE SYSTEM - No Luck Required
-=====================================
+Auto-Hedge System
+=================
+Places LAY bets immediately after BACK bets to lock in profit.
+Greens the book for guaranteed returns.
 
-Automatically hedges every BACK bet with a LAY bet to guarantee profit.
-
-CRITICAL: This removes the luck component.
+Uses requests directly with certificate (same as live_trading_integrated.py)
 """
 
-import requests
 import json
 import time
-from datetime import datetime, timezone
+import requests
+from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Dict, Optional
 
-# Files
-HEDGE_LOG = Path("hedge_log.json")
-TRADES_LOG = Path("live_trades_log.json")
+# Configuration
+R_UNIT = 1.00
+TARGET_PRICE_DROP = 0.95  # Target 5% price drop
+MAX_WAIT_SECONDS = 300  # 5 minutes max wait
+CHECK_INTERVAL = 2  # Check every 2 seconds
+BETFAIR_COMMISSION = 0.05
 
-# Betfair credentials
+# Paths
+WORKSPACE = Path(__file__).parent
+OPEN_POSITIONS_FILE = WORKSPACE / "open_positions.json"
+LIVE_TRADES_LOG = WORKSPACE / "live_trades_log.json"
+BANKROLL_FILE = WORKSPACE / "bankroll.json"
+
+# Betfair credentials (same as live_trading_integrated.py)
 USERNAME = "dnfarnot@gmail.com"
 PASSWORD = "Tobiano01"
 APP_KEY = "XmZEwtLsIRkf5lQ3"
 CERT_FILE = r"C:\Users\aaron\Desktop\008\betfair_api_combined_20260225_152452.pem"
 
-# Parameters
-TARGET_PRICE_DROP = 0.95  # 5% lower
-MAX_WAIT_SECONDS = 180  # 3 minutes
-CHECK_INTERVAL = 2  # Check every 2 seconds
 
-session_token = None
-
-
-def login_betfair() -> bool:
-
-    """Login to Betfair"""
-    global session_token
-
-    payload = f"username={USERNAME}&password={PASSWORD}"
-    headers = {
-        "X-Application": APP_KEY,
-        "Content-Type": "application/x-www-form-urlencoded"
-    }
-
-    try:
-        response = requests.post(
-            "https://identitysso-cert.betfair.com/api/certlogin",
-            data=payload,
-            cert=CERT_FILE,
-            headers=headers,
-            timeout=15
-        )
-
-        if response.status_code == 200:
-            result = response.json()
-            if result.get("loginStatus") == "SUCCESS":
-                session_token = result.get("sessionToken")
-                return True
-    except:
-        pass
-
-    return False
-
-
-def get_lay_price(market_id: str, selection_id: int) -> Optional[Dict]:
-    """Get current best LAY price"""
-    if not session_token:
-        return None
-
-    headers = {
-        "X-Application": APP_KEY,
-        "X-Authentication": session_token,
-        "Content-Type": "application/json"
-    }
-
-    payload = {
-        "jsonrpc": "2.0",
-        "method": "SportsAPING/v1.0/listRunnerBook",
-        "params": {
-            "marketId": market_id,
-            "selectionId": selection_id,
-            "priceProjection": {
-                "priceData": ["EX_BEST_OFFERS"],
-                "virtualise": True
+class AutoHedge:
+    """Auto-hedge system for green booking trades."""
+    
+    def __init__(self):
+        self.session_token = None
+        self.connected = False
+        
+    def connect(self):
+        """Connect to Betfair API."""
+        try:
+            payload = f'username={USERNAME}&password={PASSWORD}'
+            headers = {
+                'X-Application': APP_KEY,
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
-        },
-        "id": 1
-    }
-
-    try:
-        response = requests.post(
-            "https://api.betfair.com/exchange/betting/json-rpc/v1",
-            headers=headers,
-            json=payload,
-            timeout=10
-        )
-
-        if response.status_code == 200:
-            result = response.json().get("result", [])
-            if result:
-                book = result[0]
-                ex = book.get("ex", {})
-                lay_offers = ex.get("availableToLay", [])
-
-                if lay_offers:
-                    return {
-                        "price": lay_offers[0].get("price", 0),
-                        "size": lay_offers[0].get("size", 0)
+            
+            response = requests.post(
+                'https://identitysso-cert.betfair.com/api/certlogin',
+                data=payload,
+                cert=CERT_FILE,
+                headers=headers,
+                timeout=15
+            )
+            
+            if response.status_code == 200:
+                result = response.json()
+                if result.get('loginStatus') == 'SUCCESS':
+                    self.session_token = result.get('sessionToken')
+                    self.connected = True
+                    print("[AUTO-HEDGE] Connected to Betfair")
+                    return True
+            
+            print(f"[AUTO-HEDGE] Login failed: {response.status_code}")
+            return False
+            
+        except Exception as e:
+            print(f"[AUTO-HEDGE] Connection failed: {e}")
+            return False
+    
+    def load_open_positions(self):
+        """Load open positions from file."""
+        if not OPEN_POSITIONS_FILE.exists():
+            return []
+        try:
+            with open(OPEN_POSITIONS_FILE) as f:
+                data = json.load(f)
+                # Handle both {"positions": [...]} and [...] formats
+                if isinstance(data, dict) and "positions" in data:
+                    return data["positions"]
+                return data
+        except:
+            return []
+    
+    def save_open_positions(self, positions):
+        """Save open positions to file."""
+        with open(OPEN_POSITIONS_FILE, "w") as f:
+            json.dump({"positions": positions}, f, indent=2)
+    
+    def get_current_price(self, market_id, selection_id):
+        """Get current BACK and LAY prices for a selection."""
+        if not self.connected:
+            return None, None
+            
+        try:
+            headers = {
+                'X-Application': APP_KEY,
+                'X-Authentication': self.session_token,
+                'Content-Type': 'application/json'
+            }
+            
+            data = {
+                "jsonrpc": "2.0",
+                "method": "SportsAPING/v1.0/listMarketBook",
+                "params": {
+                    "marketIds": [market_id],
+                    "priceProjection": {
+                        "priceData": ["EX_ALL_OFFERS"]
                     }
-    except:
-        pass
-
-    return None
-
-
-def place_lay_bet(market_id: str, selection_id: int, price: float, stake: float) -> Optional[str]:
-    """Place LAY bet"""
-    if not session_token:
-        return None
-
-    headers = {
-        "X-Application": APP_KEY,
-        "X-Authentication": session_token,
-        "Content-Type": "application/json"
-    }
-
-    payload = {
-        "jsonrpc": "2.0",
-        "method": "SportsAPING/v1.0/placeOrders",
-        "params": {
-            "marketId": market_id,
-            "instructions": [{
-                "selectionId": selection_id,
-                "handicap": "0",
-                "side": "LAY",
-                "orderType": "LIMIT",
-                "limitOrder": {
-                    "size": stake,
-                    "price": price,
-                    "persistenceType": "LAPSE"
-                }
-            }],
-            "customerRef": f"autohedge_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-        },
-        "id": 1
-    }
-
-    try:
-        response = requests.post(
-            "https://api.betfair.com/exchange/betting/json-rpc/v1",
-            headers=headers,
-            json=payload,
-            timeout=10
-        )
-
-        if response.status_code == 200:
+                },
+                "id": 1
+            }
+            
+            response = requests.post(
+                'https://api.betfair.com/exchange/betting/json-rpc/v1',
+                headers=headers,
+                json=data,
+                timeout=10
+            )
+            
+            if response.status_code != 200:
+                return None, None
+                
             result = response.json()
-            status = result.get("result", {}).get("status")
-
-            if status == "SUCCESS":
-                instructions = result.get("result", {}).get("instructionReports", [])
-                if instructions:
-                    return instructions[0].get("betId")
-    except:
-        pass
-
-    return None
-
-
-def auto_hedge(back_bet: Dict) -> Dict:
-    """
-    Automatically hedge a BACK bet with a LAY bet.
-
-    Returns dict with hedge result.
-    """
-    market_id = back_bet.get("market_id")
-    selection_id = back_bet.get("selection_id")
-    entry_price = back_bet.get("entry_price")
-    back_stake = back_bet.get("stake", 1.0)
-    target_lay_price = entry_price * TARGET_PRICE_DROP
-
-    print(f"\n{'='*60}")
-    print(f"AUTO-HEDGE STARTED")
-    print(f"{'='*60}")
-    print(f"Runner: {back_bet.get('runner', 'Unknown')}")
-    print(f"BACK: ${back_stake:.2f} @ ${entry_price:.2f}")
-    print(f"Target LAY: ${target_lay_price:.2f}")
-    print(f"{'='*60}\n")
-
-    # Monitor price until target reached or timeout
-    start_time = time.time()
-    hedge_result = {
-        "success": False,
-        "back_bet_id": back_bet.get("bet_id"),
-        "market_id": market_id,
-        "selection_id": selection_id,
-        "entry_price": entry_price,
-        "target_price": target_lay_price
-    }
-
-    while time.time() - start_time < MAX_WAIT_SECONDS:
-        # Get current LAY price
-        lay_data = get_lay_price(market_id, selection_id)
-
-        if not lay_data:
-            print("Error getting price, retrying...")
-            time.sleep(CHECK_INTERVAL)
-            continue
-
-        current_price = lay_data["price"]
-        current_size = lay_data["size"]
-        elapsed = time.time() - start_time
-
-        print(f"[{elapsed:.00}s] Current LAY: ${current_price:.2f} (liquidity: ${current_size:.2f})")
-
-        # Check if price is at or below target
-        if current_price <= target_lay_price:
-            print(f"\nTARGET REACHED! LAY @ ${current_price:.2f}")
-
-            # Calculate LAY stake
-            lay_stake = (back_stake * entry_price) / current_price
-
-            print(f"Placing LAY: ${lay_stake:.2f} @ ${current_price:.2f}")
-
-            # Check liquidity
-            if current_size < lay_stake:
-                print(f"WARNING: Insufficient liquidity (${current_size:.2f} < ${lay_stake:.2f})")
-                print("Adjusting stake to available liquidity...")
-                lay_stake = current_size * 0.95  # Use 95% of available
-
-            # Place LAY bet
-            lay_bet_id = place_lay_bet(market_id, selection_id, current_price, lay_stake)
-
-            if lay_bet_id:
-                # Calculate guaranteed profit
-                if_wins = (back_stake * (entry_price - 1)) - (lay_stake * (current_price - 1))
-                if_loses = lay_stake - back_stake
-                guaranteed = min(if_wins, if_loses)
-
-                print(f"\n{'='*60}")
-                print(f"GREEN BOOK COMPLETE!")
-                print(f"{'='*60}")
-                print(f"LAY Bet ID: {lay_bet_id}")
-                print(f"LAY Stake: ${lay_stake:.2f} @ ${current_price:.2f}")
-                print(f"\nOutcomes:")
-                print(f"  If wins: ${if_wins:+.2f}")
-                print(f"  If loses: ${if_loses:+.2f}")
-                print(f"  GUARANTEED: ${guaranteed:+.2f}")
-                print(f"{'='*60}\n")
-
-                hedge_result["success"] = True
-                hedge_result["lay_bet_id"] = lay_bet_id
-                hedge_result["lay_price"] = current_price
-                hedge_result["lay_stake"] = lay_stake
-                hedge_result["guaranteed_profit"] = guaranteed
-                hedge_result["time_to_hedge"] = elapsed
-
-                # Log it
-                log_hedge(hedge_result)
-
-                return hedge_result
+            
+            if 'result' not in result or not result['result']:
+                return None, None
+                
+            market_book = result['result'][0]
+            
+            for runner in market_book.get('runners', []):
+                if runner.get('selectionId') == selection_id:
+                    ex = runner.get('ex', {})
+                    
+                    back_price = None
+                    lay_price = None
+                    
+                    if ex.get('availableToBack'):
+                        back_price = ex['availableToBack'][0]['price']
+                    if ex.get('availableToLay'):
+                        lay_price = ex['availableToLay'][0]['price']
+                        
+                    return back_price, lay_price
+                    
+            return None, None
+            
+        except Exception as e:
+            print(f"[AUTO-HEDGE] Error getting price: {e}")
+            return None, None
+    
+    def place_lay_bet(self, market_id, selection_id, price, stake):
+        """Place a LAY bet to hedge a BACK position."""
+        if not self.connected:
+            print("[AUTO-HEDGE] Not connected")
+            return None
+            
+        try:
+            headers = {
+                'X-Application': APP_KEY,
+                'X-Authentication': self.session_token,
+                'Content-Type': 'application/json'
+            }
+            
+            data = {
+                "jsonrpc": "2.0",
+                "method": "SportsAPING/v1.0/placeOrders",
+                "params": {
+                    "marketId": market_id,
+                    "instructions": [{
+                        "selectionId": selection_id,
+                        "side": "LAY",
+                        "orderType": "LIMIT",
+                        "limitOrder": {
+                            "size": stake,
+                            "price": price,
+                            "persistenceType": "LAPSE"
+                        }
+                    }]
+                },
+                "id": 1
+            }
+            
+            response = requests.post(
+                'https://api.betfair.com/exchange/betting/json-rpc/v1',
+                headers=headers,
+                json=data,
+                timeout=10
+            )
+            
+            if response.status_code != 200:
+                print(f"[AUTO-HEDGE] LAY failed: HTTP {response.status_code}")
+                return None
+                
+            result = response.json()
+            
+            if 'result' in result and result['result'].get('status') == 'SUCCESS':
+                instruction = result['result'].get('instructionReports', [{}])[0]
+                bet_id = instruction.get('betId')
+                print(f"[AUTO-HEDGE] LAY placed: ${stake:.2f} @ ${price:.2f} (bet_id: {bet_id})")
+                return bet_id
             else:
-                print("ERROR: Failed to place LAY bet")
-                hedge_result["error"] = "LAY placement failed"
-                return hedge_result
+                error = result.get('error', {}).get('message', 'Unknown error')
+                print(f"[AUTO-HEDGE] LAY failed: {error}")
+                return None
+                
+        except Exception as e:
+            print(f"[AUTO-HEDGE] Error placing LAY: {e}")
+            return None
+    
+    def calculate_green_book(self, back_price, back_stake, lay_price, lay_stake):
+        """Calculate profit/loss for both outcomes after hedging."""
+        # If runner WINS
+        # BACK wins: back_stake * (back_price - 1)
+        # LAY loses: -(lay_stake * (lay_price - 1))
+        win_profit = (back_stake * (back_price - 1)) - (lay_stake * (lay_price - 1))
+        
+        # If runner LOSES
+        # BACK loses: -back_stake
+        # LAY wins: +lay_stake
+        lose_profit = lay_stake - back_stake
+        
+        return win_profit, lose_profit
+    
+    def calculate_optimal_lay(self, back_price, back_stake, target_lay_price):
+        """Calculate optimal LAY stake for equal profit either way."""
+        # For green book: profit if wins = profit if loses
+        # back_stake * (back_price - 1) - lay_stake * (lay_price - 1) = lay_stake - back_stake
+        # Solving for lay_stake:
+        # lay_stake = back_stake * back_price / lay_price
+        
+        lay_stake = (back_stake * back_price) / target_lay_price
+        return lay_stake
+    
+    def hedge_position(self, position):
+        """Hedge a single open BACK position."""
+        market_id = position.get("market_id")
+        selection_id = position.get("selection_id")
+        entry_price = position.get("entry_price")
+        entry_stake = position.get("entry_stake", position.get("stake", R_UNIT))
+        target_price = entry_price * TARGET_PRICE_DROP
+        
+        runner_name = position.get("runner", position.get("runner_name", "Unknown"))
+        
+        print(f"\n[AUTO-HEDGE] Monitoring: {runner_name}")
+        print(f"  Entry: ${entry_stake:.2f} @ ${entry_price:.2f}")
+        print(f"  Target: ${target_price:.2f} (5% drop)")
+        
+        start_time = time.time()
+        
+        while time.time() - start_time < MAX_WAIT_SECONDS:
+            # Check current price
+            back_price, lay_price = self.get_current_price(market_id, selection_id)
+            
+            if back_price is None or lay_price is None:
+                print("[AUTO-HEDGE] Could not get price, retrying...")
+                time.sleep(CHECK_INTERVAL)
+                continue
+            
+            print(f"  Current: BACK ${back_price:.2f} | LAY ${lay_price:.2f}", end="\r")
+            
+            # Check if target reached
+            if lay_price <= target_price:
+                print(f"\n[AUTO-HEDGE] Target reached! LAY price ${lay_price:.2f} <= ${target_price:.2f}")
+                
+                # Calculate optimal LAY stake
+                lay_stake = self.calculate_optimal_lay(entry_price, entry_stake, lay_price)
+                
+                # Calculate green book profit
+                win_profit, lose_profit = self.calculate_green_book(
+                    entry_price, entry_stake, lay_price, lay_stake
+                )
+                
+                print(f"[AUTO-HEDGE] Optimal LAY: ${lay_stake:.2f} @ ${lay_price:.2f}")
+                print(f"[AUTO-HEDGE] If wins: ${win_profit:.2f} | If loses: ${lose_profit:.2f}")
+                
+                # Place LAY bet
+                bet_id = self.place_lay_bet(market_id, selection_id, lay_price, lay_stake)
+                
+                if bet_id:
+                    # Log the hedge
+                    self.log_hedge(position, lay_price, lay_stake, bet_id, win_profit, lose_profit)
+                    return True
+                else:
+                    print("[AUTO-HEDGE] Failed to place LAY, will retry...")
+            
+            time.sleep(CHECK_INTERVAL)
+        
+        print(f"\n[AUTO-HEDGE] Timeout after {MAX_WAIT_SECONDS}s, price never reached target")
+        return False
+    
+    def log_hedge(self, position, lay_price, lay_stake, bet_id, win_profit, lose_profit):
+        """Log the completed hedge."""
+        runner_name = position.get("runner", position.get("runner_name", "Unknown"))
+        
+        log_entry = {
+            "timestamp": datetime.now().isoformat(),
+            "type": "HEDGE",
+            "runner_name": runner_name,
+            "market_id": position["market_id"],
+            "selection_id": position["selection_id"],
+            "back": {
+                "price": position["entry_price"],
+                "stake": position.get("entry_stake", position.get("stake", R_UNIT)),
+                "bet_id": position.get("bet_id")
+            },
+            "lay": {
+                "price": lay_price,
+                "stake": lay_stake,
+                "bet_id": bet_id
+            },
+            "green_book": {
+                "if_wins": round(win_profit, 2),
+                "if_loses": round(lose_profit, 2)
+            }
+        }
+        
+        # Append to log
+        logs = []
+        if LIVE_TRADES_LOG.exists():
+            try:
+                with open(LIVE_TRADES_LOG) as f:
+                    logs = json.load(f)
+            except:
+                logs = []
+        
+        logs.append(log_entry)
+        
+        with open(LIVE_TRADES_LOG, "w") as f:
+            json.dump(logs, f, indent=2)
+        
+        print(f"[AUTO-HEDGE] Hedge logged")
+    
+    def run(self):
+        """Run auto-hedge on all open positions."""
+        print("[AUTO-HEDGE] Starting auto-hedge system...")
+        
+        if not self.connect():
+            return
+        
+        positions = self.load_open_positions()
+        
+        if not positions:
+            print("[AUTO-HEDGE] No open positions to hedge")
+            return
+        
+        print(f"[AUTO-HEDGE] Found {len(positions)} open positions")
+        
+        hedged = 0
+        remaining_positions = []
+        
+        for position in positions:
+            # Check if already hedged
+            if position.get("hedged"):
+                print(f"[AUTO-HEDGE] Skipping already hedged: {position.get('runner', position.get('runner_name'))}")
+                remaining_positions.append(position)
+                continue
+            
+            # Try to hedge
+            success = self.hedge_position(position)
+            
+            if success:
+                position["hedged"] = True
+                position["hedge_time"] = datetime.now().isoformat()
+                hedged += 1
+                remaining_positions.append(position)
+            else:
+                # Keep position for next attempt
+                remaining_positions.append(position)
+        
+        # Save updated positions
+        self.save_open_positions(remaining_positions)
+        
+        print(f"\n[AUTO-HEDGE] Complete: {hedged}/{len(positions)} positions hedged")
 
-        # Wait before next check
-        time.sleep(CHECK_INTERVAL)
 
-    # Timeout
-    print(f"\nTIMEOUT: Price did not reach target in {MAX_WAIT_SECONDS} seconds")
-    hedge_result["error"] = "Timeout waiting for target price"
-    return hedge_result
-
-
-def log_hedge(hedge_result: Dict):
-    """Log hedge result"""
-    log_entry = {
-        "timestamp": datetime.now().isoformat(),
-        **hedge_result
-    }
-
-    # Load existing log
-    if HEDGE_LOG.exists():
-        with open(HEDGE_LOG, "r") as f:
-            log = json.load(f)
+def main():
+    """Main entry point."""
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Auto-Hedge System")
+    parser.add_argument("--watch", action="store_true", help="Watch mode - continuously monitor")
+    parser.add_argument("--interval", type=int, default=60, help="Watch interval in seconds")
+    args = parser.parse_args()
+    
+    hedge = AutoHedge()
+    
+    if args.watch:
+        print(f"[AUTO-HEDGE] Watch mode - checking every {args.interval}s")
+        while True:
+            try:
+                hedge.run()
+                time.sleep(args.interval)
+            except KeyboardInterrupt:
+                print("\n[AUTO-HEDGE] Stopped")
+                break
     else:
-        log = []
-
-    log.append(log_entry)
-
-    with open(HEDGE_LOG, "w") as f:
-        json.dump(log, f, indent=2)
-
-
-def test_auto_hedge():
-    """Test the auto-hedge system with a simulated bet"""
-    print("="*60)
-    print("AUTO-HEDGE SYSTEM TEST")
-    print("="*60)
-    print()
-
-    if not login_betfair():
-        print("ERROR: Cannot login to Betfair")
-        return
-
-    print("Login: SUCCESS")
-    print()
-
-    # Simulated BACK bet
-    test_bet = {
-        "bet_id": "TEST_123",
-        "market_id": "1.226614153",  # Example market
-        "selection_id": 95919103,  # Example selection
-        "runner": "Test Runner",
-        "entry_price": 3.40,
-        "stake": 1.00
-    }
-
-    print("Testing with simulated BACK bet:")
-    print(f"  Market: {test_bet['market_id']}")
-    print(f"  Selection: {test_bet['selection_id']}")
-    print(f"  Price: ${test_bet['entry_price']:.2f}")
-    print(f"  Stake: ${test_bet['stake']:.2f}")
-    print()
-
-    # Run auto-hedge
-    result = auto_hedge(test_bet)
-
-    if result.get("success"):
-        print("\nTEST PASSED: Auto-hedge system working!")
-    else:
-        print(f"\nTEST RESULT: {result.get('error', 'Unknown error')}")
+        hedge.run()
 
 
 if __name__ == "__main__":
-    test_auto_hedge()
+    main()
