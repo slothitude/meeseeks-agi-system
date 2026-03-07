@@ -6,27 +6,66 @@ Secretary: Sloth_rog 🦥
 
 ## Quick Commands
 
-Just message me naturally and I'll handle the bookkeeping.
-
 | You say | I do |
 |---------|------|
 | `new job [name]` | Create new job entry |
-| `[job] + [hours] hrs [task]` | Add labour line |
-| `[job] bought [item] $[amount]` | Add expense |
+| `[job] + [hrs] [task]` | Add labour hours |
+| `[job] bought [item] $[amount]` | Add materials |
+| `photo [job] [type]` | Log photo (you send image, I categorise) |
 | `invoice [job]` | Generate full bill |
 | `paid [job] $[amount]` | Record payment |
-| `what's owed` | Show all outstanding |
 | `jobs` | List active jobs |
+| `photos [job]` | Show all photos for job |
+
+---
+
+## Photo Types
+
+| Type | Purpose |
+|------|---------|
+| `ref` | Reference - how it goes together |
+| `apart` | Disassembly - order of parts |
+| `broken` | Evidence - damaged parts |
+| `done` | Completed work |
+| `receipt` | Proof of purchase |
+
+**Example:**
+```
+[You send photo]
+You: "Dave's boat broken"
+Me: Logged as broken part evidence for Dave's boat
+```
+
+---
+
+## Photo Storage
+
+```
+photos/
+├── daves-boat/
+│   ├── ref/
+│   │   └── 2026-03-08_wiring-before.jpg
+│   ├── apart/
+│   │   └── 2026-03-08_panel-removal.jpg
+│   ├── broken/
+│   │   └── 2026-03-08_fried-mosfet.jpg
+│   └── done/
+│       └── 2026-03-08_install-complete.jpg
+├── joshs-boat/
+│   └── ...
+└── barry-barcode/
+    └── ...
+```
 
 ---
 
 ## Active Jobs
 
-| Job | Status | Labour | Materials | Total | Paid | Owed |
-|-----|--------|--------|-----------|-------|------|------|
-| Dave's Boat (HHO) | Active | $240 | $385 | $625 | $0 | $625 |
-| Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD |
-| Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD |
+| Job | Status | Labour | Materials | Total | Paid | Owed | Photos |
+|-----|--------|--------|-----------|-------|------|------|--------|
+| Dave's Boat (HHO) | Active | $240 | $385 | $625 | $0 | $625 | 0 |
+| Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD | 0 |
+| Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD | 0 |
 
 **Total Outstanding: $625+**
 
@@ -52,6 +91,11 @@ Just message me naturally and I'll handle the bookkeeping.
 | 2026-03-08 | PWM's | $140 |
 | | **Total** | **$385** |
 
+**Photos:**
+| Date | Type | Description | File |
+|------|------|-------------|------|
+| — | — | — | — |
+
 **Summary:**
 - Labour: $240
 - Materials: $385
@@ -65,15 +109,9 @@ Just message me naturally and I'll handle the bookkeeping.
 
 **Status:** Ongoing (generator + electrical)
 
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| — | — | — | — | — |
-
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| — | — | — |
+**Labour:** TBD
+**Materials:** TBD
+**Photos:** None yet
 
 ---
 
@@ -81,16 +119,9 @@ Just message me naturally and I'll handle the bookkeeping.
 
 **Status:** Software built, install pending
 
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| — | Software development | TBD | $40 | TBD |
-| — | Install + test | TBD | $40 | TBD |
-
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| — | — | — |
+**Labour:** TBD
+**Materials:** TBD
+**Photos:** None yet
 
 ---
 
@@ -102,14 +133,6 @@ Just message me naturally and I'll handle the bookkeeping.
 
 ---
 
-## Monthly Summary
-
-| Month | Jobs Active | Labour | Materials | Total Billed | Paid | Outstanding |
-|-------|-------------|--------|-----------|--------------|------|-------------|
-| Mar 2026 | 3 | $240 | $385 | $625+ | $0 | $625+ |
-
----
-
 **Default Rate: $40/hr**
 
-_Last updated: 2026-03-08 08:45_
+_Last updated: 2026-03-08 08:56_
