@@ -13,15 +13,16 @@
 - **Output:** `race_prices_clean.csv`
 - **Currently tracking:** Flemington R2
 
-### Manual Analysis Results (2 races)
+### Manual Analysis Results (3 races)
 
 | Race | Edges | R Potential |
 |------|-------|-------------|
 | Murray Bridge R1 | 3 | +0.167R |
 | Randwick R1 | 1 | +0.059R |
-| **Total** | **4** | **+0.226R** |
+| Flemington R2 | 3 | +0.321R |
+| **Total** | **7** | **+0.547R** |
 
-**Average:** +0.113R per race
+**Average:** +0.182R per race
 
 ---
 
@@ -34,6 +35,11 @@
 
 ### Randwick R1
 1. **DRIFT:** Kingston Charm +5.9% ($8.50 → $9.00) = +0.059R
+
+### Flemington R2 (Live)
+1. **STEAM:** Verdoux -8.0% ($5.00 → $4.60) = +0.080R
+2. **DRIFT:** Hezdarnhottoo +18.2% ($5.50 → $6.50) = +0.182R
+3. **DRIFT:** Castellar +5.9% ($8.50 → $9.00) = +0.059R
 
 ---
 
@@ -83,7 +89,8 @@
 
 ---
 
-*Status: 11:34 AM, March 7th, 2026*
-*Paper trading: 31 mins elapsed*
+*Status: 11:38 AM, March 7th, 2026*
+*Paper trading: 37 mins elapsed*
 *Logger: Running*
 *Data: Capturing*
+*R found: +0.547R from 3 races*
