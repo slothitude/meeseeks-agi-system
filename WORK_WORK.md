@@ -1,112 +1,115 @@
-# WORK WORK ⚒️
+# WORK WORK - Job Tracking System
 
-*Ready to work!*
-
-## 💰 Money Makers (Priority)
-
-### 🔴 Barry's Samsung Cord — URGENT
-- **Status:** Action needed TOMORROW
-- **Type:** Paid work (Samsung covering cost?)
-- **Cord:** BN39-03006A
-- **Action:** Ring Zane tomorrow
-- **Goal:** Get Samsung to pay for cord, order by tomorrow for Monday install
-- **Deadline:** Order tomorrow for Monday install
-- **Created:** 2026-03-03
+Secretary: Sloth_rog 🦥
 
 ---
 
-### 🔴 Fix Josh's Boat — Ongoing
-- **Status:** Active job
-- **Type:** Paid work
-- **Start:** Tomorrow (2026-03-04) 10:00 AM
-- **Task list (prioritized):**
-  - 10:00 AM — Generator inspection
-  - After inspection — Get oil
-  - Grease hydraulics
-  - Grease rams (tripping DC breaker)
-  - Diagnose: Rams tripping DC breaker
-  - Diagnose: AC tripping shore power RCD
-  - Fix stern thrusters (not working)
-- **Notes:** 
-  - Not all one day — get them sorted over time
-  - Rams tripping DC breaker → seized/overloading?
-  - AC tripping shore power RCD → earth leak?
-- **Created:** 2026-03-03
+## Quick Commands
+
+Just message me naturally and I'll handle the bookkeeping.
+
+| You say | I do |
+|---------|------|
+| `new job [name]` | Create new job entry |
+| `[job] + [hours] hrs [task]` | Add labour line |
+| `[job] bought [item] $[amount]` | Add expense |
+| `invoice [job]` | Generate full bill |
+| `paid [job] $[amount]` | Record payment |
+| `what's owed` | Show all outstanding |
+| `jobs` | List active jobs |
 
 ---
 
-### Dave's Boat (HHO System)
-- **Location:** `projects/hho-display-box/`
-- **Status:** Pending Dave's approval
-- **Type:** Paid work — HHO generator install
-- **Cost:** $178.65 AUD (Jaycar + Altronics)
-- **Notes:** HHO control system for Dave's boat
-- **Tomorrow:** After Zane call — confirm with Dave if happy to proceed with HHO remote display
-- **Resume:** Order parts, build Display Box first
-- **Created:** 2026-03-03
+## Active Jobs
+
+| Job | Status | Labour | Materials | Total | Paid | Owed |
+|-----|--------|--------|-----------|-------|------|------|
+| Dave's Boat (HHO) | Active | $240 | $385 | $625 | $0 | $625 |
+| Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD |
+| Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD |
+
+**Total Outstanding: $625+**
 
 ---
 
-### Barry Barcode Printer Software
-- **Status:** Software built
-- **Type:** Paid work (Barry)
-- **Notes:** Software already created
-- **Phases:**
-  1. Install with Barry
-  2. Test it
-- **Created:** 2026-03-03
+## Job Details
+
+### Dave's Boat (HHO)
+
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| 2026-03-08 | Install bilge | 4 | $40 | $160 |
+| 2026-03-08 | Install PWM | 2 | $40 | $80 |
+| | **Total** | **6** | | **$240** |
+
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| 2026-03-08 | Cigarettes + other | $130 |
+| 2026-03-08 | Shunts | $95 |
+| 2026-03-08 | Misc | $20 |
+| 2026-03-08 | PWM's | $140 |
+| | **Total** | **$385** |
+
+**Summary:**
+- Labour: $240
+- Materials: $385
+- **Total: $625**
+- **Paid: $0**
+- **Owed: $625**
 
 ---
 
-### 🔴 Barry's Samsung Cord — URGENT
-- **Status:** Action needed TOMORROW
-- **Type:** Paid job issue (Barry — different job)
-- **Cord:** BN39-03006A
-- **Action:** Ring Zane tomorrow
-- **Goal:** Get Samsung to pay for replacement cord (cut during install on different job)
-- **Deadline:** Order tomorrow for Monday install
-- **Created:** 2026-03-03
+### Josh's Boat
+
+**Status:** Ongoing (generator + electrical)
+
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| — | — | — | — | — |
+
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| — | — | — |
 
 ---
 
-## 📋 Other Projects
+### Barry Barcode
 
-### Sort Out Tax
-- **Status:** Not started
-- **Type:** Saves money
-- **Notes:** 
-- **Next Steps:** 
-- **Created:** 2026-03-03
+**Status:** Software built, install pending
 
----
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| — | Software development | TBD | $40 | TBD |
+| — | Install + test | TBD | $40 | TBD |
 
-### Fix House
-- **Status:** Not started
-- **Type:** Maintenance
-- **Notes:** 
-- **Next Steps:** 
-- **Created:** 2026-03-03
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| — | — | — |
 
 ---
 
-### 🔴 Get Barry's Samsung One Cord — URGENT
-- **Status:** Action needed TOMORROW
-- **Type:** Paid job issue (cord cut during work)
-- **Cord:** BN39-03006A
-- **Action:** Ring Zane tomorrow
-- **Goal:** Get Samsung to pay for replacement cord, order by tomorrow for Monday install
-- **Context:** Cord was cut during a paid job — need Samsung to cover replacement
-- **Deadline:** Order tomorrow for Monday install
-- **Created:** 2026-03-03
+## Payments Received
+
+| Date | Job | Amount | Method |
+|------|-----|--------|--------|
+| — | — | — | — |
 
 ---
 
-## Project Commands
-- `add project [name]` — Add new project
-- `update project [name]` — Update project status/notes
-- `list projects` — Show all projects
-- `complete project [name]` — Mark project done
+## Monthly Summary
+
+| Month | Jobs Active | Labour | Materials | Total Billed | Paid | Outstanding |
+|-------|-------------|--------|-----------|--------------|------|-------------|
+| Mar 2026 | 3 | $240 | $385 | $625+ | $0 | $625+ |
 
 ---
 
-_Last updated: 2026-03-03_
+**Default Rate: $40/hr**
+
+_Last updated: 2026-03-08 08:45_
