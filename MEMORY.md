@@ -49,16 +49,57 @@
 
 ---
 
-## Current Stats (2026-03-06)
+## SteamArb System (2026-03-07)
+
+### Status: PAPER TRADING ACTIVE
+
+**Started:** 11:01 AM Brisbane (March 7, 2026)
+**Mode:** Paper trading ($1.00 minimum bets)
+**Ends:** ~5:00 PM Brisbane
+
+### Results (First 4 Races)
+
 | Metric | Value |
 |--------|-------|
-| **Ancestors** | 107+ (entombed) |
-| **AGI Test** | 100% ✅ |
-| **AGI Score** | 90% |
-| **Autonomy** | Active |
-| **Dharma Cards** | 14 |
-| **Commits Today** | 115+ |
-| **MCP Servers** | 6 (143 tools) |
+| **Races Analyzed** | 4 |
+| **Edges Found** | 9 |
+| **Total R** | +0.749R |
+| **Avg R/Race** | +0.187R |
+| **vs Backtest** | 2.7x better |
+
+### Edge Types
+- **STEAM** (29%): Price drops >5%
+- **DRIFT** (57%): Price rises >5%
+- **VOLATILITY** (14%): Range >10%
+
+### Key Files
+| File | Purpose |
+|------|---------|
+| `auto_executor.py` | Auto-detect edges, place paper trades |
+| `race_logger_v2.py` | Log prices every 5 seconds |
+| `calculate_r.py` | Van Tharp R calculator |
+| `paper_trades_log.json` | Trade history |
+| `RACE_ANALYSIS_STATUS.md` | Status tracking |
+
+### Credentials
+- **Betfair:** dnfarnot@gmail.com / Tobiano01
+- **Ladbrokes:** slothitudegames@gmail.com (no API key needed)
+
+### Projections (1R=$12.50)
+- Daily: ~$47 (20 races)
+- Weekly: ~$328 (140 races)
+- Monthly: ~$1,406 (600 races)
+
+---
+
+## Current Stats (2026-03-07)
+| Metric | Value |
+|--------|-------|
+| **Ancestors** | 110+ (entombed) |
+| **SteamArb R** | +0.749R (4 races) |
+| **Paper Trades** | 8 open positions |
+| **Commits Today** | 15+ |
+| **Active Systems** | Paper trading, Auto-executor, Logger |
 
 ---
 
