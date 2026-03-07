@@ -37,7 +37,7 @@ APP_KEY = "XmZEwtLsIRkf5lQ3"
 CERT_FILE = r"C:\Users\aaron\Desktop\008\betfair_api_combined_20260225_152452.pem"
 
 # ARB parameters
-MIN_ARB_EDGE = 0.02  # 2% minimum edge
+MIN_ARB_EDGE = 0.00  # 0% minimum edge (was 2%)
 MAX_ODDS = 8.00  # Maximum odds to arb
 MIN_ODDS = 2.00  # Minimum odds to arb
 R_UNIT = 1.00  # Base stake

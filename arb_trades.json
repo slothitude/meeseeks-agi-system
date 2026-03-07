@@ -1,0 +1,232 @@
+[
+  {
+    "timestamp": "2026-03-07T15:27:40.092945",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 8,
+    "runner": "Ninja",
+    "ladb_back": {
+      "price": 6.5,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 6.2,
+      "stake": 1.05,
+      "matched": 1.05,
+      "bet_id": "420902109270",
+      "status": "PLACED"
+    },
+    "edge": 4.84,
+    "if_wins": 0.05,
+    "if_loses": 0.05,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T15:49:15.361187",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.2,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.18,
+      "stake": 1.01,
+      "matched": 0.0,
+      "bet_id": "420904059055",
+      "status": "PLACED"
+    },
+    "edge": 0.92,
+    "if_wins": 0.01,
+    "if_loses": 0.01,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T15:54:27.350532",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.25,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.24,
+      "stake": 1.0,
+      "matched": 1.0,
+      "bet_id": "420904391681",
+      "status": "PLACED"
+    },
+    "edge": 0.45,
+    "if_wins": 0.0,
+    "if_loses": 0.0,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T15:57:28.052651",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.25,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.2,
+      "stake": 1.02,
+      "matched": 1.02,
+      "bet_id": "420904564042",
+      "status": "PLACED"
+    },
+    "edge": 2.27,
+    "if_wins": 0.02,
+    "if_loses": 0.02,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T15:58:13.372744",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.25,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.2,
+      "stake": 1.02,
+      "matched": 1.02,
+      "bet_id": "420904604074",
+      "status": "PLACED"
+    },
+    "edge": 2.27,
+    "if_wins": 0.02,
+    "if_loses": 0.02,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T15:58:58.897421",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.25,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.22,
+      "stake": 1.01,
+      "matched": 1.01,
+      "bet_id": "420904642631",
+      "status": "PLACED"
+    },
+    "edge": 1.35,
+    "if_wins": 0.01,
+    "if_loses": 0.01,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T15:59:44.520793",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.2,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.16,
+      "stake": 1.02,
+      "matched": 1.02,
+      "bet_id": "420904687868",
+      "status": "PLACED"
+    },
+    "edge": 1.85,
+    "if_wins": 0.02,
+    "if_loses": 0.02,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T16:00:30.741383",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.2,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.1,
+      "stake": 1.05,
+      "matched": 0.0,
+      "bet_id": "420904742125",
+      "status": "PLACED"
+    },
+    "edge": 4.76,
+    "if_wins": 0.05,
+    "if_loses": 0.05,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T16:01:15.957255",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.2,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.12,
+      "stake": 1.04,
+      "matched": 1.04,
+      "bet_id": "420904790810",
+      "status": "PLACED"
+    },
+    "edge": 3.77,
+    "if_wins": 0.04,
+    "if_loses": 0.04,
+    "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T16:02:00.098239",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.15,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.1,
+      "stake": 1.02,
+      "matched": 1.02,
+      "bet_id": "420904845497",
+      "status": "PLACED"
+    },
+    "edge": 2.38,
+    "if_wins": 0.02,
+    "if_loses": 0.02,
+    "status": "OPEN"
+  }
+]
