@@ -1,0 +1,140 @@
+[
+  {
+    "id": "Murray Bridge_R3_Whiskey Tumbler_122746",
+    "timestamp": "2026-03-07T12:27:46.818322",
+    "track": "Murray Bridge",
+    "race": "3",
+    "runner": "Whiskey Tumbler",
+    "edge_type": "STEAM",
+    "entry_price": 5.5,
+    "target_price": 5.225,
+    "open_price": 7,
+    "change_pct": -21.4,
+    "stakes": {
+      "back_stake": 10.0,
+      "lay_stake": 10.53,
+      "profit_if_win": 0.5,
+      "profit_if_lose": 0.5,
+      "guaranteed_profit": 0.5
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 8.2,
+    "bankroll_before": 10.0
+  },
+  {
+    "id": "Randwick_R3_Farcolo_122747",
+    "timestamp": "2026-03-07T12:27:47.164244",
+    "track": "Randwick",
+    "race": "3",
+    "runner": "Farcolo",
+    "edge_type": "STEAM",
+    "entry_price": 81,
+    "target_price": 76.95,
+    "open_price": 101,
+    "change_pct": -19.8,
+    "stakes": {
+      "back_stake": 10.0,
+      "lay_stake": 10.53,
+      "profit_if_win": 0.5,
+      "profit_if_lose": 0.5,
+      "guaranteed_profit": 0.5
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 12.2,
+    "bankroll_before": 10.0
+  },
+  {
+    "id": "Gunnedah_R1_Muirisc_122747",
+    "timestamp": "2026-03-07T12:27:47.506288",
+    "track": "Gunnedah",
+    "race": "1",
+    "runner": "Muirisc",
+    "edge_type": "STEAM",
+    "entry_price": 6.5,
+    "target_price": 6.175,
+    "open_price": 9.5,
+    "change_pct": -31.6,
+    "stakes": {
+      "back_stake": 10.0,
+      "lay_stake": 10.53,
+      "profit_if_win": 0.5,
+      "profit_if_lose": 0.5,
+      "guaranteed_profit": 0.5
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 5.2,
+    "bankroll_before": 10.0
+  },
+  {
+    "id": "Towong_R1_I Am Strong_122747",
+    "timestamp": "2026-03-07T12:27:47.888211",
+    "track": "Towong",
+    "race": "1",
+    "runner": "I Am Strong",
+    "edge_type": "STEAM",
+    "entry_price": 10,
+    "target_price": 9.5,
+    "open_price": 15,
+    "change_pct": -33.3,
+    "stakes": {
+      "back_stake": 10.0,
+      "lay_stake": 10.53,
+      "profit_if_win": 0.5,
+      "profit_if_lose": 0.5,
+      "guaranteed_profit": 0.5
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 10.2,
+    "bankroll_before": 10.0
+  },
+  {
+    "id": "Murray Bridge_R3_Simply Sid_122819",
+    "timestamp": "2026-03-07T12:28:19.151127",
+    "track": "Murray Bridge",
+    "race": "3",
+    "runner": "Simply Sid",
+    "edge_type": "STEAM",
+    "entry_price": 8.5,
+    "target_price": 8.075,
+    "open_price": 10,
+    "change_pct": -15.0,
+    "stakes": {
+      "back_stake": 10.0,
+      "lay_stake": 10.53,
+      "profit_if_win": 0.5,
+      "profit_if_lose": 0.5,
+      "guaranteed_profit": 0.5
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 7.7,
+    "bankroll_before": 10.0
+  },
+  {
+    "id": "Randwick_R3_Strollin' By_122852",
+    "timestamp": "2026-03-07T12:28:52.842644",
+    "track": "Randwick",
+    "race": "3",
+    "runner": "Strollin' By",
+    "edge_type": "STEAM",
+    "entry_price": 81,
+    "target_price": 76.95,
+    "open_price": 101,
+    "change_pct": -19.8,
+    "stakes": {
+      "back_stake": 10.0,
+      "lay_stake": 10.53,
+      "profit_if_win": 0.5,
+      "profit_if_lose": 0.5,
+      "guaranteed_profit": 0.5
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 11.1,
+    "bankroll_before": 10.0
+  }
+]
