@@ -228,5 +228,28 @@
     "if_wins": 0.02,
     "if_loses": 0.02,
     "status": "OPEN"
+  },
+  {
+    "timestamp": "2026-03-07T16:12:05.620239",
+    "type": "ARB",
+    "track": "Randwick",
+    "race": 9,
+    "runner": "Joliestar",
+    "ladb_back": {
+      "price": 2.3,
+      "stake": 1.0,
+      "status": "PENDING"
+    },
+    "bf_lay": {
+      "price": 2.18,
+      "stake": 1.06,
+      "matched": 0.0,
+      "bet_id": "420905702081",
+      "status": "PLACED"
+    },
+    "edge": 5.5,
+    "if_wins": 0.05,
+    "if_loses": 0.05,
+    "status": "OPEN"
   }
 ]
