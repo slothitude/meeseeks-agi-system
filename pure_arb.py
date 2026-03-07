@@ -132,46 +132,56 @@ def get_betfair_market_book(market_id: str) -> Optional[dict]:
 
 
 def get_ladbrokes_races() -> List[dict]:
-    """Get upcoming races from Ladbrokes."""
-    url = "https://api.ladbrokes.com.au/affiliates/v1/racing/"
-
+    """Get upcoming races from Ladbrokes using working fetcher."""
+    from ladbrokes_fetcher import fetch_all_prices
+    
     try:
-        response = requests.get(
-            url,
-            headers=LADBROKES_HEADERS,
-            timeout=10
-        )
-
-        if response.status_code == 200:
-            races = response.json()
-
-            # Filter for today's AU races with time remaining
-            now = datetime.now(timezone.utc)
-            filtered = []
-
-            for race in races:
-                if race.get('status') != 'OPEN':
-                    continue
-
-                start_time_str = race.get('start_time')
-                if not start_time_str:
-                    continue
-
-                try:
-                    start_time = datetime.fromisoformat(start_time_str.replace('Z', '+00:00'))
-                    mins_to_start = (start_time - now).total_seconds() / 60
-
-                    if 3 <= mins_to_start <= 30:  # 3-30 mins to start
-                        race['mins_to_start'] = mins_to_start
-                        filtered.append(race)
-                except:
-                    continue
-
-            return filtered
+        # Use the working fetcher
+        runners = fetch_all_prices(categories=["H"], au_only=True)
+        
+        # Filter for races 3-30 mins from now
+        now = datetime.now(timezone.utc)
+        filtered = []
+        
+        # Group by race
+        races_by_key = defaultdict(list)
+        for runner in runners:
+            track = runner.get('meeting_name', '')
+            race_num = runner.get('race_number', 0)
+            start_time_str = runner.get('start_time', '')
+            
+            if not start_time_str:
+                continue
+            
+            try:
+                start_time = datetime.fromisoformat(start_time_str.replace('Z', '+00:00'))
+                mins_to_start = (start_time - now).total_seconds() / 60
+                
+                if 3 <= mins_to_start <= 30:
+                    key = f"{track}_R{race_num}"
+                    races_by_key[key].append({
+                        **runner,
+                        'mins_to_start': mins_to_start
+                    })
+            except:
+                continue
+        
+        # Convert to race format
+        for key, runners_list in races_by_key.items():
+            if runners_list:
+                first = runners_list[0]
+                filtered.append({
+                    'meeting_name': first['meeting_name'],
+                    'race_number': first['race_number'],
+                    'start_time': first['start_time'],
+                    'mins_to_start': first['mins_to_start'],
+                    'runners': runners_list
+                })
+        
+        return filtered
     except Exception as e:
         print(f"[ARB] Error fetching Ladbrokes: {e}")
-
-    return []
+        return []
 
 
 def get_betfair_markets() -> Dict[str, dict]:
