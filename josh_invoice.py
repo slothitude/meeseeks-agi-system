@@ -107,63 +107,57 @@ def create_josh_invoice():
         c.drawString(25*mm, y_line, item)
         y_line -= 5*mm
     
-    # Labour section with breakdown
-    y = height - 115*mm  # Adjusted for smaller header
+    # Labour section with breakdown (more compact)
+    y = height - 100*mm
     c.setFont("Helvetica-Bold", 14)
     c.drawString(20*mm, y, "LABOUR")
     c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
     
     c.setFont("Helvetica", 11)
-    y_offset = 15*mm
+    y_offset = 12*mm
     for description, amount in labour_items:
         c.drawString(25*mm, y - y_offset, description)
         c.drawRightString(width - 25*mm, y - y_offset, f"${amount:.2f}")
-        y_offset += 10*mm
+        y_offset += 8*mm
     
-    # Materials section
-    y = height - (140 + y_offset + 10)*mm
+    # Materials section (compact)
+    y_mat = y - y_offset - 8*mm
     c.setFont("Helvetica-Bold", 14)
-    c.drawString(20*mm, y, "MATERIALS")
-    c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
+    c.drawString(20*mm, y_mat, "MATERIALS")
+    c.line(20*mm, y_mat - 3*mm, width - 20*mm, y_mat - 3*mm)
     
     c.setFont("Helvetica", 11)
-    c.drawString(25*mm, y - 15*mm, "Owner supplied")
-    c.drawRightString(width - 25*mm, y - 15*mm, "$0.00")
+    c.drawString(25*mm, y_mat - 12*mm, "Owner supplied")
+    c.drawRightString(width - 25*mm, y_mat - 12*mm, "$0.00")
     
-    # Total section
-    y = height - (140 + y_offset + 60)*mm
+    # Total section (compact)
+    y_total = y_mat - 35*mm
     c.setFont("Helvetica-Bold", 12)
-    c.drawString(20*mm, y, "Labour:")
-    c.drawRightString(width - 25*mm, y, f"${labour_total:.2f}")
+    c.drawString(20*mm, y_total, "Labour:")
+    c.drawRightString(width - 25*mm, y_total, f"${labour_total:.2f}")
     
-    c.drawString(20*mm, y - 12*mm, "Materials:")
-    c.drawRightString(width - 25*mm, y - 12*mm, f"${materials:.2f}")
+    c.drawString(20*mm, y_total - 10*mm, "Materials:")
+    c.drawRightString(width - 25*mm, y_total - 10*mm, f"${materials:.2f}")
     
-    c.line(width - 80*mm, y - 18*mm, width - 25*mm, y - 18*mm)
+    c.line(width - 80*mm, y_total - 15*mm, width - 25*mm, y_total - 15*mm)
     
     c.setFont("Helvetica-Bold", 14)
-    c.drawString(20*mm, y - 30*mm, "TOTAL:")
-    c.drawRightString(width - 25*mm, y - 30*mm, f"${total:.2f}")
+    c.drawString(20*mm, y_total - 28*mm, "TOTAL:")
+    c.drawRightString(width - 25*mm, y_total - 28*mm, f"${total:.2f}")
     
-    if paid > 0:
-        c.setFont("Helvetica", 12)
-        c.drawString(20*mm, y - 45*mm, "Paid:")
-        c.drawRightString(width - 25*mm, y - 45*mm, f"${paid:.2f}")
-    
-    # Balance due - highlighted
-    balance_y = y - 70*mm
+    # Balance due - highlighted (compact)
+    balance_y = y_total - 55*mm
     c.setFillColor(HexColor('#fff3cd'))
-    c.rect(20*mm, balance_y - 10*mm, width - 40*mm, 20*mm, fill=1, stroke=0)
+    c.rect(20*mm, balance_y - 8*mm, width - 40*mm, 18*mm, fill=1, stroke=0)
     
     c.setFillColor(HexColor('#000000'))
-    c.setFont("Helvetica-Bold", 16)
+    c.setFont("Helvetica-Bold", 14)
     c.drawString(25*mm, balance_y, "BALANCE DUE:")
     c.drawRightString(width - 25*mm, balance_y, f"${owed:.2f}")
     
-    # Payment info
-    c.setFont("Helvetica", 10)
-    c.drawString(20*mm, balance_y - 25*mm, "Payment: Australia Post Everyday Mastercard")
-    c.drawString(20*mm, balance_y - 35*mm, "Contact Aaron for BSB/Account details")
+    # Payment info (compact)
+    c.setFont("Helvetica", 9)
+    c.drawString(20*mm, balance_y - 18*mm, "Payment: Australia Post Everyday Mastercard • Contact Aaron for BSB/Account")
     
     # Footer
     c.setFont("Helvetica-Oblique", 10)
