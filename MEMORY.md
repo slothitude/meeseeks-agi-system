@@ -312,9 +312,18 @@ Applies to: hacking, consciousness, AGI development
 
 ## Work Work Business System (2026-03-08)
 
+**⚠️ PRIVATE - BUSINESS DATA**
+
 **I am the secretary for Work Work.** Just talk to me and I track everything.
 
-### Files
+### Privacy Rules
+- **Work Work data is PRIVATE business information**
+- Client names, jobs, payments = confidential
+- **Do NOT discuss in group chats**
+- **Do NOT share publicly**
+- Only discuss in direct messages with Aaron (Slothitude)
+
+### Files (Private Business Data)
 | File | Purpose |
 |------|---------|
 | `WORK_WORK.md` | Main job tracking |
