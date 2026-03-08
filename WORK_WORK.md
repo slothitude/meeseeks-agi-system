@@ -128,6 +128,7 @@ photos/
 
 ### Merc V8
 
+**Client:** Hayden
 **Status:** New - V8 out of boat
 
 **Labour:**
