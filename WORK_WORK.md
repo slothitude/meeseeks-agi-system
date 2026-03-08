@@ -1,7 +1,7 @@
 # WORK WORK - Job Tracking System
 
 **Secretary:** Sloth_rog 🦥
-**Updated:** 2026-03-08 15:53
+**Updated:** 2026-03-08 17:10
 
 ---
 
@@ -69,9 +69,11 @@ PLUS: Reimburse whoever paid receipts/cash
 |------|-----|-----|-------|------|------|--------|
 | 2026-03-08 | Dave's Boat (HHO) | Aaron | 4 | $40 | — | $160 |
 | 2026-03-08 | Dave's Boat (HHO) | Aaron | 2 | $40 | — | $80 |
+| 2026-03-08 | Josh's Boat | Aaron | 3 | $40 | — | $120 |
+| 2026-03-08 | Josh's Boat | Luke | 3 | $40 | — | $120 |
 
-**Aaron's Total:** $240
-**Luke's Total:** $0
+**Aaron's Total:** $360
+**Luke's Total:** $120
 
 ---
 
@@ -162,11 +164,13 @@ PLUS: Reimburse whoever paid receipts/cash
 
 **Work In Progress:**
 - **Started:** 2026-03-08 @ 2:00 PM
-- **Aaron:** On site
-- **Luke:** On site
-- **Task:** (awaiting details)
+- **Finished:** 2026-03-08 @ 5:00 PM
+- **Duration:** 3 hours
 
-**Hours:** (pending finish time)
+**Hours Logged:**
+- **Aaron:** 3 hrs @ $40 = $120
+- **Luke:** 3 hrs @ $40 = $120
+- **Labour Total:** $240
 
 ---
 
