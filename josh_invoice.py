@@ -83,8 +83,26 @@ def create_josh_invoice():
     c.setFont("Helvetica", 10)
     c.drawString(25*mm, y - 20*mm, "Terms: Cash on completion")
     
+    # Work description section
+    y_desc = height - 130*mm
+    c.setFont("Helvetica-Bold", 11)
+    c.drawString(20*mm, y_desc, "Work Completed:")
+    c.setFont("Helvetica", 10)
+    
+    work_items = [
+        "• Installed new fuel pump (owner supplied)",
+        "• Generator started and tested",
+        "• Identified coolant system issue - requires investigation",
+        "• Bilge pump float requires securing"
+    ]
+    
+    y_line = y_desc - 8*mm
+    for item in work_items:
+        c.drawString(25*mm, y_line, item)
+        y_line -= 6*mm
+    
     # Labour section with breakdown
-    y = height - 140*mm
+    y = height - 170*mm  # Adjusted for work description
     c.setFont("Helvetica-Bold", 14)
     c.drawString(20*mm, y, "LABOUR")
     c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
