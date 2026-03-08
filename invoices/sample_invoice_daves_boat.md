@@ -4,15 +4,14 @@
 
 **WORK WORK**  
 Electrical + Electronics + Programming  
-ABN: [Your ABN Here]  
-Ph: [Your Phone]  
-Email: [Your Email]
+Ph: [Your Phone]
 
 ---
 
 **Invoice #:** WW-20260308-DAVES-BOAT  
 **Date:** 8 March 2026  
 **Due:** Upon Receipt  
+**Terms:** Cash on completion  
 
 **Bill To:**
 Dave  
@@ -66,16 +65,9 @@ Dave
 
 ---
 
-**Payment Details:**
-- Cash
-- Bank Transfer: [BSB] [Account]
-- PayPal: [If applicable]
+**Payment:** Cash on completion
 
 **Thank you for your business!**
-
----
-
-*Questions? Contact Aaron on [phone]*
 
 ---
 
