@@ -45,6 +45,7 @@
 
 *Billable jobs and work tasks:*
 
+- [ ] Barry Allan (nursery): Samsung One Cord arriving tomorrow
 - [ ] Dave's Boat: Collect remaining $50
 - [ ] HHO Display Box: Order parts ($178.65)
 - [ ] Merc V8 (Hayden): Pull V8 from boat
