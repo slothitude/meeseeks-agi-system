@@ -1,7 +1,21 @@
 # WORK WORK - Job Tracking System
 
 **Secretary:** Sloth_rog 🦥
-**Updated:** 2026-03-08 17:10
+**Updated:** 2026-03-08 19:41
+
+---
+
+## 📊 Quick Totals
+
+| Job | Labour | Materials | Total | Paid | Owed |
+|-----|--------|-----------|-------|------|------|
+| Dave's Boat | $240 | $385 | $625 | $575 | **$50** |
+| Josh's Boat | $240 | $0 | $240 | $0 | **$240** |
+| **TOTAL** | **$480** | **$385** | **$865** | **$575** | **$290** |
+
+**Outstanding: $290**
+- Dave: $50
+- Josh: $240 (pending invoice)
 
 ---
 
@@ -50,16 +64,39 @@ PLUS: Reimburse whoever paid receipts/cash
 
 ## Active Jobs
 
-| Job | Client | Status | Total | Paid | Owed |
-|-----|--------|--------|-------|------|------|
-| Dave's Boat (HHO) | Dave | Active | $625 | $575 | **$50** |
-| Dave's Alternator | Dave | New | TBD | $0 | TBD |
-| Merc V8 | Hayden | New | TBD | $0 | TBD |
-| Barry Allan Samsung | Barry Allan | Tomorrow | TBD | $0 | TBD |
-| Josh's Boat | Josh | **Active** | TBD | $0 | TBD |
-| Barry Barcode | Barry | Pending | TBD | $0 | TBD |
+| Job | Client | Status | Labour | Materials | Total | Paid | Owed |
+|-----|--------|--------|--------|-----------|-------|------|------|
+| Dave's Boat (HHO) | Dave | **$50 owed** | $240 | $385 | $625 | $575 | **$50** |
+| Josh's Boat | Josh | Active | $240 | $0 | $240 | $0 | **$240** |
+| Dave's Alternator | Dave | New | $0 | $0 | TBD | $0 | TBD |
+| Merc V8 | Hayden | New | $0 | $0 | TBD | $0 | TBD |
+| Barry Allan Samsung | Barry Allan | Tomorrow | $0 | $0 | TBD | $0 | TBD |
+| Barry Barcode | Barry | Pending | $0 | $0 | TBD | $0 | TBD |
 
-**Total Owed to Work Work: $50+**
+**Total Outstanding: $290** ($50 Dave + $240 Josh)
+
+---
+
+## Current Owings (Live)
+
+### Josh's Boat - Not Yet Invoiced
+| Person | Hours | Labour | Materials | Profit Share | TOTAL OWED |
+|--------|-------|--------|-----------|--------------|------------|
+| Aaron | 3 | $120 | $0 | — | **$120** |
+| Luke | 3 | $120 | $0 | — | **$120** |
+| **Total** | 6 | $240 | $0 | — | **$240** |
+
+*Invoice not generated yet. Will split 50/50 when invoiced.*
+
+### Dave's Boat - Invoiced
+| Person | Status |
+|--------|--------|
+| Aaron | $50 owed from Dave |
+| Luke | $0 |
+
+**Grand Total Owed to Work Work: $290**
+- Dave owes: $50
+- Josh owes: $240 (not yet invoiced)
 
 ---
 
@@ -162,6 +199,11 @@ PLUS: Reimburse whoever paid receipts/cash
 **Client:** Josh
 **Status:** Active - generator + electrical
 
+**Running Total:**
+- Labour: $240 (Aaron $120 + Luke $120)
+- Materials: $0 (owner supplied)
+- **Total: $240** (not yet invoiced)
+
 **Work Done:**
 - **Started:** 2026-03-08 @ 2:00 PM
 - **Finished:** 2026-03-08 @ 5:00 PM
@@ -172,14 +214,14 @@ PLUS: Reimburse whoever paid receipts/cash
   - Stopped due to low/loss of coolant (needs investigation)
   - Found bilge pump float not secured (needs securing)
 
-**Hours Logged:**
-- **Aaron:** 3 hrs @ $40 = $120
-- **Luke:** 3 hrs @ $40 = $120
-- **Labour Total:** $240
+**Pending:**
+- Plumber's tape (tomorrow)
+- Coolant issue investigation
+- Secure bilge pump float
 
-**Materials:**
-- New fuel pump (50% off) - prepurchased by owner Josh (no cost to Work Work)
-- Plumber's tape - pending tomorrow
+**Split (when invoiced):**
+- Aaron: $120
+- Luke: $120
 
 ---
 
