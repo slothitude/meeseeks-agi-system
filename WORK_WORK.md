@@ -86,8 +86,14 @@ photos/
 
 ### Split Formula
 ```
-(Total Invoice - Materials) ÷ 2 = Each person's share
+(Total Invoice - Materials - Cash Out) ÷ 2 = Each person's share
 ```
+
+### Expenses Tracker (Cash Out)
+
+| Job | Date | Item | Amount | Who Paid |
+|-----|------|------|--------|----------|
+| — | — | — | — | — |
 
 ### Hours Tracker
 
