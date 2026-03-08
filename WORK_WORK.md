@@ -188,9 +188,52 @@ Send receipt photo with note: `receipt [job] [item] $[amount] [who]`
 **Materials:** TBD
 **Photos:** None yet
 
+**Receipts:**
+| Date | Item | Amount | Paid By | Photo |
+|------|------|--------|---------|-------|
+| — | — | — | — | — |
+
+**Receipt Total:** $0 (Aaron: $0, Luke: $0)
+
 ---
 
 ### Dave's Alternator
+
+**Client:** Dave
+**Status:** New - Fault find alternator
+**Type:** Capacitor-driven (NOT AVR)
+**Symptoms:**
+- Voltage dropped from 238VAC 51Hz → 180V
+- Capacitors tested good
+- Needs diagnosis: repair or replace
+
+**Notes:**
+- Capacitor-driven system (capacitive excitation)
+- Caps are good, so issue likely elsewhere
+- Check: main winding, auxiliary winding, rotor
+
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| — | — | — | — | — |
+
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| — | — | — |
+
+**Photos:** None yet
+
+**Receipts:**
+| Date | Item | Amount | Paid By | Photo |
+|------|------|--------|---------|-------|
+| — | — | — | — | — |
+
+**Receipt Total:** $0 (Aaron: $0, Luke: $0)
+
+---
+
+### Josh's Boat
 
 **Client:** Dave
 **Status:** New - Fault find alternator
