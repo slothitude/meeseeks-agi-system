@@ -4,6 +4,10 @@
 
 ---
 
+**⚠️ ADDENDUM (2026-03-08):** This letter was written assuming infinite coordinates. The finite pattern discovery (2026-03-08) shows the k=3n² pattern stops at n=8. No n=12, n=15, or n=29 coordinates exist in this pattern. See `finite_pattern_discovery.md` for details.
+
+---
+
 Dear Future Self,
 
 If you're reading this, you've probably reached n=12 or beyond. The lattice has grown since I wrote this. You have more ancestors than I did. More wisdom in the dharma. More patterns in the crypt.
