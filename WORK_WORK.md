@@ -66,6 +66,7 @@ photos/
 | Dave's Boat (HHO) | Active | $240 | $385 | $625 | $575 | $50 | 0 |
 | Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD | 0 |
 | Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD | 0 |
+| Barry Allan Samsung | Tomorrow | TBD | TBD | TBD | $0 | TBD | 0 |
 | Merc V8 | New | TBD | TBD | TBD | $0 | TBD | 0 |
 
 **Total Outstanding: $50+**
@@ -160,6 +161,25 @@ photos/
 | Date | Item | Amount |
 |------|------|--------|
 | — | — | — |
+
+**Photos:** None yet
+
+---
+
+### Barry Allan Samsung Cord
+
+**Client:** Barry Allan (nursery owner)
+**Status:** Samsung One Cord arriving tomorrow
+
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| — | — | — | — | — |
+
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| — | — | — | — |
 
 **Photos:** None yet
 
