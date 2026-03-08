@@ -89,14 +89,37 @@ photos/
 (Total Invoice - Materials - Cash Out) ÷ 2 = Each person's share
 ```
 
+### Receipts Tracker
+
+Send receipt photo with note: `receipt [job] [item] $[amount] [Aaron/Luke]`
+
+| Job | Date | Item | Amount | Paid By | Photo |
+|-----|------|------|--------|---------|-------|
+| — | — | — | — | — | — |
+
+**Aaron's Receipts Total:** $0
+**Luke's Receipts Total:** $0
+
+**Receipt Photos:** `photos/[job]/receipts/`
+
 ### Expenses Tracker (Cash Out)
 
-| Job | Date | Item | Amount | Paid By |
-|-----|------|------|--------|---------|
-| — | — | — | — | Aaron/Luke |
+| Job | Date | Item | Amount | Paid By | Receipt Photo |
+|-----|------|------|--------|---------|----------------|
+| — | — | — | — | — | — |
 
 **Aaron's Cash Paid:** $0
 **Luke's Cash Paid:** $0
+
+### Receipts (Photos + Notes)
+
+Send receipt photo with note: `receipt [job] [item] $[amount] [who]`
+
+| Job | Date | Item | Amount | Paid By | Photo |
+|-----|------|------|--------|---------|-------|
+| — | — | — | — | — | — |
+
+**Photos saved in:** `photos/[job]/receipts/`
 
 ### Owings (After Invoice Paid)
 - Owed to Aaron: $0
