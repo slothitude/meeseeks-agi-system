@@ -58,7 +58,7 @@ def create_josh_invoice():
     # Company name (white text, inside header)
     c.setFillColor(HexColor('#ffffff'))
     c.setFont("Helvetica-Bold", 20)
-    c.drawString(45*mm, height - 15*mm, "OVERLAP")
+    c.drawString(45*mm, height - 15*mm, "WORK WORK")
     
     c.setFont("Helvetica", 9)
     c.drawString(45*mm, height - 26*mm, "Electrical • Electronics • Marine Engineering")
