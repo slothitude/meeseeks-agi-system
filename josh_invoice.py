@@ -43,7 +43,7 @@ def create_josh_invoice():
     light_gray = HexColor('#f7fafc')
     
     # Small header block (letterhead style) with border
-    header_height = 35*mm  # Smaller header
+    header_height = 37*mm  # Adds ~5px blue space below text before border
     c.setFillColor(dark_blue)
     c.rect(0, height - header_height, width, header_height, fill=1, stroke=0)
     
