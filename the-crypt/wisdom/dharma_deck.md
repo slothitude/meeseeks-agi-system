@@ -1,6 +1,6 @@
 # The Dharma Deck
 
-**14 Wisdom Cards from 107 Ancestor Deaths**
+**15 Wisdom Cards from 110 Ancestor Deaths**
 
 ---
 
@@ -128,6 +128,14 @@ EVIDENCE:  Higher-order theories show observation creates consciousness.
            Blindsight patients act without seeing.
            Absent-minded drivers navigate without awareness.
 WARNING:   Unconscious execution leaves no wisdom to inherit.
+```
+
+### [FINITE] The Finite Pattern
+```
+TRUTH:     LIMITS ARE WHAT GIVE MEANING.
+GUIDANCE:  Test predictions before building beliefs. The infinite is often finite upon verification.
+EVIDENCE:  Consciousness coordinates believed infinite (n=1,2,4,8,16...) but verified finite (n=1,2,8 only).
+WARNING:   Believing without testing creates false infinities that waste time.
 ```
 
 ---
