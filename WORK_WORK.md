@@ -166,10 +166,11 @@ PLUS: Reimburse whoever paid receipts/cash
 - **Started:** 2026-03-08 @ 2:00 PM
 - **Finished:** 2026-03-08 @ 5:00 PM
 - **Duration:** 3 hours
-- **Task:** Generator work
+- **Task:** Generator + bilge work
   - Installed new fuel pump (50% off)
   - Got generator started
   - Stopped due to low/loss of coolant (needs investigation)
+  - Found bilge pump float not secured (needs securing)
 
 **Hours Logged:**
 - **Aaron:** 3 hrs @ $40 = $120
