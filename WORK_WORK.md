@@ -76,21 +76,27 @@ photos/
 
 ## Workers
 
-**Aaron** - Primary
+**Aaron (Slothitude)** - Primary
 **Luke** - Works together on jobs
 
-### Luke's Rate
-- Minimum: $40/hr
-- Fuel: +$20 if close/local
-- Split: (Total - Expenses) ÷ 2
+### Rates
+- **Aaron:** $40/hr (default)
+- **Luke:** $40/hr minimum
+- **Fuel:** +$20 when specified
 
-### Luke's Hours Tracker
+### Split Formula
+```
+(Total Invoice - Materials) ÷ 2 = Each person's share
+```
 
-| Job | Date | Hours | Rate | Fuel | Total |
-|-----|------|-------|------|------|-------|
-| — | — | — | — | — | — |
+### Hours Tracker
 
-**Luke's Total Earned:** $0
+| Job | Date | Who | Hours | Rate | Fuel | Amount |
+|-----|------|-----|-------|------|------|--------|
+| — | — | — | — | — | — | — |
+
+**Aaron's Total:** $0
+**Luke's Total:** $0
 
 ---
 
@@ -152,10 +158,16 @@ photos/
 
 **Client:** Dave
 **Status:** New - Fault find alternator
+**Type:** Capacitor-driven (NOT AVR)
 **Symptoms:**
 - Voltage dropped from 238VAC 51Hz → 180V
 - Capacitors tested good
 - Needs diagnosis: repair or replace
+
+**Notes:**
+- Capacitor-driven system (capacitive excitation)
+- Caps are good, so issue likely elsewhere
+- Check: main winding, auxiliary winding, rotor
 
 **Labour:**
 | Date | Task | Hours | Rate | Amount |

@@ -45,6 +45,7 @@
 
 *Billable jobs and work tasks:*
 
+- [ ] Order megger (insulation tester)
 - [ ] Dave's Alternator: Fault find (238V→180V drop, caps good)
 - [ ] Barry Allan (nursery): Samsung One Cord arriving tomorrow
 - [ ] Dave's Boat: Collect remaining $50
