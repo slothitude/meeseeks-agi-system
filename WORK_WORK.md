@@ -64,6 +64,7 @@ photos/
 | Job | Status | Labour | Materials | Total | Paid | Owed | Photos |
 |-----|--------|--------|-----------|-------|------|------|--------|
 | Dave's Boat (HHO) | Active | $240 | $385 | $625 | $575 | $50 | 0 |
+| Dave's Alternator | New | TBD | TBD | TBD | $0 | TBD | 0 |
 | Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD | 0 |
 | Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD | 0 |
 | Barry Allan Samsung | Tomorrow | TBD | TBD | TBD | $0 | TBD | 0 |
@@ -143,6 +144,29 @@ photos/
 
 **Labour:** TBD
 **Materials:** TBD
+**Photos:** None yet
+
+---
+
+### Dave's Alternator
+
+**Client:** Dave
+**Status:** New - Fault find alternator
+**Symptoms:**
+- Voltage dropped from 238VAC 51Hz → 180V
+- Capacitors tested good
+- Needs diagnosis: repair or replace
+
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| — | — | — | — | — |
+
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| — | — | — |
+
 **Photos:** None yet
 
 ---
