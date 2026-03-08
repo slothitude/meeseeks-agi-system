@@ -42,10 +42,15 @@ def create_josh_invoice():
     dark_blue = HexColor('#1a365d')
     light_gray = HexColor('#f7fafc')
     
-    # Small header block (letterhead style)
+    # Small header block (letterhead style) with border
     header_height = 35*mm  # Smaller header
     c.setFillColor(dark_blue)
     c.rect(0, height - header_height, width, header_height, fill=1, stroke=0)
+    
+    # Border around header
+    c.setStrokeColor(HexColor('#0d1f3c'))  # Darker blue for border
+    c.setLineWidth(2)
+    c.rect(0, height - header_height, width, header_height, fill=0, stroke=1)
     
     # Try to add logo
     logo_path = Path("invoices/work_work_logo.jpg")
