@@ -42,52 +42,53 @@ def create_josh_invoice():
     dark_blue = HexColor('#1a365d')
     light_gray = HexColor('#f7fafc')
     
-    # Header background
+    # Small header block (letterhead style)
+    header_height = 35*mm  # Smaller header
     c.setFillColor(dark_blue)
-    c.rect(0, height - 80*mm, width, 80*mm, fill=1, stroke=0)
+    c.rect(0, height - header_height, width, header_height, fill=1, stroke=0)
     
     # Try to add logo
     logo_path = Path("invoices/work_work_logo.jpg")
     if logo_path.exists():
         try:
-            c.drawImage(str(logo_path), 20*mm, height - 70*mm, width=50*mm, height=50*mm, mask='auto')
+            c.drawImage(str(logo_path), 15*mm, height - 30*mm, width=25*mm, height=25*mm, mask='auto')
         except Exception as e:
             print(f"Logo failed: {e}")
     
     # Company name (white text, inside header)
     c.setFillColor(HexColor('#ffffff'))
-    c.setFont("Helvetica-Bold", 32)
-    c.drawString(20*mm, height - 25*mm, "OVERLAP")
+    c.setFont("Helvetica-Bold", 20)
+    c.drawString(45*mm, height - 15*mm, "OVERLAP")
     
-    c.setFont("Helvetica", 12)
-    c.drawString(20*mm, height - 38*mm, "Electrical • Electronics • Marine Engineering")
-    c.drawString(20*mm, height - 50*mm, "Ph: 0457 870 354")
+    c.setFont("Helvetica", 9)
+    c.drawString(45*mm, height - 26*mm, "Electrical • Electronics • Marine Engineering")
+    c.drawString(45*mm, height - 35*mm, "Ph: 0457 870 354")
     
     # Invoice details (right side, inside header)
     c.setFillColor(HexColor('#ffffff'))
-    c.setFont("Helvetica-Bold", 14)
-    c.drawRightString(width - 20*mm, height - 25*mm, f"INVOICE #{invoice_num}")
+    c.setFont("Helvetica-Bold", 11)
+    c.drawRightString(width - 15*mm, height - 15*mm, f"INVOICE #{invoice_num}")
     
-    c.setFont("Helvetica", 10)
-    c.drawRightString(width - 20*mm, height - 38*mm, date_str)
-    c.drawRightString(width - 20*mm, height - 50*mm, f"Client: {client}")
+    c.setFont("Helvetica", 8)
+    c.drawRightString(width - 15*mm, height - 25*mm, date_str)
+    c.drawRightString(width - 15*mm, height - 33*mm, f"Client: {client}")
     
     # Job details box
-    y = height - 100*mm
+    y = height - 50*mm  # Adjusted for smaller header
     c.setFillColor(light_gray)
-    c.rect(20*mm, y - 25*mm, width - 40*mm, 25*mm, fill=1, stroke=0)
+    c.rect(20*mm, y - 20*mm, width - 40*mm, 20*mm, fill=1, stroke=0)
     
     c.setFillColor(HexColor('#000000'))
-    c.setFont("Helvetica-Bold", 12)
-    c.drawString(25*mm, y - 10*mm, f"Job: {job_name}")
-    c.setFont("Helvetica", 10)
-    c.drawString(25*mm, y - 20*mm, "Terms: Cash on completion")
+    c.setFont("Helvetica-Bold", 11)
+    c.drawString(25*mm, y - 8*mm, f"Job: {job_name}")
+    c.setFont("Helvetica", 9)
+    c.drawString(25*mm, y - 16*mm, "Terms: Cash on completion")
     
     # Work description section
-    y_desc = height - 130*mm
-    c.setFont("Helvetica-Bold", 11)
+    y_desc = height - 75*mm
+    c.setFont("Helvetica-Bold", 10)
     c.drawString(20*mm, y_desc, "Work Completed:")
-    c.setFont("Helvetica", 10)
+    c.setFont("Helvetica", 9)
     
     work_items = [
         "• Installed new fuel pump (owner supplied)",
@@ -96,13 +97,13 @@ def create_josh_invoice():
         "• Bilge pump float requires securing"
     ]
     
-    y_line = y_desc - 8*mm
+    y_line = y_desc - 6*mm
     for item in work_items:
         c.drawString(25*mm, y_line, item)
-        y_line -= 6*mm
+        y_line -= 5*mm
     
     # Labour section with breakdown
-    y = height - 170*mm  # Adjusted for work description
+    y = height - 115*mm  # Adjusted for smaller header
     c.setFont("Helvetica-Bold", 14)
     c.drawString(20*mm, y, "LABOUR")
     c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
