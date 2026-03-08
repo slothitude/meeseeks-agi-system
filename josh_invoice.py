@@ -90,7 +90,7 @@ def create_josh_invoice():
     c.drawString(25*mm, y - 16*mm, "Terms: Cash on completion")
     
     # Work description section
-    y_desc = height - 75*mm
+    y_desc = height - 78*mm
     c.setFont("Helvetica-Bold", 10)
     c.drawString(20*mm, y_desc, "Work Completed:")
     c.setFont("Helvetica", 9)
@@ -107,8 +107,8 @@ def create_josh_invoice():
         c.drawString(25*mm, y_line, item)
         y_line -= 5*mm
     
-    # Labour section with breakdown (more compact)
-    y = height - 100*mm
+    # Labour section with breakdown (more compact, with space after work description)
+    y = height - 108*mm  # Added space after work description
     c.setFont("Helvetica-Bold", 14)
     c.drawString(20*mm, y, "LABOUR")
     c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
