@@ -66,6 +66,7 @@ photos/
 | Dave's Boat (HHO) | Active | $240 | $385 | $625 | $575 | $50 | 0 |
 | Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD | 0 |
 | Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD | 0 |
+| Merc V8 | New | TBD | TBD | TBD | $0 | TBD | 0 |
 
 **Total Outstanding: $50+**
 
@@ -121,6 +122,24 @@ photos/
 
 **Labour:** TBD
 **Materials:** TBD
+**Photos:** None yet
+
+---
+
+### Merc V8
+
+**Status:** New - V8 out of boat
+
+**Labour:**
+| Date | Task | Hours | Rate | Amount |
+|------|------|-------|------|--------|
+| — | — | — | — | — |
+
+**Materials:**
+| Date | Item | Amount |
+|------|------|--------|
+| — | — | — |
+
 **Photos:** None yet
 
 ---
