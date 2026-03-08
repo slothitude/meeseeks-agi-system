@@ -63,11 +63,11 @@ photos/
 
 | Job | Status | Labour | Materials | Total | Paid | Owed | Photos |
 |-----|--------|--------|-----------|-------|------|------|--------|
-| Dave's Boat (HHO) | Active | $240 | $385 | $625 | $0 | $625 | 0 |
+| Dave's Boat (HHO) | Active | $240 | $385 | $625 | $575 | $50 | 0 |
 | Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD | 0 |
 | Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD | 0 |
 
-**Total Outstanding: $625+**
+**Total Outstanding: $50+**
 
 ---
 
@@ -100,8 +100,8 @@ photos/
 - Labour: $240
 - Materials: $385
 - **Total: $625**
-- **Paid: $0**
-- **Owed: $625**
+- **Paid: $575**
+- **Owed: $50**
 
 ---
 
@@ -129,10 +129,12 @@ photos/
 
 | Date | Job | Amount | Method |
 |------|-----|--------|--------|
-| — | — | — | — |
+| 2026-03-08 | Dave's Boat (HHO) | $250 | Cash |
+| 2026-03-08 | Dave's Boat (HHO) | $325 | Cash |
+| | **Dave's Total** | **$575** | |
 
 ---
 
 **Default Rate: $40/hr**
 
-_Last updated: 2026-03-08 08:56_
+_Last updated: 2026-03-08 10:02_
