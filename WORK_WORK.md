@@ -178,7 +178,7 @@ PLUS: Reimburse whoever paid receipts/cash
 - **Labour Total:** $240
 
 **Materials:**
-- New fuel pump (50% off) - (need cost)
+- New fuel pump (50% off) - prepurchased by owner Josh (no cost to Work Work)
 - Plumber's tape - pending tomorrow
 
 ---
