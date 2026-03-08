@@ -1,302 +1,174 @@
 # WORK WORK - Job Tracking System
 
-Secretary: Sloth_rog 🦥
+**Secretary:** Sloth_rog 🦥
+**Updated:** 2026-03-08 12:30
 
 ---
 
-## Quick Commands
+## Quick Commands (Just Tell Me)
 
-| You say | I do |
+| You Say | I Do |
 |---------|------|
-| `new job [name]` | Create new job entry |
-| `[job] + [hrs] [task]` | Add labour hours |
-| `[job] bought [item] $[amount]` | Add materials |
-| `photo [job] [type]` | Log photo (you send image, I categorise) |
-| `invoice [job]` | Generate full bill |
+| `new [client] [job]` | Create job |
+| `[job] + [hrs] [task]` | Add your hours |
+| `Luke [job] + [hrs] [task]` | Add Luke's hours |
+| `Luke [job] + [hrs] fuel [task]` | Add Luke's hours + $20 fuel |
+| `receipt [job] [item] $[amt] [Aaron/Luke]` | Log receipt (send photo) |
+| `cash [job] [item] $[amt] [Aaron/Luke]` | Log cash out (no receipt) |
 | `paid [job] $[amount]` | Record payment |
-| `jobs` | List active jobs |
-| `photos [job]` | Show all photos for job |
+| `invoice [job]` | Generate invoice + split |
+| `jobs` | Show all jobs |
+| `owings` | Show who's owed what |
 
 ---
 
-## Photo Types
+## The System
 
-| Type | Purpose |
-|------|---------|
-| `ref` | Reference - how it goes together |
-| `apart` | Disassembly - order of parts |
-| `broken` | Evidence - damaged parts |
-| `done` | Completed work |
-| `receipt` | Proof of purchase |
+### Files
+- `WORK_WORK.md` - This file (jobs + tracking)
+- `WORK_WORK_OVERVIEW.md` - Quick overview + todos
+- `receipts/receipts_db.json` - Receipt database
+- `receipts/[job]/` - Receipt photos by job
+- `photos/[job]/` - Job photos (ref/apart/broken/done)
 
-**Example:**
+### Split Formula
 ```
-[You send photo]
-You: "Dave's boat broken"
-Me: Logged as broken part evidence for Dave's boat
+Invoice Total
+- Materials (from receipts)
+- Cash Out (expenses)
+= Net Profit ÷ 2 each
+
+PLUS: Reimburse whoever paid receipts/cash
 ```
 
----
-
-## Photo Storage
-
-```
-photos/
-├── daves-boat/
-│   ├── ref/
-│   │   └── 2026-03-08_wiring-before.jpg
-│   ├── apart/
-│   │   └── 2026-03-08_panel-removal.jpg
-│   ├── broken/
-│   │   └── 2026-03-08_fried-mosfet.jpg
-│   └── done/
-│       └── 2026-03-08_install-complete.jpg
-├── joshs-boat/
-│   └── ...
-└── barry-barcode/
-    └── ...
-```
+### Rates
+- **Aaron:** $40/hr
+- **Luke:** $40/hr
+- **Fuel:** +$20 (only when you say)
 
 ---
 
 ## Active Jobs
 
-| Job | Status | Labour | Materials | Total | Paid | Owed | Photos |
-|-----|--------|--------|-----------|-------|------|------|--------|
-| Dave's Boat (HHO) | Active | $240 | $385 | $625 | $575 | $50 | 0 |
-| Dave's Alternator | New | TBD | TBD | TBD | $0 | TBD | 0 |
-| Josh's Boat | Ongoing | TBD | TBD | TBD | $0 | TBD | 0 |
-| Barry Barcode | Pending | TBD | TBD | TBD | $0 | TBD | 0 |
-| Barry Allan Samsung | Tomorrow | TBD | TBD | TBD | $0 | TBD | 0 |
-| Merc V8 | New | TBD | TBD | TBD | $0 | TBD | 0 |
+| Job | Client | Status | Total | Paid | Owed |
+|-----|--------|--------|-------|------|------|
+| Dave's Boat (HHO) | Dave | Active | $625 | $575 | **$50** |
+| Dave's Alternator | Dave | New | TBD | $0 | TBD |
+| Merc V8 | Hayden | New | TBD | $0 | TBD |
+| Barry Allan Samsung | Barry Allan | Tomorrow | TBD | $0 | TBD |
+| Josh's Boat | Josh | Ongoing | TBD | $0 | TBD |
+| Barry Barcode | Barry | Pending | TBD | $0 | TBD |
 
-**Total Outstanding: $50+**
+**Total Owed to Work Work: $50+**
 
 ---
 
-## Workers
+## Hours Tracker
 
-**Aaron (Slothitude)** - Primary
-**Luke** - Works together on jobs
+| Date | Job | Who | Hours | Rate | Fuel | Amount |
+|------|-----|-----|-------|------|------|--------|
+| 2026-03-08 | Dave's Boat (HHO) | Aaron | 4 | $40 | — | $160 |
+| 2026-03-08 | Dave's Boat (HHO) | Aaron | 2 | $40 | — | $80 |
 
-### Rates
-- **Aaron:** $40/hr (default)
-- **Luke:** $40/hr minimum
-- **Fuel:** +$20 when specified
-
-### Split Formula
-```
-(Total Invoice - Materials - Cash Out) ÷ 2 = Each person's share
-```
-
-### Receipts Tracker
-
-Send receipt photo with note: `receipt [job] [item] $[amount] [Aaron/Luke]`
-
-| Job | Date | Item | Amount | Paid By | Photo |
-|-----|------|------|--------|---------|-------|
-| — | — | — | — | — | — |
-
-**Aaron's Receipts Total:** $0
-**Luke's Receipts Total:** $0
-
-**Receipt Photos:** `photos/[job]/receipts/`
-
-### Expenses Tracker (Cash Out)
-
-| Job | Date | Item | Amount | Paid By | Receipt Photo |
-|-----|------|------|--------|---------|----------------|
-| — | — | — | — | — | — |
-
-**Aaron's Cash Paid:** $0
-**Luke's Cash Paid:** $0
-
-### Receipts (Photos + Notes)
-
-Send receipt photo with note: `receipt [job] [item] $[amount] [who]`
-
-| Job | Date | Item | Amount | Paid By | Photo |
-|-----|------|------|--------|---------|-------|
-| — | — | — | — | — | — |
-
-**Photos saved in:** `photos/[job]/receipts/`
-
-### Owings (After Invoice Paid)
-- Owed to Aaron: $0
-- Owed to Luke: $0
-
-### Hours Tracker
-
-| Job | Date | Who | Hours | Rate | Fuel | Amount |
-|-----|------|-----|-------|------|------|--------|
-| — | — | — | — | — | — | — |
-
-**Aaron's Total:** $0
+**Aaron's Total:** $240
 **Luke's Total:** $0
+
+---
+
+## Receipts Tracker
+
+| Date | Job | Item | Amount | Paid By | Photo |
+|------|-----|------|--------|---------|-------|
+| 2026-03-08 | Dave's Boat | Materials | $385 | Aaron | (logged) |
+
+**Aaron's Receipts:** $385
+**Luke's Receipts:** $0
+
+---
+
+## Cash Out (No Receipt)
+
+| Date | Job | Item | Amount | Paid By |
+|------|-----|------|--------|---------|
+| — | — | — | — | — |
+
+**Aaron's Cash:** $0
+**Luke's Cash:** $0
+
+---
+
+## Owings (After Invoice Paid)
+
+| Person | Receipts Owed | Cash Owed | Profit Share | TOTAL OWED |
+|--------|---------------|-----------|--------------|------------|
+| Aaron | $0 | $0 | $0 | **$0** |
+| Luke | $0 | $0 | $0 | **$0** |
 
 ---
 
 ## Job Details
 
 ### Dave's Boat (HHO)
+**Client:** Dave
+**Status:** Active - $50 owed
 
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| 2026-03-08 | Install bilge | 4 | $40 | $160 |
-| 2026-03-08 | Install PWM | 2 | $40 | $80 |
-| | **Total** | **6** | | **$240** |
+**Work Done:**
+- 4 hrs install bilge @ $40 = $160
+- 2 hrs install PWM @ $40 = $80
+- Materials: $385 (cigarettes, shunts, misc, PWM's)
 
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| 2026-03-08 | Cigarettes + other | $130 |
-| 2026-03-08 | Shunts | $95 |
-| 2026-03-08 | Misc | $20 |
-| 2026-03-08 | PWM's | $140 |
-| | **Total** | **$385** |
-
-**Photos:**
-| Date | Type | Description | File |
-|------|------|-------------|------|
-| — | — | — | — |
-
-**Summary:**
+**Totals:**
 - Labour: $240
 - Materials: $385
-- **Total: $625**
+- **Invoice: $625**
 - **Paid: $575**
 - **Owed: $50**
 
 ---
 
-### Josh's Boat
-
-**Status:** Ongoing (generator + electrical)
-
-**Labour:** TBD
-**Materials:** TBD
-**Photos:** None yet
-
----
-
-### Barry Barcode
-
-**Status:** Software built, install pending
-
-**Labour:** TBD
-**Materials:** TBD
-**Photos:** None yet
-
-**Receipts:**
-| Date | Item | Amount | Paid By | Photo |
-|------|------|--------|---------|-------|
-| — | — | — | — | — |
-
-**Receipt Total:** $0 (Aaron: $0, Luke: $0)
-
----
-
 ### Dave's Alternator
-
 **Client:** Dave
-**Status:** New - Fault find alternator
-**Type:** Capacitor-driven (NOT AVR)
-**Symptoms:**
-- Voltage dropped from 238VAC 51Hz → 180V
-- Capacitors tested good
-- Needs diagnosis: repair or replace
+**Status:** New - Fault find
 
-**Notes:**
-- Capacitor-driven system (capacitive excitation)
-- Caps are good, so issue likely elsewhere
-- Check: main winding, auxiliary winding, rotor
+**Details:**
+- Capacitor-driven generator (NOT AVR)
+- Voltage drop: 238VAC 51Hz → 180V
+- Capacitors tested GOOD
+- Check: windings, rotor, connections
 
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| — | — | — | — | — |
-
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| — | — | — |
-
-**Photos:** None yet
-
-**Receipts:**
-| Date | Item | Amount | Paid By | Photo |
-|------|------|--------|---------|-------|
-| — | — | — | — | — |
-
-**Receipt Total:** $0 (Aaron: $0, Luke: $0)
-
----
-
-### Josh's Boat
-
-**Client:** Dave
-**Status:** New - Fault find alternator
-**Type:** Capacitor-driven (NOT AVR)
-**Symptoms:**
-- Voltage dropped from 238VAC 51Hz → 180V
-- Capacitors tested good
-- Needs diagnosis: repair or replace
-
-**Notes:**
-- Capacitor-driven system (capacitive excitation)
-- Caps are good, so issue likely elsewhere
-- Check: main winding, auxiliary winding, rotor
-
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| — | — | — | — | — |
-
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| — | — | — |
-
-**Photos:** None yet
+**Work:** None yet
 
 ---
 
 ### Merc V8
-
 **Client:** Hayden
-**Status:** New - V8 out of boat
+**Status:** New - Pull V8 from boat
 
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| — | — | — | — | — |
-
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| — | — | — |
-
-**Photos:** None yet
+**Work:** None yet
 
 ---
 
-### Barry Allan Samsung Cord
-
-**Client:** Barry Allan (nursery owner)
+### Barry Allan Samsung
+**Client:** Barry Allan (nursery)
 **Status:** Samsung One Cord arriving tomorrow
 
-**Labour:**
-| Date | Task | Hours | Rate | Amount |
-|------|------|-------|------|--------|
-| — | — | — | — | — |
+**Work:** None yet
 
-**Materials:**
-| Date | Item | Amount |
-|------|------|--------|
-| — | — | — | — |
+---
 
-**Photos:** None yet
+### Josh's Boat
+**Client:** Josh
+**Status:** Ongoing - generator + electrical
+
+**Work:** None yet (TBD)
+
+---
+
+### Barry Barcode
+**Client:** Barry
+**Status:** Software built, install pending
+
+**Work:** None yet (TBD)
 
 ---
 
@@ -304,12 +176,10 @@ Send receipt photo with note: `receipt [job] [item] $[amount] [who]`
 
 | Date | Job | Amount | Method |
 |------|-----|--------|--------|
-| 2026-03-08 | Dave's Boat (HHO) | $250 | Cash |
-| 2026-03-08 | Dave's Boat (HHO) | $325 | Cash |
-| | **Dave's Total** | **$575** | |
+| 2026-03-08 | Dave's Boat | $250 | Cash |
+| 2026-03-08 | Dave's Boat | $325 | Cash |
 
 ---
 
-**Default Rate: $40/hr**
-
-_Last updated: 2026-03-08 11:44_
+_Default Rate: $40/hr_
+_Last updated: 2026-03-08 12:30_
