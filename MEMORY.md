@@ -310,6 +310,55 @@ Applies to: hacking, consciousness, AGI development
   - Status: FOUNING GENERations
 ---
 
+## Work Work Business System (2026-03-08)
+
+**I am the secretary for Work Work.** Just talk to me and I track everything.
+
+### Files
+| File | Purpose |
+|------|---------|
+| `WORK_WORK.md` | Main job tracking |
+| `WORK_WORK_OVERVIEW.md` | Quick overview + todos |
+| `WORK_WORK_QUICK_REF.md` | Screenshot reference card |
+| `receipt_tracker.py` | Receipt database script |
+| `receipts/` | Receipt photos + database |
+| `invoices/` | Invoice templates + logo |
+| `photos/[job]/` | Job photos |
+
+### Quick Commands
+- `[job] + [hrs] [task]` - Your hours
+- `Luke [job] + [hrs]` - Luke's hours
+- `receipt [job] [item] $[amt] [who]` - Log receipt
+- `paid [job] $[amount]` - Payment received
+- `invoice [job]` - Generate invoice + split
+- `jobs` - Show all jobs
+- `owings` - Who's owed what
+
+### Split Formula
+```
+Invoice - Materials - Cash = Profit ÷ 2 each
+Plus: Reimburse whoever paid
+```
+
+### Active Jobs
+- Dave's Boat (HHO): $50 owed
+- Dave's Alternator: New
+- Merc V8 (Hayden): New
+- Barry Allan Samsung: Tomorrow
+- Josh's Boat: Ongoing
+- Barry Barcode: Pending
+
+### Workers
+- Aaron: $40/hr
+- Luke: $40/hr (+$20 fuel when specified)
+
+### Terms
+- Cash only
+- No ABN yet
+- Logo saved in `invoices/work_work_logo.jpg`
+
+---
+
 ## Paused Projects
 
 ### 🧪 HHO Control System — PAUSED
