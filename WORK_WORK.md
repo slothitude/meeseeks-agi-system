@@ -162,15 +162,23 @@ PLUS: Reimburse whoever paid receipts/cash
 **Client:** Josh
 **Status:** Active - generator + electrical
 
-**Work In Progress:**
+**Work Done:**
 - **Started:** 2026-03-08 @ 2:00 PM
 - **Finished:** 2026-03-08 @ 5:00 PM
 - **Duration:** 3 hours
+- **Task:** Generator work
+  - Installed new fuel pump (50% off)
+  - Got generator started
+  - Stopped due to low/loss of coolant (needs investigation)
 
 **Hours Logged:**
 - **Aaron:** 3 hrs @ $40 = $120
 - **Luke:** 3 hrs @ $40 = $120
 - **Labour Total:** $240
+
+**Materials:**
+- New fuel pump (50% off) - (need cost)
+- Plumber's tape - pending tomorrow
 
 ---
 
