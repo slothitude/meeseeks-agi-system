@@ -91,9 +91,16 @@ photos/
 
 ### Expenses Tracker (Cash Out)
 
-| Job | Date | Item | Amount | Who Paid |
-|-----|------|------|--------|----------|
-| — | — | — | — | — |
+| Job | Date | Item | Amount | Paid By |
+|-----|------|------|--------|---------|
+| — | — | — | — | Aaron/Luke |
+
+**Aaron's Cash Paid:** $0
+**Luke's Cash Paid:** $0
+
+### Owings (After Invoice Paid)
+- Owed to Aaron: $0
+- Owed to Luke: $0
 
 ### Hours Tracker
 
