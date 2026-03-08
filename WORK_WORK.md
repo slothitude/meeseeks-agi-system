@@ -72,6 +72,26 @@ photos/
 
 ---
 
+## Workers
+
+**Aaron** - Primary
+**Luke** - Works together on jobs
+
+### Luke's Rate
+- Minimum: $40/hr
+- Fuel: +$20 if close/local
+- Split: (Total - Expenses) ÷ 2
+
+### Luke's Hours Tracker
+
+| Job | Date | Hours | Rate | Fuel | Total |
+|-----|------|-------|------|------|-------|
+| — | — | — | — | — | — |
+
+**Luke's Total Earned:** $0
+
+---
+
 ## Job Details
 
 ### Dave's Boat (HHO)
