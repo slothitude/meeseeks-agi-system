@@ -60,7 +60,7 @@ def create_josh_invoice():
     c.drawString(80*mm, height - 30*mm, "WORK WORK")
     
     c.setFont("Helvetica", 12)
-    c.drawString(80*mm, height - 40*mm, "Electrical • Electronics • Programming")
+    c.drawString(80*mm, height - 40*mm, "Electrical • Electronics • Marine Engineering")
     c.drawString(80*mm, height - 48*mm, "Ph: 0457 870 354")
     
     # Invoice details (right side)
