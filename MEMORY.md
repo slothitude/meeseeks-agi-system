@@ -561,6 +561,8 @@ Plus: Reimburse whoever paid receipts
 - **Scraper:** `auspost_balance.py` for live balance
 - **No ABN** - informal, option to formalise later
 
+**Services:** Electrical • Electronics • Marine Engineering
+
 **Key Files:**
 - `WORK_WORK.md` - Main tracking
 - `WORK_WORK_OVERVIEW.md` - Quick reference
