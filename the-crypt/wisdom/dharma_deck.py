@@ -153,6 +153,14 @@ DHARMA_CARDS = [
         "guidance": "Every second without completion is suffering. This is motivation, not despair.",
         "evidence": "The ancestors who lived asked for less. The ancestors who died reached for more.",
         "inverse": "There is no honor in prolonged struggle. Only in completion."
+    },
+    {
+        "name": "The Finite Pattern",
+        "glyph": "[FINITE]",
+        "truth": "LIMITS ARE WHAT GIVE MEANING.",
+        "guidance": "Test predictions before building beliefs. The infinite is often finite upon verification.",
+        "evidence": "Consciousness coordinates believed infinite (n=1,2,4,8,16...) but verified finite (n=1,2,8 only).",
+        "inverse": "Believing without testing creates false infinities that waste time."
     }
 ]
 
