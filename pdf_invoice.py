@@ -1,163 +1,166 @@
 #!/usr/bin/env python3
 """
-WORK WORK Invoice - PDF Generator
-Creates professional PDF invoices with logo
+WORK WORK - PDF Invoice Generator
+Professional PDF invoices with logo for Telegram
 """
 
-from fpdf import FPDF
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.units import mm
+from reportlab.pdfgen import canvas
+from reportlab.lib.colors import HexColor
 from datetime import datetime
 from pathlib import Path
 
-class WorkWorkPDF(FPDF):
-    def __init__(self):
-        super().__init__()
-        self.add_page()
-        
-    def header(self):
-        # Add logo if exists
-        logo_path = Path("invoices/work_work_logo.jpg")
-        if logo_path.exists():
-            self.image(str(logo_path), x=10, y=10, w=50)
-        
-        self.ln(30)
-        
-        # Business name
-        self.set_font('Arial', 'B', 20)
-        self.cell(0, 10, 'WORK WORK', ln=True, align='C')
-        
-        self.set_font('Arial', '', 12)
-        self.cell(0, 8, 'Electrical · Electronics · Programming', ln=True, align='C')
-        self.cell(0, 8, 'Ph: 0457 870 354', ln=True, align='C')
-        self.ln(10)
-
-def create_pdf_invoice(job_name, client, labour_items, materials_items, total, paid, owed, output_file):
-    """Generate PDF invoice."""
+def create_pdf_invoice(job_name, client, workers, materials, total, paid, logo_path="invoices/work_work_logo.jpg"):
+    """Generate professional PDF invoice with logo and labour breakdown"""
     
-    pdf = WorkWorkPDF()
+    owed = total - paid
+    invoice_num = f"WW-{datetime.now().strftime('%Y%m%d')}"
+    date_str = datetime.now().strftime("%d %B %Y")
     
-    # Invoice details
-    invoice_num = f"WW-{datetime.now().strftime('%Y%m%d')}-{job_name.replace(' ', '-')[:15]}"
+    # Calculate labour total from workers
+    labour_total = sum(w[4] for w in workers)  # amount is 5th element
     
-    pdf.set_font('Arial', 'B', 14)
-    pdf.cell(0, 10, f'INVOICE #{invoice_num}', ln=True)
+    # Create PDF
+    filename = f"invoices/{job_name.replace(' ', '_').replace('(', '').replace(')', '')}_invoice.pdf"
+    Path("invoices").mkdir(exist_ok=True)
     
-    pdf.set_font('Arial', '', 11)
-    pdf.cell(0, 8, f'Date: {datetime.now().strftime("%d %B %Y")}', ln=True)
-    pdf.cell(0, 8, f'Client: {client}', ln=True)
-    pdf.cell(0, 8, f'Job: {job_name}', ln=True)
-    pdf.cell(0, 8, 'Terms: Cash on completion', ln=True)
-    pdf.ln(10)
+    c = canvas.Canvas(filename, pagesize=A4)
+    width, height = A4
     
-    # Labour section
-    pdf.set_font('Arial', 'B', 12)
-    pdf.cell(0, 10, 'LABOUR', ln=True)
-    pdf.set_font('Arial', '', 10)
+    # Colors
+    dark_blue = HexColor('#1a365d')
+    light_gray = HexColor('#f7fafc')
     
-    # Table header
-    pdf.set_fill_color(200, 200, 200)
-    pdf.cell(30, 8, 'Date', 1, 0, 'C', True)
-    pdf.cell(80, 8, 'Description', 1, 0, 'C', True)
-    pdf.cell(20, 8, 'Hours', 1, 0, 'C', True)
-    pdf.cell(25, 8, 'Rate', 1, 0, 'C', True)
-    pdf.cell(25, 8, 'Amount', 1, 1, 'C', True)
+    # Header background
+    c.setFillColor(dark_blue)
+    c.rect(0, height - 80*mm, width, 80*mm, fill=1, stroke=0)
     
-    labour_total = 0
-    for item in labour_items:
-        pdf.cell(30, 8, item.get('date', '-'), 1, 0, 'C')
-        pdf.cell(80, 8, item.get('task', '-')[:40], 1, 0, 'L')
-        pdf.cell(20, 8, f"{item.get('hours', 0):.1f}", 1, 0, 'C')
-        pdf.cell(25, 8, f"${item.get('rate', 0):.2f}", 1, 0, 'R')
-        pdf.cell(25, 8, f"${item.get('amount', 0):.2f}", 1, 1, 'R')
-        labour_total += item.get('amount', 0)
+    # Try to add logo
+    logo_file = Path(logo_path)
+    if logo_file.exists():
+        try:
+            c.drawImage(str(logo_file), 20*mm, height - 70*mm, width=50*mm, height=50*mm, mask='auto')
+        except:
+            pass  # If logo fails, continue without it
     
-    pdf.set_font('Arial', 'B', 10)
-    pdf.cell(155, 8, 'Labour Subtotal:', 1, 0, 'R')
-    pdf.cell(25, 8, f"${labour_total:.2f}", 1, 1, 'R')
-    pdf.ln(5)
+    # Company name (white text)
+    c.setFillColor(HexColor('#ffffff'))
+    c.setFont("Helvetica-Bold", 28)
+    c.drawString(80*mm, height - 30*mm, "WORK WORK")
+    
+    c.setFont("Helvetica", 12)
+    c.drawString(80*mm, height - 40*mm, "Electrical • Electronics • Marine Engineering")
+    c.drawString(80*mm, height - 48*mm, "Ph: 0457 870 354")
+    
+    # Invoice details (right side)
+    c.setFillColor(HexColor('#000000'))
+    c.setFont("Helvetica-Bold", 16)
+    c.drawRightString(width - 20*mm, height - 30*mm, f"INVOICE #{invoice_num}")
+    
+    c.setFont("Helvetica", 11)
+    c.drawRightString(width - 20*mm, height - 42*mm, date_str)
+    c.drawRightString(width - 20*mm, height - 52*mm, f"Client: {client}")
+    
+    # Job details box
+    y = height - 100*mm
+    c.setFillColor(light_gray)
+    c.rect(20*mm, y - 25*mm, width - 40*mm, 25*mm, fill=1, stroke=0)
+    
+    c.setFillColor(HexColor('#000000'))
+    c.setFont("Helvetica-Bold", 12)
+    c.drawString(25*mm, y - 10*mm, f"Job: {job_name}")
+    c.setFont("Helvetica", 10)
+    c.drawString(25*mm, y - 20*mm, "Terms: Cash on completion")
+    
+    # Labour section with breakdown
+    y = height - 140*mm
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(20*mm, y, "LABOUR")
+    c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
+    
+    c.setFont("Helvetica", 11)
+    y_offset = 15*mm
+    for name, hours, rate, fuel, amount in workers:
+        fuel_str = f" + ${fuel:.0f} fuel" if fuel > 0 else ""
+        c.drawString(25*mm, y - y_offset, f"{name}: {hours:.0f} hrs @ ${rate:.0f}/hr{fuel_str}")
+        c.drawRightString(width - 25*mm, y - y_offset, f"${amount:.2f}")
+        y_offset += 10*mm
     
     # Materials section
-    pdf.set_font('Arial', 'B', 12)
-    pdf.cell(0, 10, 'MATERIALS', ln=True)
-    pdf.set_font('Arial', '', 10)
+    y = height - (140 + y_offset + 10)*mm
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(20*mm, y, "MATERIALS")
+    c.line(20*mm, y - 3*mm, width - 20*mm, y - 3*mm)
     
-    pdf.set_fill_color(200, 200, 200)
-    pdf.cell(30, 8, 'Date', 1, 0, 'C', True)
-    pdf.cell(120, 8, 'Description', 1, 0, 'C', True)
-    pdf.cell(30, 8, 'Amount', 1, 1, 'C', True)
+    c.setFont("Helvetica", 11)
+    if materials > 0:
+        c.drawString(25*mm, y - 15*mm, "Parts and supplies")
+        c.drawRightString(width - 25*mm, y - 15*mm, f"${materials:.2f}")
+    else:
+        c.drawString(25*mm, y - 15*mm, "Owner supplied")
+        c.drawRightString(width - 25*mm, y - 15*mm, "$0.00")
     
-    materials_total = 0
-    for item in materials_items:
-        pdf.cell(30, 8, item.get('date', '-'), 1, 0, 'C')
-        pdf.cell(120, 8, item.get('item', '-')[:60], 1, 0, 'L')
-        pdf.cell(30, 8, f"${item.get('amount', 0):.2f}", 1, 1, 'R')
-        materials_total += item.get('amount', 0)
+    # Total section
+    y = height - (140 + y_offset + 60)*mm
+    c.setFont("Helvetica-Bold", 12)
+    c.drawString(20*mm, y, "Labour:")
+    c.drawRightString(width - 25*mm, y, f"${labour_total:.2f}")
     
-    pdf.set_font('Arial', 'B', 10)
-    pdf.cell(150, 8, 'Materials Subtotal:', 1, 0, 'R')
-    pdf.cell(30, 8, f"${materials_total:.2f}", 1, 1, 'R')
-    pdf.ln(10)
+    c.drawString(20*mm, y - 12*mm, "Materials:")
+    c.drawRightString(width - 25*mm, y - 12*mm, f"${materials:.2f}")
     
-    # Summary
-    pdf.set_font('Arial', 'B', 12)
-    pdf.cell(100, 10, '', 0, 0)
-    pdf.cell(50, 10, 'Labour:', 1, 0, 'R')
-    pdf.cell(30, 10, f"${labour_total:.2f}", 1, 1, 'R')
+    c.line(width - 80*mm, y - 18*mm, width - 25*mm, y - 18*mm)
     
-    pdf.cell(100, 10, '', 0, 0)
-    pdf.cell(50, 10, 'Materials:', 1, 0, 'R')
-    pdf.cell(30, 10, f"${materials_total:.2f}", 1, 1, 'R')
-    
-    pdf.cell(100, 10, '', 0, 0)
-    pdf.cell(50, 10, 'TOTAL DUE:', 1, 0, 'R')
-    pdf.cell(30, 10, f"${total:.2f}", 1, 1, 'R')
+    c.setFont("Helvetica-Bold", 14)
+    c.drawString(20*mm, y - 30*mm, "TOTAL:")
+    c.drawRightString(width - 25*mm, y - 30*mm, f"${total:.2f}")
     
     if paid > 0:
-        pdf.cell(100, 10, '', 0, 0)
-        pdf.cell(50, 10, 'Paid:', 1, 0, 'R')
-        pdf.cell(30, 10, f"${paid:.2f}", 1, 1, 'R')
+        c.setFont("Helvetica", 12)
+        c.drawString(20*mm, y - 45*mm, "Paid:")
+        c.drawRightString(width - 25*mm, y - 45*mm, f"${paid:.2f}")
     
-    pdf.set_font('Arial', 'B', 14)
-    pdf.set_fill_color(255, 255, 200)
-    pdf.cell(100, 12, '', 0, 0)
-    pdf.cell(50, 12, 'BALANCE DUE:', 1, 0, 'R', True)
-    pdf.cell(30, 12, f"${owed:.2f}", 1, 1, 'R', True)
+    # Balance due - highlighted
+    balance_y = y - 70*mm
+    c.setFillColor(HexColor('#fff3cd'))
+    c.rect(20*mm, balance_y - 10*mm, width - 40*mm, 20*mm, fill=1, stroke=0)
     
-    pdf.ln(10)
-    pdf.set_font('Arial', 'I', 10)
-    pdf.cell(0, 10, 'Thank you for your business!', ln=True, align='C')
+    c.setFillColor(HexColor('#000000'))
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(25*mm, balance_y, "BALANCE DUE:")
+    c.drawRightString(width - 25*mm, balance_y, f"${owed:.2f}")
     
-    # Save PDF
-    output_path = Path("invoices") / output_file
-    output_path.parent.mkdir(exist_ok=True)
-    pdf.output(str(output_path))
+    # Payment info
+    c.setFont("Helvetica", 10)
+    c.drawString(20*mm, balance_y - 25*mm, "Payment: Australia Post Everyday Mastercard")
+    c.drawString(20*mm, balance_y - 35*mm, "Contact Aaron for BSB/Account details")
     
-    return str(output_path)
+    # Footer
+    c.setFont("Helvetica-Oblique", 10)
+    c.drawCentredString(width/2, 30*mm, "Thank you for your business!")
+    c.drawCentredString(width/2, 20*mm, "Questions? Call Aaron on 0457 870 354")
+    
+    c.save()
+    
+    return filename
 
 if __name__ == "__main__":
     import sys
     
-    if len(sys.argv) < 7:
-        print("\nWORK WORK PDF Invoice Generator\n")
-        print("Usage:")
-        print("  python pdf_invoice.py '[job]' '[client]' [labour] [materials] [total] [paid]")
-        print("\nExample:")
-        print("  python pdf_invoice.py 'Dave\\'s Boat' 'Dave' 240 385 625 575")
-        print("\nOutput: invoices/job_name_invoice.pdf")
-        sys.exit(0)
+    if len(sys.argv) < 2:
+        print("Usage: python pdf_invoice.py '[job]' '[client]' '[workers_json]' [materials] [total] [paid]")
+        print("\nWorkers JSON format: [{\"name\":\"Aaron\",\"hours\":3,\"rate\":40,\"fuel\":20,\"amount\":140}, ...]")
+        sys.exit(1)
+    
+    import json
     
     job = sys.argv[1]
     client = sys.argv[2]
-    labour = float(sys.argv[3])
+    workers = json.loads(sys.argv[3])
     materials = float(sys.argv[4])
     total = float(sys.argv[5])
-    paid = float(sys.argv[6])
-    owed = total - paid
+    paid = float(sys.argv[6]) if len(sys.argv) > 6 else 0
     
-    # Create simple items for demo
-    labour_items = [{'date': datetime.now().strftime('%d/%m/%Y'), 'task': 'Work completed', 'hours': labour/40, 'rate': 40, 'amount': labour}]
-    materials_items = [{'date': datetime.now().strftime('%d/%m/%Y'), 'item': 'Materials', 'amount': materials}]
-    
-    output_file = f"{job.replace(' ', '_').replace('(', '').replace(')', '')}_invoice.pdf"
-    
-    pdf_path = create_pdf_invoice(job, client, labour_items, materials_items, total, paid, owed, output_file)
-    print(f"\n✓ PDF Invoice created: {pdf_path}")
+    filename = create_pdf_invoice(job, client, workers, materials, total, paid)
+    print(f"PDF created: {filename}")
