@@ -19,12 +19,12 @@ def create_josh_invoice():
     invoice_num = f"WW-{datetime.now().strftime('%Y%m%d')}"
     date_str = datetime.now().strftime("%d %B %Y")
     
-    # Labour breakdown
-    workers = [
-        ("Aaron", 3, 40, 20, 140),  # name, hours, rate, fuel, total
-        ("Luke", 3, 40, 0, 120)
+    # Labour breakdown (generic, no names)
+    labour_items = [
+        ("Two technicians @ $40/hr x 3 hours", 240),
+        ("Fuel allowance", 20)
     ]
-    labour_total = sum(w[4] for w in workers)
+    labour_total = 260
     materials = 0
     total = labour_total + materials
     paid = 0
@@ -56,12 +56,12 @@ def create_josh_invoice():
     
     # Company name (white text)
     c.setFillColor(HexColor('#ffffff'))
-    c.setFont("Helvetica-Bold", 28)
-    c.drawString(80*mm, height - 30*mm, "WORK WORK")
+    c.setFont("Helvetica-Bold", 32)
+    c.drawString(80*mm, height - 32*mm, "OVERLAP")
     
     c.setFont("Helvetica", 12)
-    c.drawString(80*mm, height - 40*mm, "Electrical • Electronics • Marine Engineering")
-    c.drawString(80*mm, height - 48*mm, "Ph: 0457 870 354")
+    c.drawString(80*mm, height - 42*mm, "Electrical • Electronics • Marine Engineering")
+    c.drawString(80*mm, height - 50*mm, "Ph: 0457 870 354")
     
     # Invoice details (right side)
     c.setFillColor(HexColor('#000000'))
@@ -91,9 +91,8 @@ def create_josh_invoice():
     
     c.setFont("Helvetica", 11)
     y_offset = 15*mm
-    for name, hours, rate, fuel, amount in workers:
-        fuel_str = f" + ${fuel:.0f} fuel" if fuel > 0 else ""
-        c.drawString(25*mm, y - y_offset, f"{name}: {hours:.0f} hrs @ ${rate:.0f}/hr{fuel_str}")
+    for description, amount in labour_items:
+        c.drawString(25*mm, y - y_offset, description)
         c.drawRightString(width - 25*mm, y - y_offset, f"${amount:.2f}")
         y_offset += 10*mm
     
