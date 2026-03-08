@@ -554,6 +554,13 @@ Invoice - Materials - Cash = Profit ÷ 2 each
 Plus: Reimburse whoever paid receipts
 ```
 
+**Payment Method:**
+- **Card:** Australia Post Everyday Mastercard (prepaid)
+- **BSB/Account:** Can receive direct transfers from clients
+- **Cash Access:** ATM ($3.50 fee) or Post Office Bank@Post
+- **Scraper:** `auspost_balance.py` for live balance
+- **No ABN** - informal, option to formalise later
+
 **Key Files:**
 - `WORK_WORK.md` - Main tracking
 - `WORK_WORK_OVERVIEW.md` - Quick reference

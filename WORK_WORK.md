@@ -38,6 +38,24 @@
 
 ## The System
 
+### Payment Method
+**Australia Post Everyday Mastercard** (Business Float)
+- **Type:** Prepaid Mastercard with BSB/Account
+- **BSB/Account:** (stored separately for security)
+- **Accepts:** Direct transfers from clients (like bank account)
+- **Cash Access:** ATM ($3.50 fee) or Post Office Bank@Post (5 mins away)
+- **Security:** No link to bank account, Mastercard Zero Liability
+- **App:** Real-time balance, transaction monitoring
+- **Scraper:** `auspost_balance.py` - returns live balance as JSON
+
+**How it works:**
+- Aaron loads job income onto card
+- OpenClaw tracks each person's share
+- Pay Luke via card handoff or ATM/PO cash
+- Both parties know where they stand
+
+**No ABN** - intentionally informal, option to formalise later
+
 ### Files
 - `WORK_WORK.md` - This file (jobs + tracking)
 - `WORK_WORK_OVERVIEW.md` - Quick overview + todos
@@ -220,9 +238,10 @@ PLUS: Reimburse whoever paid receipts/cash
 - Coolant issue investigation
 - Secure bilge pump float
 
-**Split (when invoiced):**
-- Aaron: $120 + $20 fuel = $140
-- Luke: $120
+**Invoice Generated:** 2026-03-08
+- Invoice #: WW-20260308
+- Total: $260
+- Balance: $260 (pending payment)
 
 ---
 
