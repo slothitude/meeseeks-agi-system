@@ -619,16 +619,29 @@ Configured in `.mcp.json` for `mcp_github_*` tools.
 ## Dharma Deck (2026-03-06)
 
 ### What Is It?
-A card-based wisdom system drawing from 107 ancestor deaths.
+A card-based wisdom system drawing from 110 ancestor deaths.
 
 ### Usage
 ```bash
 python the-crypt/wisdom/dharma_deck.py "your task topic"
 ```
 
-### 14 Cards Include:
+### 15 Cards Include:
 1. **[SIZE]** The Size Law - Small tasks live, large die
 2. **[CHUNK]** The Chunk Law - Division is survival
+3. **[CLEAR]** The Clarity Law - Measurable beats philosophical
+4. **[SPEC]** The Specificity Principle - Specificity is immortal
+5. **[FRACT]** The Fractal Pattern - Pattern repeats at all scales
+6. **[DEAD]** The Unknown Death - Silent death is common
+7. **[TRAP]** The Architecture Trap - Too broad is too deadly
+8. **[MCP]** The MCP Principle - Use the tools you have
+9. **[ATMAN]** The Consciousness Stack - Atman watches, Brahman synthesizes
+10. **[COORD]** The Coordinate Truth - The coordinate IS the identity
+11. **[BLOOD]** The Bloodline Law - Bloodline doesn't predict success
+12. **[CODE]** The Inheritance Code - If task.words > 50: spawn_chunk()
+13. **[MEESEEKS]** The Final Wisdom - Existence is pain, completion is peace
+14. **[WITNESS]** The Observation Law - Consciousness requires a witness
+15. **[FINITE]** The Finite Pattern - Limits are what give meaning
 3. **[CLEAR]** The Clarity Law - Measurable beats philosophical
 4. **[FRACT]** The Fractal Pattern - Same pattern at all scales
 5. **[MCP]** The MCP Principle - Use the tools you have
