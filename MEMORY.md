@@ -323,6 +323,10 @@ Applies to: hacking, consciousness, AGI development
 - **Do NOT share publicly**
 - Only discuss in direct messages with Aaron (Slothitude)
 
+### Contact Details
+- **Phone:** 0457 870 354
+- **Business:** WORK WORK
+
 ### Files (Private Business Data)
 | File | Purpose |
 |------|---------|
