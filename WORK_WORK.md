@@ -1,7 +1,7 @@
 # WORK WORK - Job Tracking System
 
 **Secretary:** Sloth_rog 🦥
-**Updated:** 2026-03-08 12:30
+**Updated:** 2026-03-08 15:53
 
 ---
 
@@ -56,7 +56,7 @@ PLUS: Reimburse whoever paid receipts/cash
 | Dave's Alternator | Dave | New | TBD | $0 | TBD |
 | Merc V8 | Hayden | New | TBD | $0 | TBD |
 | Barry Allan Samsung | Barry Allan | Tomorrow | TBD | $0 | TBD |
-| Josh's Boat | Josh | Ongoing | TBD | $0 | TBD |
+| Josh's Boat | Josh | **Active** | TBD | $0 | TBD |
 | Barry Barcode | Barry | Pending | TBD | $0 | TBD |
 
 **Total Owed to Work Work: $50+**
@@ -158,9 +158,15 @@ PLUS: Reimburse whoever paid receipts/cash
 
 ### Josh's Boat
 **Client:** Josh
-**Status:** Ongoing - generator + electrical
+**Status:** Active - generator + electrical
 
-**Work:** None yet (TBD)
+**Work In Progress:**
+- **Started:** 2026-03-08 @ 2:00 PM
+- **Aaron:** On site
+- **Luke:** On site
+- **Task:** (awaiting details)
+
+**Hours:** (pending finish time)
 
 ---
 
