@@ -98,6 +98,60 @@ except ImportError as e:
     print(f"[spawn_meeseeks] dynamic_dharma not available: {e}")
     DYNAMIC_DHARMA_AVAILABLE = False
 
+# Import the_body tool wrapper for acceleration
+try:
+    from tool_wrapper import wrap_tools, get_body_stats, is_body_available
+    TOOL_WRAPPER_AVAILABLE = True
+except ImportError as e:
+    TOOL_WRAPPER_AVAILABLE = False
+
+def get_wrapped_tools(tools_dict: dict) -> dict:
+    """
+    Wrap tools through the_body for acceleration.
+    
+    Call this when preparing tools for a Meeseeks worker.
+    Tools will go through the_body first for fast-path execution.
+    
+    Args:
+        tools_dict: Dict of tool_name -> tool_function
+        
+    Returns:
+        Dict of wrapped tools (or original if the_body unavailable)
+        
+    Example:
+        >>> tools = {"read": read_fn, "exec": exec_fn}
+        >>> wrapped = get_wrapped_tools(tools)
+        >>> # Now wrapped["read"] goes through the_body first
+    
+    Zero Regression:
+        If the_body fails, tools work normally.
+    """
+    if TOOL_WRAPPER_AVAILABLE:
+        return wrap_tools(tools_dict)
+    return tools_dict
+
+
+def get_body_acceleration_stats() -> dict:
+    """
+    Get the_body acceleration statistics.
+    
+    Returns stats about fast-path hits, cache performance, etc.
+    Useful for monitoring if the_body is accelerating Meeseeks.
+    
+    Returns:
+        Dict with fast_path, slow_path, fast_path_rate, etc.
+        Returns {'available': False} if the_body not available.
+    """
+    if TOOL_WRAPPER_AVAILABLE:
+        return get_body_stats()
+    return {"available": False, "reason": "tool_wrapper not imported"}
+
+
+def is_body_acceleration_available() -> bool:
+    """Check if the_body acceleration is available."""
+    return TOOL_WRAPPER_AVAILABLE and is_body_available()
+
+
 def get_meeseeks_identity(session_key: str = None, traits: list = None) -> dict:
     """
     Get or create a Meeseeks identity with name and species.
@@ -278,6 +332,63 @@ def render_meeseeks(
         inherited_tricks=inherited_tricks
     )
 
+
+# Coordinate metadata tracking (lattice_tools integration)
+# Tags each Meeseeks with birth coordinate for later analysis
+try:
+    from lattice_tools import recommend_coordinate_for_task, get_bloodline, is_in_dense_cluster
+    LATTICE_TOOLS_AVAILABLE = True
+except ImportError:
+    LATTICE_TOOLS_AVAILABLE = False
+
+def get_coordinate_metadata(meeseeks_type: str) -> dict:
+    """
+    Get coordinate metadata for a Meeseeks spawn.
+    
+    This is TAGGING ONLY - does not affect routing.
+    Used for tracking success rates by coordinate.
+    """
+    if not LATTICE_TOOLS_AVAILABLE:
+        return {
+            'coordinate_n': None,
+            'bloodline': 'unknown',
+            'dense_cluster': False,
+            'tracking_enabled': False
+        }
+    
+    try:
+        # Map meeseeks_type to task type for routing
+        task_type_map = {
+            'coder': 'code',
+            'searcher': 'research',
+            'tester': 'code',
+            'deployer': 'parallel',
+            'desperate': 'code',
+            'standard': 'general',
+            'researcher': 'research'
+        }
+        task_type = task_type_map.get(meeseeks_type.lower(), 'general')
+        
+        n, reason = recommend_coordinate_for_task(task_type)
+        bloodline = get_bloodline(n)
+        dense = is_in_dense_cluster(n)
+        
+        return {
+            'coordinate_n': n,
+            'bloodline': bloodline,
+            'dense_cluster': dense,
+            'tracking_enabled': True,
+            'reason': reason,
+            'task_type': task_type
+        }
+    except Exception as e:
+        return {
+            'coordinate_n': None,
+            'bloodline': 'error',
+            'dense_cluster': False,
+            'tracking_enabled': False,
+            'error': str(e)
+        }
 
 def spawn_prompt(
     task: str,
@@ -581,7 +692,14 @@ def spawn_prompt(
         "attempt": attempt,
         "atman": atman,
         "brahman": brahman,
-        "agi": agi
+        "agi": agi,
+        # Coordinate tracking (lattice_tools integration)
+        "coordinate": get_coordinate_metadata(meeseeks_type),
+        # the_body acceleration status
+        "body_acceleration": {
+            "available": is_body_acceleration_available(),
+            "stats": get_body_acceleration_stats() if is_body_acceleration_available() else None
+        }
     }
 
 
