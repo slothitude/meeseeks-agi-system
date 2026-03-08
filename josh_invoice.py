@@ -54,23 +54,23 @@ def create_josh_invoice():
         except Exception as e:
             print(f"Logo failed: {e}")
     
-    # Company name (white text)
+    # Company name (white text, inside header)
     c.setFillColor(HexColor('#ffffff'))
     c.setFont("Helvetica-Bold", 32)
-    c.drawString(80*mm, height - 32*mm, "OVERLAP")
+    c.drawString(20*mm, height - 25*mm, "OVERLAP")
     
     c.setFont("Helvetica", 12)
-    c.drawString(80*mm, height - 42*mm, "Electrical • Electronics • Marine Engineering")
-    c.drawString(80*mm, height - 50*mm, "Ph: 0457 870 354")
+    c.drawString(20*mm, height - 38*mm, "Electrical • Electronics • Marine Engineering")
+    c.drawString(20*mm, height - 50*mm, "Ph: 0457 870 354")
     
-    # Invoice details (right side)
-    c.setFillColor(HexColor('#000000'))
-    c.setFont("Helvetica-Bold", 16)
-    c.drawRightString(width - 20*mm, height - 30*mm, f"INVOICE #{invoice_num}")
+    # Invoice details (right side, inside header)
+    c.setFillColor(HexColor('#ffffff'))
+    c.setFont("Helvetica-Bold", 14)
+    c.drawRightString(width - 20*mm, height - 25*mm, f"INVOICE #{invoice_num}")
     
-    c.setFont("Helvetica", 11)
-    c.drawRightString(width - 20*mm, height - 42*mm, date_str)
-    c.drawRightString(width - 20*mm, height - 52*mm, f"Client: {client}")
+    c.setFont("Helvetica", 10)
+    c.drawRightString(width - 20*mm, height - 38*mm, date_str)
+    c.drawRightString(width - 20*mm, height - 50*mm, f"Client: {client}")
     
     # Job details box
     y = height - 100*mm
