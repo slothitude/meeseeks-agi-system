@@ -46,8 +46,8 @@ def create_pdf_invoice(job_name, client, workers, materials, total, paid, logo_p
     
     # Company name (white text)
     c.setFillColor(HexColor('#ffffff'))
-    c.setFont("Helvetica-Bold", 32)
-    c.drawString(80*mm, height - 32*mm, "OVERLAP")
+    c.setFont("Helvetica-Bold", 20)
+    c.drawString(45*mm, height - 15*mm, "WORK WORK")
     
     c.setFont("Helvetica", 12)
     c.drawString(80*mm, height - 42*mm, "Electrical • Electronics • Marine Engineering")
