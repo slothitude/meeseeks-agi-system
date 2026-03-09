@@ -598,6 +598,14 @@ Observer/Sum = 1/2                 (always half)
 - **Phone:** 0457 870 354
 - **Business:** WORK WORK
 
+### AusPost Everyday Mastercard (Daily Check)
+- **Balance:** $20.00 AUD (checked 2026-03-09)
+- **Card:** 5386 6000 0459 9247
+- **Login:** aaronjking86@gmail.com
+- **Portal:** https://everyday.card.auspost/
+- **Frequency:** Daily OR on request
+- **Note:** CAPTCHA requires user input
+
 ### Files (Private Business Data)
 | File | Purpose |
 |------|---------|
