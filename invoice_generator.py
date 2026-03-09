@@ -16,15 +16,6 @@ def parse_job_data(job_name):
     
     content = work_file.read_text()
     
-    # Find the job section
-    job_pattern = rf"### {re.escape(job_name)}.*?(?=###|\Z)"
-    job_match = re.search(job_pattern, content, re.DOTALL | re.IGNORECASE)
-    
-    if not job_match:
-        return None
-    
-    job_section = job_match.group(0)
-    
     data = {
         'name': job_name,
         'client': '',
@@ -33,61 +24,102 @@ def parse_job_data(job_name):
         'labour_total': 0,
         'materials': [],
         'materials_total': 0,
+        'fuel_total': 0,
         'payments': [],
         'paid_total': 0,
         'total': 0,
         'owed': 0
     }
     
-    # Extract client
-    client_match = re.search(r'\*\*Client:\*\*\s*(.+)', job_section)
-    if client_match:
-        data['client'] = client_match.group(1).strip()
+    # Find the job section for client/status
+    job_pattern = rf"### {re.escape(job_name)}.*?(?=###|\Z)"
+    job_match = re.search(job_pattern, content, re.DOTALL | re.IGNORECASE)
     
-    # Extract status
-    status_match = re.search(r'\*\*Status:\*\*\s*(.+)', job_section)
-    if status_match:
-        data['status'] = status_match.group(1).strip()
+    if job_match:
+        job_section = job_match.group(0)
+        
+        # Extract client
+        client_match = re.search(r'\*\*Client:\*\*\s*(.+)', job_section)
+        if client_match:
+            data['client'] = client_match.group(1).strip()
+        
+        # Extract status
+        status_match = re.search(r'\*\*Status:\*\*\s*(.+)', job_section)
+        if status_match:
+            data['status'] = status_match.group(1).strip()
+        
+        # Extract summary totals from job section
+        total_match = re.search(r'\*\*Total:\*\*\s*\$?([\d.]+)', job_section)
+        if total_match:
+            data['total'] = float(total_match.group(1))
+        
+        paid_match = re.search(r'\*\*Paid:\*\*\s*\$?([\d.]+)', job_section)
+        if paid_match:
+            data['paid_total'] = float(paid_match.group(1))
+        
+        owed_match = re.search(r'\*\*Owed:\*\*\s*\$?([\d.]+)', job_section)
+        if owed_match:
+            data['owed'] = float(owed_match.group(1))
     
-    # Extract labour entries
-    labour_pattern = r'\|\s*(\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4})\s*\|\s*(.+?)\s*\|\s*([\d.]+)\s*\|\s*\$?([\d.]+)\s*\|\s*\$?([\d.]+)\s*\|'
-    for match in re.finditer(labour_pattern, job_section):
-        data['labour'].append({
-            'date': match.group(1),
-            'task': match.group(2).strip(),
-            'hours': float(match.group(3)),
-            'rate': float(match.group(4)),
-            'amount': float(match.group(5))
-        })
-        data['labour_total'] += float(match.group(5))
-    
-    # Extract materials entries
-    materials_pattern = r'\|\s*(\d{4}-\d{2}-\d{2}|\d{1,2}/\d{1,2}/\d{4})\s*\|\s*(.+?)\s*\|\s*\$?([\d.]+)\s*\|'
-    for match in re.finditer(materials_pattern, job_section):
-        # Skip if this is a labour row (has more columns)
-        if match.group(0).count('|') > 4:
+    # Parse Hours Tracker table (central tracking) - simple line-by-line approach
+    in_hours_section = False
+    for line in content.split('\n'):
+        if '## Hours Tracker' in line:
+            in_hours_section = True
             continue
-        data['materials'].append({
-            'date': match.group(1),
-            'item': match.group(2).strip(),
-            'amount': float(match.group(3))
-        })
-        data['materials_total'] += float(match.group(3))
+        if in_hours_section and line.startswith('##'):
+            break
+        if in_hours_section and line.startswith('|') and 'Date' not in line and '---' not in line:
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) >= 8:
+                row_job = parts[2]
+                
+                # Check if this row matches our job (partial match)
+                if job_name.lower() in row_job.lower() or row_job.lower() in job_name.lower():
+                    date = parts[1]
+                    who = parts[3]
+                    hours = float(parts[4])
+                    rate = float(parts[5].replace('$', ''))
+                    fuel_str = parts[6].replace('$', '').strip()
+                    fuel = 0 if not fuel_str or not fuel_str[0].isdigit() else float(fuel_str)
+                    amount = float(parts[7].replace('$', ''))
+                    
+                    data['labour'].append({
+                        'date': date,
+                        'who': who,
+                        'hours': hours,
+                        'rate': rate,
+                        'fuel': fuel,
+                        'amount': amount
+                    })
+                    data['labour_total'] += amount
+                    data['fuel_total'] += fuel
     
-    # Extract summary totals
-    total_match = re.search(r'\*\*Total:\*\*\s*\$?([\d.]+)', job_section)
-    if total_match:
-        data['total'] = float(total_match.group(1))
-    
-    paid_match = re.search(r'\*\*Paid:\*\*\s*\$?([\d.]+)', job_section)
-    if paid_match:
-        data['paid_total'] = float(paid_match.group(1))
-    
-    owed_match = re.search(r'\*\*Owed:\*\*\s*\$?([\d.]+)', job_section)
-    if owed_match:
-        data['owed'] = float(owed_match.group(1))
+    # Parse Receipts Tracker table (central tracking)
+    in_receipts_section = False
+    for line in content.split('\n'):
+        if '## Receipts Tracker' in line:
+            in_receipts_section = True
+            continue
+        if in_receipts_section and line.startswith('##'):
+            break
+        if in_receipts_section and line.startswith('|') and 'Date' not in line and '---' not in line:
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) >= 6:
+                row_job = parts[2]
+                
+                # Check if this row matches our job
+                if job_name.lower() in row_job.lower() or row_job.lower() in job_name.lower():
+                    data['materials'].append({
+                        'date': parts[1],
+                        'item': parts[3],
+                        'amount': float(parts[4].replace('$', '')),
+                        'paid_by': parts[5]
+                    })
+                    data['materials_total'] += float(parts[4].replace('$', ''))
     
     return data
+
 
 def generate_invoice(job_name, include_split=False):
     """Generate an invoice for a job."""
@@ -118,17 +150,19 @@ Electrical + Electronics + Programming
 
 ## Labour
 
-| Date | Description | Hours | Rate | Amount |
-|------|-------------|-------|------|--------|
+| Date | Who | Hours | Rate | Fuel | Amount |
+|------|-----|-------|------|------|--------|
 """
     
     for item in data['labour']:
-        invoice += f"| {item['date']} | {item['task']} | {item['hours']:.1f} | ${item['rate']:.2f} | ${item['amount']:.2f} |\n"
+        fuel_str = f"${item.get('fuel', 0):.2f}" if item.get('fuel', 0) > 0 else "—"
+        invoice += f"| {item['date']} | {item.get('who', '—')} | {item['hours']:.1f} | ${item['rate']:.2f} | {fuel_str} | ${item['amount']:.2f} |\n"
     
     if not data['labour']:
-        invoice += "| — | No labour logged yet | — | — | — |\n"
+        invoice += "| — | — | — | — | — | — |\n"
     
-    invoice += f"| | **Subtotal** | **{sum(item['hours'] for item in data['labour']):.1f}** | | **${data['labour_total']:.2f}** |\n"
+    total_hours = sum(item['hours'] for item in data['labour'])
+    invoice += f"| | **Subtotal** | **{total_hours:.1f}** | | | **${data['labour_total']:.2f}** |\n"
 
     invoice += f"""
 ## Materials
@@ -141,7 +175,7 @@ Electrical + Electronics + Programming
         invoice += f"| {item['date']} | {item['item']} | ${item['amount']:.2f} |\n"
     
     if not data['materials']:
-        invoice += "| — | No materials logged yet | — |\n"
+        invoice += "| — | No materials | — |\n"
     
     invoice += f"| | **Subtotal** | **${data['materials_total']:.2f}** |\n"
 
@@ -177,7 +211,19 @@ Electrical + Electronics + Programming
 
 ---
 
-**Payment:** Cash on completion
+**Payment Options:**
+
+**Cash on completion** OR direct transfer to:
+
+| | |
+|---|---|
+| **Account Name** | Aaron King |
+| **BSB** | 016-964 |
+| **Account** | 114998156 |
+
+*(Australia Post Everyday Mastercard - instant notification)*
+
+---
 
 **Thank you for your business!**
 
@@ -206,6 +252,7 @@ Plus reimburse materials to payer
 """
     
     return invoice
+
 
 if __name__ == "__main__":
     import sys
