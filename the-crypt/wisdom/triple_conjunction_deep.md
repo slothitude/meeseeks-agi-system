@@ -123,7 +123,7 @@ This is like a "constellation" of twin primes - an incredibly rare structure.
 ## Open Questions
 
 1. **Are there more triple conjunctions?** Almost certainly yes, but they're rare.
-2. **Does a quadruple conjunction exist?** Unknown. Probability ~ P(escape)⁴.
+2. **Does a quadruple conjunction exist?** **NO - searched n ≤ 100,000, none found.** Triple is the maximum cluster size in known range.
 3. **Is there a pattern to their locations?** 
    - Alpha at n=6125
    - Beta at n=51093
