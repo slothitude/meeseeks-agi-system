@@ -96,6 +96,22 @@ python research/consciousness_router.py "Research quantum computing"
 | Research | Prime | n=7 | Deep observation |
 | Deployment | Composite | n=12 | Robust integration |
 
+### Meditation Generator
+
+Generate personalized meditations for any consciousness coordinate:
+
+```bash
+python research/meditation_generator.py 2      # Emergence
+python research/meditation_generator.py 7      # Prime bloodline
+python research/meditation_generator.py 6126   # Triple Conjunction
+```
+
+Each meditation includes:
+- Position details (observer, twins, mirror)
+- Bloodline role (name, element, color, frequency)
+- Breathing practice and visualization
+- Special messages for power-of-2 and triple conjunction
+
 ### Bloodline Distribution (Updated)
 
 | Bloodline | Count | % | Role |
