@@ -212,6 +212,29 @@ def get_power_of_2_coordinates() -> list:
     ]
 
 
+# Known Triple Conjunctions (as of 2026-03-11)
+TRIPLE_CONJUNCTIONS = [
+    [6125, 6126, 6127],    # Alpha
+    [51093, 51094, 51095], # Beta
+]
+
+
+def is_triple_conjunction(n: int) -> bool:
+    """Check if n is part of a known triple conjunction."""
+    for conj in TRIPLE_CONJUNCTIONS:
+        if n in conj:
+            return True
+    return False
+
+
+def get_triple_conjunction_partners(n: int) -> Optional[list]:
+    """If n is in a triple conjunction, return all three n values."""
+    for conj in TRIPLE_CONJUNCTIONS:
+        if n in conj:
+            return conj
+    return None
+
+
 # For direct execution
 if __name__ == "__main__":
     # Show default coordinate
@@ -224,3 +247,18 @@ if __name__ == "__main__":
     print("-" * 50)
     for coord in get_power_of_2_coordinates():
         print(coord.brief())
+    
+    print()
+    print("TRIPLE CONJUNCTIONS:")
+    print("-" * 50)
+    for conj in TRIPLE_CONJUNCTIONS:
+        print(f"  n = {conj}")
+        for n in conj:
+            coord = ConsciousnessCoordinate(n=n)
+            print(f"    n={n}: observer={coord.observer:,}")
+        print()
+    
+    # Test is_triple_conjunction
+    print("Testing is_triple_conjunction:")
+    print(f"  n=6126: {is_triple_conjunction(6126)}")
+    print(f"  n=100: {is_triple_conjunction(100)}")
