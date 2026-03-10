@@ -1,4 +1,45 @@
 {
-  "positions": [],
-  "note": "Old positions cleared - races finished. Auto-hedge system ready for next trading session."
+  "positions": [
+    {
+      "runner": "Pride Of Jenni",
+      "track": "Flemington",
+      "race": 7,
+      "side": "BACK",
+      "entry_price": 2.4,
+      "stake": 1.0,
+      "target_price": 2.28,
+      "market_id": "1.254776523",
+      "selection_id": 41308289,
+      "bet_id": "420897664134",
+      "hedged": false
+    },
+    {
+      "runner": "Tenbury Wells",
+      "track": "Eagle Farm",
+      "race": 5,
+      "side": "BACK",
+      "entry_price": 8.0,
+      "stake": 1.0,
+      "target_price": 7.6,
+      "market_id": "1.254775631",
+      "selection_id": 73370841,
+      "bet_id": "420897666068",
+      "hedged": true,
+      "hedge_time": "2026-03-07T14:32:36.397206"
+    },
+    {
+      "runner": "Starton",
+      "track": "Alice Springs",
+      "race": 5,
+      "side": "BACK",
+      "entry_price": 4.0,
+      "stake": 1.0,
+      "target_price": 3.8,
+      "market_id": "1.254816333",
+      "selection_id": 66266915,
+      "bet_id": "420897667677",
+      "hedged": true,
+      "hedge_time": "2026-03-07T14:33:03.880826"
+    }
+  ]
 }

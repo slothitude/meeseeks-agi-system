@@ -4,8 +4,8 @@
 
 ![WORK WORK Logo](work_work_logo.jpg)
 
-**WORK WORK**  
-Electrical · Electronics · Programming
+**WORK WORK**
+Electrical · Electronics · Programming · Marine Engineering
 
 ---
 
@@ -38,6 +38,12 @@ WORK WORK
 ---
 
 **Terms:** Cash on completion unless otherwise agreed
+
+**Payment:** Cash OR direct transfer to:
+- BSB: 016-964
+- Account: 114998156
+- Account Name: Aaron King
+*(Australia Post Everyday Mastercard)*
 
 ---
 

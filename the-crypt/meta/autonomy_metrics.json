@@ -1,7 +1,7 @@
 {
   "status": "active",
   "iteration": 1,
-  "gap_addressed": "Build standard capabilities (no ancestors)",
+  "gap_addressed": "Build tester capabilities (no ancestors)",
   "autonomy_score": 0.9000000000000001,
   "total_spawned": 1,
   "total_learned": 1

@@ -1,76 +1,67 @@
 #!/usr/bin/env python3
-"""Quick balance check using interactive login"""
+"""Check actual Betfair account balance"""
+
 import requests
 import json
+from pathlib import Path
 
-# Credentials from 008 files
-USERNAME = "aaronwashington8@gmail.com"
-PASSWORD = "Melbourne22!"
+# Betfair credentials
+USERNAME = "dnfarnot@gmail.com"
+PASSWORD = "Tobiano01"
 APP_KEY = "XmZEwtLsIRkf5lQ3"
+CERT_PATH = Path("C:/Users/aaron/Desktop/008/betfair_api_combined_20260225_152452.pem")
 
-# Interactive login endpoint
-LOGIN_URL = "https://identitysso.betfair.com/api/login"
-BALANCE_URL = "https://api.betfair.com/exchange/account/rest/v1.0/getAccountFunds/"
-
+# Login to Betfair
+login_url = "https://identitysso.betfair.com/api/certlogin"
 headers = {
-    'X-Application': APP_KEY,
-    'Content-Type': 'application/x-www-form-urlencoded'
+    "X-Application": APP_KEY,
+    "Content-Type": "application/x-www-form-urlencoded"
 }
 
-payload = f"username={USERNAME}&password={PASSWORD}"
-
-print("Attempting interactive login...")
-
 try:
-    response = requests.post(LOGIN_URL, data=payload, headers=headers, timeout=15)
-    print(f"Status: {response.status_code}")
-    
+    response = requests.post(
+        login_url,
+        data=f"username={USERNAME}&password={PASSWORD}",
+        headers=headers,
+        cert=str(CERT_PATH),
+        timeout=10
+    )
+
     if response.status_code == 200:
         data = response.json()
-        status = data.get('status', 'Unknown')
-        print(f"Login status: {status}")
-        
-        if status == 'SUCCESS':
-            token = data.get('token')
-            print(f"Token: {token[:30]}..." if token else "No token")
-            
-            # Check balance
-            bal_headers = {
-                'X-Application': APP_KEY,
-                'X-Authentication': token,
-                'Accept': 'application/json'
-            }
-            
-            bal_response = requests.get(BALANCE_URL, headers=bal_headers, timeout=10)
-            print(f"\nBalance check status: {bal_response.status_code}")
-            
-            if bal_response.status_code == 200:
-                balance_data = bal_response.json()
-                print("\n" + "="*50)
-                print("ACCOUNT BALANCE")
-                print("="*50)
-                print(f"Available: ${balance_data.get('availableToBetBalance', 'N/A')}")
-                print(f"Exposure: ${balance_data.get('exposure', 'N/A')}")
-                print(f"Exposure Limit: ${balance_data.get('exposureLimit', 'N/A')}")
-                print("="*50)
-                
-                # Save to config
-                config = {
-                    "app_key": APP_KEY,
-                    "session_token": token,
-                    "extracted_at": "2026-03-06 22:56",
-                    "balance": balance_data.get('availableToBetBalance', 0)
-                }
-                with open("betfair_config.json", "w") as f:
-                    json.dump(config, f, indent=2)
-                print("\nConfig saved to betfair_config.json")
-            else:
-                print(f"Balance error: {bal_response.text}")
+        session_token = data.get("sessionToken")
+        print("Login successful!")
+        print(f"Session token: {session_token[:20]}...")
+
+        # Get account balance
+        balance_url = "https://api.betfair.com/exchange/account/rest/v1.0/getAccountFunds/"
+        balance_headers = {
+            "X-Application": APP_KEY,
+            "X-Authentication": session_token,
+            "Content-Type": "application/json"
+        }
+
+        balance_response = requests.post(
+            balance_url,
+            headers=balance_headers,
+            json={},
+            timeout=10
+        )
+
+        if balance_response.status_code == 200:
+            balance_data = balance_response.json()
+            print("\n=== BETFAIR ACCOUNT BALANCE ===")
+            print(f"Available: ${balance_data.get('availableToBetBalance', 0):.2f} AUD")
+            print(f"Balance: ${balance_data.get('balance', 0):.2f} AUD")
+            print(f"Exposure: ${balance_data.get('exposure', 0):.2f} AUD")
+            print(f"Commission: ${balance_data.get('commissionBalance', 0):.2f} AUD")
+            print("================================")
         else:
-            error = data.get('error', 'Unknown error')
-            print(f"Login failed: {error}")
+            print(f"Balance check failed: {balance_response.status_code}")
+            print(balance_response.text[:200])
     else:
-        print(f"Response: {response.text}")
-        
+        print(f"Login failed: {response.status_code}")
+        print(response.text[:200])
+
 except Exception as e:
     print(f"Error: {e}")

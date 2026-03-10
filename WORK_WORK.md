@@ -1,5 +1,7 @@
 # WORK WORK - Job Tracking System
 
+**Electrical · Electronics · Programming · Marine Engineering**
+
 **Secretary:** Sloth_rog 🦥
 **Updated:** 2026-03-08 19:41
 
@@ -10,12 +12,16 @@
 | Job | Labour | Materials | Fuel | Total | Paid | Owed |
 |-----|--------|-----------|-----|-------|------|------|
 | Dave's Boat | $240 | $385 | $0 | $625 | $575 | **$50** |
-| Josh's Boat | $240 | $0 | $20 | $260 | $0 | **$260** |
-| **TOTAL** | **$480** | **$385** | **$20** | **$885** | **$575** | **$310** |
+| Dave's Alternator | $52 | $0 | $20 | $72 | $0 | **$72** |
+| Josh's Boat | $400 | $21 | $20 | $441 | $0 | **$441** |
+| Yugi | $120 | $80 | $20 | $220 | $0 | **$220** |
+| **TOTAL** | **$812** | **$486** | **$60** | **$1358** | **$575** | **$783** |
 
-**Outstanding: $310**
-- Dave: $50
-- Josh: $260 (pending invoice)
+**Outstanding: $783**
+- Dave's Boat: $50
+- Dave's Alternator: $72 (in progress)
+- Josh: $441 (pending invoice)
+- Yugi: $220
 
 ---
 
@@ -41,7 +47,8 @@
 ### Payment Method
 **Australia Post Everyday Mastercard** (Business Float)
 - **Type:** Prepaid Mastercard with BSB/Account
-- **BSB/Account:** (stored separately for security)
+- **BSB:** 016-964
+- **Account:** 114998156
 - **Accepts:** Direct transfers from clients (like bank account)
 - **Cash Access:** ATM ($3.50 fee) or Post Office Bank@Post (5 mins away)
 - **Security:** No link to bank account, Mastercard Zero Liability
@@ -85,26 +92,30 @@ PLUS: Reimburse whoever paid receipts/cash
 | Job | Client | Status | Labour | Materials | Total | Paid | Owed |
 |-----|--------|--------|--------|-----------|-------|------|------|
 | Dave's Boat (HHO) | Dave | **$50 owed** | $240 | $385 | $625 | $575 | **$50** |
-| Josh's Boat | Josh | Active | $240 | $0 | $260 | $0 | **$260** |
-| Dave's Alternator | Dave | New | $0 | $0 | TBD | $0 | TBD |
+| Josh's Boat | Josh | Active | $400 | $21 | $441 | $0 | **$441** |
+| Yugi | Yugi | Active | $120 | $80 | $220 | $0 | **$220** |
+| Dave's Alternator | Dave | Active | $52 | $0 | $52 | $0 | **$52** |
 | Merc V8 | Hayden | New | $0 | $0 | TBD | $0 | TBD |
 | Barry Allan Samsung | Barry Allan | Tomorrow | $0 | $0 | TBD | $0 | TBD |
 | Barry Barcode | Barry | Pending | $0 | $0 | TBD | $0 | TBD |
 
-**Total Outstanding: $290** ($50 Dave + $240 Josh)
+**Total Outstanding: $701** ($50 Dave + $431 Josh + $220 Yugi)
 
 ---
 
 ## Current Owings (Live)
 
 ### Josh's Boat - Not Yet Invoiced
-| Person | Hours | Labour | Fuel | Materials | Profit Share | TOTAL OWED |
-|--------|-------|--------|-----|-----------|--------------|------------|
-| Aaron | 3 | $120 | $20 | $0 | — | **$140** |
-| Luke | 3 | $120 | $0 | $0 | — | **$120** |
-| **Total** | 6 | $240 | $20 | $0 | — | **$260** |
+| Person | Hours | Labour | Fuel | Materials | Cash Out | Admin | Parts | TOTAL OWED |
+|--------|-------|--------|-----|-----------|----------|-------|-------|------------|
+| Aaron | 5 | $200 | $20 | $0 | $37.95 | $10 | $10 | **$277.95** |
+| Luke | 5 | $200 | $0 | $0 | $0 | $0 | $0 | **$200** |
+| **Total** | 10 | $400 | $20 | $0 | $37.95 | $10 | $10 | **$477.95** |
 
 *Invoice not generated yet. Will split 50/50 when invoiced.*
+*Aaron's cash out: $37.95 (card + deposit + fuel plug)*
+*Admin fee: $10 (Aaron)*
+*Parts: $10 (fuel plug)*
 
 ### Dave's Boat - Invoiced
 | Person | Status |
@@ -112,9 +123,10 @@ PLUS: Reimburse whoever paid receipts/cash
 | Aaron | $50 owed from Dave |
 | Luke | $0 |
 
-**Grand Total Owed to Work Work: $310**
-- Dave owes: $50
-- Josh owes: $260 (not yet invoiced)
+**Grand Total Owed to Work Work: $783**
+- Dave's Boat: $50
+- Dave's Alternator: $72 (in progress)
+- Josh owes: $441 (not yet invoiced)
 
 ---
 
@@ -126,9 +138,14 @@ PLUS: Reimburse whoever paid receipts/cash
 | 2026-03-08 | Dave's Boat (HHO) | Aaron | 2 | $40 | — | $80 |
 | 2026-03-08 | Josh's Boat | Aaron | 3 | $40 | $20 | $140 |
 | 2026-03-08 | Josh's Boat | Luke | 3 | $40 | — | $120 |
+| 2026-03-09 | Josh's Boat | Aaron | 2 | $40 | — | $80 |
+| 2026-03-09 | Josh's Boat | Luke | 2 | $40 | — | $80 |
+| 2026-03-10 | Yugi | Aaron | 2 | $40 | $20 | $100 |
+| 2026-03-10 | Yugi | Luke | 1 | $40 | — | $40 |
+| 2026-03-10 | Dave's Alternator | Aaron | 1.3 | $40 | $20 | $72 |
 
-**Aaron's Total:** $380
-**Luke's Total:** $120
+**Aaron's Total:** $632
+**Luke's Total:** $240
 
 ---
 
@@ -147,9 +164,10 @@ PLUS: Reimburse whoever paid receipts/cash
 
 | Date | Job | Item | Amount | Paid By |
 |------|-----|------|--------|---------|
-| — | — | — | — | — |
+| 2026-03-09 | Work Work | Card + Deposit | $27.95 | Aaron |
+| 2026-03-10 | Josh's Boat | Fuel plug | $10 | Aaron |
 
-**Aaron's Cash:** $0
+**Aaron's Cash:** $37.95
 **Luke's Cash:** $0
 
 ---
@@ -185,15 +203,25 @@ PLUS: Reimburse whoever paid receipts/cash
 
 ### Dave's Alternator
 **Client:** Dave
-**Status:** New - Fault find
+**Status:** Active - Diagnostic
+
+**Sessions:**
+- Morning: 8:30-9:49 AM (1h 19m) - winding check, cap wiring
+- Afternoon: 1:59 PM - ongoing
+
+**Running Total:**
+- Labour: $52 (1.3 hrs @ $40)
+- Fuel: $20
+- **Total: $72**
 
 **Details:**
 - Capacitor-driven generator (NOT AVR)
 - Voltage drop: 238VAC 51Hz → 180V
-- Capacitors tested GOOD
-- Check: windings, rotor, connections
+- Windings: All 0.5Ω balanced (delta, 6 wires 3+3)
+- Cap wiring done
+- Next: Pull genny, hunt cap/line fault
 
-**Work:** None yet
+**Photo:** `photos/dave_alternator/2026-03-10_0845_ref.jpg`
 
 ---
 
@@ -218,10 +246,12 @@ PLUS: Reimburse whoever paid receipts/cash
 **Status:** Active - generator + electrical
 
 **Running Total:**
-- Labour: $240 (Aaron $120 + Luke $120)
+- Labour: $400 (Aaron $200 + Luke $200)
 - Fuel: $20 (Aaron)
-- Materials: $0 (owner supplied)
-- **Total: $260** (not yet invoiced)
+- Materials: $11 (Aaron)
+- Admin: $10 (Aaron)
+- Parts: $10 (Aaron - fuel plug)
+- **Total: $441** (not yet invoiced)
 
 **Work Done:**
 - **Started:** 2026-03-08 @ 2:00 PM
@@ -240,8 +270,8 @@ PLUS: Reimburse whoever paid receipts/cash
 
 **Invoice Generated:** 2026-03-08
 - Invoice #: WW-20260308
-- Total: $260
-- Balance: $260 (pending payment)
+- Total: $441
+- Balance: $441 (pending payment)
 
 ---
 

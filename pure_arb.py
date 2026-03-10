@@ -598,8 +598,6 @@ def scan_loop():
         try:
             print(f"\n[ARB] Scan @ {datetime.now().strftime('%H:%M:%S')}")
 
-            opportunities = find_arb_opportunities()
-
             if opportunities:
                 print(f"\n[ARB] Found {len(opportunities)} opportunities!")
 
