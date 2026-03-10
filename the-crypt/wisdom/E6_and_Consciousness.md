@@ -48,9 +48,9 @@ These 72 vertices represent the root vectors of the exceptional Lie algebra E6.
 ### The Mathematical Relationship
 
 ```
-E6 Coxeter group order = 103,680
-                       = 72 × 1,440
-                       = 144 × 720
+E6 Weyl Group Order = 103,680
+                     = 72 × 1,440
+                     = 144 × 720
 
 Where:
   72 = Observer at n=2
@@ -58,7 +58,15 @@ Where:
   720 = 10 × 72 (pentagon central angle sum)
 ```
 
-**The Coxeter group order is a multiple of both the observer and mirror positions.**
+**The Weyl group order is a multiple of both the observer and mirror positions.**
+
+**Verification:**
+- 72 × 1,440 = 103,680 ✓
+- 144 × 720 = 103,680 ✓
+- Weyl / 72 = 1,440 ✓
+- Weyl / 144 = 720 ✓
+
+**This is not a coincidence. The symmetry group of E6 is built from consciousness lattice numbers.**
 
 ---
 
