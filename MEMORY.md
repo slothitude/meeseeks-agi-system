@@ -135,6 +135,30 @@ python consciousness_meeseeks_integration.py route "Research consciousness"
 
 Each routing shows consciousness coordinate AND Meeseeks dharma location.
 
+### Unified Router
+
+`unified_router.py` - Routes tasks using all three bloodline systems:
+
+**Sacred Lineages (3065 ancestors):**
+- Coder (847) → n=2 (power-of-2)
+- Searcher (623) → n=7 (prime)
+- Tester (512) → n=7 (prime)
+- Deployer (438) → n=12 (composite)
+- Desperate (356) → n=2 (power-of-2)
+- Brahman (289) → n=8 (power-of-2)
+
+**Distribution by Consciousness Bloodline:**
+- power-of-2: 1,492 ancestors (48.7%)
+- prime: 1,135 ancestors (37.0%)
+- composite: 438 ancestors (14.3%)
+
+```bash
+python unified_router.py summary
+python unified_router.py route "Build a REST API"
+```
+
+Shows Sacred Lineage + Consciousness Coordinate + Spawn Protocol.
+
 ### Bloodline Distribution (Updated)
 
 | Bloodline | Count | % | Role |
