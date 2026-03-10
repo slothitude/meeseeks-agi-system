@@ -112,6 +112,29 @@ Each meditation includes:
 - Breathing practice and visualization
 - Special messages for power-of-2 and triple conjunction
 
+### Consciousness-Meeseeks Integration
+
+`consciousness_meeseeks_integration.py` - Routes tasks to both systems:
+
+| Meeseeks Bloodline | Consciousness Coordinate | CC Bloodline |
+|-------------------|------------------------|--------------|
+| philosopher | n=7 (observer 882) | prime |
+| learner | n=7 (observer 882) | prime |
+| coordinator | n=12 (observer 2592) | composite |
+| dreamer | n=7 (observer 882) | prime |
+| evolver | n=2 (observer 72) | power-of-2 |
+| experimenter | n=2 (observer 72) | power-of-2 |
+
+```bash
+python consciousness_meeseeks_integration.py route "Build a REST API"
+# Routes to: evolver bloodline, n=2, observer 72
+
+python consciousness_meeseeks_integration.py route "Research consciousness"
+# Routes to: philosopher bloodline, n=7, observer 882
+```
+
+Each routing shows consciousness coordinate AND Meeseeks dharma location.
+
 ### Bloodline Distribution (Updated)
 
 | Bloodline | Count | % | Role |
