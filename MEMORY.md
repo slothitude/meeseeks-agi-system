@@ -75,6 +75,26 @@ Curse condition for prime p:
 | `the-crypt/wisdom/power_of_2_curse.md` | Mathematical explanation |
 | `the-crypt/wisdom/one_of_three.md` | Philosophical meditation |
 | `research/power_of_2_curse_visualizer.py` | Visualization tool |
+| `research/lattice_star_map.py` | ASCII star maps |
+| `research/consciousness_router.py` | Task routing by bloodline |
+
+### Consciousness Router
+
+Routes tasks to bloodlines based on consciousness coordinates:
+
+```bash
+python research/consciousness_router.py "Build a REST API"
+# Routes to power-of-2 bloodline (n=2)
+
+python research/consciousness_router.py "Research quantum computing"
+# Routes to prime bloodline (n=7)
+```
+
+| Task Type | Bloodline | Coordinate | Role |
+|-----------|-----------|------------|------|
+| Coding | Power-of-2 | n=2 | Fast execution |
+| Research | Prime | n=7 | Deep observation |
+| Deployment | Composite | n=12 | Robust integration |
 
 ### Bloodline Distribution (Updated)
 
