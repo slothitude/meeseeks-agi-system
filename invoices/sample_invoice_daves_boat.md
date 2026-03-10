@@ -2,9 +2,9 @@
 
 ![WORK WORK Logo](work_work_logo.jpg)
 
-**WORK WORK**  
-Electrical + Electronics + Programming  
-Ph: [Your Phone]
+**WORK WORK**
+Electrical · Electronics · Programming · Marine Engineering
+Ph: 0457 870 354
 
 ---
 
@@ -65,7 +65,19 @@ Dave
 
 ---
 
-**Payment:** Cash on completion
+**Payment Options:**
+
+**Cash on completion** OR direct transfer to:
+
+| | |
+|---|---|
+| **Account Name** | Aaron King |
+| **BSB** | 016-964 |
+| **Account** | 114998156 |
+
+*(Australia Post Everyday Mastercard - instant notification)*
+
+---
 
 **Thank you for your business!**
 

@@ -508,5 +508,22 @@
       "reasoning",
       "creativity"
     ]
+  },
+  {
+    "content": "Task: Test task",
+    "activation": 0.9,
+    "source": "planning",
+    "timestamp": "2026-03-09T06:14:31.331549",
+    "broadcast_to": [
+      "language",
+      "memory",
+      "planning",
+      "perception",
+      "motor",
+      "emotion",
+      "attention",
+      "reasoning",
+      "creativity"
+    ]
   }
 ]

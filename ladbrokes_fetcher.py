@@ -78,7 +78,7 @@ def fetch_all_prices(categories: List[str] = ["H", "G"], au_only: bool = True) -
             country = meeting.get("country", "")
             
             # Filter for AU only if requested
-            if au_only and country != "AU":
+            if au_only and country not in ["AU", "AUS"]:
                 continue
             
             print(f"\n  [{meeting_name}] ({country})", flush=True)

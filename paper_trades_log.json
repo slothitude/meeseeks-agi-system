@@ -376,5 +376,131 @@
     "r_potential": 0.05,
     "status": "OPEN",
     "mins_to_start": 13.5
+  },
+  {
+    "id": "Murray Bridge_R3_Simply Sid_122303",
+    "timestamp": "2026-03-07T12:23:03.040078",
+    "track": "Murray Bridge",
+    "race": "3",
+    "runner": "Simply Sid",
+    "edge_type": "STEAM",
+    "entry_price": 9,
+    "target_price": 8.549999999999999,
+    "open_price": 10,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 12.9
+  },
+  {
+    "id": "Towong_R1_Capital Design_122304",
+    "timestamp": "2026-03-07T12:23:04.070045",
+    "track": "Towong",
+    "race": "1",
+    "runner": "Capital Design",
+    "edge_type": "STEAM",
+    "entry_price": 2.15,
+    "target_price": 2.0425,
+    "open_price": 2.4,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 14.9
+  },
+  {
+    "id": "Gunnedah_R1_Erniegy_122441",
+    "timestamp": "2026-03-07T12:24:41.237721",
+    "track": "Gunnedah",
+    "race": "1",
+    "runner": "Erniegy",
+    "edge_type": "STEAM",
+    "entry_price": 1.75,
+    "target_price": 1.6624999999999999,
+    "open_price": 2.05,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 8.3
+  },
+  {
+    "id": "Randwick_R3_Potomac River_122513",
+    "timestamp": "2026-03-07T12:25:13.598854",
+    "track": "Randwick",
+    "race": "3",
+    "runner": "Potomac River",
+    "edge_type": "STEAM",
+    "entry_price": 21,
+    "target_price": 19.95,
+    "open_price": 23,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 14.8
+  },
+  {
+    "id": "Randwick_R3_Farcolo_122546",
+    "timestamp": "2026-03-07T12:25:46.502890",
+    "track": "Randwick",
+    "race": "3",
+    "runner": "Farcolo",
+    "edge_type": "STEAM",
+    "entry_price": 81,
+    "target_price": 76.95,
+    "open_price": 101,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 14.2
+  },
+  {
+    "id": "Towong_R1_I Am Strong_122653",
+    "timestamp": "2026-03-07T12:26:53.877080",
+    "track": "Towong",
+    "race": "1",
+    "runner": "I Am Strong",
+    "edge_type": "STEAM",
+    "entry_price": 10,
+    "target_price": 9.5,
+    "open_price": 15,
+    "stakes": {
+      "back_stake": 1.0,
+      "lay_stake": 1.05,
+      "profit_if_win": 0.05,
+      "profit_if_lose": 0.05,
+      "guaranteed_profit": 0.05
+    },
+    "r_potential": 0.05,
+    "status": "OPEN",
+    "mins_to_start": 11.1
   }
 ]

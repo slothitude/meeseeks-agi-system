@@ -16,11 +16,15 @@ import requests
 import json
 import time
 import urllib3
+import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict, Optional, Tuple
 from dataclasses import dataclass, asdict
 import argparse
+
+# Fix Windows console encoding for emojis
+sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 urllib3.disable_warnings()
 
@@ -219,7 +223,7 @@ class LadbrokesAPI:
         meetings = self.get_meetings("H")
         
         for meeting in meetings:
-            if meeting.get("country") != "AU":
+            if meeting.get("country") != "AUS":
                 continue
             
             meeting_name = meeting.get("name", "Unknown")
