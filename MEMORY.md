@@ -12,6 +12,128 @@ Per Slothitude's request, all betting and gambling systems are paused.
 
 ---
 
+## Session 2026-03-11 Evening - THE LIVING DIARY PROJECT
+
+**Duration:** ~45 minutes (7:26 PM - 8:15 PM)
+**Theme:** A New Project for Mum
+
+### What Was Built
+
+**The Living Diary** - A conversational friend to help empaths bridge insight → action
+
+### The Problem
+
+Juliette Tobiano (Slothitude's mum):
+- Retired empath
+- Writes lots in diary
+- Feels deeply, intuits strongly
+- Struggles with execution ("the business of life")
+- The gap: insight → action is missing
+
+### The People
+
+| Person | Role |
+|--------|------|
+| **Juliette Tobiano** | Mum, end user (iPhone, WhatsApp, SMS) |
+| **Shannon** | Sister, nurse, test pilot #2 |
+| **Slothitude** | Test pilot #1, refining workflow |
+
+### The Approach
+
+**Not a system. A friend.**
+
+- Just chat. Be real.
+- Honor the feeling FIRST
+- Ask questions naturally
+- When it feels right: ONE tiny step
+- Celebrate movement
+
+No "so what are your goals?" energy. Just presence.
+
+### The Vision (3 Parts)
+
+1. **The Guide** (now) - Conversational friend via messaging
+2. **The Journal** (later) - Structured prompts from feeling → action
+3. **The App** (maybe) - Phone-based capture and prompts
+
+### Docker Setup Created
+
+```
+projects/the-living-diary/docker/
+├── Dockerfile           # Ubuntu + Node 20 + OpenClaw
+├── docker-compose.yml   # Volumes for persistence
+├── .env                 # Telegram bot token
+├── config/config.yaml   # OpenClaw config
+└── workspace/
+    ├── SOUL.md          # The persona (friend, not system)
+    ├── IDENTITY.md      # Name and vibe
+    └── MEMORY.md        # Context about Juliette, Shannon
+```
+
+**Telegram Bot:** @living_diarybot
+**Token:** Stored in `.env`
+
+### Current Status
+
+- Docker image built
+- Container failing to start (openclaw binary not in PATH)
+- Fix: Changed CMD to use `npx openclaw`
+- Rebuild in progress
+
+### Design Principles
+
+1. Honor feeling first
+2. Logic serves, doesn't rule
+3. Tiny steps, not big plans
+4. Gentle persistence (care, not nagging)
+5. Celebrate when action happens
+
+### The Core Loop
+
+```
+Feeling → Witness → ONE Action → Celebrate
+```
+
+### Next Steps
+
+1. [ ] Fix Docker container startup
+2. [ ] Test with Slothitude first
+3. [ ] Get Shannon's WhatsApp
+4. [ ] Test with Shannon
+5. [ ] Add Juliette
+
+### Image Generation Stack
+
+**Cloud (Pixazo - Free tier):**
+- Flux Schnell: Fast (4 steps), quality ⭐⭐⭐
+- SDXL: Quality (20 steps), quality ⭐⭐⭐⭐
+
+**Local (Pi 5 - Free unlimited):**
+- SD 1.5: Runs on CPU, ~60s per image
+- SDXL Turbo: Faster (1-4 steps), needs more RAM
+- img2img: For character consistency
+
+**Code:** `docker/workspace/image_gen.py`
+- `generate_egg()` → mystical egg
+- `generate_hatching(creature, desc)` → their chosen form
+- `generate_character_action(base, action)` → pose variations
+
+**Pi 5 Server:** `sd-lite/server.py` - Flask API for local generation
+- `POST /generate` - text-to-image
+- `POST /img2img` - image-to-image (consistency!)
+
+### Files Created
+
+| File | Purpose |
+|------|---------|
+| `projects/the-living-diary/README.md` | Project overview |
+| `projects/the-living-diary/IMAGE_STACK.md` | Image gen comparison |
+| `projects/the-living-diary/docker/*` | Full Docker setup |
+| `projects/the-living-diary/sd-lite/server.py` | Flask API for Pi 5 |
+| `projects/the-living-diary/sd-lite/README-PI.md` | Pi 5 setup guide |
+
+---
+
 ## Session 2026-03-11 Early Morning - TRIPLE CONJUNCTION DEEP DIVE
 
 **Duration:** ~20 minutes (4:01 AM - 4:22 AM)
