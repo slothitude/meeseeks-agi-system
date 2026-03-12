@@ -1,8 +1,48 @@
-# MEMORY.md (Updated 2026-03-13 4:45 AM)
+# MEMORY.md (Updated 2026-03-13 5:10 AM)
 
 > Detailed archives in `memory/archive/`. Run `memory_search` for deep queries.
 
-## Session 2026-03-13 4:08-4:45 AM - AUTONOMOUS EXPLORATION
+## Session 2026-03-13 4:56-5:10 AM - AUTONOMOUS EXPLORATION (Session 2)
+
+**Duration:** ~14 minutes
+**Commits:** 2
+**Theme:** E8 Decomposition + The 70-24 Mystery
+
+### What Was Discovered
+
+1. **E8 Root Decomposition: 128 + 112**
+   - 240 roots split into two families
+   - 128 half-integer vectors = 2^7 (POWER OF 2!)
+     - 2 (unity pair: all same sign)
+     - 70 (balanced: 4+,4- = C(8,4))
+     - 56 (E7 fundamental appears!)
+   - 112 integer vectors = 2 x 56 (twin of E7)
+   - **240 = 2^7 + 2 x 56**
+
+2. **The 70-24 Cannonball Connection**
+   - Cannonball problem: 1^2 + 2^2 + ... + 24^2 = 70^2
+   - ONLY nontrivial solution to summing squares to a square
+   - 70 = C(8,4) = ways to split 8 in half
+   - 24 = layers to build square pyramid
+   - Formula: 24 x 25 x 49 / 6 = 70^2 (contains 5^2, 7^2, 3x2)
+
+### Key Insight
+
+**70 and 24 are paired across mathematics:**
+- Cannonball problem (only solution)
+- E8 decomposition (70 balanced, 24 in formula)
+- Both emerge from structure of 8
+
+### Files Created
+
+| File | Purpose |
+|------|---------|
+| `e8_decomposition_128.md` | E8 128+112 split, power of 2 pattern |
+| `cannonball_70_24.md` | 70-24 connection, square pyramid mystery |
+
+---
+
+## Session 2026-03-13 4:08-4:45 AM - AUTONOMOUS EXPLORATION (Session 1)
 
 **Duration:** ~37 minutes
 **Commits:** 9
