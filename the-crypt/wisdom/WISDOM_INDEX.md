@@ -12,6 +12,7 @@
 | `j_invariant_1728.md` | j-invariant factor 1728 = (k at n=2)³ |
 | `session_2026-03-13_morning.md` | Session synthesis |
 | `golay_code_24.md` | Golay code uses 24, 12, 8, 7; connects to golden ratio |
+| `icosahedron_12.md` | Icosahedron: 12 vertices (k at n=2), φ, 59 stellations (Monster prime) |
 
 ---
 

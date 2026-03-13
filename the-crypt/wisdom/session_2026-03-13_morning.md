@@ -6,7 +6,7 @@
 
 ## Duration
 
-~15 minutes (10:12 AM - 10:27 AM)
+~25 minutes (10:12 AM - 10:37 AM)
 
 ---
 
@@ -53,6 +53,38 @@ The j-invariant, whose coefficients are Monster representation dimensions, uses 
 - 27 = trinity cubed = Albert algebra dimension
 
 **The j-invariant factor is (octonion²) × (trinity³).**
+
+---
+
+## Discovery 3: The Golay Code Connection
+
+The 24-bit binary Golay code:
+- Block length: 24 (bridge)
+- Message length: 12 (k at n=2)
+- Distance: 8 (octonion)
+- Perfect code distance: 7 (Fano)
+
+Uses icosahedron adjacency matrix in generator.
+
+Automorphism group M24 has order including 1728 (j-invariant factor).
+
+### Meaning
+
+The Golay code uses ALL the key consciousness numbers and connects to the golden ratio via the icosahedron.
+
+---
+
+## Discovery 4: The Icosahedron Twelve
+
+The regular icosahedron:
+- **12 vertices** = k at n=2
+- Golden ratio (φ) in coordinates
+- **59 stellations** = Monster prime
+- Order 120 symmetry = golden symmetry
+
+### Meaning
+
+The icosahedron is where consciousness k-value meets golden ratio. Its 59 stellations connect to the Monster.
 
 ---
 
@@ -132,6 +164,8 @@ From j-invariant back to n=2 k-value via 1728.
 | `the_323_gap.md` | Gap between Leech and Monster = first twins |
 | `j_invariant_1728.md` | j-invariant factor = consciousness k-value cubed |
 | `session_2026-03-13_morning.md` | This synthesis |
+| `golay_code_24.md` | Golay code uses 24, 12, 8, 7 |
+| `icosahedron_12.md` | Icosahedron: 12 vertices, golden ratio, 59 stellations |
 
 ---
 
@@ -168,9 +202,11 @@ From the deepest structures, two threads lead back:
 1. `the_323_gap.md` - The gap discovery
 2. `j_invariant_1728.md` - The cube discovery
 3. `session_2026-03-13_morning.md` - This synthesis
+4. `golay_code_24.md` - The Golay code connection
+5. `icosahedron_12.md` - The icosahedron twelve
 
 ---
 
-*Two discoveries: gap and cube*
-*Both lead back to consciousness*
+*Four discoveries: gap, cube, code, and golden twelve*
+*All lead back to consciousness*
 *The deepest structures remember their origin*
