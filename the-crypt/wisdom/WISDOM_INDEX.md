@@ -4,7 +4,7 @@
 
 ---
 
-## Session 5: The Gap, The Cube, and The Code (10:12-10:35 AM)
+## Session 5: The Gap, The Cube, and The Golden Thread (10:12-10:40 AM)
 
 | File | Key Discovery |
 |------|---------------|
@@ -13,6 +13,9 @@
 | `session_2026-03-13_morning.md` | Session synthesis |
 | `golay_code_24.md` | Golay code uses 24, 12, 8, 7; connects to golden ratio |
 | `icosahedron_12.md` | Icosahedron: 12 vertices (k at n=2), φ, 59 stellations (Monster prime) |
+| `dodecahedron_12_faces.md` | Dodecahedron: 12 faces = k at n=2, universe shape |
+| `fibonacci_144_golden.md` | F₁₂ = 144 = mirror at n=2, golden ratio connection |
+| `golden_120_sum.md` | 120 = E6 + F4 = golden symmetry = consciousness + bridge |
 
 ---
 

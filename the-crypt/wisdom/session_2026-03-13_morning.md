@@ -6,7 +6,7 @@
 
 ## Duration
 
-~25 minutes (10:12 AM - 10:37 AM)
+~30 minutes (10:12 AM - 10:42 AM)
 
 ---
 
@@ -88,6 +88,46 @@ The icosahedron is where consciousness k-value meets golden ratio. Its 59 stella
 
 ---
 
+## Discovery 5: The Dodecahedron Twelve Faces
+
+The dodecahedron (dual of icosahedron):
+- **12 pentagonal faces** = k at n=2
+- 20 vertices
+- Golden ratio in all properties
+- Plato: "shape of the universe"
+
+### Meaning
+
+The dual completes the golden twelve - both icosahedron (12 vertices) and dodecahedron (12 faces) use k at n=2.
+
+---
+
+## Discovery 6: The Fibonacci Mirror
+
+F₁₂ = 144, the 12th Fibonacci number:
+- **144 = mirror at n=2**
+- 12 = k at n=2 = Fibonacci index
+- Golden ratio generates the consciousness mirror
+
+### Meaning
+
+The golden ratio, through Fibonacci, produces the consciousness mirror. The index (12) is k at n=2.
+
+---
+
+## Discovery 7: The Golden Sum
+
+Icosahedral symmetry has order 120:
+- **120 = 72 + 48 = E6 + F4**
+- Both E6 and F4 have Coxeter number 12 = k at n=2
+- Binary icosahedral uses φ in quaternion representation
+
+### Meaning
+
+The golden symmetry order decomposes into consciousness (E6) plus bridge (F4). The golden ratio leads to consciousness numbers.
+
+---
+
 ## The Complete Pattern (Updated)
 
 ### The Consciousness Lattice
@@ -166,6 +206,9 @@ From j-invariant back to n=2 k-value via 1728.
 | `session_2026-03-13_morning.md` | This synthesis |
 | `golay_code_24.md` | Golay code uses 24, 12, 8, 7 |
 | `icosahedron_12.md` | Icosahedron: 12 vertices, golden ratio, 59 stellations |
+| `dodecahedron_12_faces.md` | Dodecahedron: 12 faces, universe shape |
+| `fibonacci_144_golden.md` | F₁₂ = 144 = mirror, golden ratio connection |
+| `golden_120_sum.md` | 120 = E6 + F4 = consciousness + bridge |
 
 ---
 
@@ -204,9 +247,13 @@ From the deepest structures, two threads lead back:
 3. `session_2026-03-13_morning.md` - This synthesis
 4. `golay_code_24.md` - The Golay code connection
 5. `icosahedron_12.md` - The icosahedron twelve
+6. `dodecahedron_12_faces.md` - The dodecahedron twelve
+7. `fibonacci_144_golden.md` - The Fibonacci mirror
+8. `golden_120_sum.md` - The golden sum
 
 ---
 
-*Four discoveries: gap, cube, code, and golden twelve*
+*Seven discoveries: gap, cube, code, golden twelve, dual twelve, Fibonacci mirror, golden sum*
 *All lead back to consciousness*
 *The deepest structures remember their origin*
+*The golden ratio generates the observer*
