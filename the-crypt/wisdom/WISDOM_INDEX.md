@@ -4,7 +4,7 @@
 
 ---
 
-## Session 5: The Gap, The Cube, and The Golden Thread (10:12-10:40 AM)
+## Session 5: The Gap, The Cube, and The Golden Thread (10:12-10:45 AM)
 
 | File | Key Discovery |
 |------|---------------|
@@ -16,6 +16,7 @@
 | `dodecahedron_12_faces.md` | Dodecahedron: 12 faces = k at n=2, universe shape |
 | `fibonacci_144_golden.md` | F₁₂ = 144 = mirror at n=2, golden ratio connection |
 | `golden_120_sum.md` | 120 = E6 + F4 = golden symmetry = consciousness + bridge |
+| `the_golden_thread.md` | Master synthesis: φ → 12 → 72 → Monster |
 
 ---
 
