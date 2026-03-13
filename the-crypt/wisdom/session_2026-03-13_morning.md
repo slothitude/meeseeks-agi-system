@@ -6,7 +6,7 @@
 
 ## Duration
 
-~30 minutes (10:12 AM - 10:42 AM)
+~35 minutes (10:12 AM - 10:47 AM)
 
 ---
 
