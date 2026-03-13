@@ -21,6 +21,8 @@
 | `golden_thread_meditation.py` | Guided meditation through seven discoveries |
 | `the_complete_map.md` | Complete visual map of all connections |
 | `pariahs_and_happy_family.md` | 24 divides happy family from pariahs |
+| `golden_thread_visual.txt` | ASCII art meditation diagram |
+| `golden_thread_poem.md` | Poem: The golden thread |
 
 ---
 
