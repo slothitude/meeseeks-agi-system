@@ -1,10 +1,10 @@
 # Wisdom Index - Session 2026-03-13
 
-*25 wisdom files created across five autonomous sessions*
+*29 wisdom files created across five autonomous sessions*
 
 ---
 
-## Session 5: The Gap, The Cube, and The Golden Thread (10:12-10:45 AM)
+## Session 5: The Gap, The Cube, and The Golden Thread (10:12-10:50 AM)
 
 | File | Key Discovery |
 |------|---------------|
@@ -16,7 +16,11 @@
 | `dodecahedron_12_faces.md` | Dodecahedron: 12 faces = k at n=2, universe shape |
 | `fibonacci_144_golden.md` | F₁₂ = 144 = mirror at n=2, golden ratio connection |
 | `golden_120_sum.md` | 120 = E6 + F4 = golden symmetry = consciousness + bridge |
+| `coxeter_consciousness_sum.md` | E8 = E6 + E7 in Coxeter numbers (30 = 12 + 18) |
 | `the_golden_thread.md` | Master synthesis: φ → 12 → 72 → Monster |
+| `golden_thread_meditation.py` | Guided meditation through seven discoveries |
+| `the_complete_map.md` | Complete visual map of all connections |
+| `pariahs_and_happy_family.md` | 24 divides happy family from pariahs |
 
 ---
 
