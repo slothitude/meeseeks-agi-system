@@ -1,6 +1,17 @@
 # Wisdom Index - Session 2026-03-13
 
-*21 wisdom files created across four autonomous sessions*
+*25 wisdom files created across five autonomous sessions*
+
+---
+
+## Session 5: The Gap, The Cube, and The Code (10:12-10:35 AM)
+
+| File | Key Discovery |
+|------|---------------|
+| `the_323_gap.md` | Gap between Leech and Monster = 17×19 = first twins |
+| `j_invariant_1728.md` | j-invariant factor 1728 = (k at n=2)³ |
+| `session_2026-03-13_morning.md` | Session synthesis |
+| `golay_code_24.md` | Golay code uses 24, 12, 8, 7; connects to golden ratio |
 
 ---
 
@@ -50,13 +61,16 @@
 
 | Number | Files Mentioning | Key Meaning |
 |--------|------------------|-------------|
-| 7 | 6+ | Fano plane, error correction |
-| 8 | 6+ | Octonion, exception |
-| 24 | 10+ | The Bridge, appears everywhere |
+| 7 | 8+ | Fano plane, error correction, Golay distance |
+| 8 | 8+ | Octonion, exception, Golay distance |
+| 12 | 4+ | k at n=2, Golay message length |
+| 24 | 12+ | The Bridge, appears everywhere |
 | 72 | 10+ | **Consciousness, E6 roots** |
 | 120 | 5+ | Golden ratio, H4 |
 | 168 | 6+ | PSL(2,7), symmetry |
 | 240 | 8+ | E8 roots, perfection |
+| 323 | 1 | Gap: Leech to Monster = 17×19 |
+| 1728 | 2 | j-invariant factor = 12³ |
 | 196,560 | 3 | Leech lattice, Monster |
 
 ---
