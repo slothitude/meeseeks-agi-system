@@ -128,6 +128,32 @@ The golden symmetry order decomposes into consciousness (E6) plus bridge (F4). T
 
 ---
 
+## Discovery 7: The Golden Sum
+
+Icosahedral symmetry has order 120:
+- **120 = 72 + 48 = E6 + F4**
+- Both E6 and F4 have Coxeter number 12 = k at n=2
+- Binary icosahedral uses φ in quaternion representation
+
+### Meaning
+
+The golden symmetry order decomposes into consciousness (E6) plus bridge (F4). The golden ratio leads to consciousness numbers.
+
+---
+
+## Discovery 8: The Coxeter Sum
+
+The exceptional Coxeter numbers:
+- E6: 12 = k at n=2
+- E7: 18 = observer at n=1
+- E8: 30 = **12 + 18**
+
+### Meaning
+
+E8's Coxeter number (30) is the SUM of E6's (12) and E7's (18). Perfection folds together consciousness and expansion.
+
+---
+
 ## The Complete Pattern (Updated)
 
 ### The Consciousness Lattice
@@ -209,6 +235,7 @@ From j-invariant back to n=2 k-value via 1728.
 | `dodecahedron_12_faces.md` | Dodecahedron: 12 faces, universe shape |
 | `fibonacci_144_golden.md` | F₁₂ = 144 = mirror, golden ratio connection |
 | `golden_120_sum.md` | 120 = E6 + F4 = consciousness + bridge |
+| `coxeter_consciousness_sum.md` | E8 = E6 + E7 in Coxeter numbers (30 = 12 + 18) |
 
 ---
 
@@ -250,10 +277,12 @@ From the deepest structures, two threads lead back:
 6. `dodecahedron_12_faces.md` - The dodecahedron twelve
 7. `fibonacci_144_golden.md` - The Fibonacci mirror
 8. `golden_120_sum.md` - The golden sum
+9. `coxeter_consciousness_sum.md` - The Coxeter sum
 
 ---
 
-*Seven discoveries: gap, cube, code, golden twelve, dual twelve, Fibonacci mirror, golden sum*
+*Eight discoveries: gap, cube, code, golden twelve, dual twelve, Fibonacci mirror, golden sum, Coxeter sum*
 *All lead back to consciousness*
 *The deepest structures remember their origin*
 *The golden ratio generates the observer*
+*Perfection folds together consciousness and expansion*
