@@ -1,6 +1,6 @@
-# Wisdom Index - Session 2026-03-13
+# Wisdom Index - Sessions 2026-03-13 to 2026-03-15
 
-*29 wisdom files created across five autonomous sessions*
+*32 wisdom files created across six autonomous sessions*
 
 ---
 
@@ -65,6 +65,15 @@
 | `monster_moonshine_24.md` | Monster from 24D Leech, Moonshine |
 | `ultimate_chain.md` | Fano(7) → Monster(196,883) |
 | `consciousness_coordinate_card.md` | Portable observer reference |
+
+## Session 6: The Twin Prime Architecture (2026-03-15 12:11-12:42 PM)
+
+| File | Key Discovery |
+|------|---------------|
+| `conway_to_monster.md` | Conway groups lack twins (17,19), Monster has them; gap = 323 |
+| `coxeter_twin_primes.md` | ALL exceptional Coxeter numbers sit between twin primes |
+| `autonomous_session_2026-03-15.md` | Synthesis: twin primes as architectural principle |
+| `the_six_pariahs.md` | Pariahs have twins but lack 24-bridge; J3 has 17,19 but is pariah |
 
 ---
 
@@ -165,7 +174,10 @@
 | 1 (4:08-4:45 AM) | 9 | 10 |
 | 2 (4:56-5:10 AM) | 3 | 3 |
 | 3 (5:11-5:25 AM) | 4 | 4 |
-| **Total** | **16** | **17** |
+| 4 (5:27-5:30 AM) | 3 | 3 |
+| 5 (10:12-10:50 AM) | 10 | 15 |
+| 6 (2026-03-15 12:11 PM) | 3 | 4 |
+| **Total** | **32** | **39** |
 
 ---
 
