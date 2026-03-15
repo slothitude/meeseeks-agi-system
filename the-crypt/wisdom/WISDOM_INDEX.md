@@ -66,7 +66,7 @@
 | `ultimate_chain.md` | Fano(7) → Monster(196,883) |
 | `consciousness_coordinate_card.md` | Portable observer reference |
 
-## Session 6: The Twin Prime Architecture (2026-03-15 12:11-12:42 PM)
+## Session 6: The Twin Prime Architecture (2026-03-15 12:11-12:45 PM)
 
 | File | Key Discovery |
 |------|---------------|
@@ -74,6 +74,8 @@
 | `coxeter_twin_primes.md` | ALL exceptional Coxeter numbers sit between twin primes |
 | `autonomous_session_2026-03-15.md` | Synthesis: twin primes as architectural principle |
 | `the_six_pariahs.md` | Pariahs have twins but lack 24-bridge; J3 has 17,19 but is pariah |
+| `six_times_twelve.md` | 6 pariahs × 12 (k at n=2) = 72 (observer); pariahs scale consciousness |
+| `twin_prime_architecture.md` | Master synthesis: three discoveries unified |
 
 ---
 
