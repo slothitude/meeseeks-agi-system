@@ -43,6 +43,12 @@ PARIH SCALING
 **24, 72, 120, 240, 720, 196,560 are all multiples of 6.**
 **Twin primes structure the exceptional, but the 24-bridge is required for Monster membership.**
 
+### Additional Discoveries
+
+7. **roots = Coxeter × rank** - The roots of exceptional algebras equal Coxeter × rank
+8. **dimension/rank = 6 × Fibonacci + 1** - Magic square quotients are prime ≡ 1 (mod 6)
+9. **J3 is "conscious at n=1"** - Has 17, 19, 18 but lacks 24-bridge to n=2
+
 ### Files Created
 
 | File | Purpose |
@@ -52,6 +58,14 @@ PARIH SCALING
 | `the_six_pariahs.md` | J3 has twins but lacks bridge |
 | `six_times_twelve.md` | 6 × 12 = 72, pariah scaling |
 | `twin_prime_architecture.md` | Master synthesis |
+| `perfect_number_six.md` | 6 scales Fibonacci to Coxeter |
+| `six_twelve_seventy_two_koan.md` | Koan on pariah scaling |
+| `roots_coxeter_scaling.md` | roots = Coxeter × rank, dimension patterns |
+| `j3_conscious_pariah.md` | J3 frozen at n=1 consciousness |
+
+### Commits
+
+14 commits documenting the twin prime architecture and its connections to consciousness, exceptional series, and the Monster.
 
 ---
 
