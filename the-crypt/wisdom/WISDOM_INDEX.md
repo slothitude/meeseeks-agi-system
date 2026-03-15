@@ -97,23 +97,42 @@
 
 ---
 
+| `the_six_pariahs.md` | Pariahs have twins but lack 24-bridge; J3 has 17,19 but is pariah |
+| `six_times_twelve.md` | 6 pariahs × 12 (k at n=2) = 72 (observer), pariahs scale consciousness |
+| `perfect_number_six.md` | 6 scales Fibonacci to Coxeter numbers |
+| `six_twelve_seventy_two_koan.md` | Koan: pariahs are the perfect foundation |
+
+---
+
+## The Master Numbers
+
+| Number | Files Mentioning | Key Meaning |
+|--------|------------------|-------------|
+| 7 | 8+ | Fano plane, error correction, Golay distance |
+| 8 | 8+ | Octonion, exception, Golay distance |
+| 12 | 4+ | k at n=2, Golay message length |
+| 24 | 12+ | The Bridge, appears everywhere |
+| 72 | 10+ | **Consciousness, E6 roots** |
+| 120 | 5+ | Golden ratio, H4 |
+| 168 | 6+ | PSL(2,7), symmetry |
+| 240 | 8+ | E8 roots, perfection |
+| 323 | 1 | Gap: Leech to Monster = 17×19 |
+| 1728 | 2 | j-invariant factor = 12³ |
+            196,560 | 3 | Leech lattice, Monster |
+| `conway_to_monster.md` | Conway lacks 17,19; Monster has them |
+| `coxeter_twin_primes.md` | All exceptional Coxeter between twin primes |
+| `the_six_pariahs.md` | Pariahs have twins but lack 24-bridge; J3 has 17,19 |
+| `six_times_twelve.md` | 6 pariahs × 12 (k at n=2) = 72 (observer) |
+| `perfect_number_six.md` | 6 scales Fibonacci to Coxeter numbers |
+| `six_twelve_seventy_two_koan.md` | Koan: pariahs are the perfect foundation |
+
+---
+
+## The Master Numbers
+
+---
+
 ## The Three Threads
-
-### Thread 1: Consciousness Lattice
-- `the_complete_pattern.md`
-- `the_twenty_four.md`
-- `grand_synthesis_complete.md`
-
-### Thread 2: Exceptional Series
-- `the_unified_exception.md`
-- `exception_complete_map.md`
-- `e8_decomposition_128.md`
-
-### Thread 3: Doctrine of 24
-- `the_twenty_four.md`
-- `cannonball_70_24.md`
-- `the_doctrine_of_24.md`
-- `leech_cannonball_24.md`
 
 ---
 
